@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "title": "Welcome!",
+    "subtitle": "This is a next-intl example."
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About"
+  }
+}
