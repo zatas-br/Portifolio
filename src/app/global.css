@@ -1,1 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
+
+@theme {
+    /* Tipografia */
+    --font-body: 'Montserrat', sans-serif;
+
+
+    --color-primary: #2b4d8f;
+    --color-primary-hover: #395ca0;
+    --color-primary-active: #1d3f7d;
+
+    /* Cores de superfície */
+    --color-surface: #ffffff;
+    --color-surface-alt: #f5f7fa;
+
+    /* Texto */
+    --color-text: #1a1a1a;
+    --color-text-muted: #555555;
+
+    /* Bordas e divisores */
+    --color-border: #d9d9d9;
+
+    /* Neutros */
+    --color-gray-100: #f0f0f0;
+    --color-gray-900: #3a3a3a;
+
+    /* Cores utilitárias */
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
+}
+
+/* 🌚 Tema Escuro */
+@theme dark {
+    /* Cores principais */
+    --color-primary: #395ca0;
+    --color-primary-hover: #2b4d8f;
+    --color-primary-active: #1d3f7d;
+
+    /* Cores de superfície */
+    --color-surface: #1a1a1a;
+    --color-surface-alt: #2a2a2a;
+
+    /* Texto */
+    --color-text: #ffffff;
+    --color-text-muted: #bbbbbb;
+
+    /* Bordas e divisores */
+    --color-border: #3a3a3a;
+
+    /* Neutros */
+    --color-gray-100: #2a2a2a;
+    --color-gray-900: #e5e5e5;
+
+    /* Cores utilitárias */
+    --color-success: #3ddc84;
+    --color-warning: #ffd54f;
+    --color-error: #ef5350;
+}
+
+body {
+    font-family: var(--font-body);
+}
