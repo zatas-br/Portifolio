@@ -1,3 +1,4 @@
+import { VariantsMenu } from '../components/menu/VariantsMenu';
 import './global.css';
 import Header from '@/src/components/layout/Header';
 
