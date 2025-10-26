@@ -1,4 +1,5 @@
 import './global.css';
+import Header from '@/src/components/layout/Header';
 
 export default async function RootLayout({
   children,
@@ -11,7 +12,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body>
+      
+      <body className='flex justify-center items-center bg-primary-light flex-col'>
+        <Header/>
           {children}
       </body>
     </html>
