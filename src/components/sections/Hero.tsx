@@ -11,26 +11,26 @@ export default function Hero() {
   return (
     <section className="flex flex-col items-center justify-center bg-primary-light gap-20 m-0 w-full max-w-screen-xl">
       <div className="flex flex-col items-center justify-center">
-        <img src={menuIcon.src} alt="Logo" className="h-40" />
-        <h3 className="font-medium text-4xl text-primary mt-8">
+        <img src={menuIcon.src} alt="Logo" className="h-60" />
+        <h3 className="text-[56pt] text-4xl text-primary mt-8">
           {t('subtitle')}
         </h3>
       </div>
       <div className="w-5/10 flex flex-row justify-between">
         <div className="flex flex-row justify-center items-center gap-2 group cursor-pointer">
-          <span className="font-bold text-primary text-[20pt]">Projetos</span>
+          <span className="font-bold text-primary text-[36pt]">Projetos</span>
           <img
             src={rightIcon.src}
             alt="Ícone de seta"
-            className="h-5 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-150"
+            className="h-8 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-150"
           />
         </div>
         <div className="flex flex-row justify-center items-center gap-2 group cursor-pointer">
-          <span className="font-bold text-primary text-[20pt]">Contato</span>
+          <span className="font-bold text-primary text-[36pt]">Contato</span>
           <img
             src={rightIcon.src}
             alt="Ícone de seta"
-            className="h-5 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-150"
+            className="h-8 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-150"
           />
         </div>
       </div>
