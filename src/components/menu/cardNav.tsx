@@ -200,11 +200,11 @@ const CardNav: React.FC<CardNavProps> = ({
                         style={{ color: menuColor || '#000' }}
                     >
                         <div
-                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45 scale-110' : ''
                                 } group-hover:opacity-75`}
                         />
                         <div
-                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45 scale-110' : ''
                                 } group-hover:opacity-75`}
                         />
                     </div>
