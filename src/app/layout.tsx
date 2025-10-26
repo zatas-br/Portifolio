@@ -1,20 +1,16 @@
+import { ParallaxProvider } from 'react-scroll-parallax';
 import './global.css';
-import Header from '@/src/components/layout/Header';
 
 export default async function RootLayout({
   children,
-  params: {locale}
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: { locale: string };
 }) {
-  
-
   return (
     <html lang={locale}>
-      
-      <body className='flex justify-center items-center bg-primary-light flex-col'>
-        <Header/>
+      <body className="bg-background-white">
           {children}
       </body>
     </html>
