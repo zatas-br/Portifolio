@@ -5,5 +5,31 @@
   "Navigation": {
     "home": "Home",
     "about": "About"
+  },
+  "CardNav":{
+      "about": {
+        "label": "About",
+        "links": [
+          { "label": "Company", "href": "/about", "ariaLabel": "About Zatas Company" },
+          { "label": "Team", "href": "/team", "ariaLabel": "Meet our Team" },
+          { "label": "Careers", "href": "/careers", "ariaLabel": "Career Opportunities" }
+        ]
+      },
+      "services": {
+        "label": "Services",
+        "links": [
+          { "label": "Development", "href": "/services/development", "ariaLabel": "Web Development" },
+          { "label": "Design", "href": "/services/design", "ariaLabel": "Design and UX/UI" },
+          { "label": "Consulting", "href": "/services/consulting", "ariaLabel": "Tech Consulting" }
+        ]
+      },
+      "contact": {
+        "label": "Contact",
+        "links": [
+          { "label": "Email", "href": "mailto:contact@zatas.com.br", "ariaLabel": "Send us an email" },
+          { "label": "WhatsApp", "href": "https://wa.me/5516000000000", "ariaLabel": "Chat on WhatsApp" },
+          { "label": "LinkedIn", "href": "https://linkedin.com/company/zatas", "ariaLabel": "Connect on LinkedIn" }
+        ]
+      }
   }
 }
