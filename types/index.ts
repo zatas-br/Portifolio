@@ -42,7 +42,7 @@ export interface ThemeControls {
 }
 
 export interface LanguageControls {
-    current: 'pt' | 'en';
+    current: String;
     onToggle: () => void;
 }
 export interface NavColors {

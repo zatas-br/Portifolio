@@ -1,28 +1,54 @@
 'use client'
 
 import { useState } from 'react';
-import CardNav from '../menu/CardNav';
+import CardNav from '@/src/components/menu/cardNav';
 import zatasIcon from '@/public/images/Identidade_visual/icon-zatas-blue.svg';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import { useRouter } from '@/src/i18n/navigation';
 
 export default function Header() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [language, setLanguage] = useState<'pt' | 'en'>('pt');
-  
+  const currentLocale = useLocale(); // Usado para o estado 'current' do botão
+  const router = useRouter(); 
+  const fullPathname = usePathname();
+
+  const locales = ['pt-br', 'en-us'];
 
   const handleThemeToggle = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    // Aqui você pode adicionar a lógica para mudar o tema do site
     document.documentElement.classList.toggle('dark');
-    console.log('Tema alterado para:', newTheme);
   };
 
   const handleLanguageToggle = () => {
-    const newLanguage = language === 'pt' ? 'en' : 'pt';
-    setLanguage(newLanguage);
-    // Aqui você pode integrar com next-intl ou sua solução de i18n
-    console.log('Idioma alterado para:', newLanguage);
+    // 2. Descubra qual locale está ATUALMENTE na URL
+    let currentLocaleOnPath = locales.find(loc => 
+      fullPathname === `/${loc}` || fullPathname.startsWith(`/${loc}/`)
+    );
+    
+    // Se não encontrar (ex: raiz '/'), use o hook useLocale como fallback
+    if (!currentLocaleOnPath) {
+      currentLocaleOnPath = currentLocale; 
+    }
+
+    // 3. Calcule o novo idioma
+    const newLanguage = currentLocaleOnPath === 'pt-br' ? 'en-us' : 'pt-br';
+
+    // 4. Limpe o path usando o locale que ENCONTRAMOS
+    const regex = new RegExp(`^/${currentLocaleOnPath}`);
+    let newPath = fullPathname.replace(regex, '');
+
+    // 5. Garanta que a raiz seja "/"
+    if (newPath === '') {
+      newPath = '/';
+    }
+
+    // 6. Faça o push correto
+    // Ex: router.push("/sobre", { locale: "en-us" })
+    // Ex: router.push("/", { locale: "en-us" })
+    router.push(newPath, { locale: newLanguage });
+    
   };
 
   const t = useTranslations('CardNav');
@@ -81,7 +107,7 @@ export default function Header() {
         }}
 
         language={{
-          current: language,
+          current: currentLocale,
           onToggle: handleLanguageToggle
         }}
       />
