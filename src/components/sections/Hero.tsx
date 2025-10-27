@@ -1,39 +1,61 @@
+'use client'
 
-import { useTranslations } from 'next-intl';
-import menuIcon from '@/public/images/Identidade_visual/zatas-blue.svg';
-import rightIcon from '@/public/images/Identidade_visual/rightIcon.svg';
-import zaIcon from '@/public/images/Identidade_visual/zaIcon.svg';
-import iconZatas from '@/public/images/Identidade_visual/icon-zatas-blue.svg';
+import AnimatedLogo from '../ui/AnimatedLogo';
+import Slogan from '../ui/AnimatedSlogan';
+import AnimatedButton from '../ui/AnimatedButton';
 
-export default function Hero() {
-  const t = useTranslations('HomePage');
-
+const HeroSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center bg-primary-light gap-20 m-0 w-full max-w-screen-xl">
-      <div className="flex flex-col items-center justify-center">
-        <img src={menuIcon.src} alt="Logo" className="h-60" />
-        <h3 className="text-[56pt] text-4xl text-primary mt-8">
-          {t('subtitle')}
-        </h3>
+    <div className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden">
+      {/* Grade de fundo sutil */}
+      <div className="absolute inset-0 opacity-5">
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px'
+          }}
+        />
       </div>
-      <div className="w-5/10 flex flex-row justify-between">
-        <div className="flex flex-row justify-center items-center gap-2 group cursor-pointer">
-          <span className="font-bold text-primary text-[36pt]">Projetos</span>
-          <img
-            src={rightIcon.src}
-            alt="Ícone de seta"
-            className="h-8 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-150"
-          />
+
+      {/* Conteúdo principal */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        {/* Logo Animado */}
+        <div className="mb-8">
+          <AnimatedLogo />
         </div>
-        <div className="flex flex-row justify-center items-center gap-2 group cursor-pointer">
-          <span className="font-bold text-primary text-[36pt]">Contato</span>
-          <img
-            src={rightIcon.src}
-            alt="Ícone de seta"
-            className="h-8 transition-transform duration-300 ease-in-out origin-left group-hover:scale-x-150"
-          />
+
+        {/* Slogan */}
+        <div className="mb-12">
+          <Slogan />
+        </div>
+
+        {/* Botões de ação */}
+        <div className="flex flex-wrap gap-4 justify-center items-center">
+          <AnimatedButton 
+            variant="primary" 
+            icon={<span>→</span>}
+            onClick={() => console.log('Ver Projetos')}
+          >
+            Explorar Projetos
+          </AnimatedButton>
+          <AnimatedButton 
+            variant="secondary"
+            icon={<span>✉</span>}
+            onClick={() => console.log('Contato')}
+          >
+            Entrar em Contato
+          </AnimatedButton>
         </div>
       </div>
-    </section>
+
+      {/* Efeito de vignette sutil */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-radial from-transparent via-transparent to-gray-100/30" />
+    </div>
   );
-}
+};
+
+export default HeroSection;
