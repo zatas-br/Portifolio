@@ -26,9 +26,13 @@ export interface CardNavProps {
     menuColor?: string;
     buttonBgColor?: string;
     buttonTextColor?: string;
+    onThemeToggle?: () => void;
+    onLanguageToggle?: () => void;
+    currentTheme?: 'light' | 'dark';
+    currentLanguage?: 'pt' | 'en';
 }
 
-// Componente de ícone de seta (substituindo react-icons)
+// Componente de ícone de seta
 const ArrowUpRight = ({ className }: { className?: string }) => (
     <svg
         className={className}
@@ -48,6 +52,35 @@ const ArrowUpRight = ({ className }: { className?: string }) => (
     </svg>
 );
 
+// Ícone do Sol
+const SunIcon = ({ className }: { className?: string }) => (
+    <svg
+        className={className}
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M12 5V3M12 21V19M16.95 7.05L18.364 5.636M5.636 18.364L7.05 16.95M19 12H21M3 12H5M16.95 16.95L18.364 18.364M5.636 5.636L7.05 7.05" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+);
+
+// Ícone da Lua
+const MoonIcon = ({ className }: { className?: string }) => (
+    <svg
+        className={className}
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+);
+
 const CardNav: React.FC<CardNavProps> = ({
     logo,
     logoAlt = 'Logo',
@@ -57,7 +90,11 @@ const CardNav: React.FC<CardNavProps> = ({
     baseColor = '#fff',
     menuColor,
     buttonBgColor,
-    buttonTextColor
+    buttonTextColor,
+    onThemeToggle,
+    onLanguageToggle,
+    currentTheme = 'light',
+    currentLanguage = 'pt'
 }) => {
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
@@ -184,9 +221,40 @@ const CardNav: React.FC<CardNavProps> = ({
                 className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
                 style={{ backgroundColor: baseColor }}
             >
-                <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] z-[2]">
+                <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[0.5rem] md:pl-[1.1rem] pr-[0.5rem] z-[2]">
+                    {/* Lado Esquerdo: Botões de Tema e Idioma */}
+                    <div className="flex items-center gap-2">
+                        {/* Botão de Tema */}
+                        <button
+                            type="button"
+                            onClick={onThemeToggle}
+                            className="flex items-center justify-center w-[38px] h-[38px] md:w-[44px] md:h-[44px] rounded-[calc(0.75rem-0.2rem)] transition-all duration-300 hover:opacity-90 md:hover:scale-105 active:scale-95"
+                            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                            aria-label={currentTheme === 'light' ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
+                        >
+                            {currentTheme === 'light' ? <MoonIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" /> : <SunIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" />}
+                        </button>
+
+                        {/* Botão de Idioma */}
+                        <button
+                            type="button"
+                            onClick={onLanguageToggle}
+                            className="flex items-center justify-center w-[38px] h-[38px] md:w-auto md:px-3 md:h-[44px] rounded-[calc(0.75rem-0.2rem)] font-semibold text-xs md:text-sm transition-all duration-300 hover:opacity-90 md:hover:scale-105 active:scale-95"
+                            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                            aria-label={currentLanguage === 'pt' ? 'Mudar para inglês' : 'Mudar para português'}
+                        >
+                            {currentLanguage === 'pt' ? 'EN' : 'PT'}
+                        </button>
+                    </div>
+
+                    {/* Centro: Logo */}
+                    <div className="logo-container absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px]" />
+                    </div>
+
+                    {/* Lado Direito: Menu Hambúrguer */}
                     <div
-                        className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
+                        className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px]`}
                         onClick={toggleMenu}
                         role="button"
                         aria-label={isExpanded ? 'Close menu' : 'Open menu'}
@@ -200,31 +268,22 @@ const CardNav: React.FC<CardNavProps> = ({
                         style={{ color: menuColor || '#000' }}
                     >
                         <div
-                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45 scale-110' : ''
-                                } group-hover:opacity-75`}
+                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${
+                                isHamburgerOpen ? 'translate-y-[4px] rotate-45 scale-110' : ''
+                            } group-hover:opacity-75`}
                         />
                         <div
-                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45 scale-110' : ''
-                                } group-hover:opacity-75`}
+                            className={`hamburger-line w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${
+                                isHamburgerOpen ? '-translate-y-[4px] -rotate-45 scale-110' : ''
+                            } group-hover:opacity-75`}
                         />
                     </div>
-
-                    <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-                        <img src={logo} alt={logoAlt} className="logo h-[28px]" />
-                    </div>
-
-                    <button
-                        type="button"
-                        className="card-nav-cta-button hidden md:inline-flex items-center justify-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 h-full font-medium cursor-pointer transition-colors duration-300 hover:opacity-90"
-                        style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                    >
-                        Linktree
-                    </button>
                 </div>
 
                 <div
-                    className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-                        } md:flex-row md:items-end md:gap-[12px]`}
+                    className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
+                        isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
+                    } md:flex-row md:items-end md:gap-[12px]`}
                     aria-hidden={!isExpanded}
                 >
                     {(items || []).slice(0, 3).map((item, idx) => (
