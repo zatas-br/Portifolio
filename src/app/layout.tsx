@@ -1,3 +1,4 @@
+import { ParallaxProvider } from 'react-scroll-parallax';
 import './global.css';
 import Header from '@/src/components/layout/Header';
 import { routing } from '@/src/i18n/routing';
