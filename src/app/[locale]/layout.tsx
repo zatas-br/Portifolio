@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/src/i18n/routing';
 import { getMessages } from 'next-intl/server';
 import Header from '@/src/components/layout/Header';
+import ScrollResetProvider from '@/src/components/providers/ScrollResetProvider';
 
 type Props = {
   children: React.ReactNode;
@@ -22,12 +23,14 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-      </div>
+      <ScrollResetProvider>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+        </div>
+      </ScrollResetProvider>
     </NextIntlClientProvider>
   );
 }
