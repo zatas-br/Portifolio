@@ -1,3 +1,5 @@
+// 📁 app/[locale]/layout.tsx
+
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/src/i18n/routing';
@@ -19,8 +21,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-        <main className="h-full w-full overflow-hidden">
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
           {children}
         </main>
+      </div>
+    </NextIntlClientProvider>
   );
 }

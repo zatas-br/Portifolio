@@ -69,9 +69,9 @@ export default function Header() {
       bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
-        { label: t('services.links.0.label'), href: '/services/development', ariaLabel: t('services.links.0.ariaLabel') },
-        { label: t('services.links.1.label'), href: '/services/design', ariaLabel: t('services.links.1.ariaLabel') },
-        { label: t('services.links.2.label'), href: '/services/consulting', ariaLabel: t('services.links.2.ariaLabel') }
+       { label: 'Desenvolvimento', href: '/services/desenvolvimento', ariaLabel: 'Ver projetos de desenvolvimento' },
+      { label: 'Design', href: '/services/design', ariaLabel: 'Ver projetos de design' },
+      { label: 'Marketing', href: '/services/marketing', ariaLabel: 'Ver projetos de marketing' }
       ]
     },
     {
