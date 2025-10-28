@@ -52,7 +52,7 @@ export default function Header() {
       links: [
         { label: t('about.links.0.label'), href: '/about', ariaLabel: t('about.links.0.ariaLabel') },
         { label: t('about.links.1.label'), href: '/team', ariaLabel: t('about.links.1.ariaLabel') },
-        { label: t('about.links.2.label'), href: '/careers', ariaLabel: t('about.links.2.ariaLabel') }
+        { label: t('about.links.2.label'), href: '/partnerships', ariaLabel: t('about.links.2.ariaLabel') }
       ]
     },
     {

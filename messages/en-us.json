@@ -12,7 +12,7 @@
         "links": [
           { "label": "Company", "href": "/about", "ariaLabel": "About Zatas Company" },
           { "label": "Team", "href": "/team", "ariaLabel": "Meet our Team" },
-          { "label": "Careers", "href": "/careers", "ariaLabel": "Career Opportunities" }
+          { "label": "Partnerships", "href": "/partnerships", "ariaLabel": "Partnership Opportunities" }
         ]
       },
       "services": {

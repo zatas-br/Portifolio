@@ -12,7 +12,7 @@
         "links": [
           { "label": "Empresa", "href": "/sobre", "ariaLabel": "Sobre a Empresa Zatas" },
           { "label": "Equipe", "href": "/equipe", "ariaLabel": "Conheça nossa Equipe" },
-          { "label": "Carreiras", "href": "/carreiras", "ariaLabel": "Oportunidades de Carreira" }
+          { "label": "Parcerias", "href": "/parcerias", "ariaLabel": "Oportunidades de Parceria" }
         ]
       },
       "services": {
