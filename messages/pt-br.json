@@ -31,5 +31,17 @@
           { "label": "LinkedIn", "href": "https://linkedin.com/company/zatas", "ariaLabel": "Conecte no LinkedIn" }
         ]
       }
+    },
+    "CompanyPage": {
+        "title": "Sobre a Zatas",
+        "description": "Transformamos ideias em produtos digitais que impactam milhões de pessoas ao redor do mundo",
+        "historyTitle": "Nossa História",
+        "history": [
+          "A jornada da Zatas começou quando um personal trainer, por indicação de outros programadores, entrou em contato com o sócio, Bruno, buscando uma forma de otimizar a gestão de seus alunos. Com essa proposta em mãos, Bruno convidou Gabriel e Antony para colaborarem no desenvolvimento da aplicação.",
+          "O projeto foi um sucesso e mostrou ao time o poder da colaboração. Para complementar as habilidades técnicas do grupo, Bryan foi convidado para a sociedade, trazendo sua expertise em marketing e design.",
+          "A Zatas foi fundada sobre essa base: a união de competências diversas com o propósito de oferecer soluções completas. A empresa começou resolvendo um problema específico e hoje segue com essa mesma paixão por transformar os desafios de cada cliente em projetos de sucesso.",
+          "O Significado de 'Zatas'",
+          "O nome 'Zatas' foi escolhido por sua sonoridade forte e memorável. Ele remete à palavra 'exatas', refletindo a essência do trabalho da empresa: a busca pela precisão, lógica e inteligência de dados na construção de cada solução. Zatas é sinônimo da solução exata para o desafio de cada cliente."
+        ]
     }
 }

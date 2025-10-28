@@ -17,8 +17,19 @@ import {
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
+import { useMessages, useTranslations } from 'next-intl';
+
+type Messages = {
+  CompanyPage: {
+    history: string[];
+  };
+};
 
 export default function CompanyPage() {
+  const t = useTranslations('CompanyPage');
+  const messages = useMessages() as Messages;
+  const historyParagraphs = messages.CompanyPage.history;
+  
   const heroRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
@@ -42,9 +53,9 @@ export default function CompanyPage() {
       {/* Hero */}
       <div ref={heroRef} className="bg-gradient-to-br from-primary to-primary-hover text-white py-20 md:py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Sobre a Zatas</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('title')}</h1>
           <p className="text-lg md:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto">
-            Transformamos ideias em produtos digitais que impactam milhões de pessoas ao redor do mundo
+            {t('description')}
           </p>
         </div>
       </div>
@@ -54,19 +65,13 @@ export default function CompanyPage() {
         <div ref={el => sectionsRef.current[0] = el} className="mb-20 md:mb-24">
           <div className="flex items-center gap-3 mb-6">
             <FaRocket className="w-6 h-6 text-primary" />
-            <h2 className="text-3xl md:text-4xl font-bold text-text">Nossa História</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-text">{t('historyTitle')}</h2>
           </div>
           <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8">
             <div className="space-y-4 text-text-muted text-base md:text-lg leading-relaxed">
-              <p>
-                A Zatas nasceu em 2020 com uma missão clara: criar soluções digitais que realmente fazem a diferença na vida das pessoas. Fundada por quatro profissionais apaixonados por tecnologia e inovação, começamos em uma pequena sala em São Paulo.
-              </p>
-              <p>
-                Hoje, somos uma equipe de mais de 50 profissionais talentosos, atendendo clientes em 5 países e impactando mais de 1 milhão de usuários com nossas soluções.
-              </p>
-              <p>
-                Nossa jornada é guiada pela crença de que tecnologia deve ser acessível, intuitiva e transformadora. Cada projeto que assumimos é uma oportunidade de superar expectativas e criar algo extraordinário.
-              </p>
+              {historyParagraphs.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>
