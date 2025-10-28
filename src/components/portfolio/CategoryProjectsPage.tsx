@@ -68,14 +68,6 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
       {/* Header */}
       <div ref={headerRef} className="bg-gradient-to-br from-surface-alt to-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          {/* Badge */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-2 bg-surface border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
-              <HiSparkles className="w-4 h-4 text-primary" />
-              Portfólio
-            </span>
-          </div>
-
           {/* Title with Icon */}
           <div className="flex items-center gap-4 mb-4">
             <div className="text-primary">

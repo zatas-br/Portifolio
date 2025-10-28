@@ -40,7 +40,6 @@ export default function Header() {
     }
 
     router.push(newPath, { locale: newLanguage });
-    router.refresh();
   };
 
   const t = useTranslations('CardNav');

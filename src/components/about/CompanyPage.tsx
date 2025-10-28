@@ -42,14 +42,6 @@ export default function CompanyPage() {
       {/* Hero */}
       <div ref={heroRef} className="bg-gradient-to-br from-primary to-primary-hover text-white py-20 md:py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-              <HiSparkles className="w-4 h-4" />
-              Conheça a Zatas
-            </span>
-          </div>
-
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Sobre a Zatas</h1>
           <p className="text-lg md:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto">
             Transformamos ideias em produtos digitais que impactam milhões de pessoas ao redor do mundo

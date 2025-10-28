@@ -6,8 +6,16 @@ import Slogan from '../ui/AnimatedSlogan';
 import AnimatedButton from '../ui/AnimatedButton';
 import { FaInstagram } from 'react-icons/fa';
 import { useTheme } from 'next-themes';
+import { useEffect } from 'react';
 
 const HeroSection = () => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
@@ -28,7 +36,7 @@ const HeroSection = () => {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center -mt-24">
         {/* Logo Animado */}
         <div className="mb-8">
           <AnimatedLogo />
