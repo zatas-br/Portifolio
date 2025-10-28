@@ -37,7 +37,7 @@ export interface UseCardNavAnimationProps {
 }
 
 export interface ThemeControls {
-    current: 'light' | 'dark';
+    current: String | undefined;
     onToggle: () => void;
 }
 

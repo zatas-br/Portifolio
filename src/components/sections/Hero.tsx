@@ -4,21 +4,25 @@ import AnimatedLogo from '../ui/AnimatedLogo';
 import Slogan from '../ui/AnimatedSlogan';
 import AnimatedButton from '../ui/AnimatedButton';
 import { FaInstagram } from 'react-icons/fa';
+import { useTheme } from 'next-themes';
 
 const HeroSection = () => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
+
+  const gridColor = isDark 
+    ? 'rgba(65, 65, 65, 0.2)' // Sua --color-primary dark (#414141) com 20% opacidade
+    : 'rgba(59, 130, 246, 0.3)';
+
+  const vignetteColor = isDark 
+    ? 'rgba(42, 42, 42, 0.3)'   // Seu --color-surface-alt dark (#2a2a2a)
+    : 'rgba(245, 247, 250, 0.3)';
+
   return (
-    <div className="h-screen w-full bg-white flex items-center justify-center relative overflow-hidden">
-      {/* Grade de fundo sutil */}
+    <div className="h-screen w-full bg-surface flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }}
         />
       </div>
 
@@ -29,7 +33,6 @@ const HeroSection = () => {
           <AnimatedLogo />
         </div>
 
-        {/* Slogan */}
         <div className="mb-12">
           <Slogan />
         </div>

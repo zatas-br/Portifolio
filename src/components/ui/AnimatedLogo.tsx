@@ -1,7 +1,30 @@
+'use client'
+
 import { motion } from 'framer-motion';
-import zatasLogo from '@/public/images/Identidade_visual/zatas-blue.svg';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import zatasLogoBlue from '@/public/images/Identidade_visual/zatas-blue.svg';
+import zatasLogoWhite from '@/public/images/Identidade_visual/zatas-white.svg'; // Ajuste o caminho
 
 const AnimatedLogo = () => {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Evita hidratação mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Não renderiza até estar montado no cliente
+  if (!mounted) {
+    return (
+      <div className="w-full max-w-md mx-auto h-32" /> // Placeholder com altura fixa
+    );
+  }
+
+  const isDark = resolvedTheme === 'dark';
+  const logoSrc = isDark ? zatasLogoWhite.src : zatasLogoBlue.src;
+
   return (
     <motion.div
       className="relative"
@@ -10,7 +33,8 @@ const AnimatedLogo = () => {
       transition={{ duration: 1, ease: [0.6, 0.05, 0.01, 0.9] }}
     >
       <motion.img
-        src={zatasLogo.src}
+        key={logoSrc} // Força re-render quando o tema muda
+        src={logoSrc}
         alt="ZATAS"
         className="w-full max-w-md mx-auto"
         initial={{ opacity: 0, y: 30 }}
@@ -33,9 +57,7 @@ const AnimatedLogo = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-      >
-        <div className="w-full h-full" />
-      </motion.div>
+      />
     </motion.div>
   );
 };

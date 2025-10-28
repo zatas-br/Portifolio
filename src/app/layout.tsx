@@ -1,5 +1,12 @@
 // 📁 app/layout.tsx
 
+import './global.css';
+import Header from '@/src/components/layout/Header';
+import { routing } from '@/src/i18n/routing';
+import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { ThemeProvider } from 'next-themes';
+
 import type { Metadata } from "next";
 import "./global.css";
 
@@ -15,9 +22,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased">
-        {children}
-      </body>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <body className='antialiased'>
+          <ThemeProvider attribute="class" 
+            defaultTheme="system" 
+            enableSystem>
+            <Header key={locale} />
+            {children}
+          </ThemeProvider>
+        </body>
+
+      </NextIntlClientProvider>
     </html>
   );
 }
