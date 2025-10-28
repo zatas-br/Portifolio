@@ -11,7 +11,6 @@ import {
   FaExternalLinkAlt,
   FaFolder
 } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
 import { PROJECTS, CATEGORIES } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 
@@ -67,23 +66,23 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
     <div className="min-h-screen bg-surface">
       {/* Header */}
       <div ref={headerRef} className="bg-gradient-to-br from-surface-alt to-surface border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           {/* Title with Icon */}
-          <div className="flex items-center gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
             <div className="text-primary">
               {categoryIcons[category]}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-text">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text">
               {categoryData?.title}
             </h1>
           </div>
           
-          <p className="text-lg text-text-muted max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-text-muted max-w-2xl leading-relaxed">
             {categoryData?.description}
           </p>
 
           {/* Stats */}
-          <div className="mt-8 flex items-center gap-6 text-sm">
+          <div className="mt-6 sm:mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <FaFolder className="w-4 h-4 text-primary" />
               <span className="text-text-muted">
@@ -95,10 +94,10 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
       </div>
 
       {/* Projects Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-2 gap-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Lista de Projetos */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
@@ -108,9 +107,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group cursor-pointer"
               >
-                <div className="bg-surface border-2 border-border hover:border-primary rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <div className="bg-surface border-2 border-border hover:border-primary rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                   {/* Mobile Image */}
-                  <div className="lg:hidden mb-4 rounded-xl overflow-hidden">
+                  <div className="lg:hidden mb-4 rounded-xl overflow-hidden bg-surface-alt">
                     <img 
                       src={project.image} 
                       alt={project.title}
@@ -119,13 +118,13 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
-                    {project.title}
-                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-start sm:items-center gap-2">
+                    <span className="flex-1">{project.title}</span>
+                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1 sm:mt-0" />
                   </h3>
 
                   {/* Description */}
-                  <p className="text-text-muted mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-text-muted mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   
@@ -147,7 +146,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
 
                   {/* Footer */}
-                  <div className="flex items-center justify-between text-sm pt-4 border-t border-border">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm pt-4 border-t border-border">
                     <span className="text-text-muted">{project.client}</span>
                     <span className="flex items-center gap-2 text-primary font-semibold">
                       Ver projeto 
@@ -160,7 +159,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
           </div>
 
           {/* Preview de Imagem - Desktop Only */}
-          <div className="hidden lg:block sticky top-24 h-fit">
+          <div className="hidden lg:block sticky top-24 self-start">
             <div 
               ref={imageRef}
               className="w-full aspect-[4/3] bg-surface-alt rounded-2xl overflow-hidden shadow-2xl border-2 border-border"
@@ -184,13 +183,16 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
               )}
             </div>
             
-            {/* Info abaixo da imagem */}
-            {hoveredProjectData && (
-              <div className="mt-6 p-4 bg-surface border border-border rounded-xl">
-                <p className="text-sm text-text-muted mb-1">Preview</p>
-                <p className="text-text font-semibold">{hoveredProjectData.title}</p>
-              </div>
-            )}
+            {/* Info abaixo da imagem - Sempre visível quando hover */}
+            <div className={`mt-6 p-4 bg-surface border border-border rounded-xl transition-all duration-300 ${hoveredProjectData ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+              {hoveredProjectData && (
+                <>
+                  <p className="text-sm text-text-muted mb-1">Preview</p>
+                  <p className="text-text font-semibold">{hoveredProjectData.title}</p>
+                  <p className="text-sm text-text-muted mt-2 line-clamp-2">{hoveredProjectData.description}</p>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
