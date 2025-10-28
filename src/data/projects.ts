@@ -16,7 +16,7 @@ export const CATEGORIES: Category[] = [
   { 
     id: 'marketing', 
     title: 'Marketing', 
-    icon: '📊',
+    icon: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800',
     description: 'Estratégias digitais que convertem'
   }
 ];

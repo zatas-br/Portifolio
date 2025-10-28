@@ -46,21 +46,13 @@ export default function TeamPage() {
   return (
     <div className="min-h-screen bg-surface">
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-surface-alt to-surface border-b border-border py-16 md:py-20 px-6">
+      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border py-16 md:py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          {/* Badge */}
-          <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-surface border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
-              <HiSparkles className="w-4 h-4 text-primary" />
-              Conheça quem faz acontecer
-            </span>
-          </div>
-
           <div className="flex items-center justify-center gap-3 mb-4">
-            <FaUsers className="w-8 h-8 text-primary" />
-            <h1 className="text-4xl md:text-5xl font-bold text-text">Nossa Equipe</h1>
+            <FaUsers className="w-8 h-8 text-white" />
+            <h1 className="text-4xl md:text-5xl font-bold text-white">Nossa Equipe</h1>
           </div>
-          <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray max-w-2xl mx-auto">
             Conheça os fundadores que tornam tudo isso possível
           </p>
         </div>
@@ -118,7 +110,7 @@ export default function TeamPage() {
 
             <div className="grid md:grid-cols-3">
               {/* Left - Photo & Basic Info */}
-              <div className="bg-gradient-to-br from-primary to-primary-hover text-white p-6 md:p-8 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
+              <div className="bg-gradient-to-br from-start-gradient to-final-gradient text-white p-6 md:p-8 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
                 <img
                   src={selectedMember.image}
                   alt={selectedMember.name}

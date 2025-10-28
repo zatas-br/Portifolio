@@ -1,74 +1,57 @@
-/* global.css */
-
-/* Seus imports */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import 'tailwindcss'; /* Importa o Tailwind v4 */
+@import 'tailwindcss';
 
-/* 1. DIRETIVA @THEME (O jeito v4)
-   Contém APENAS as variáveis do tema padrão (claro).
-   O Tailwind v4 vai ler isso e criar as classes (bg-primary, etc.)
-*/
 @theme {
-  /* Tipografia */
   --font-body: 'Montserrat', sans-serif;
 
-  /* Cores Primárias (Light) */
   --color-primary: #2b4d8f;
+  --color-primary-icon:var(--color-primary);
   --color-primary-hover: #395ca0;
   --color-primary-active: #1d3f7d;
 
-  /* Cores de superfície (Light) */
+  --color-start-gradient: var(--color-primary);
+  --color-final-gradient: #2a2a2a;
+
   --color-surface: #ffffff;
   --color-surface-alt: #f5f7fa;
 
-  /* Texto (Light) */
   --color-text: #1a1a1a;
   --color-text-slogan:#2b4d8f;
+  --color-white:#f0f0f0;
+  --color-gray: #aaaaaa;
   --color-text-muted: #555555;
+  --color-spare-text: #2b4d8f;
 
-  /* Bordas e divisores (Light) */
   --color-border: #d9d9d9;
 
-  /* Cores utilitárias (Exemplo) */
   --color-success: #28a745;
   --color-warning: #ffc107;
   --color-error: #dc3545;
 }
 
-/* 2. DIRETIVA @layer base
-   Aqui vão os estilos base E as redefinições do tema.
-*/
 @layer base {
 
-  /* 2a. TEMA ESCURO (Redefinições)
-     Defina as redefinições do dark mode AQUI, fora do @theme.
-  */
   .dark {
-    /* Cores Primárias (Dark) */
     --color-primary: #4b4b4b;
-    --color-primary-hover: #202020;
+    --color-primary-icon:var(--color-text);
+    --color-primary-hover: #d3cece;
+    --color-start-gradient: var(--color-primary);
+    --color-final-gradient: #000000;
     --color-primary-active: #131313;
 
-    /* Cores de superfície (Dark) */
     --color-surface: #1e1e1e;
     --color-surface-alt: #2a2a2a;
 
-    /* Texto (Dark) */
     --color-text: #f0f0f0;
-    --color-text-slogan: #f0f0f0;
+    --color-text-slogan: var(--color-text);
     --color-text-muted: #aaaaaa;
+    --color-spare-text: var(--color-text);
 
-    /* Bordas e divisores (Dark) */
     --color-border: #444444;
   }
 
-  /* 2b. Aplicação base no body
-  */
   body {
-    /* Aplica a fonte do @theme */
-    font-family: var(--font-body); 
-    
-    /* Aplica as cores de fundo e texto do @theme */
+    font-family: var(--font-body);
     background-color: var(--color-surface);
     color: var(--color-text);
   }

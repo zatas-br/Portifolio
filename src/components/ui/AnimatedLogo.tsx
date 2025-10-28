@@ -10,15 +10,13 @@ const AnimatedLogo = () => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Evita hidratação mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Não renderiza até estar montado no cliente
   if (!mounted) {
     return (
-      <div className="w-full max-w-md mx-auto h-32" /> // Placeholder com altura fixa
+      <div className="w-full max-w-md mx-auto h-32" />
     );
   }
 
@@ -33,7 +31,7 @@ const AnimatedLogo = () => {
       transition={{ duration: 1, ease: [0.6, 0.05, 0.01, 0.9] }}
     >
       <motion.img
-        key={logoSrc} // Força re-render quando o tema muda
+        key={logoSrc}
         src={logoSrc}
         alt="ZATAS"
         className="w-full max-w-md mx-auto"

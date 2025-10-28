@@ -19,12 +19,12 @@ const HeroSection = () => {
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === 'dark';
 
-  const gridColor = isDark 
-    ? 'rgba(65, 65, 65, 0.2)' // Sua --color-primary dark (#414141) com 20% opacidade
+  const gridColor = isDark
+    ? 'rgba(65, 65, 65, 0.2)'
     : 'rgba(59, 130, 246, 0.3)';
 
-  const vignetteColor = isDark 
-    ? 'rgba(42, 42, 42, 0.3)'   // Seu --color-surface-alt dark (#2a2a2a)
+  const vignetteColor = isDark
+    ? 'rgba(42, 42, 42, 0.3)'
     : 'rgba(245, 247, 250, 0.3)';
 
   return (

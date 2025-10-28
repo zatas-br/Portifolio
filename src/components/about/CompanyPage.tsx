@@ -51,7 +51,7 @@ export default function CompanyPage() {
   return (
     <div className="min-h-screen bg-surface">
       {/* Hero */}
-      <div ref={heroRef} className="bg-gradient-to-br from-primary to-primary-hover text-white py-20 md:py-24 px-6">
+      <div ref={heroRef} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white py-20 md:py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('title')}</h1>
           <p className="text-lg md:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto">
@@ -110,7 +110,7 @@ export default function CompanyPage() {
         </div>
 
         {/* Números */}
-        <div ref={el => sectionsRef.current[2] = el} className="bg-gradient-to-br from-primary to-primary-hover text-white rounded-3xl p-8 md:p-12 mb-20 md:mb-24">
+        <div ref={el => sectionsRef.current[2] = el} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white rounded-3xl p-8 md:p-12 mb-20 md:mb-24">
           <div className="flex items-center justify-center gap-3 mb-8 md:mb-12">
             <FaAward className="w-6 h-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-center">Zatas em Números</h2>

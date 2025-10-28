@@ -73,7 +73,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             <div className="text-primary">
               {categoryIcons[category]}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-text">
+            <h1 className="text-4xl md:text-5xl font-bold text-spare-text">
               {categoryData?.title}
             </h1>
           </div>
@@ -87,7 +87,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             <div className="flex items-center gap-2">
               <FaFolder className="w-4 h-4 text-primary" />
               <span className="text-text-muted">
-                <strong className="text-text font-semibold">{filteredProjects.length}</strong> projetos
+                <strong className="text-spare-text font-semibold">{filteredProjects.length}</strong> projetos
               </span>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
+                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:spare-text transition-colors flex items-center gap-2">
                     {project.title}
                     <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
