@@ -29,7 +29,7 @@ export default function AllProjectsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-blue-50 to-white border-b border-gray-100">
+      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">Todos os Projetos</h1>
           <p className="text-xl text-gray-600 mb-8">Explore nosso portfólio completo</p>

@@ -57,29 +57,12 @@ const AnimatedButton = ({
   const handleMouseDown = () => gsap.to(buttonRef.current, { scale: 0.95, duration: 0.1, ease: 'power2.out' });
   const handleMouseUp = () => gsap.to(buttonRef.current, { scale: 1.05, duration: 0.1, ease: 'power2.out' });
 
-
-  // --- PONTOS PRINCIPAIS AQUI ---
-
-  // 1. Estilos Base:
-  //    - 'primary': Usa 'bg-primary' (azul)
-  //    - 'secondary': Usa 'bg-transparent', 'text-text' (cor do texto do tema)
-  //      e 'border-border' (cor da borda do tema).
-  //      ISSO RESOLVE O PROBLEMA DO BOTÃO BRANCO NO FUNDO BRANCO.
   const baseStyles = isPrimary
     ? 'bg-primary text-white border-2 border-primary'
     : 'bg-transparent text-text border-2 border-border';
 
-  // 2. Cor do Fundo no Hover (para a animação do bgRef)
-  //    - 'primary': Usa 'bg-primary-hover'
-  //    - 'secondary': Usa 'bg-text' (preenche com a cor do texto do tema)
   const bgColor = isPrimary ? 'bg-primary-hover' : 'bg-text';
 
-  // 3. Cor do Texto no Hover
-  //    - 'primary': (continua branco, sem classe)
-  //    - 'secondary': Vira 'group-hover:text-surface' (cor do fundo do tema)
-  const textColorOnHover = isPrimary ? '' : 'group-hover:text-surface';
-  
-  // --- FIM DOS PONTOS PRINCIPAIS ---
 
   return (
     <button
@@ -108,14 +91,14 @@ const AnimatedButton = ({
       />
       
       {/* Conteúdo (texto e ícone) */}
-      <span className={`relative z-10 transition-colors duration-300 ${textColorOnHover}`}>
+      <span className={`relative z-10 transition-colors duration-300 group-hover:text-surface`}>
         {children}
       </span>
       
       {icon && (
         <span 
           ref={iconRef}
-          className={`relative z-10 flex items-center transition-colors duration-300 ${textColorOnHover}`}
+          className={`relative z-10 flex items-center transition-colors duration-300 group-hover:text-surface`}
         >
           {icon}
         </span>
