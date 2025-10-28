@@ -1,16 +1,30 @@
-// 📁 src/components/portfolio/CategoryProjectsPage.tsx
-
 'use client'
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
+import { 
+  FaCode, 
+  FaPalette, 
+  FaBullhorn,
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaFolder
+} from 'react-icons/fa';
+import { HiSparkles } from 'react-icons/hi';
 import { PROJECTS, CATEGORIES } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 
 interface CategoryProjectsPageProps {
   category: 'desenvolvimento' | 'design' | 'marketing';
 }
+
+// Ícones para cada categoria
+const categoryIcons: Record<string, React.ReactNode> = {
+  'desenvolvimento': <FaCode className="w-12 h-12" />,
+  'design': <FaPalette className="w-12 h-12" />,
+  'marketing': <FaBullhorn className="w-12 h-12" />
+};
 
 export default function CategoryProjectsPage({ category }: CategoryProjectsPageProps) {
   const router = useRouter();
@@ -33,10 +47,13 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   }, []);
 
   useEffect(() => {
-    if (hoveredProject && imageRef.current) {
-      gsap.to(imageRef.current, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' });
-    } else if (imageRef.current) {
-      gsap.to(imageRef.current, { opacity: 0, scale: 0.95, duration: 0.3 });
+    if (imageRef.current) {
+      gsap.to(imageRef.current, { 
+        opacity: 1, 
+        scale: hoveredProject ? 1 : 0.98, 
+        duration: 0.4, 
+        ease: 'power2.out' 
+      });
     }
   }, [hoveredProject]);
 
@@ -47,15 +64,41 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-surface">
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-blue-50 to-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-5xl">{categoryData?.icon}</span>
-            <h1 className="text-5xl font-bold text-gray-900">{categoryData?.title}</h1>
+      <div ref={headerRef} className="bg-gradient-to-br from-surface-alt to-surface border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          {/* Badge */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 bg-surface border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
+              <HiSparkles className="w-4 h-4 text-primary" />
+              Portfólio
+            </span>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl">{categoryData?.description}</p>
+
+          {/* Title with Icon */}
+          <div className="flex items-center gap-4 mb-4">
+            <div className="text-primary">
+              {categoryIcons[category]}
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-text">
+              {categoryData?.title}
+            </h1>
+          </div>
+          
+          <p className="text-lg text-text-muted max-w-2xl leading-relaxed">
+            {categoryData?.description}
+          </p>
+
+          {/* Stats */}
+          <div className="mt-8 flex items-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <FaFolder className="w-4 h-4 text-primary" />
+              <span className="text-text-muted">
+                <strong className="text-text font-semibold">{filteredProjects.length}</strong> projetos
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -73,7 +116,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group cursor-pointer"
               >
-                <div className="bg-white border-2 border-gray-100 hover:border-blue-500 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg">
+                <div className="bg-surface border-2 border-border hover:border-primary rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                   {/* Mobile Image */}
                   <div className="lg:hidden mb-4 rounded-xl overflow-hidden">
                     <img 
@@ -83,29 +126,40 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                     />
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
                     {project.title}
+                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+
+                  {/* Description */}
+                  <p className="text-text-muted mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
                   
+                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 4).map(tech => (
                       <span 
                         key={tech} 
-                        className="text-xs font-medium bg-blue-50 text-blue-600 px-3 py-1.5 rounded-full"
+                        className="text-xs font-medium bg-surface-alt text-primary border border-border px-3 py-1.5 rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 4 && (
+                      <span className="text-xs font-medium text-text-muted px-3 py-1.5">
+                        +{project.technologies.length - 4}
+                      </span>
+                    )}
                   </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{project.client}</span>
-                    <span className="flex items-center gap-1 text-blue-600 font-medium">
+                  {/* Footer */}
+                  <div className="flex items-center justify-between text-sm pt-4 border-t border-border">
+                    <span className="text-text-muted">{project.client}</span>
+                    <span className="flex items-center gap-2 text-primary font-semibold">
                       Ver projeto 
-                      <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                      <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </div>
@@ -117,19 +171,32 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
           <div className="hidden lg:block sticky top-24 h-fit">
             <div 
               ref={imageRef}
-              className="w-full aspect-[4/3] bg-gray-50 rounded-2xl overflow-hidden shadow-xl opacity-0 border border-gray-100"
+              className="w-full aspect-[4/3] bg-surface-alt rounded-2xl overflow-hidden shadow-2xl border-2 border-border"
             >
-              {hoveredProjectData && (
+              {hoveredProjectData ? (
                 <img
                   src={hoveredProjectData.image}
                   alt={hoveredProjectData.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-500"
                 />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
+                  <FaFolder className="w-16 h-16 text-primary mb-4 opacity-50" />
+                  <p className="text-text-muted text-lg font-medium mb-2">
+                    Passe o mouse sobre um projeto
+                  </p>
+                  <p className="text-text-muted text-sm opacity-75">
+                    para visualizar a prévia
+                  </p>
+                </div>
               )}
             </div>
+            
+            {/* Info abaixo da imagem */}
             {hoveredProjectData && (
-              <div className="mt-6 text-center">
-                <p className="text-sm text-gray-500">Preview de {hoveredProjectData.title}</p>
+              <div className="mt-6 p-4 bg-surface border border-border rounded-xl">
+                <p className="text-sm text-text-muted mb-1">Preview</p>
+                <p className="text-text font-semibold">{hoveredProjectData.title}</p>
               </div>
             )}
           </div>
