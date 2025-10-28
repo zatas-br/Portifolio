@@ -7,7 +7,7 @@ interface CardNavTopProps {
     menuColor: string;
     buttonBgColor: string;
     buttonTextColor: string;
-    currentTheme: 'light' | 'dark';
+    currentTheme: String | undefined;
     currentLanguage: String;
     isHamburgerOpen: boolean;
     onThemeToggle?: () => void;
