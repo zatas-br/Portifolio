@@ -85,3 +85,45 @@ export interface Category {
   icon: string;
   description: string;
 }
+
+// 📁 src/types/about.ts
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  skills: string[];
+  education: Education[];
+  experience: Experience[];
+  social: {
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
+  };
+}
+
+export interface Education {
+  institution: string;
+  degree: string;
+  year: string;
+}
+
+export interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+}
+
+export interface Job {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: 'full-time' | 'part-time' | 'freelance';
+  description: string;
+  requirements: string[];
+  benefits: string[];
+}
