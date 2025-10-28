@@ -55,7 +55,7 @@ export default function Header() {
 
   const menuItems = [
     {
-      label: t('contact.label'),
+      label: t('about.label'),
       bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
@@ -65,7 +65,7 @@ export default function Header() {
       ]
     },
     {
-      label: t('contact.label'),
+      label: t('services.label'),
       bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
