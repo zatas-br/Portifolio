@@ -63,3 +63,25 @@ export interface CardNavProps {
     language: LanguageControls;
     colors?: NavColors;
 }
+
+export interface Project {
+  id: string;
+  title: string;
+  category: 'desenvolvimento' | 'design' | 'marketing';
+  image: string;
+  description: string;
+  year: number;
+  author: string;
+  technologies: string[];
+  fullDescription: string;
+  gallery: string[];
+  client?: string;
+  link?: string;
+}
+
+export interface Category {
+  id: string;
+  title: string;
+  icon: string;
+  description: string;
+}
