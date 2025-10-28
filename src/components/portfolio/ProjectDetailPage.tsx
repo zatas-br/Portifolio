@@ -1,10 +1,18 @@
-// 📁 src/components/portfolio/ProjectDetailPage.tsx
-
 'use client'
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
+import { 
+  FaArrowLeft, 
+  FaExternalLinkAlt, 
+  FaCalendar, 
+  FaUsers, 
+  FaBriefcase,
+  FaCode,
+  FaImages
+} from 'react-icons/fa';
+import { HiSparkles } from 'react-icons/hi';
 import { PROJECTS } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 
@@ -36,99 +44,162 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
   if (!project) return null;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-surface">
       {/* Back Button */}
-      <div className="border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-6">
+      <div className="border-b border-border bg-surface sticky top-0 z-10 backdrop-blur-sm bg-surface/80">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <button
             onClick={() => router.push(`/services/${category}`)}
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
+            className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors font-medium cursor-pointer group"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
+            <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Voltar para projetos
           </button>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
         {/* Header */}
         <div ref={headerRef} className="mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">{project.title}</h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl">{project.description}</p>
+          {/* Badge */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
+              <HiSparkles className="w-4 h-4 text-primary" />
+              Estudo de Caso
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
+            {project.title}
+          </h1>
           
-          <div className="flex flex-wrap gap-8 text-gray-600">
-            <div>
-              <span className="block text-sm text-gray-400 mb-1">Ano</span>
-              <span className="font-semibold text-gray-900">{project.year}</span>
+          {/* Description */}
+          <p className="text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl">
+            {project.description}
+          </p>
+          
+          {/* Meta Info */}
+          <div className="flex flex-wrap gap-6 text-text-muted">
+            <div className="flex items-center gap-2">
+              <FaCalendar className="w-4 h-4 text-primary" />
+              <div>
+                <span className="block text-xs text-text-muted mb-0.5">Ano</span>
+                <span className="font-semibold text-text">{project.year}</span>
+              </div>
             </div>
-            <div>
-              <span className="block text-sm text-gray-400 mb-1">Equipe</span>
-              <span className="font-semibold text-gray-900">{project.author}</span>
+            <div className="flex items-center gap-2">
+              <FaUsers className="w-4 h-4 text-primary" />
+              <div>
+                <span className="block text-xs text-text-muted mb-0.5">Equipe</span>
+                <span className="font-semibold text-text">{project.author}</span>
+              </div>
             </div>
             {project.client && (
-              <div>
-                <span className="block text-sm text-gray-400 mb-1">Cliente</span>
-                <span className="font-semibold text-gray-900">{project.client}</span>
+              <div className="flex items-center gap-2">
+                <FaBriefcase className="w-4 h-4 text-primary" />
+                <div>
+                  <span className="block text-xs text-text-muted mb-0.5">Cliente</span>
+                  <span className="font-semibold text-text">{project.client}</span>
+                </div>
               </div>
             )}
           </div>
         </div>
 
         {/* Hero Image */}
-        <div ref={heroRef} className="mb-16 rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-          <img src={project.image} alt={project.title} className="w-full h-[500px] object-cover" />
+        <div ref={heroRef} className="mb-16 rounded-2xl overflow-hidden shadow-2xl border-2 border-border group">
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500" 
+          />
         </div>
 
         {/* Content */}
-        <div ref={contentRef} className="grid md:grid-cols-3 gap-12 mb-16">
+        <div ref={contentRef} className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
+          {/* Main Content */}
           <div className="md:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Sobre o Projeto</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">{project.fullDescription}</p>
+            <div className="bg-surface border border-border rounded-2xl p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-4">
+                <FaCode className="w-5 h-5 text-primary" />
+                <h2 className="text-2xl md:text-3xl font-bold text-text">Sobre o Projeto</h2>
+              </div>
+              <p className="text-base md:text-lg text-text-muted leading-relaxed">
+                {project.fullDescription}
+              </p>
             </div>
           </div>
 
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Tecnologias</h3>
+          {/* Sidebar */}
+          <div className="space-y-6">
+            {/* Technologies */}
+            <div className="bg-surface border border-border rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
+                <FaCode className="w-4 h-4 text-primary" />
+                Tecnologias
+              </h3>
               <div className="space-y-2">
                 {project.technologies.map(tech => (
-                  <div key={tech} className="bg-blue-50 border border-blue-100 text-blue-700 px-4 py-3 rounded-lg font-medium">
+                  <div 
+                    key={tech} 
+                    className="bg-surface-alt border border-border text-primary px-4 py-3 rounded-lg font-medium text-sm hover:border-primary transition-colors"
+                  >
                     {tech}
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* CTA Button */}
             {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-blue-600 text-white text-center py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg hover:shadow-xl"
+                className="flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl hover:bg-primary-hover active:bg-primary-active transition-colors font-semibold shadow-lg hover:shadow-xl cursor-pointer"
               >
-                Ver Projeto Live →
+                Ver Projeto Live
+                <FaExternalLinkAlt className="w-4 h-4" />
               </a>
             )}
           </div>
         </div>
 
         {/* Gallery */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Galeria do Projeto</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {project.gallery.map((img, index) => (
-              <div
-                key={index}
-                ref={el => galleryRef.current[index] = el}
-                className="rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow"
-              >
-                <img src={img} alt={`${project.title} - ${index + 1}`} className="w-full h-80 object-cover" />
-              </div>
-            ))}
+        {project.gallery && project.gallery.length > 0 && (
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <FaImages className="w-6 h-6 text-primary" />
+              <h2 className="text-2xl md:text-3xl font-bold text-text">Galeria do Projeto</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+              {project.gallery.map((img, index) => (
+                <div
+                  key={index}
+                  ref={el => galleryRef.current[index] = el}
+                  className="rounded-xl overflow-hidden shadow-lg border-2 border-border hover:shadow-2xl hover:border-primary transition-all duration-300 group cursor-pointer"
+                >
+                  <img 
+                    src={img} 
+                    alt={`${project.title} - ${index + 1}`} 
+                    className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
+                </div>
+              ))}
+            </div>
           </div>
+        )}
+
+        {/* Navigation Footer */}
+        <div className="mt-16 pt-8 border-t border-border">
+          <button
+            onClick={() => router.push(`/services/${category}`)}
+            className="flex items-center gap-2 text-primary hover:text-primary-hover transition-colors font-semibold cursor-pointer group mx-auto"
+          >
+            <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            Ver mais projetos de {category}
+          </button>
         </div>
       </div>
     </div>
