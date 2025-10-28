@@ -7,7 +7,7 @@ import { FaInstagram } from 'react-icons/fa';
 
 const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden">
+    <div className="h-screen w-full bg-white flex items-center justify-center relative overflow-hidden">
       {/* Grade de fundo sutil */}
       <div className="absolute inset-0 opacity-5">
         <div

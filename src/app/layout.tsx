@@ -22,7 +22,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className='flex justify-center items-center bg-primary-light flex-col'>
+        <body className='flex flex-col min-h-screen bg-primary-light overflow-hidden'>
           <Header key={locale} />
           {children}
         </body>

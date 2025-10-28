@@ -19,7 +19,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-        <main className="min-h-screen bg-white">
+        <main className="h-full w-full overflow-hidden">
           {children}
         </main>
   );
