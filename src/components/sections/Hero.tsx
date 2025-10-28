@@ -3,13 +3,14 @@
 import AnimatedLogo from '../ui/AnimatedLogo';
 import Slogan from '../ui/AnimatedSlogan';
 import AnimatedButton from '../ui/AnimatedButton';
+import { FaInstagram } from 'react-icons/fa';
 
 const HeroSection = () => {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center relative overflow-hidden">
       {/* Grade de fundo sutil */}
       <div className="absolute inset-0 opacity-5">
-        <div 
+        <div
           className="w-full h-full"
           style={{
             backgroundImage: `
@@ -35,19 +36,19 @@ const HeroSection = () => {
 
         {/* Botões de ação */}
         <div className="flex flex-wrap gap-4 justify-center items-center">
-          <AnimatedButton 
-            variant="primary" 
+          <AnimatedButton
+            variant="primary"
             icon={<span>→</span>}
             onClick={() => console.log('Ver Projetos')}
           >
             Explorar Projetos
           </AnimatedButton>
-          <AnimatedButton 
+          <AnimatedButton
             variant="secondary"
-            icon={<span>✉</span>}
-            onClick={() => console.log('Contato')}
+            icon={<FaInstagram size={18} />}
+            onClick={() => window.open('https://instagram.com/suaempresa', '_blank')}
           >
-            Entrar em Contato
+            Siga no Instagram
           </AnimatedButton>
         </div>
       </div>

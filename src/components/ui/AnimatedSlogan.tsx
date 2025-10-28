@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const Slogan = () => {
-  const words = ['Design', '•', 'Código', '•', 'Impacto'];
+  const words = ['Design', '|', 'Código', '|', 'Impacto'];
 
   return (
     <motion.div
@@ -23,7 +23,7 @@ const Slogan = () => {
             delay: 1.2 + i * 0.1,
             duration: 0.5
           }}
-          className={word === '•' ? 'text-blue-400' : ''}
+          className={word === '|' ? 'text-primary' : ''}
         >
           {word}
         </motion.span>
