@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 const Slogan = () => {
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === 'dark';
+
+
   const words = ['Design', '|', 'Código', '|', 'Impacto'];
 
   return (
@@ -12,7 +17,7 @@ const Slogan = () => {
         duration: 0.8,
         ease: "easeOut"
       }}
-      className="flex items-center justify-center gap-4 text-gray-800 text-lg md:text-xl tracking-wide"
+      className="flex items-center justify-center gap-4 text-gray-800 text-text-slogan md:text-xl tracking-wide"
     >
       {words.map((word, i) => (
         <motion.span

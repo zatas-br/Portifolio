@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
@@ -41,75 +43,43 @@ const AnimatedButton = ({
   }, [isPrimary]);
 
   const handleMouseEnter = () => {
-    if (!buttonRef.current || !bgRef.current) return;
-
-    gsap.to(bgRef.current, {
-      scaleX: 1,
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-
-    gsap.to(buttonRef.current, {
-      scale: 1.05,
-      duration: 0.3,
-      ease: 'power2.out'
-    });
-
-    if (iconRef.current) {
-      gsap.to(iconRef.current, {
-        x: 5,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
-    }
+    gsap.to(bgRef.current, { scaleX: 1, duration: 0.4, ease: 'power2.out' });
+    gsap.to(buttonRef.current, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
+    if (iconRef.current) gsap.to(iconRef.current, { x: 5, duration: 0.3, ease: 'power2.out' });
   };
 
   const handleMouseLeave = () => {
-    if (!buttonRef.current || !bgRef.current) return;
-
-    gsap.to(bgRef.current, {
-      scaleX: 0,
-      duration: 0.4,
-      ease: 'power2.out'
-    });
-
-    gsap.to(buttonRef.current, {
-      scale: 1,
-      duration: 0.3,
-      ease: 'power2.out'
-    });
-
-    if (iconRef.current) {
-      gsap.to(iconRef.current, {
-        x: 0,
-        duration: 0.3,
-        ease: 'power2.out'
-      });
-    }
+    gsap.to(bgRef.current, { scaleX: 0, duration: 0.4, ease: 'power2.out' });
+    gsap.to(buttonRef.current, { scale: 1, duration: 0.3, ease: 'power2.out' });
+    if (iconRef.current) gsap.to(iconRef.current, { x: 0, duration: 0.3, ease: 'power2.out' });
   };
 
-  const handleMouseDown = () => {
-    gsap.to(buttonRef.current, {
-      scale: 0.95,
-      duration: 0.1,
-      ease: 'power2.out'
-    });
-  };
+  const handleMouseDown = () => gsap.to(buttonRef.current, { scale: 0.95, duration: 0.1, ease: 'power2.out' });
+  const handleMouseUp = () => gsap.to(buttonRef.current, { scale: 1.05, duration: 0.1, ease: 'power2.out' });
 
-  const handleMouseUp = () => {
-    gsap.to(buttonRef.current, {
-      scale: 1.05,
-      duration: 0.1,
-      ease: 'power2.out'
-    });
-  };
 
+  // --- PONTOS PRINCIPAIS AQUI ---
+
+  // 1. Estilos Base:
+  //    - 'primary': Usa 'bg-primary' (azul)
+  //    - 'secondary': Usa 'bg-transparent', 'text-text' (cor do texto do tema)
+  //      e 'border-border' (cor da borda do tema).
+  //      ISSO RESOLVE O PROBLEMA DO BOTÃO BRANCO NO FUNDO BRANCO.
   const baseStyles = isPrimary
     ? 'bg-primary text-white border-2 border-primary'
-    : 'bg-white text-gray-900 border-2 border-gray-900';
+    : 'bg-transparent text-text border-2 border-border';
 
-  const bgColor = isPrimary ? 'bg-primary-hover' : 'bg-gray-900';
-  const textColorOnHover = isPrimary ? '' : 'group-hover:text-white';
+  // 2. Cor do Fundo no Hover (para a animação do bgRef)
+  //    - 'primary': Usa 'bg-primary-hover'
+  //    - 'secondary': Usa 'bg-text' (preenche com a cor do texto do tema)
+  const bgColor = isPrimary ? 'bg-primary-hover' : 'bg-text';
+
+  // 3. Cor do Texto no Hover
+  //    - 'primary': (continua branco, sem classe)
+  //    - 'secondary': Vira 'group-hover:text-surface' (cor do fundo do tema)
+  const textColorOnHover = isPrimary ? '' : 'group-hover:text-surface';
+  
+  // --- FIM DOS PONTOS PRINCIPAIS ---
 
   return (
     <button
@@ -130,11 +100,14 @@ const AnimatedButton = ({
       `}
       style={{ opacity: 0 }}
     >
+      {/* Fundo animado */}
       <div
         ref={bgRef}
         className={`absolute inset-0 ${bgColor} origin-left`}
         style={{ transform: 'scaleX(0)' }}
       />
+      
+      {/* Conteúdo (texto e ícone) */}
       <span className={`relative z-10 transition-colors duration-300 ${textColorOnHover}`}>
         {children}
       </span>

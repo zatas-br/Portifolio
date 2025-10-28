@@ -6,9 +6,10 @@ import zatasIcon from '@/public/images/Identidade_visual/icon-zatas-white.svg';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { useRouter } from '@/src/i18n/navigation';
+import { useTheme } from 'next-themes';
 
 export default function Header() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const {theme, setTheme} = useTheme()
   const currentLocale = useLocale(); // Usado para o estado 'current' do botão
   const router = useRouter(); 
   const fullPathname = usePathname();
@@ -18,35 +19,26 @@ export default function Header() {
   const handleThemeToggle = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    document.documentElement.classList.toggle('dark');
   };
 
   const handleLanguageToggle = () => {
-    // 2. Descubra qual locale está ATUALMENTE na URL
     let currentLocaleOnPath = locales.find(loc => 
       fullPathname === `/${loc}` || fullPathname.startsWith(`/${loc}/`)
     );
-    
-    // Se não encontrar (ex: raiz '/'), use o hook useLocale como fallback
+
     if (!currentLocaleOnPath) {
       currentLocaleOnPath = currentLocale; 
     }
-
-    // 3. Calcule o novo idioma
     const newLanguage = currentLocaleOnPath === 'pt-br' ? 'en-us' : 'pt-br';
 
-    // 4. Limpe o path usando o locale que ENCONTRAMOS
     const regex = new RegExp(`^/${currentLocaleOnPath}`);
     let newPath = fullPathname.replace(regex, '');
 
-    // 5. Garanta que a raiz seja "/"
+
     if (newPath === '') {
       newPath = '/';
     }
 
-    // 6. Faça o push correto
-    // Ex: router.push("/sobre", { locale: "en-us" })
-    // Ex: router.push("/", { locale: "en-us" })
     router.push(newPath, { locale: newLanguage });
     router.refresh();
   };
