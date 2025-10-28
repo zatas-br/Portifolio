@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SunIcon, MoonIcon } from '../../icons';
 import { HamburgerMenu } from '../../ui/HamburguerMenu';
 
@@ -52,15 +53,17 @@ export const CardNavTop = ({
                     onClick={onLanguageToggle}
                     className="flex items-center justify-center w-[38px] h-[38px] md:w-auto md:px-3 md:h-[44px] rounded-[calc(0.75rem-0.2rem)] font-semibold text-xs md:text-sm transition-all duration-300 hover:opacity-90 md:hover:scale-105 active:scale-95"
                     style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                    aria-label={currentLanguage === 'pt' ? 'Mudar para inglês' : 'Mudar para português'}
+                    aria-label={currentLanguage === 'pt-br' ? 'Mudar para inglês' : 'Mudar para português'}
                 >
-                    {currentLanguage === 'pt' ? 'EN' : 'PT'}
+                    {currentLanguage === 'pt-br' ? 'EN' : 'PT'}
                 </button>
             </div>
 
             {/* Centro: Logo */}
             <div className="logo-container absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px]" />
+                <Link href="/">
+                    <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px]" />
+                </Link>
             </div>
 
             {/* Lado Direito: Menu Hambúrguer */}
