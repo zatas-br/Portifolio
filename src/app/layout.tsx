@@ -22,17 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <NextIntlClientProvider locale={locale} messages={messages}>
         <body className='antialiased'>
           <ThemeProvider attribute="class" 
             defaultTheme="system" 
             enableSystem>
-            <Header key={locale} />
             {children}
           </ThemeProvider>
         </body>
-
-      </NextIntlClientProvider>
     </html>
   );
 }
