@@ -48,7 +48,7 @@ export default function Header() {
     // Ex: router.push("/sobre", { locale: "en-us" })
     // Ex: router.push("/", { locale: "en-us" })
     router.push(newPath, { locale: newLanguage });
-    
+    router.refresh();
   };
 
   const t = useTranslations('CardNav');

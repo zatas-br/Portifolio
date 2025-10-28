@@ -19,14 +19,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <div className="min-h-screen bg-white">
-        <Header />
-        
-        <main>
+        <main className="min-h-screen bg-white">
           {children}
         </main>
-      </div>
-    </NextIntlClientProvider>
   );
 }
