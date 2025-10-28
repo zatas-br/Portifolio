@@ -65,14 +65,14 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   return (
     <div className="min-h-screen bg-surface">
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border">
+      <div ref={headerRef} className="bg-gradient-to-br from-surface-alt to-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           {/* Title with Icon */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
             <div className="text-primary">
               {categoryIcons[category]}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-spare-text">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text">
               {categoryData?.title}
             </h1>
           </div>
@@ -86,7 +86,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             <div className="flex items-center gap-2">
               <FaFolder className="w-4 h-4 text-primary" />
               <span className="text-text-muted">
-                <strong className="text-spare-text font-semibold">{filteredProjects.length}</strong> projetos
+                <strong className="text-text font-semibold">{filteredProjects.length}</strong> projetos
               </span>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                ref={el => projectsRef.current[index] = el}
+                ref={el => { projectsRef.current[index] = el; }}
                 onClick={() => handleProjectClick(project.id)}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
@@ -118,9 +118,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:spare-text transition-colors flex items-center gap-2">
-                    {project.title}
-                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-start sm:items-center gap-2">
+                    <span className="flex-1">{project.title}</span>
+                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1 sm:mt-0" />
                   </h3>
 
                   {/* Description */}
