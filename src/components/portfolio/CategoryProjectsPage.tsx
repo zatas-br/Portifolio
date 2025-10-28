@@ -69,24 +69,24 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           {/* Title with Icon */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
-            <div className="text-primary">
+            <div className="text-white">
               {categoryIcons[category]}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-spare-text">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
               {categoryData?.title}
             </h1>
           </div>
           
-          <p className="text-base sm:text-lg text-text-muted max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-gray max-w-2xl leading-relaxed">
             {categoryData?.description}
           </p>
 
           {/* Stats */}
           <div className="mt-6 sm:mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
-              <FaFolder className="w-4 h-4 text-primary" />
-              <span className="text-text-muted">
-                <strong className="text-spare-text font-semibold">{filteredProjects.length}</strong> projetos
+              <FaFolder className="w-4 h-4 text-white" />
+              <span className="text-gray">
+                <strong className="text-white font-semibold">{filteredProjects.length}</strong> projetos
               </span>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group cursor-pointer"
               >
-                <div className="bg-surface border-2 border-border hover:border-primary rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+                <div className="bg-surface border-2 border-border hover:border-primary  rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                   {/* Mobile Image */}
                   <div className="lg:hidden mb-4 rounded-xl overflow-hidden bg-surface-alt">
                     <img 
@@ -118,7 +118,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:spare-text transition-colors flex items-center gap-2">
+                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:primary transition-colors flex items-center gap-2">
                     {project.title}
                     <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
