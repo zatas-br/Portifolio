@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import CardNav from '@/src/components/menu/cardNav';
-import zatasIcon from '@/public/images/Identidade_visual/icon-zatas-blue.svg';
+import zatasIcon from '@/public/images/Identidade_visual/icon-zatas-white.svg';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { useRouter } from '@/src/i18n/navigation';
@@ -55,8 +55,8 @@ export default function Header() {
 
   const menuItems = [
     {
-      label: t('about.label'),
-      bgColor: "var(--color-primary)",
+      label: t('contact.label'),
+      bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
         { label: t('about.links.0.label'), href: '/about', ariaLabel: t('about.links.0.ariaLabel') },
@@ -65,8 +65,8 @@ export default function Header() {
       ]
     },
     {
-      label: t('services.label'),
-      bgColor: "var(--color-primary-hover)",
+      label: t('contact.label'),
+      bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
         { label: t('services.links.0.label'), href: '/services/development', ariaLabel: t('services.links.0.ariaLabel') },
@@ -95,10 +95,10 @@ export default function Header() {
         ease="power3.out"
 
         colors={{
-          base: "var(--color-surface)",
-          menu: "var(--color-text)",
-          buttonBg: "var(--color-primary)",
-          buttonText: "var(--color-surface)"
+          base: "var(--color-primary)",
+          menu: "var(--color-white)",
+          buttonBg: "var(--color-primary-active)",
+          buttonText: "var(--color-white)"
         }}
 
         theme={{
