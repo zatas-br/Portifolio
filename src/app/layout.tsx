@@ -1,3 +1,4 @@
+// 📁 app/layout.tsx
 
 import './global.css';
 import Header from '@/src/components/layout/Header';
@@ -6,24 +7,23 @@ import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 
-type Props = {
-  children: React.ReactNode;
-  params: { locale: string }; // 2. O 'params' não é uma Promise aqui
+import type { Metadata } from "next";
+import "./global.css";
+
+export const metadata: Metadata = {
+  title: "Zatas Portfolio",
+  description: "Portfólio profissional",
 };
 
-export default async function RootLayout({ children, params }: Props) {
-
-  const { locale } = params; // <-- Corrigido (não precisa de 'await')
-
-  // 3. Adicione o 'notFound' para locales inválidos
-  if (!hasLocale(routing.locales, locale)) {
-  }
-
-  const messages = await getMessages();
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang={locale} suppressHydrationWarning={false}>
+    <html lang="pt-BR">
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className='flex flex-col min-h-screen bg-primary-light overflow-hidden'>
+        <body className='antialiased'>
           <ThemeProvider attribute="class" 
             defaultTheme="system" 
             enableSystem>
