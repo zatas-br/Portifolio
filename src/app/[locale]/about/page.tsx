@@ -1,6 +1,6 @@
-// 📁 app/[locale]/team/page.tsx
+// 📁 app/[locale]/about/page.tsx
 
-import TeamPage from '@/src/components/about/TeamPage';
+import CompanyPage from '@/src/components/about/CompanyPage';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
@@ -12,10 +12,10 @@ export async function generateMetadata({ params: { locale } }: Props): Promise<M
   const t = await getTranslations({ locale, namespace: 'CardNav' });
   
   return {
-    title: t('about.links.1.label'),
+    title: t('about.label'),
   };
 }
 
-export default function TeamPageRoute() {
-  return <TeamPage />;
+export default function AboutPage() {
+  return <CompanyPage />;
 }
