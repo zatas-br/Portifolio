@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import AnimatedLogo from '../ui/AnimatedLogo';
 import Slogan from '../ui/AnimatedSlogan';
 import AnimatedButton from '../ui/AnimatedButton';
@@ -39,6 +40,7 @@ const HeroSection = () => {
 
         {/* Botões de ação */}
         <div className="flex flex-wrap gap-4 justify-center items-center">
+          <Link href='/services'>
           <AnimatedButton
             variant="primary"
             icon={<span>→</span>}
@@ -46,6 +48,7 @@ const HeroSection = () => {
           >
             Explorar Projetos
           </AnimatedButton>
+          </Link>
           <AnimatedButton
             variant="secondary"
             icon={<FaInstagram size={18} />}
