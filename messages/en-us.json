@@ -7,6 +7,7 @@
     "about": "About"
   },
   "CardNav":{
+      "logoAlt": "Zatas Logo",
       "about": {
         "label": "About",
         "links": [
@@ -53,7 +54,9 @@
         "stat1": "300% growth",
         "stat2": "100+ projects delivered",
         "stat3": "5 countries served"
-      }
+      },
+      "buttonProject":"Explore Projects",
+      "buttonInstagram":"Folow on Instagram"
     },
     "partnershipTypes": {
       "title": "Partnership Opportunities",
@@ -166,5 +169,37 @@
   },
   "Slogan": {
     "words": ["Design", "|", "Code", "|", "Impact"]
+  },
+  "HamburgerMenu": {
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "Hero": {
+    "button1": "Explore Projects",
+    "button2": "Follow on Instagram"
+  },
+  "ServicesLandingPage": {
+    "badge": "What we do",
+    "title1": "Turn your",
+    "title2": "idea",
+    "title3": "into",
+    "title4": "reality",
+    "subtitle": "Complete solutions in development, design and digital marketing",
+    "viewProjects": "View projects",
+    "ctaTitle": "Ready to start your project?",
+    "ctaSubtitle": "Get in touch and let's turn your idea into reality",
+    "ctaButton": "Talk to the team",
+    "categoryTags": [
+      ["Web", "Mobile", "APIs"],
+      ["UI/UX", "Branding", "Identity"],
+      ["SEO", "Social Media", "Content"]
+    ]
+  },
+  "CategoryProjectsPage": {
+    "projects": "projects",
+    "viewProject": "View project",
+    "hoverPreview": "Hover over a project",
+    "hoverPreviewSubtitle": "to see a preview",
+    "preview": "Preview"
   }
 }

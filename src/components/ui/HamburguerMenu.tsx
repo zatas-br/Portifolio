@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 interface HamburgerMenuProps {
     isOpen: boolean;
     onClick: () => void;
@@ -11,6 +13,7 @@ export const HamburgerMenu = ({
     color = '#000',
     className = '' 
 }: HamburgerMenuProps) => {
+    const t = useTranslations('HamburgerMenu');
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -24,7 +27,7 @@ export const HamburgerMenu = ({
             onClick={onClick}
             onKeyDown={handleKeyDown}
             role="button"
-            aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-label={isOpen ? t('close') : t('open')}
             aria-expanded={isOpen}
             tabIndex={0}
             style={{ color }}

@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { CardNavProps } from '@/types';
 import { useCardNavAnimation } from '../../hooks/useCardNavAnimation';
 import { CardNavTop } from './components/CardNavTop';
@@ -7,7 +8,7 @@ import { CardNavContent } from './components/CardNavContent';
 
 const CardNav = ({
     logo,
-    logoAlt = 'Logo',
+    logoAlt,
     items,
     className = '',
     ease = 'power3.out',
@@ -15,6 +16,8 @@ const CardNav = ({
     language,
     colors = {}
 }: CardNavProps) => {
+    const t = useTranslations('CardNav');
+    const finalLogoAlt = logoAlt ?? t('logoAlt');
     const {
         base: baseColor = '#fff',
         menu: menuColor = '#000',
@@ -41,7 +44,7 @@ const CardNav = ({
             >
                 <CardNavTop
                     logo={logo}
-                    logoAlt={logoAlt}
+                    logoAlt={finalLogoAlt}
                     menuColor={menuColor}
                     buttonBgColor={buttonBgColor || baseColor}
                     buttonTextColor={buttonTextColor || menuColor}

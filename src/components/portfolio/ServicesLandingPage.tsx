@@ -20,6 +20,7 @@ import {
 } from 'react-icons/hi';
 import { CATEGORIES } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
+import { useTranslations } from 'next-intl';
 
 // Ícones modernos para cada categoria
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -39,6 +40,7 @@ const tagIcons: Record<string, React.ReactNode> = {
 };
 
 export default function ServicesLandingPage() {
+  const t = useTranslations('ServicesLandingPage');
   const router = useRouter();
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -47,13 +49,9 @@ export default function ServicesLandingPage() {
   useEffect(() => {
     animateFadeIn(headerRef.current, 0);
     animateEnter(cardsRef.current, 0.15);
-  }, []);
+  }, [animateEnter, animateFadeIn]);
 
-  const categoryTags = [
-    ['Web', 'Mobile', 'APIs'],
-    ['UI/UX', 'Branding', 'Identidade'],
-    ['SEO', 'Social Media', 'Conteúdo']
-  ];
+  const categoryTags = t.raw('categoryTags') as string[][];
 
   return (
     <div className="min-h-screen bg-surface">
@@ -64,22 +62,22 @@ export default function ServicesLandingPage() {
           <div className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
               <HiSparkles className="w-4 h-4 text-primary" />
-              O que fazemos
+              {t('badge')}
             </span>
           </div>
           
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold text-center mb-6">
-            <span className="text-text">Transforme sua </span>
-            <span className="text-primary">ideia</span>
+            <span className="text-text">{t('title1')} </span>
+            <span className="text-primary">{t('title2')}</span>
             <br />
-            <span className="text-text">em </span>
-            <span className="bg-gradient-to-r from-start-gradient to-final-gradient bg-clip-text text-transparent">realidade</span>
+            <span className="text-text">{t('title3')} </span>
+            <span className="bg-gradient-to-r from-start-gradient to-final-gradient bg-clip-text text-transparent">{t('title4')}</span>
           </h1>
           
           {/* Subtitle */}
           <p className="text-lg text-text-muted max-w-2xl mx-auto text-center leading-relaxed">
-            Soluções completas em desenvolvimento, design e marketing digital
+            {t('subtitle')}
           </p>
         </div>
       </div>
@@ -112,7 +110,7 @@ export default function ServicesLandingPage() {
 
                 {/* CTA */}
                 <div className="flex items-center gap-2 text-primary font-semibold cursor-pointer">
-                  <span>Ver projetos</span>
+                  <span>{t('viewProjects')}</span>
                   <FaArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
 
@@ -139,16 +137,16 @@ export default function ServicesLandingPage() {
         <div className="mt-20 text-center">
           <div className="bg-surface rounded-2xl p-12 border-2 border-border max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-text mb-4">
-              Pronto para começar seu projeto?
+              {t('ctaTitle')}
             </h3>
             <p className="text-xl text-text-muted mb-8">
-              Entre em contato e vamos transformar sua ideia em realidade
+              {t('ctaSubtitle')}
             </p>
             <button 
               onClick={() => router.push('/contact')}
               className="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-hover active:bg-primary-active transition-colors shadow-lg hover:shadow-xl cursor-pointer"
             >
-              Falar com a equipe <FaArrowRight className="inline-block ml-2 w-4 h-4" />
+              {t('ctaButton')} <FaArrowRight className="inline-block ml-2 w-4 h-4" />
             </button>
           </div>
         </div>
