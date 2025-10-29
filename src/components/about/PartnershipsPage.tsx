@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { 
   FaHandshake, 
   FaRocket, 
@@ -14,13 +14,13 @@ import {
   FaBullhorn,
   FaEnvelope,
   FaCheckCircle,
-  FaArrowRight,
-  FaStar
+  FaArrowRight
 } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
+import { useTranslations } from 'next-intl';
 
 export default function PartnershipsPage() {
+  const t = useTranslations('PartnershipsPage');
   const headerRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
@@ -28,40 +28,52 @@ export default function PartnershipsPage() {
   useEffect(() => {
     animateFadeIn(headerRef.current, 0);
     animateEnter(sectionsRef.current, 0.15);
-  }, []);
+  }, [animateEnter, animateFadeIn]);
 
   const partnershipTypes = [
     {
       icon: <FaHandshake className="w-12 h-12" />,
-      title: 'Sócios Estratégicos',
-      description: 'Procuramos parceiros que compartilham nossa visão de transformar o mercado digital com inovação e excelência.',
-      benefits: ['Participação nos lucros', 'Decisões estratégicas', 'Crescimento compartilhado']
+      title: t('partnershipTypes.types.0.title'),
+      description: t('partnershipTypes.types.0.description'),
+      benefits: [
+        t('partnershipTypes.types.0.benefits.0'), 
+        t('partnershipTypes.types.0.benefits.1'), 
+        t('partnershipTypes.types.0.benefits.2')
+      ]
     },
     {
       icon: <FaRocket className="w-12 h-12" />,
-      title: 'Investidores',
-      description: 'Empresa em crescimento acelerado buscando investimento para expansão nacional e internacional.',
-      benefits: ['ROI competitivo', 'Transparência total', 'Relatórios mensais']
+      title: t('partnershipTypes.types.1.title'),
+      description: t('partnershipTypes.types.1.description'),
+      benefits: [
+        t('partnershipTypes.types.1.benefits.0'), 
+        t('partnershipTypes.types.1.benefits.1'), 
+        t('partnershipTypes.types.1.benefits.2')
+      ]
     },
     {
       icon: <FaGlobeAmericas className="w-12 h-12" />,
-      title: 'Parceiros Comerciais',
-      description: 'Construa uma rede de negócios sólida conosco. Indicações, projetos conjuntos e crescimento mútuo.',
-      benefits: ['Comissões atrativas', 'Suporte completo', 'Projetos exclusivos']
+      title: t('partnershipTypes.types.2.title'),
+      description: t('partnershipTypes.types.2.description'),
+      benefits: [
+        t('partnershipTypes.types.2.benefits.0'), 
+        t('partnershipTypes.types.2.benefits.1'), 
+        t('partnershipTypes.types.2.benefits.2')
+      ]
     }
   ];
 
   const whyPartner = [
-    { icon: <FaChartLine />, title: 'Crescimento Acelerado', desc: '300% de crescimento nos últimos 2 anos' },
-    { icon: <FaTrophy />, title: 'Portfólio de Elite', desc: 'Mais de 100 projetos de sucesso entregues' },
-    { icon: <FaUsers />, title: 'Time Experiente', desc: '50+ profissionais altamente qualificados' },
-    { icon: <FaLightbulb />, title: 'Inovação Constante', desc: 'Tecnologias de ponta e metodologias ágeis' }
+    { icon: <FaChartLine />, title: t('whyPartner.reasons.0.title'), desc: t('whyPartner.reasons.0.desc') },
+    { icon: <FaTrophy />, title: t('whyPartner.reasons.1.title'), desc: t('whyPartner.reasons.1.desc') },
+    { icon: <FaUsers />, title: t('whyPartner.reasons.2.title'), desc: t('whyPartner.reasons.2.desc') },
+    { icon: <FaLightbulb />, title: t('whyPartner.reasons.3.title'), desc: t('whyPartner.reasons.3.desc') }
   ];
 
   const expertiseAreas = [
-    { icon: <FaCode />, title: 'Desenvolvimento', desc: 'Web, Mobile, APIs e Sistemas Complexos' },
-    { icon: <FaPalette />, title: 'Design & UX', desc: 'Interfaces modernas e experiências memoráveis' },
-    { icon: <FaBullhorn />, title: 'Marketing Digital', desc: 'Estratégias que convertem e engajam' }
+    { icon: <FaCode />, title: t('expertiseAreas.areas.0.title'), desc: t('expertiseAreas.areas.0.desc') },
+    { icon: <FaPalette />, title: t('expertiseAreas.areas.1.title'), desc: t('expertiseAreas.areas.1.desc') },
+    { icon: <FaBullhorn />, title: t('expertiseAreas.areas.2.title'), desc: t('expertiseAreas.areas.2.desc') }
   ];
 
   return (
@@ -72,27 +84,27 @@ export default function PartnershipsPage() {
         
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Construa o Futuro <br className="hidden md:block" />
-            <span className="text-white/90">com a Zatas</span>
+            {t('hero.title1')} <br className="hidden md:block" />
+            <span className="text-white/90">{t('hero.title2')}</span>
           </h1>
           
           <p className="text-lg md:text-2xl opacity-90 leading-relaxed max-w-3xl mx-auto mb-8">
-            Conecte-se com uma empresa em crescimento exponencial. Seja sócio, investidor ou parceiro estratégico.
+            {t('hero.subtitle')}
           </p>
           
           {/* Stats Pills */}
           <div className="flex flex-wrap gap-3 md:gap-4 justify-center text-sm md:text-base">
             <div className="bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center gap-2">
               <FaChartLine className="w-4 h-4" />
-              300% de crescimento
+              {t('hero.stats.stat1')}
             </div>
             <div className="bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center gap-2">
               <FaTrophy className="w-4 h-4" />
-              100+ projetos entregues
+              {t('hero.stats.stat2')}
             </div>
             <div className="bg-white/20 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 rounded-full flex items-center gap-2">
               <FaGlobeAmericas className="w-4 h-4" />
-              5 países atendidos
+              {t('hero.stats.stat3')}
             </div>
           </div>
         </div>
@@ -102,9 +114,9 @@ export default function PartnershipsPage() {
         {/* Partnership Types */}
         <div ref={el => { sectionsRef.current[0] = el; }} className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Oportunidades de Parceria</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">{t('partnershipTypes.title')}</h2>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
-              Escolha a melhor forma de fazer parte da nossa jornada de crescimento
+              {t('partnershipTypes.subtitle')}
             </p>
           </div>
 
@@ -132,9 +144,9 @@ export default function PartnershipsPage() {
         {/* Why Partner */}
         <div ref={el => { sectionsRef.current[1] = el; }} className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Por que fazer parceria conosco?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">{t('whyPartner.title')}</h2>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
-              Números e resultados que comprovam nosso potencial
+              {t('whyPartner.subtitle')}
             </p>
           </div>
 
@@ -154,9 +166,9 @@ export default function PartnershipsPage() {
         {/* Expertise Areas */}
         <div ref={el => { sectionsRef.current[2] = el; }} className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Nossa Expertise</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">{t('expertiseAreas.title')}</h2>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
-              Três pilares que sustentam nosso sucesso e o dos nossos parceiros
+              {t('expertiseAreas.subtitle')}
             </p>
           </div>
 
@@ -182,9 +194,9 @@ export default function PartnershipsPage() {
               <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FaHandshake className="w-10 h-10" />
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">Vamos conversar?</h3>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">{t('mainCTA.title')}</h3>
               <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Entre em contato e descubra como podemos crescer juntos. Agende uma reunião sem compromisso.
+                {t('mainCTA.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
@@ -196,14 +208,14 @@ export default function PartnershipsPage() {
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                   </svg>
-                  WhatsApp
+                  {t('mainCTA.whatsapp')}
                 </a>
                 <a
                   href="mailto:parcerias@zatas.com.br"
                   className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all shadow-2xl hover:shadow-3xl hover:scale-105 cursor-pointer text-lg w-full sm:w-auto justify-center"
                 >
                   <FaEnvelope className="w-5 h-5" />
-                  E-mail
+                  {t('mainCTA.email')}
                 </a>
               </div>
             </div>
@@ -216,15 +228,15 @@ export default function PartnershipsPage() {
             <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaUsers className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-text mb-4">Quer fazer parte do time?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-text mb-4">{t('secondaryCTA.title')}</h3>
             <p className="text-lg text-text-muted mb-6 max-w-xl mx-auto">
-              Também estamos sempre em busca de talentos excepcionais
+              {t('secondaryCTA.subtitle')}
             </p>
             <a
               href="mailto:rh@zatas.com.br"
               className="inline-flex items-center gap-2 bg-surface text-primary border-2 border-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all cursor-pointer"
             >
-              Envie seu currículo
+              {t('secondaryCTA.button')}
               <FaArrowRight className="w-4 h-4" />
             </a>
           </div>

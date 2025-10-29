@@ -43,5 +43,128 @@
           "O Significado de 'Zatas'",
           "O nome 'Zatas' foi escolhido por sua sonoridade forte e memorável. Ele remete à palavra 'exatas', refletindo a essência do trabalho da empresa: a busca pela precisão, lógica e inteligência de dados na construção de cada solução. Zatas é sinônimo da solução exata para o desafio de cada cliente."
         ]
+    },
+    "PartnershipsPage": {
+      "hero": {
+        "title1": "Construa o Futuro",
+        "title2": "com a Zatas",
+        "subtitle": "Conecte-se com uma empresa em crescimento exponencial. Seja sócio, investidor ou parceiro estratégico.",
+        "stats": {
+          "stat1": "300% de crescimento",
+          "stat2": "100+ projetos entregues",
+          "stat3": "5 países atendidos"
+        }
+      },
+      "partnershipTypes": {
+        "title": "Oportunidades de Parceria",
+        "subtitle": "Escolha a melhor forma de fazer parte da nossa jornada de crescimento",
+        "types": [
+          {
+            "title": "Sócios Estratégicos",
+            "description": "Procuramos parceiros que compartilham nossa visão de transformar o mercado digital com inovação e excelência.",
+            "benefits": ["Participação nos lucros", "Decisões estratégicas", "Crescimento compartilhado"]
+          },
+          {
+            "title": "Investidores",
+            "description": "Empresa em crescimento acelerado buscando investimento para expansão nacional e internacional.",
+            "benefits": ["ROI competitivo", "Transparência total", "Relatórios mensais"]
+          },
+          {
+            "title": "Parceiros Comerciais",
+            "description": "Construa uma rede de negócios sólida conosco. Indicações, projetos conjuntos e crescimento mútuo.",
+            "benefits": ["Comissões atrativas", "Suporte completo", "Projetos exclusivos"]
+          }
+        ]
+      },
+      "whyPartner": {
+        "title": "Por que fazer parceria conosco?",
+        "subtitle": "Números e resultados que comprovam nosso potencial",
+        "reasons": [
+          {
+            "title": "Crescimento Acelerado",
+            "desc": "300% de crescimento nos últimos 2 anos"
+          },
+          {
+            "title": "Portfólio de Elite",
+            "desc": "Mais de 100 projetos de sucesso entregues"
+          },
+          {
+            "title": "Time Experiente",
+            "desc": "50+ profissionais altamente qualificados"
+          },
+          {
+            "title": "Inovação Constante",
+            "desc": "Tecnologias de ponta e metodologias ágeis"
+          }
+        ]
+      },
+      "expertiseAreas": {
+        "title": "Nossa Expertise",
+        "subtitle": "Três pilares que sustentam nosso sucesso e o dos nossos parceiros",
+        "areas": [
+          {
+            "title": "Desenvolvimento",
+            "desc": "Web, Mobile, APIs e Sistemas Complexos"
+          },
+          {
+            "title": "Design & UX",
+            "desc": "Interfaces modernas e experiências memoráveis"
+          },
+          {
+            "title": "Marketing Digital",
+            "desc": "Estratégias que convertem e engajam"
+          }
+        ]
+      },
+      "mainCTA": {
+        "title": "Vamos conversar?",
+        "subtitle": "Entre em contato e descubra como podemos crescer juntos. Agende uma reunião sem compromisso.",
+        "whatsapp": "WhatsApp",
+        "email": "E-mail"
+      },
+      "secondaryCTA": {
+        "title": "Quer fazer parte do time?",
+        "subtitle": "Também estamos sempre em busca de talentos excepcionais",
+        "button": "Envie seu currículo"
+      }
+    },
+    "ContactPage": {
+      "title": "Contato",
+      "subtitle": "Tem uma ideia ou projeto? Adoraríamos ouvir de você.",
+      "form": {
+        "name": {
+          "label": "Nome",
+          "placeholder": "Seu nome"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "seu@email.com"
+        },
+        "message": {
+          "label": "Mensagem",
+          "placeholder": "Como podemos ajudar?"
+        },
+        "submit": "Enviar Mensagem"
+      }
+    },
+    "ProjectDetailPage": {
+      "backButton": "Voltar para projetos",
+      "badge": "Estudo de Caso",
+      "meta": {
+        "year": "Ano",
+        "client": "Cliente"
+      },
+      "authors": {
+        "single": "Responsável pelo Projeto",
+        "multiple": "Equipe do Projeto"
+      },
+      "about": "Sobre o Projeto",
+      "technologies": "Tecnologias",
+      "liveProject": "Ver Projeto Live",
+      "gallery": "Galeria do Projeto",
+      "moreProjects": "Ver mais projetos de {category}"
+    },
+    "Slogan": {
+      "words": ["Design", "|", "Código", "|", "Impacto"]
     }
 }

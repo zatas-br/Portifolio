@@ -1,12 +1,9 @@
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
 
 const Slogan = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-
-
-  const words = ['Design', '|', 'Código', '|', 'Impacto'];
+  const t = useTranslations('Slogan');
+  const words = t.raw('words') as string[];
 
   return (
     <motion.div

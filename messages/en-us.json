@@ -43,5 +43,128 @@
       "The Meaning of 'Zatas'",
       "The name 'Zatas' was chosen for its strong and memorable sound. It refers to the word 'exact', reflecting the essence of the company's work: the search for precision, logic, and data intelligence in the construction of each solution. Zatas is synonymous with the exact solution for each client's challenge."
     ]
+  },
+  "PartnershipsPage": {
+    "hero": {
+      "title1": "Build the Future",
+      "title2": "with Zatas",
+      "subtitle": "Connect with an exponentially growing company. Become a partner, investor, or strategic ally.",
+      "stats": {
+        "stat1": "300% growth",
+        "stat2": "100+ projects delivered",
+        "stat3": "5 countries served"
+      }
+    },
+    "partnershipTypes": {
+      "title": "Partnership Opportunities",
+      "subtitle": "Choose the best way to be part of our growth journey",
+      "types": [
+        {
+          "title": "Strategic Partners",
+          "description": "We are looking for partners who share our vision of transforming the digital market with innovation and excellence.",
+          "benefits": ["Profit sharing", "Strategic decisions", "Shared growth"]
+        },
+        {
+          "title": "Investors",
+          "description": "A fast-growing company seeking investment for national and international expansion.",
+          "benefits": ["Competitive ROI", "Full transparency", "Monthly reports"]
+        },
+        {
+          "title": "Commercial Partners",
+          "description": "Build a solid business network with us. Referrals, joint projects, and mutual growth.",
+          "benefits": ["Attractive commissions", "Full support", "Exclusive projects"]
+        }
+      ]
+    },
+    "whyPartner": {
+      "title": "Why partner with us?",
+      "subtitle": "Numbers and results that prove our potential",
+      "reasons": [
+        {
+          "title": "Accelerated Growth",
+          "desc": "300% growth in the last 2 years"
+        },
+        {
+          "title": "Elite Portfolio",
+          "desc": "More than 100 successful projects delivered"
+        },
+        {
+          "title": "Experienced Team",
+          "desc": "50+ highly qualified professionals"
+        },
+        {
+          "title": "Constant Innovation",
+          "desc": "Cutting-edge technologies and agile methodologies"
+        }
+      ]
+    },
+    "expertiseAreas": {
+      "title": "Our Expertise",
+      "subtitle": "Three pillars that support our success and that of our partners",
+      "areas": [
+        {
+          "title": "Development",
+          "desc": "Web, Mobile, APIs and Complex Systems"
+        },
+        {
+          "title": "Design & UX",
+          "desc": "Modern interfaces and memorable experiences"
+        },
+        {
+          "title": "Digital Marketing",
+          "desc": "Strategies that convert and engage"
+        }
+      ]
+    },
+    "mainCTA": {
+      "title": "Let's talk?",
+      "subtitle": "Get in touch and find out how we can grow together. Schedule a no-obligation meeting.",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail"
+    },
+    "secondaryCTA": {
+      "title": "Want to be part of the team?",
+      "subtitle": "We are also always looking for exceptional talent",
+      "button": "Send your resume"
+    }
+  },
+  "ContactPage": {
+    "title": "Contact",
+    "subtitle": "Have an idea or project? We'd love to hear from you.",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "How can we help?"
+      },
+      "submit": "Send Message"
+    }
+  },
+  "ProjectDetailPage": {
+    "backButton": "Back to projects",
+    "badge": "Case Study",
+    "meta": {
+      "year": "Year",
+      "client": "Client"
+    },
+    "authors": {
+      "single": "Project Lead",
+      "multiple": "Project Team"
+    },
+    "about": "About the Project",
+    "technologies": "Technologies",
+    "liveProject": "View Live Project",
+    "gallery": "Project Gallery",
+    "moreProjects": "View more {category} projects"
+  },
+  "Slogan": {
+    "words": ["Design", "|", "Code", "|", "Impact"]
   }
 }
