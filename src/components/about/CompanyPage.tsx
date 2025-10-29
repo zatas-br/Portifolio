@@ -67,7 +67,6 @@ export default function CompanyPage() {
         {/* Nossa História */}
         <div ref={el => { sectionsRef.current[0] = el; }} className="mb-20 md:mb-24">
           <div className="flex items-center gap-3 mb-6">
-            <FaRocket className="w-6 h-6 text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-text">{t('historyTitle')}</h2>
           </div>
           <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8">
@@ -112,41 +111,6 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* Números */}
-        <div ref={el => { sectionsRef.current[2] = el; }} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white rounded-3xl p-8 md:p-12 mb-20 md:mb-24">
-          <div className="flex items-center justify-center gap-3 mb-8 md:mb-12">
-            <FaAward className="w-6 h-6" />
-            {/* ATUALIZADO */}
-            <h2 className="text-3xl md:text-4xl font-bold text-center">{t('numbersTitle')}</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <FaUsers className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
-              {/* ATUALIZADO */}
-              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.professionals')}</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <FaProjectDiagram className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold mb-2">100+</div>
-              {/* ATUALIZADO */}
-              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.projects')}</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <FaGlobeAmericas className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold mb-2">1M+</div>
-              {/* ATUALIZADO */}
-              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.users')}</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-              <FaAward className="w-8 h-8 mx-auto mb-3" />
-              <div className="text-4xl md:text-5xl font-bold mb-2">5</div>
-              {/* ATUALIZADO */}
-              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.countries')}</div>
-            </div>
-          </div>
-        </div>
-
         {/* Cultura */}
         <div ref={el => { sectionsRef.current[3] = el; }}>
           <div className="flex items-center gap-3 mb-6">
@@ -164,7 +128,7 @@ export default function CompanyPage() {
               <div key={i} className="bg-surface border-2 border-border rounded-2xl p-6 hover:border-primary transition-all hover:shadow-lg group cursor-default">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-surface-alt rounded-xl flex items-center justify-center flex-shrink-0 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <div className="w-6 h-6">{item.icon}</div>
+                    <div className="w-12 h-12 flex items-center justify-center">{item.icon}</div>
                   </div>
                   <div>
                     <h4 className="text-lg md:text-xl font-bold text-text mb-2">{item.title}</h4>
