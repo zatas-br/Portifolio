@@ -43,7 +43,31 @@
       "Zatas was founded on this foundation: the union of diverse skills with the purpose of offering complete solutions. The company started by solving a specific problem and today continues with the same passion for turning each client's challenges into successful projects.",
       "The Meaning of 'Zatas'",
       "The name 'Zatas' was chosen for its strong and memorable sound. It refers to the word 'exact', reflecting the essence of the company's work: the search for precision, logic, and data intelligence in the construction of each solution. Zatas is synonymous with the exact solution for each client's challenge."
-    ]
+    ],
+    "cardMissionTitle": "Mission",
+    "cardMissionText": "To create innovative digital solutions that transform businesses and improve people's lives through technology.",
+    "cardVisionTitle": "Vision",
+    "cardVisionText": "To be a global leader in digital product development, recognized for excellence and positive impact.",
+    "cardValuesTitle": "Values",
+    "cardValuesText": "Continuous innovation, technical excellence, teamwork, transparency, and customer focus.",
+    
+    "numbersTitle": "Zatas by the Numbers",
+    "numbersItems": {
+      "professionals": "Professionals",
+      "projects": "Projects Delivered",
+      "users": "Users Impacted",
+      "countries": "Countries Served"
+    },
+    "cultureTitle": "Our Culture",
+    "cultureDescription": "We believe a healthy and collaborative work environment is essential for innovation. At Zatas, we value:",
+    "cultureItems": {
+      "autonomy": { "title": "Autonomy", "desc": "We trust our team to make decisions" },
+      "learning": { "title": "Learning", "desc": "We encourage continuous growth" },
+      "diversity": { "title": "Diversity", "desc": "We celebrate different perspectives" },
+      "transparency": { "title": "Transparency", "desc": "Open communication at all levels" },
+      "balance": { "title": "Work-life balance", "desc": "Balance between personal and professional life" },
+      "impact": { "title": "Impact", "desc": "Focus on results that matter" }
+    }
   },
   "PartnershipsPage": {
     "hero": {
@@ -129,6 +153,78 @@
       "title": "Want to be part of the team?",
       "subtitle": "We are also always looking for exceptional talent",
       "button": "Send your resume"
+    }
+  },
+  "TeamPage": {
+    "title": "Our Team",
+    "description": "Meet the founders who make it all possible",
+    "card": {
+      "viewProfile": "View profile"
+    },
+    "modal": {
+      "closeLabel": "Close modal",
+      "about": "About",
+      "skills": "Specialties",
+      "education": "Education",
+      "experience": "Experience"
+    },
+    "members": {
+      "joao-silva": {
+        "name": "João Silva",
+        "role": "CEO & Co-founder",
+        "bio": "Serial entrepreneur with over 15 years of experience in technology. Passionate about creating solutions that impact millions of people.",
+        "skills": ["Strategy", "Leadership", "Product", "Business Vision"],
+        "education": [
+          { "institution": "MIT - Massachusetts Institute of Technology", "degree": "MBA in Technology Management", "year": "2015" },
+          { "institution": "USP - University of São Paulo", "degree": "Computer Engineering", "year": "2010" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CEO & Co-founder", "period": "2020 - Present", "description": "Leading the strategic vision and growth of the company, expanding to 5 countries." },
+          { "company": "TechCorp Brazil", "role": "Product Director", "period": "2015 - 2020", "description": "Responsible for launching 3 products that generated R$50M in revenue." }
+        ]
+      },
+      "maria-santos": {
+        "name": "Maria Santos",
+        "role": "CTO & Co-founder",
+        "bio": "Software engineer specializing in scalable system architecture. Technical leader focused on innovation and quality.",
+        "skills": ["Software Architecture", "Cloud Computing", "DevOps", "Technical Management"],
+        "education": [
+          { "institution": "Stanford University", "degree": "Master's in Computer Science", "year": "2014" },
+          { "institution": "UNICAMP", "degree": "Software Engineering", "year": "2012" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CTO & Co-founder", "period": "2020 - Present", "description": "Leading a team of 50+ engineers, building infrastructure serving 1M+ users." },
+          { "company": "Amazon Web Services", "role": "Senior Solutions Architect", "period": "2016 - 2020", "description": "Consulting for Fortune 500 companies on cloud migration." }
+        ]
+      },
+      "pedro-oliveira": {
+        "name": "Pedro Oliveira",
+        "role": "CPO & Co-founder",
+        "bio": "Product designer focused on user experience. Believes design is about solving problems, not just aesthetics.",
+        "skills": ["Product Design", "UX Research", "Design Systems", "Prototyping"],
+        "education": [
+          { "institution": "Parsons School of Design - NYC", "degree": "Master's in Interaction Design", "year": "2016" },
+          { "institution": "ESPM", "degree": "Graphic Design", "year": "2013" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CPO & Co-founder", "period": "2020 - Present", "description": "Leading product and design vision, creating award-winning experiences." },
+          { "company": "Nubank", "role": "Lead Product Designer", "period": "2017 - 2020", "description": "Responsible for redesigning the app used by 40M+ customers." }
+        ]
+      },
+      "ana-costa": {
+        "name": "Ana Costa",
+        "role": "CMO & Co-founder",
+        "bio": "Specialist in growth marketing and branding. Built marketing strategies that generated 300% growth in startups.",
+        "skills": ["Growth Marketing", "Branding", "Analytics", "Content Strategy"],
+        "education": [
+          { "institution": "Harvard Business School", "degree": "MBA in Marketing", "year": "2015" },
+          { "institution": "FGV", "degree": "Business Administration", "year": "2011" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CMO & Co-founder", "period": "2020 - Present", "description": "Leading all marketing and brand growth initiatives." },
+          { "company": "Rock Content", "role": "Marketing Director", "period": "2016 - 2020", "description": "Responsible for 10x growth in the customer base." }
+        ]
+      }
     }
   },
   "ContactPage": {
