@@ -14,6 +14,8 @@ import {
 import { PROJECTS, CATEGORIES } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import { useTranslations } from 'next-intl';
+import { Category, Project } from '@/types';
+import gsap from 'gsap';
 
 interface CategoryProjectsPageProps {
   category: 'desenvolvimento' | 'design' | 'marketing';
@@ -75,11 +77,11 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
               {categoryIcons[category]}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white">
-              {categoryDetails?.title}
+              {categoryData?.title}
             </h1>
           </div>
           <p className="text-base sm:text-lg text-gray max-w-2xl leading-relaxed">
-            {categoryDetails?.description}
+            {categoryData?.description}
           </p>
           <div className="mt-6 sm:mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
@@ -96,7 +98,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="space-y-4 sm:space-y-6">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
                 // ref={el => { projectsRef.current[index] = el; }} // Comentado para depuração
