@@ -18,7 +18,7 @@ const HeroSection = () => {
       </div>
 
       {/* Conteúdo principal - centralizado verticalmente */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
         {/* Logo Animado */}
         <div className="mb-8">
           <AnimatedLogo />
@@ -29,9 +29,9 @@ const HeroSection = () => {
           <Slogan />
         </div>
 
-        {/* Botões de ação */}
-        <div className="flex flex-wrap gap-4 justify-center items-center">
-          <Link href='/services'>
+        {/* Botões de ação - Agora com largura igual no mobile */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+          <Link href='/services' className="w-full sm:w-auto">
             <AnimatedButton
               variant="primary"
               icon={<span>→</span>}

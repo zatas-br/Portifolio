@@ -61,7 +61,7 @@ const AnimatedButton = ({
     ? 'bg-primary text-white border-2 border-primary'
     : 'bg-transparent text-text border-2 border-border';
 
-  const bgColor = isPrimary ? 'bg-primary-hover' : 'bg-text';
+  const bgColor = isPrimary ? 'bg-primary-hover-v2' : 'bg-text';
 
 
   return (
