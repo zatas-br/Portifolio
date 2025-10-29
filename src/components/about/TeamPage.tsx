@@ -69,13 +69,12 @@ export default function TeamPage() {
     }
   }, [selectedMember]);
 
-  // ATUALIZADO: Função para combinar dados e abrir o modal
   const handleSelectMember = (profile: TeamProfile) => {
     const content = memberContentData[profile.id];
     if (content) {
       const fullMember: TeamMember = {
-        ...profile, // id, image, social
-        ...content,  // name, role, bio, skills, education, experience
+        ...profile,
+        ...content,
       };
       setSelectedMember(fullMember);
     }
@@ -83,51 +82,42 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-screen bg-surface">
-      {/* Header */}
       <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border py-16 md:py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <FaUsers className="w-8 h-8 text-white" />
-            {/* ATUALIZADO */}
             <h1 className="text-4xl md:text-5xl font-bold text-white">{t('title')}</h1>
           </div>
-          {/* ATUALIZADO */}
           <p className="text-lg md:text-xl text-gray max-w-2xl mx-auto">
             {t('description')}
           </p>
         </div>
       </div>
 
-      {/* Team Grid */}
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {/* ATUALIZADO: Loop sobre TEAM_PROFILES */}
           {TEAM_PROFILES.map((profile, index) => (
             <div
               key={profile.id}
               ref={el => { cardsRef.current[index] = el; }}
-              onClick={() => handleSelectMember(profile)} // ATUALIZADO
+              onClick={() => handleSelectMember(profile)}
               className="group cursor-pointer"
             >
               <div className="bg-surface border-2 border-border rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="aspect-square overflow-hidden bg-surface-alt">
                   <img
-                    src={profile.image} // ATUALIZADO
-                    alt={t(`members.${profile.id}.name`)} // ATUALIZADO
+                    src={profile.image}
+                    alt={t(`members.${profile.id}.name`)}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  {/* ATUALIZADO */}
                   <h3 className="text-xl font-bold text-text mb-2 group-hover:text-primary transition-colors">
                     {t(`members.${profile.id}.name`)}
                   </h3>
-                  {/* ATUALIZADO */}
                   <p className="text-primary font-medium mb-3 text-sm">{t(`members.${profile.id}.role`)}</p>
-                  {/* ATUALIZADO */}
                   <p className="text-text-muted text-sm line-clamp-3 leading-relaxed mb-4">{t(`members.${profile.id}.bio`)}</p>
                   <div className="flex items-center gap-2 text-primary font-semibold text-sm">
-                    {/* ATUALIZADO */}
                     {t('card.viewProfile')}
                     <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -138,24 +128,21 @@ export default function TeamPage() {
         </div>
       </div>
 
-      {/* Modal (A lógica interna permanece quase idêntica, pois 'selectedMember' já está completo) */}
       {selectedMember && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
           <div 
             ref={modalRef}
             className="bg-surface rounded-3xl max-w-4xl w-full my-8 relative border-2 border-border"
           >
-            {/* Close Button */}
             <button
               onClick={() => setSelectedMember(null)}
-              aria-label={t('modal.closeLabel')} // ATUALIZADO (Acessibilidade)
+              aria-label={t('modal.closeLabel')}
               className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 bg-surface-alt hover:bg-border rounded-full flex items-center justify-center transition-colors z-10 cursor-pointer"
             >
               <FaTimes className="w-5 h-5 text-text" />
             </button>
 
             <div className="grid md:grid-cols-3">
-              {/* Left - Photo & Basic Info */}
               <div className="bg-gradient-to-br from-start-gradient to-final-gradient text-white p-6 md:p-8 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
                 <img
                   src={selectedMember.image}
@@ -165,7 +152,6 @@ export default function TeamPage() {
                 <h2 className="text-2xl font-bold mb-2">{selectedMember.name}</h2>
                 <p className="text-white/80 mb-6">{selectedMember.role}</p>
                 
-                {/* Social Links (Já usava 'selectedMember', então não muda) */}
                 <div className="flex gap-3">
                   {selectedMember.social.linkedin && (
                     <a
@@ -200,22 +186,19 @@ export default function TeamPage() {
                 </div>
               </div>
 
-              {/* Right - Detailed Info (Textos dos títulos foram atualizados) */}
               <div className="md:col-span-2 p-6 md:p-8 max-h-[70vh] md:max-h-[80vh] overflow-y-auto">
-                {/* Bio */}
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-text mb-3 flex items-center gap-2">
                     <FaUsers className="w-5 h-5 text-primary" />
-                    {t('modal.about')} {/* ATUALIZADO */}
+                    {t('modal.about')}
                   </h3>
                   <p className="text-text-muted leading-relaxed">{selectedMember.bio}</p>
                 </div>
 
-                {/* Skills */}
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-text mb-3 flex items-center gap-2">
                     <FaCode className="w-5 h-5 text-primary" />
-                    {t('modal.skills')} {/* ATUALIZADO */}
+                    {t('modal.skills')}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedMember.skills.map(skill => (
@@ -226,11 +209,10 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                {/* Education */}
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-text mb-3 flex items-center gap-2">
                     <FaGraduationCap className="w-5 h-5 text-primary" />
-                    {t('modal.education')} {/* ATUALIZADO */}
+                    {t('modal.education')}
                   </h3>
                   <div className="space-y-4">
                     {selectedMember.education.map((edu, i) => (
@@ -243,11 +225,10 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                {/* Experience */}
                 <div>
                   <h3 className="text-xl font-bold text-text mb-3 flex items-center gap-2">
                     <FaBriefcase className="w-5 h-5 text-primary" />
-                    {t('modal.experience')} {/* ATUALIZADO */}
+                    {t('modal.experience')}
                   </h3>
                   <div className="space-y-6">
                     {selectedMember.experience.map((exp, i) => (
