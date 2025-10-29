@@ -345,5 +345,16 @@
       "hoverPreview": "Passe o mouse sobre um projeto",
       "hoverPreviewSubtitle": "para visualizar a prévia",
       "preview": "Preview"
+    },
+    "PageTitles": {
+      "home": "Zatas",
+      "about": "Sobre",
+      "team": "Equipe",
+      "partnerships": "Parcerias",
+      "services": "Serviços",
+      "development": "Desenvolvimento",
+      "design": "Design",
+      "marketing": "Marketing",
+      "contact": "Contato"
     }
 }

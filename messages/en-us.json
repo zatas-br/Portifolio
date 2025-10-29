@@ -297,5 +297,16 @@
     "hoverPreview": "Hover over a project",
     "hoverPreviewSubtitle": "to see a preview",
     "preview": "Preview"
+  },
+  "PageTitles": {
+    "home": "Zatas",
+    "about": "About",
+    "team": "Team",
+    "partnerships": "Partnerships",
+    "services": "Services",
+    "development": "Development",
+    "design": "Design",
+      "marketing": "Marketing",
+      "contact": "Contact"
   }
 }
