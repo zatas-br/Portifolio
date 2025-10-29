@@ -100,7 +100,7 @@ export default function PartnershipsPage() {
 
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
         {/* Partnership Types */}
-        <div ref={el => sectionsRef.current[0] = el} className="mb-20">
+        <div ref={el => { sectionsRef.current[0] = el; }} className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Oportunidades de Parceria</h2>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
@@ -130,7 +130,7 @@ export default function PartnershipsPage() {
         </div>
 
         {/* Why Partner */}
-        <div ref={el => sectionsRef.current[1] = el} className="mb-20">
+        <div ref={el => { sectionsRef.current[1] = el; }} className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Por que fazer parceria conosco?</h2>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
@@ -152,7 +152,7 @@ export default function PartnershipsPage() {
         </div>
 
         {/* Expertise Areas */}
-        <div ref={el => sectionsRef.current[2] = el} className="mb-20">
+        <div ref={el => { sectionsRef.current[2] = el; }} className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Nossa Expertise</h2>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
@@ -174,7 +174,7 @@ export default function PartnershipsPage() {
         </div>
 
         {/* Main CTA */}
-        <div ref={el => sectionsRef.current[3] = el} className="mb-16">
+        <div ref={el => { sectionsRef.current[3] = el; }} className="mb-16">
           <div className="bg-gradient-to-br from-start-gradient to-final-gradient text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAxMmMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
             
@@ -211,7 +211,7 @@ export default function PartnershipsPage() {
         </div>
 
         {/* Secondary CTA - Join Team */}
-        <div ref={el => sectionsRef.current[4] = el}>
+        <div ref={el => { sectionsRef.current[4] = el; }}>
           <div className="bg-surface-alt border-2 border-border rounded-2xl p-8 md:p-10 text-center">
             <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaUsers className="w-8 h-8 text-primary" />

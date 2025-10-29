@@ -64,7 +64,7 @@ export default function TeamPage() {
           {TEAM_MEMBERS.map((member, index) => (
             <div
               key={member.id}
-              ref={el => cardsRef.current[index] = el}
+              ref={el => { cardsRef.current[index] = el; }}
               onClick={() => setSelectedMember(member)}
               className="group cursor-pointer"
             >

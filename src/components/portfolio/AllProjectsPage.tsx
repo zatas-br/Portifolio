@@ -69,7 +69,7 @@ export default function AllProjectsPage() {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              ref={el => projectsRef.current[index] = el}
+              ref={el => { projectsRef.current[index] = el; }}
               onClick={() => router.push(`/services/${project.category}/${project.id}`)}
               className="group cursor-pointer"
             >
