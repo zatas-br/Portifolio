@@ -101,7 +101,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                ref={el => projectsRef.current[index] = el}
+                ref={el => { projectsRef.current[index] = el; }}
                 onClick={() => handleProjectClick(project.id)}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}

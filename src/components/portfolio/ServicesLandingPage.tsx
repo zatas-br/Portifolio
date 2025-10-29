@@ -90,7 +90,7 @@ export default function ServicesLandingPage() {
           {CATEGORIES.map((category, index) => (
             <div
               key={category.id}
-              ref={el => cardsRef.current[index] = el}
+              ref={el => { cardsRef.current[index] = el; }}
               onClick={() => router.push(`/services/${category.id}`)}
               className="group cursor-pointer"
             >

@@ -169,7 +169,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               {project.gallery.map((img, index) => (
                 <div
                   key={index}
-                  ref={el => galleryRef.current[index] = el}
+                  ref={el => { galleryRef.current[index] = el; }}
                   className="rounded-xl overflow-hidden shadow-lg border-2 border-border hover:shadow-2xl hover:border-primary transition-all duration-300 group cursor-pointer"
                 >
                   <img 

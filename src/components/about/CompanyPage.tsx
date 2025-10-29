@@ -62,7 +62,7 @@ export default function CompanyPage() {
 
       <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
         {/* Nossa História */}
-        <div ref={el => sectionsRef.current[0] = el} className="mb-20 md:mb-24">
+        <div ref={el => { sectionsRef.current[0] = el; }} className="mb-20 md:mb-24">
           <div className="flex items-center gap-3 mb-6">
             <FaRocket className="w-6 h-6 text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-text">{t('historyTitle')}</h2>
@@ -77,7 +77,7 @@ export default function CompanyPage() {
         </div>
 
         {/* Missão, Visão, Valores */}
-        <div ref={el => sectionsRef.current[1] = el} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-24">
+        <div ref={el => { sectionsRef.current[1] = el; }} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-24">
           <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary transition-all hover:shadow-lg">
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
               <FaRocket className="w-8 h-8 text-primary" />
@@ -110,7 +110,7 @@ export default function CompanyPage() {
         </div>
 
         {/* Números */}
-        <div ref={el => sectionsRef.current[2] = el} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white rounded-3xl p-8 md:p-12 mb-20 md:mb-24">
+        <div ref={el => { sectionsRef.current[2] = el; }} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white rounded-3xl p-8 md:p-12 mb-20 md:mb-24">
           <div className="flex items-center justify-center gap-3 mb-8 md:mb-12">
             <FaAward className="w-6 h-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-center">Zatas em Números</h2>
@@ -140,7 +140,7 @@ export default function CompanyPage() {
         </div>
 
         {/* Cultura */}
-        <div ref={el => sectionsRef.current[3] = el}>
+        <div ref={el => { sectionsRef.current[3] = el; }}>
           <div className="flex items-center gap-3 mb-6">
             <FaHeart className="w-6 h-6 text-primary" />
             <h2 className="text-3xl md:text-4xl font-bold text-text">Nossa Cultura</h2>
