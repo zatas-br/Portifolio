@@ -34,7 +34,7 @@ const tagIcons: Record<string, React.ReactNode> = {
   'Web': <FaLaptopCode className="w-3 h-3" />,
   'Mobile': <FaMobileAlt className="w-3 h-3" />,
   'APIs': <FaServer className="w-3 h-3" />,
-  'UI/UX': <MdDesignServices class  Name="w-3 h-3" />,
+  'UI/UX': <MdDesignServices className="w-3 h-3" />,
   'Branding': <MdBrandingWatermark className="w-3 h-3" />,
   'Identidade': <HiSparkles className="w-3 h-3" />
 };

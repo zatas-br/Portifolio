@@ -11,18 +11,20 @@ const HeroSection = () => {
   const t = useTranslations('Hero');
 
   return (
-    <div className="h-screen w-full bg-surface flex items-center justify-center relative overflow-hidden">
+    <div className="h-full w-full bg-surface flex items-center justify-center relative overflow-hidden">
+      {/* Background decorativo */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" />
       </div>
 
-      {/* Conteúdo principal */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center -mt-24">
+      {/* Conteúdo principal - centralizado verticalmente */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         {/* Logo Animado */}
         <div className="mb-8">
           <AnimatedLogo />
         </div>
 
+        {/* Slogan */}
         <div className="mb-12">
           <Slogan />
         </div>
@@ -49,7 +51,7 @@ const HeroSection = () => {
       </div>
 
       {/* Efeito de vignette sutil */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-radial from-transparent via-transparent to-gray-100/30" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-radial from-transparent via-transparent to-surface/30" />
     </div>
   );
 };
