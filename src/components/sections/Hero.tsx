@@ -5,46 +5,10 @@ import AnimatedLogo from '../ui/AnimatedLogo';
 import Slogan from '../ui/AnimatedSlogan';
 import AnimatedButton from '../ui/AnimatedButton';
 import { FaInstagram } from 'react-icons/fa';
-import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
+import { useTranslations } from "next-intl";
 
 const HeroSection = () => {
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === 'dark';
-
-  useEffect(() => {
-    // Força o scroll para o topo imediatamente
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    
-    // Salva a posição atual do scroll
-    const scrollY = window.scrollY;
-    
-    // Trava o scroll
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
-
-    return () => {
-      // Remove os estilos de travamento
-      const bodyTop = document.body.style.top;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      
-      // Restaura a posição (mas como estamos na home, será sempre 0)
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    };
-  }, []);
-
-  const gridColor = isDark
-    ? 'rgba(65, 65, 65, 0.2)'
-    : 'rgba(59, 130, 246, 0.3)';
-
-  const vignetteColor = isDark
-    ? 'rgba(42, 42, 42, 0.3)'
-    : 'rgba(245, 247, 250, 0.3)';
+  const t = useTranslations('Hero');
 
   return (
     <div className="h-screen w-full bg-surface flex items-center justify-center relative overflow-hidden">
@@ -71,7 +35,7 @@ const HeroSection = () => {
               icon={<span>→</span>}
               onClick={() => console.log('Ver Projetos')}
             >
-              Explorar Projetos
+              {t('button1')}
             </AnimatedButton>
           </Link>
           <AnimatedButton
@@ -79,7 +43,7 @@ const HeroSection = () => {
             icon={<FaInstagram size={18} />}
             onClick={() => window.open('https://instagram.com/suaempresa', '_blank')}
           >
-            Siga no Instagram
+            {t('button2')}
           </AnimatedButton>
         </div>
       </div>

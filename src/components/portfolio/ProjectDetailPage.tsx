@@ -17,6 +17,7 @@ import { HiSparkles } from 'react-icons/hi';
 import { PROJECTS } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import AuthorCard from '@/src/components/portfolio/AuthorCard';
+import { useTranslations } from 'next-intl';
 
 interface ProjectDetailPageProps {
   projectId: string;
@@ -24,6 +25,7 @@ interface ProjectDetailPageProps {
 }
 
 export default function ProjectDetailPage({ projectId, category }: ProjectDetailPageProps) {
+  const t = useTranslations('ProjectDetailPage');
   const router = useRouter();
   const project = PROJECTS.find(p => p.id === projectId);
   const headerRef = useRef<HTMLDivElement>(null);
@@ -41,7 +43,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, stagger: 0.1, duration: 0.5, delay: 0.3, ease: 'power3.out' }
     );
-  }, []);
+  }, [animateFadeIn]);
 
   if (!project) return null;
 
@@ -59,7 +61,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors font-medium cursor-pointer group"
           >
             <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Voltar para projetos
+            {t('backButton')}
           </button>
         </div>
       </div>
@@ -71,7 +73,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           <div className="flex items-center gap-3 mb-6">
             <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
               <HiSparkles className="w-4 h-4 text-primary" />
-              Estudo de Caso
+              {t('badge')}
             </span>
           </div>
 
@@ -90,7 +92,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             <div className="flex items-center gap-2">
               <FaCalendar className="w-4 h-4 text-primary" />
               <div>
-                <span className="block text-xs text-text-muted mb-0.5">Ano</span>
+                <span className="block text-xs text-text-muted mb-0.5">{t('meta.year')}</span>
                 <span className="font-semibold text-text">{project.year}</span>
               </div>
             </div>
@@ -98,7 +100,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               <div className="flex items-center gap-2">
                 <FaBriefcase className="w-4 h-4 text-primary" />
                 <div>
-                  <span className="block text-xs text-text-muted mb-0.5">Cliente</span>
+                  <span className="block text-xs text-text-muted mb-0.5">{t('meta.client')}</span>
                   <span className="font-semibold text-text">{project.client}</span>
                 </div>
               </div>
@@ -115,7 +117,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                   <FaUsers className="w-5 h-5 text-primary" />
                 )}
                 <h3 className="text-xl font-bold text-text">
-                  {isSingleAuthor ? 'Responsável pelo Projeto' : 'Equipe do Projeto'}
+                  {isSingleAuthor ? t('authors.single') : t('authors.multiple')}
                 </h3>
               </div>
 
@@ -168,7 +170,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             <div className="bg-surface border border-border rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-2 mb-4">
                 <FaCode className="w-5 h-5 text-primary" />
-                <h2 className="text-2xl md:text-3xl font-bold text-text">Sobre o Projeto</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-text">{t('about')}</h2>
               </div>
               <p className="text-base md:text-lg text-text-muted leading-relaxed">
                 {project.fullDescription}
@@ -182,7 +184,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             <div className="bg-surface border border-border rounded-2xl p-6">
               <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
                 <FaCode className="w-4 h-4 text-primary" />
-                Tecnologias
+                {t('technologies')}
               </h3>
               <div className="space-y-2">
                 {project.technologies.map(tech => (
@@ -204,7 +206,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl hover:bg-primary-hover active:bg-primary-active transition-colors font-semibold shadow-lg hover:shadow-xl cursor-pointer"
               >
-                Ver Projeto Live
+                {t('liveProject')}
                 <FaExternalLinkAlt className="w-4 h-4" />
               </a>
             )}
@@ -216,7 +218,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           <div>
             <div className="flex items-center gap-3 mb-8">
               <FaImages className="w-6 h-6 text-primary" />
-              <h2 className="text-2xl md:text-3xl font-bold text-text">Galeria do Projeto</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-text">{t('gallery')}</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               {project.gallery.map((img, index) => (
@@ -243,7 +245,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             className="flex items-center gap-2 text-primary hover:text-primary-hover transition-colors font-semibold cursor-pointer group mx-auto"
           >
             <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Ver mais projetos de {category}
+            {t('moreProjects', { category })}
           </button>
         </div>
       </div>

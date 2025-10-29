@@ -22,6 +22,8 @@ import { useMessages, useTranslations } from 'next-intl';
 type Messages = {
   CompanyPage: {
     history: string[];
+    // Nota: 'cultureItems' não é mais necessário aqui, 
+    // pois estamos usando t() diretamente no array.
   };
 };
 
@@ -34,19 +36,20 @@ export default function CompanyPage() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
 
+  // Mova o array para dentro do componente para ter acesso ao 't'
+  const cultureValues = [
+    { icon: <FaLightbulb />, title: t('cultureItems.autonomy.title'), desc: t('cultureItems.autonomy.desc') },
+    { icon: <FaStar />, title: t('cultureItems.learning.title'), desc: t('cultureItems.learning.desc') },
+    { icon: <FaUsers />, title: t('cultureItems.diversity.title'), desc: t('cultureItems.diversity.desc') },
+    { icon: <FaHandshake />, title: t('cultureItems.transparency.title'), desc: t('cultureItems.transparency.desc') },
+    { icon: <FaBalanceScale />, title: t('cultureItems.balance.title'), desc: t('cultureItems.balance.desc') },
+    { icon: <FaChartLine />, title: t('cultureItems.impact.title'), desc: t('cultureItems.impact.desc') }
+  ];
+
   useEffect(() => {
     animateFadeIn(heroRef.current, 0);
     animateEnter(sectionsRef.current, 0.2);
-  }, []);
-
-  const cultureValues = [
-    { icon: <FaLightbulb />, title: 'Autonomia', desc: 'Confiamos em nosso time para tomar decisões' },
-    { icon: <FaStar />, title: 'Aprendizado', desc: 'Incentivamos crescimento contínuo' },
-    { icon: <FaUsers />, title: 'Diversidade', desc: 'Celebramos diferentes perspectivas' },
-    { icon: <FaHandshake />, title: 'Transparência', desc: 'Comunicação aberta em todos os níveis' },
-    { icon: <FaBalanceScale />, title: 'Work-life balance', desc: 'Equilíbrio entre vida pessoal e profissional' },
-    { icon: <FaChartLine />, title: 'Impacto', desc: 'Foco em resultados que importam' }
-  ];
+  }, [animateEnter, animateFadeIn]); // Adicionei dependências ao useEffect
 
   return (
     <div className="min-h-screen bg-surface">
@@ -82,9 +85,9 @@ export default function CompanyPage() {
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
               <FaRocket className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-text mb-4">Missão</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardMissionTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
-              Criar soluções digitais inovadoras que transformam negócios e melhoram a vida das pessoas através da tecnologia.
+              {t('cardMissionText')}
             </p>
           </div>
 
@@ -92,9 +95,9 @@ export default function CompanyPage() {
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
               <FaEye className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-text mb-4">Visão</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardVisionTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
-              Ser referência global em desenvolvimento de produtos digitais, reconhecida pela excelência e impacto positivo.
+              {t('cardVisionText')}
             </p>
           </div>
 
@@ -102,9 +105,9 @@ export default function CompanyPage() {
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
               <FaHeart className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-text mb-4">Valores</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardValuesTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
-              Inovação contínua, excelência técnica, trabalho em equipe, transparência e foco no cliente.
+              {t('cardValuesText')}
             </p>
           </div>
         </div>
@@ -113,28 +116,33 @@ export default function CompanyPage() {
         <div ref={el => { sectionsRef.current[2] = el; }} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white rounded-3xl p-8 md:p-12 mb-20 md:mb-24">
           <div className="flex items-center justify-center gap-3 mb-8 md:mb-12">
             <FaAward className="w-6 h-6" />
-            <h2 className="text-3xl md:text-4xl font-bold text-center">Zatas em Números</h2>
+            {/* ATUALIZADO */}
+            <h2 className="text-3xl md:text-4xl font-bold text-center">{t('numbersTitle')}</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <FaUsers className="w-8 h-8 mx-auto mb-3" />
               <div className="text-4xl md:text-5xl font-bold mb-2">50+</div>
-              <div className="text-white/80 text-sm md:text-base">Profissionais</div>
+              {/* ATUALIZADO */}
+              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.professionals')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <FaProjectDiagram className="w-8 h-8 mx-auto mb-3" />
               <div className="text-4xl md:text-5xl font-bold mb-2">100+</div>
-              <div className="text-white/80 text-sm md:text-base">Projetos Entregues</div>
+              {/* ATUALIZADO */}
+              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.projects')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <FaGlobeAmericas className="w-8 h-8 mx-auto mb-3" />
               <div className="text-4xl md:text-5xl font-bold mb-2">1M+</div>
-              <div className="text-white/80 text-sm md:text-base">Usuários Impactados</div>
+              {/* ATUALIZADO */}
+              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.users')}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
               <FaAward className="w-8 h-8 mx-auto mb-3" />
               <div className="text-4xl md:text-5xl font-bold mb-2">5</div>
-              <div className="text-white/80 text-sm md:text-base">Países Atendidos</div>
+              {/* ATUALIZADO */}
+              <div className="text-white/80 text-sm md:text-base">{t('numbersItems.countries')}</div>
             </div>
           </div>
         </div>
@@ -143,12 +151,15 @@ export default function CompanyPage() {
         <div ref={el => { sectionsRef.current[3] = el; }}>
           <div className="flex items-center gap-3 mb-6">
             <FaHeart className="w-6 h-6 text-primary" />
-            <h2 className="text-3xl md:text-4xl font-bold text-text">Nossa Cultura</h2>
+            {/* ATUALIZADO */}
+            <h2 className="text-3xl md:text-4xl font-bold text-text">{t('cultureTitle')}</h2>
           </div>
+          {/* ATUALIZADO */}
           <p className="text-lg md:text-xl text-text-muted mb-8 leading-relaxed">
-            Acreditamos que um ambiente de trabalho saudável e colaborativo é essencial para a inovação. Na Zatas, valorizamos:
+            {t('cultureDescription')}
           </p>
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            {/* ATUALIZADO (agora consome o array 'cultureValues' que usa 't()') */}
             {cultureValues.map((item, i) => (
               <div key={i} className="bg-surface border-2 border-border rounded-2xl p-6 hover:border-primary transition-all hover:shadow-lg group cursor-default">
                 <div className="flex items-start gap-4">

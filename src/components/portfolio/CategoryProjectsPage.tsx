@@ -11,8 +11,9 @@ import {
   FaExternalLinkAlt,
   FaFolder
 } from 'react-icons/fa';
-// import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations'; // Comentado para depuração
-import { Project, Category } from '@/types';
+import { PROJECTS, CATEGORIES } from '@/src/data/projects';
+import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
+import { useTranslations } from 'next-intl';
 
 interface CategoryProjectsPageProps {
   category: 'desenvolvimento' | 'design' | 'marketing';
@@ -26,35 +27,39 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'marketing': <FaBullhorn className="w-12 h-12" />
 };
 
-export default function CategoryProjectsPage({ category, projects, categoryDetails }: CategoryProjectsPageProps) {
+export default function CategoryProjectsPage({ category }: CategoryProjectsPageProps) {
+  const t = useTranslations('CategoryProjectsPage');
   const router = useRouter();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  // const headerRef = useRef<HTMLDivElement>(null); // Comentado para depuração
-  // const projectsRef = useRef<(HTMLDivElement | null)[]>([]); // Comentado para depuração
-  // const imageRef = useRef<HTMLDivElement>(null); // Comentado para depuração
-  // const { animateFadeIn } = usePortfolioAnimations(); // Comentado para depuração
+  const headerRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const { animateFadeIn } = usePortfolioAnimations();
 
-  // useEffect(() => {
-  //   animateFadeIn(headerRef.current, 0);
-  //   gsap.fromTo(
-  //     projectsRef.current.filter(Boolean),
-  //     { opacity: 0, x: -20 },
-  //     { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, delay: 0.2, ease: 'power3.out' }
-  //   );
-  // }, [projects]);
+  const filteredProjects = PROJECTS.filter(p => p.category === category);
+  const categoryData = CATEGORIES.find(c => c.id === category);
 
-  // useEffect(() => {
-  //   if (imageRef.current) {
-  //     gsap.to(imageRef.current, { 
-  //       opacity: 1, 
-  //       scale: hoveredProject ? 1 : 0.98, 
-  //       duration: 0.4, 
-  //       ease: 'power2.out' 
-  //     });
-  //   }
-  // }, [hoveredProject]);
+  useEffect(() => {
+    animateFadeIn(headerRef.current, 0);
+    gsap.fromTo(
+      projectsRef.current.filter(Boolean),
+      { opacity: 0, x: -20 },
+      { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, delay: 0.2, ease: 'power3.out' }
+    );
+  }, [animateFadeIn]);
 
-  const hoveredProjectData = projects.find(p => p.id === hoveredProject);
+  useEffect(() => {
+    if (imageRef.current) {
+      gsap.to(imageRef.current, { 
+        opacity: 1, 
+        scale: hoveredProject ? 1 : 0.98, 
+        duration: 0.4, 
+        ease: 'power2.out' 
+      });
+    }
+  }, [hoveredProject]);
+
+  const hoveredProjectData = filteredProjects.find(p => p.id === hoveredProject);
 
   const handleProjectClick = (projectId: string) => {
     router.push(`/services/${category}/${projectId}`);
@@ -80,7 +85,7 @@ export default function CategoryProjectsPage({ category, projects, categoryDetai
             <div className="flex items-center gap-2">
               <FaFolder className="w-4 h-4 text-white" />
               <span className="text-gray">
-                <strong className="text-white font-semibold">{projects.length}</strong> projetos
+                <strong className="text-white font-semibold">{filteredProjects.length}</strong> {t('projects')}
               </span>
             </div>
           </div>
@@ -133,7 +138,7 @@ export default function CategoryProjectsPage({ category, projects, categoryDetai
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm pt-4 border-t border-border">
                     <span className="text-text-muted">{project.client}</span>
                     <span className="flex items-center gap-2 text-primary font-semibold">
-                      Ver projeto 
+                      {t('viewProject')} 
                       <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
@@ -158,10 +163,10 @@ export default function CategoryProjectsPage({ category, projects, categoryDetai
                 <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
                   <FaFolder className="w-16 h-16 text-primary mb-4 opacity-50" />
                   <p className="text-text-muted text-lg font-medium mb-2">
-                    Passe o mouse sobre um projeto
+                    {t('hoverPreview')}
                   </p>
                   <p className="text-text-muted text-sm opacity-75">
-                    para visualizar a prévia
+                    {t('hoverPreviewSubtitle')}
                   </p>
                 </div>
               )}
@@ -169,7 +174,7 @@ export default function CategoryProjectsPage({ category, projects, categoryDetai
             <div className={`mt-6 p-4 bg-surface border border-border rounded-xl transition-all duration-300 ${hoveredProjectData ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
               {hoveredProjectData && (
                 <>
-                  <p className="text-sm text-text-muted mb-1">Preview</p>
+                  <p className="text-sm text-text-muted mb-1">{t('preview')}</p>
                   <p className="text-text font-semibold">{hoveredProjectData.title}</p>
                   <p className="text-sm text-text-muted mt-2 line-clamp-2">{hoveredProjectData.description}</p>
                 </>

@@ -6,53 +6,344 @@
     "home": "Início",
     "about": "Sobre"
   },
-  "CardNav":{
+      "CardNav":{
+        "logoAlt": "Zatas Logo",
     "about": {
-        "label": "Sobre",
-        "links": [
-          { "label": "Empresa", "href": "/sobre", "ariaLabel": "Sobre a Empresa Zatas" },
-          { "label": "Equipe", "href": "/equipe", "ariaLabel": "Conheça nossa Equipe" },
-          { "label": "Parcerias", "href": "/parcerias", "ariaLabel": "Oportunidades de Parceria" }
+      "label": "Sobre",
+      "links": [
+        {
+          "label": "Empresa",
+          "href": "/sobre",
+          "ariaLabel": "Sobre a Empresa Zatas"
+        },
+        {
+          "label": "Equipe",
+          "href": "/equipe",
+          "ariaLabel": "Conheça nossa Equipe"
+        },
+        {
+          "label": "Parcerias",
+          "href": "/parcerias",
+          "ariaLabel": "Oportunidades de Parceria"
+        }
+      ]
+    },
+    "services": {
+      "label": "Serviços",
+      "links": [
+        {
+          "label": "Desenvolvimento",
+          "href": "/servicos/desenvolvimento",
+          "ariaLabel": "Desenvolvimento Web"
+        },
+        {
+          "label": "Design",
+          "href": "/servicos/design",
+          "ariaLabel": "Design e UX/UI"
+        },
+        {
+          "label": "Consultoria",
+          "href": "/servicos/consultoria",
+          "ariaLabel": "Consultoria Tech"
+        }
+      ]
+    },
+    "contact": {
+      "label": "Contato",
+      "links": [
+        {
+          "label": "Email",
+          "href": "mailto:contato@zatas.com.br",
+          "ariaLabel": "Envie um email"
+        },
+        {
+          "label": "WhatsApp",
+          "href": "https://wa.me/5516000000000",
+          "ariaLabel": "Fale pelo WhatsApp"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://linkedin.com/company/zatas",
+          "ariaLabel": "Conecte no LinkedIn"
+        }
+      ]
+    }
+  },
+  "CompanyPage": {
+    "title": "Sobre a Zatas",
+    "description": "Transformamos ideias em produtos digitais que impactam milhões de pessoas ao redor do mundo",
+    "historyTitle": "Nossa História",
+    "history": [
+      "A jornada da Zatas começou quando um personal trainer, por indicação de outros programadores, entrou em contato com o sócio, Bruno, buscando uma forma de otimizar a gestão de seus alunos. Com essa proposta em mãos, Bruno convidou Gabriel e Antony para colaborarem no desenvolvimento da aplicação.",
+      "O projeto foi um sucesso e mostrou ao time o poder da colaboração. Para complementar as habilidades técnicas do grupo, Bryan foi convidado para a sociedade, trazendo sua expertise em marketing e design.",
+      "A Zatas foi fundada sobre essa base: a união de competências diversas com o propósito de oferecer soluções completas. A empresa começou resolvendo um problema específico e hoje segue com essa mesma paixão por transformar os desafios de cada cliente em projetos de sucesso.",
+      "O Significado de 'Zatas'",
+      "O nome 'Zatas' foi escolhido por sua sonoridade forte e memorável. Ele remete à palavra 'exatas', refletindo a essência do trabalho da empresa: a busca pela precisão, lógica e inteligência de dados na construção de cada solução. Zatas é sinônimo da solução exata para o desafio de cada cliente."
+    ],
+    "cardMissionTitle": "Missão",
+    "cardMissionText": "Criar soluções digitais inovadoras que transformam negócios e melhoram a vida das pessoas através da tecnologia.",
+    "cardVisionTitle": "Visão",
+    "cardVisionText": "Ser referência global em desenvolvimento de produtos digitais, reconhecida pela excelência e impacto positivo.",
+    "cardValuesTitle": "Valores",
+    "cardValuesText": "Inovação contínua, excelência técnica, trabalho em equipe, transparência e foco no cliente.",
+    
+    "numbersTitle": "Zatas em Números",
+    "numbersItems": {
+      "professionals": "Profissionais",
+      "projects": "Projetos Entregues",
+      "users": "Usuários Impactados",
+      "countries": "Países Atendidos"
+    },
+    "cultureTitle": "Nossa Cultura",
+    "cultureDescription": "Acreditamos que um ambiente de trabalho saudável e colaborativo é essencial para a inovação. Na Zatas, valorizamos:",
+    "cultureItems": {
+      "autonomy": { "title": "Autonomia", "desc": "Confiamos em nosso time para tomar decisões" },
+      "learning": { "title": "Aprendizado", "desc": "Incentivamos crescimento contínuo" },
+      "diversity": { "title": "Diversidade", "desc": "Celebramos diferentes perspectivas" },
+      "transparency": { "title": "Transparência", "desc": "Comunicação aberta em todos os níveis" },
+      "balance": { "title": "Work-life balance", "desc": "Equilíbrio entre vida pessoal e profissional" },
+      "impact": { "title": "Impacto", "desc": "Foco em resultados que importam" }
+    }
+  },
+  "PartnershipsPage": {
+    "hero": {
+      "title1": "Construa o Futuro",
+      "title2": "com a Zatas",
+      "subtitle": "Conecte-se com uma empresa em crescimento exponencial. Seja sócio, investidor ou parceiro estratégico.",
+      "stats": {
+        "stat1": "300% de crescimento",
+        "stat2": "100+ projetos entregues",
+        "stat3": "5 países atendidos"
+      },
+      "buttonProject":"Explorar Projetos",
+      "buttonInstagram":"Siga no Instagram"
+    },
+    "partnershipTypes": {
+      "title": "Oportunidades de Parceria",
+      "subtitle": "Escolha a melhor forma de fazer parte da nossa jornada de crescimento",
+      "types": [
+        {
+          "title": "Sócios Estratégicos",
+          "description": "Procuramos parceiros que compartilham nossa visão de transformar o mercado digital com inovação e excelência.",
+          "benefits": [
+            "Participação nos lucros",
+            "Decisões estratégicas",
+            "Crescimento compartilhado"
+          ]
+        },
+        {
+          "title": "Investidores",
+          "description": "Empresa em crescimento acelerado buscando investimento para expansão nacional e internacional.",
+          "benefits": [
+            "ROI competitivo",
+            "Transparência total",
+            "Relatórios mensais"
+          ]
+        },
+        {
+          "title": "Parceiros Comerciais",
+          "description": "Construa uma rede de negócios sólida conosco. Indicações, projetos conjuntos e crescimento mútuo.",
+          "benefits": [
+            "Comissões atrativas",
+            "Suporte completo",
+            "Projetos exclusivos"
+          ]
+        }
+      ]
+    },
+    "whyPartner": {
+      "title": "Por que fazer parceria conosco?",
+      "subtitle": "Números e resultados que comprovam nosso potencial",
+      "reasons": [
+        {
+          "title": "Crescimento Acelerado",
+          "desc": "300% de crescimento nos últimos 2 anos"
+        },
+        {
+          "title": "Portfólio de Elite",
+          "desc": "Mais de 100 projetos de sucesso entregues"
+        },
+        {
+          "title": "Time Experiente",
+          "desc": "50+ profissionais altamente qualificados"
+        },
+        {
+          "title": "Inovação Constante",
+          "desc": "Tecnologias de ponta e metodologias ágeis"
+        }
+      ]
+    },
+    "expertiseAreas": {
+      "title": "Nossa Expertise",
+      "subtitle": "Três pilares que sustentam nosso sucesso e o dos nossos parceiros",
+      "areas": [
+        {
+          "title": "Desenvolvimento",
+          "desc": "Web, Mobile, APIs e Sistemas Complexos"
+        },
+        {
+          "title": "Design & UX",
+          "desc": "Interfaces modernas e experiências memoráveis"
+        },
+        {
+          "title": "Marketing Digital",
+          "desc": "Estratégias que convertem e engajam"
+        }
+      ]
+    },
+    "mainCTA": {
+      "title": "Vamos conversar?",
+      "subtitle": "Entre em contato e descubra como podemos crescer juntos. Agende uma reunião sem compromisso.",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail"
+    },
+    "secondaryCTA": {
+      "title": "Quer fazer parte do time?",
+      "subtitle": "Também estamos sempre em busca de talentos excepcionais",
+      "button": "Envie seu currículo"
+    }
+  },
+  "TeamPage": {
+    "title": "Nossa Equipe",
+    "description": "Conheça os fundadores que tornam tudo isso possível",
+    "card": {
+      "viewProfile": "Ver perfil"
+    },
+    "modal": {
+      "closeLabel": "Fechar modal",
+      "about": "Sobre",
+      "skills": "Especialidades",
+      "education": "Formação",
+      "experience": "Experiência"
+    },
+    "members": {
+      "joao-silva": {
+        "name": "João Silva",
+        "role": "CEO & Co-fundador",
+        "bio": "Empreendedor serial com mais de 15 anos de experiência em tecnologia. Apaixonado por criar soluções que impactam milhões de pessoas.",
+        "skills": ["Estratégia", "Liderança", "Produto", "Visão de Negócio"],
+        "education": [
+          { "institution": "MIT - Massachusetts Institute of Technology", "degree": "MBA em Gestão de Tecnologia", "year": "2015" },
+          { "institution": "USP - Universidade de São Paulo", "degree": "Engenharia da Computação", "year": "2010" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CEO & Co-fundador", "period": "2020 - Presente", "description": "Liderando a visão estratégica e crescimento da empresa, expandindo para 5 países." },
+          { "company": "TechCorp Brasil", "role": "Diretor de Produto", "period": "2015 - 2020", "description": "Responsável por lançar 3 produtos que geraram R$50M em receita." }
         ]
       },
-      "services": {
-        "label": "Serviços",
-        "links": [
-          { "label": "Desenvolvimento", "href": "/servicos/desenvolvimento", "ariaLabel": "Desenvolvimento Web" },
-          { "label": "Design", "href": "/servicos/design", "ariaLabel": "Design e UX/UI" },
-          { "label": "Consultoria", "href": "/servicos/consultoria", "ariaLabel": "Consultoria Tech" }
+      "maria-santos": {
+        "name": "Maria Santos",
+        "role": "CTO & Co-fundadora",
+        "bio": "Engenheira de software com especialização em arquitetura de sistemas escaláveis. Líder técnica com foco em inovação e qualidade.",
+        "skills": ["Arquitetura de Software", "Cloud Computing", "DevOps", "Gestão Técnica"],
+        "education": [
+          { "institution": "Stanford University", "degree": "Mestrado em Ciência da Computação", "year": "2014" },
+          { "institution": "UNICAMP", "degree": "Engenharia de Software", "year": "2012" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CTO & Co-fundadora", "period": "2020 - Presente", "description": "Liderando time de 50+ engenheiros, construindo infraestrutura que atende 1M+ usuários." },
+          { "company": "Amazon Web Services", "role": "Senior Solutions Architect", "period": "2016 - 2020", "description": "Consultoria para empresas Fortune 500 em migração para cloud." }
         ]
       },
-      "contact": {
-        "label": "Contato",
-        "links": [
-          { "label": "Email", "href": "mailto:contato@zatas.com.br", "ariaLabel": "Envie um email" },
-          { "label": "WhatsApp", "href": "https://wa.me/5516000000000", "ariaLabel": "Fale pelo WhatsApp" },
-          { "label": "LinkedIn", "href": "https://linkedin.com/company/zatas", "ariaLabel": "Conecte no LinkedIn" }
+      "pedro-oliveira": {
+        "name": "Pedro Oliveira",
+        "role": "CPO & Co-fundador",
+        "bio": "Designer de produto com foco em experiência do usuário. Acredita que design é sobre resolver problemas, não apenas estética.",
+        "skills": ["Product Design", "UX Research", "Design Systems", "Prototipagem"],
+        "education": [
+          { "institution": "Parsons School of Design - NYC", "degree": "Mestrado em Design Interaction", "year": "2016" },
+          { "institution": "ESPM", "degree": "Design Gráfico", "year": "2013" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CPO & Co-fundador", "period": "2020 - Presente", "description": "Liderando a visão de produto e design, criando experiências premiadas." },
+          { "company": "Nubank", "role": "Lead Product Designer", "period": "2017 - 2020", "description": "Responsável pelo redesign do app usado por 40M+ clientes." }
+        ]
+      },
+      "ana-costa": {
+        "name": "Ana Costa",
+        "role": "CMO & Co-fundadora",
+        "bio": "Especialista em growth marketing e branding. Construiu estratégias de marketing que geraram crescimento de 300% em startups.",
+        "skills": ["Growth Marketing", "Branding", "Analytics", "Estratégia de Conteúdo"],
+        "education": [
+          { "institution": "Harvard Business School", "degree": "MBA em Marketing", "year": "2015" },
+          { "institution": "FGV", "degree": "Administração de Empresas", "year": "2011" }
+        ],
+        "experience": [
+          { "company": "Zatas", "role": "CMO & Co-fundadora", "period": "2020 - Presente", "description": "Liderando todas as iniciativas de marketing e crescimento da marca." },
+          { "company": "Rock Content", "role": "Diretora de Marketing", "period": "2016 - 2020", "description": "Responsável por crescimento de 10x na base de clientes." }
         ]
       }
+    }
+  },
+  "ContactPage": {
+    "title": "Contato",
+    "subtitle": "Tem uma ideia ou projeto? Adoraríamos ouvir de você.",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "seu@email.com"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Como podemos ajudar?"
+      },
+      "submit": "Enviar Mensagem"
+    }
+  },
+  "ProjectDetailPage": {
+    "backButton": "Voltar para projetos",
+    "badge": "Estudo de Caso",
+    "meta": {
+      "year": "Ano",
+      "client": "Cliente"
     },
-    "CompanyPage": {
-        "title": "Sobre a Zatas",
-        "description": "Transformamos ideias em produtos digitais que impactam milhões de pessoas ao redor do mundo",
-        "historyTitle": "Nossa História",
-        "history": [
-          "A jornada da Zatas começou quando um personal trainer, por indicação de outros programadores, entrou em contato com o sócio, Bruno, buscando uma forma de otimizar a gestão de seus alunos. Com essa proposta em mãos, Bruno convidou Gabriel e Antony para colaborarem no desenvolvimento da aplicação.",
-          "O projeto foi um sucesso e mostrou ao time o poder da colaboração. Para complementar as habilidades técnicas do grupo, Bryan foi convidado para a sociedade, trazendo sua expertise em marketing e design.",
-          "A Zatas foi fundada sobre essa base: a união de competências diversas com o propósito de oferecer soluções completas. A empresa começou resolvendo um problema específico e hoje segue com essa mesma paixão por transformar os desafios de cada cliente em projetos de sucesso.",
-          "O Significado de 'Zatas'",
-          "O nome 'Zatas' foi escolhido por sua sonoridade forte e memorável. Ele remete à palavra 'exatas', refletindo a essência do trabalho da empresa: a busca pela precisão, lógica e inteligência de dados na construção de cada solução. Zatas é sinônimo da solução exata para o desafio de cada cliente."
-        ]
+    "authors": {
+      "single": "Responsável pelo Projeto",
+      "multiple": "Equipe do Projeto"
     },
-    "PageTitles": {
-      "home": "Zatas",
-      "about": "Sobre",
-      "team": "Equipe",
-      "partnerships": "Parcerias",
-      "services": "Serviços",
-      "development": "Desenvolvimento",
-      "design": "Design",
-      "marketing": "Marketing",
-      "contact": "Contato"
+    "about": "Sobre o Projeto",
+    "technologies": "Tecnologias",
+    "liveProject": "Ver Projeto Live",
+    "gallery": "Galeria do Projeto",
+    "moreProjects": "Ver mais projetos de {category}"
+  },
+    "Slogan": {
+      "words": ["Design", "|", "Código", "|", "Impacto"]
+    },
+    "HamburgerMenu": {
+      "open": "Abrir menu",
+      "close": "Fechar menu"
+    },
+    "Hero": {
+      "button1": "Explorar Projetos",
+      "button2": "Siga no Instagram"
+    },
+    "ServicesLandingPage": {
+      "badge": "O que fazemos",
+      "title1": "Transforme sua",
+      "title2": "ideia",
+      "title3": "em",
+      "title4": "realidade",
+      "subtitle": "Soluções completas em desenvolvimento, design e marketing digital",
+      "viewProjects": "Ver projetos",
+      "ctaTitle": "Pronto para começar seu projeto?",
+      "ctaSubtitle": "Entre em contato e vamos transformar sua ideia em realidade",
+      "ctaButton": "Falar com a equipe",
+      "categoryTags": [
+        ["Web", "Mobile", "APIs"],
+        ["UI/UX", "Branding", "Identidade"],
+        ["SEO", "Social Media", "Conteúdo"]
+      ]
+    },
+    "CategoryProjectsPage": {
+      "projects": "projetos",
+      "viewProject": "Ver projeto",
+      "hoverPreview": "Passe o mouse sobre um projeto",
+      "hoverPreviewSubtitle": "para visualizar a prévia",
+      "preview": "Preview"
     }
 }

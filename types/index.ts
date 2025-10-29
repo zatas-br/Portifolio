@@ -138,3 +138,13 @@ export interface Job {
   requirements: string[];
   benefits: string[];
 }
+
+export type TeamProfile = {
+  id: string;
+  image: string;
+  social: {
+    linkedin?: string;
+    github?: string;
+    twitter?: string;
+  };
+};
