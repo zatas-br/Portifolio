@@ -205,3 +205,10 @@ export const PROJECTS: Project[] = [
     client: 'Tech Blog'
   }
 ];
+
+// Função para buscar projetos por categoria
+export function getCategoryData(category: string) {
+  const categoryData = CATEGORIES.find(c => c.id === category);
+  const filteredProjects = PROJECTS.filter(p => p.category === category);
+  return { categoryData, filteredProjects };
+}

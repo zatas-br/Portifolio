@@ -7,10 +7,10 @@ type Props = {
 };
 
 export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: 'CardNav' });
+  const t = await getTranslations({ locale, namespace: 'PageTitles' });
   
   return {
-    title: t('contact.label'),
+    title: `${t('contact')} | Zatas`,
   };
 }
 

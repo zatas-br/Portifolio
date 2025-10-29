@@ -140,6 +140,18 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             </div>
           )}
 
+          {/* Fallback para projetos antigos sem campo authors */}
+          {/* @ts-ignore */}
+          {!hasAuthors && project.author && (
+            <div className="bg-surface-alt border border-border rounded-2xl p-6">
+              <div className="flex items-center gap-2">
+                <FaUser className="w-4 h-4 text-primary" />
+                <span className="text-sm text-text-muted">Criado por:</span>
+                {/* @ts-ignore */}
+                <span className="font-semibold text-text">{project.author}</span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Hero Image */}

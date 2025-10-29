@@ -1,9 +1,21 @@
-// 📁 app/[locale]/careers/page.tsx
-
-'use client'
+// 📁 app/[locale]/partnerships/page.tsx
 
 import PartnershipsPage from '@/src/components/about/PartnershipsPage';
+import { getTranslations } from 'next-intl/server';
+import { Metadata } from 'next';
 
-export default function CareersPageRoute() {
+type Props = {
+  params: { locale: string };
+};
+
+export async function generateMetadata({ params: { locale } }: Props): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'PageTitles' });
+
+  return {
+    title: `${t('partnerships')} | Zatas`,
+  };
+}
+
+export default function PartnershipsPageRoute() {
   return <PartnershipsPage />;
 }
