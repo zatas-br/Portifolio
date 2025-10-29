@@ -1,11 +1,7 @@
 // 📁 app/layout.tsx
 
 import './global.css';
-import Header from '@/src/components/layout/Header';
-import { routing } from '@/src/i18n/routing';
-import { getMessages } from 'next-intl/server';
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { ThemeProvider } from 'next-themes';
+import ThemeRegistry from '@/src/components/providers/ThemeRegistry';
 
 import type { Metadata } from "next";
 import "./global.css";
@@ -23,11 +19,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
         <body className='antialiased'>
-          <ThemeProvider attribute="class"
-            defaultTheme="system"
-            enableSystem>
+          <ThemeRegistry>
             {children}
-          </ThemeProvider>
+          </ThemeRegistry>
         </body>
     </html>
   );

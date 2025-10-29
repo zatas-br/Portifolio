@@ -13,6 +13,7 @@ import {
   FaImages,
   FaUser
 } from 'react-icons/fa';
+import { HiSparkles } from 'react-icons/hi';
 import { PROJECTS } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import AuthorCard from '@/src/components/portfolio/AuthorCard';
@@ -66,6 +67,14 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Header */}
         <div ref={headerRef} className="mb-12">
+          {/* Badge */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
+              <HiSparkles className="w-4 h-4 text-primary" />
+              Estudo de Caso
+            </span>
+          </div>
+
           {/* Title */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
             {project.title}
@@ -130,11 +139,13 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           )}
 
           {/* Fallback para projetos antigos sem campo authors */}
+          {/* @ts-ignore */}
           {!hasAuthors && project.author && (
             <div className="bg-surface-alt border border-border rounded-2xl p-6">
               <div className="flex items-center gap-2">
                 <FaUser className="w-4 h-4 text-primary" />
                 <span className="text-sm text-text-muted">Criado por:</span>
+                {/* @ts-ignore */}
                 <span className="font-semibold text-text">{project.author}</span>
               </div>
             </div>

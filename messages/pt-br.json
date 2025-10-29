@@ -43,5 +43,16 @@
           "O Significado de 'Zatas'",
           "O nome 'Zatas' foi escolhido por sua sonoridade forte e memorável. Ele remete à palavra 'exatas', refletindo a essência do trabalho da empresa: a busca pela precisão, lógica e inteligência de dados na construção de cada solução. Zatas é sinônimo da solução exata para o desafio de cada cliente."
         ]
+    },
+    "PageTitles": {
+      "home": "Zatas",
+      "about": "Sobre",
+      "team": "Equipe",
+      "partnerships": "Parcerias",
+      "services": "Serviços",
+      "development": "Desenvolvimento",
+      "design": "Design",
+      "marketing": "Marketing",
+      "contact": "Contato"
     }
 }

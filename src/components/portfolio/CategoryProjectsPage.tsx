@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import gsap from 'gsap';
+// import gsap from 'gsap'; // Comentado para depuração
 import { 
   FaCode, 
   FaPalette, 
@@ -11,52 +11,50 @@ import {
   FaExternalLinkAlt,
   FaFolder
 } from 'react-icons/fa';
-import { PROJECTS, CATEGORIES } from '@/src/data/projects';
-import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
+// import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations'; // Comentado para depuração
+import { Project, Category } from '@/types';
 
 interface CategoryProjectsPageProps {
   category: 'desenvolvimento' | 'design' | 'marketing';
+  projects: Project[];
+  categoryDetails: Category | undefined;
 }
 
-// Ícones para cada categoria
 const categoryIcons: Record<string, React.ReactNode> = {
   'desenvolvimento': <FaCode className="w-12 h-12" />,
   'design': <FaPalette className="w-12 h-12" />,
   'marketing': <FaBullhorn className="w-12 h-12" />
 };
 
-export default function CategoryProjectsPage({ category }: CategoryProjectsPageProps) {
+export default function CategoryProjectsPage({ category, projects, categoryDetails }: CategoryProjectsPageProps) {
   const router = useRouter();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const { animateFadeIn } = usePortfolioAnimations();
+  // const headerRef = useRef<HTMLDivElement>(null); // Comentado para depuração
+  // const projectsRef = useRef<(HTMLDivElement | null)[]>([]); // Comentado para depuração
+  // const imageRef = useRef<HTMLDivElement>(null); // Comentado para depuração
+  // const { animateFadeIn } = usePortfolioAnimations(); // Comentado para depuração
 
-  const filteredProjects = PROJECTS.filter(p => p.category === category);
-  const categoryData = CATEGORIES.find(c => c.id === category);
+  // useEffect(() => {
+  //   animateFadeIn(headerRef.current, 0);
+  //   gsap.fromTo(
+  //     projectsRef.current.filter(Boolean),
+  //     { opacity: 0, x: -20 },
+  //     { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, delay: 0.2, ease: 'power3.out' }
+  //   );
+  // }, [projects]);
 
-  useEffect(() => {
-    animateFadeIn(headerRef.current, 0);
-    gsap.fromTo(
-      projectsRef.current.filter(Boolean),
-      { opacity: 0, x: -20 },
-      { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, delay: 0.2, ease: 'power3.out' }
-    );
-  }, []);
+  // useEffect(() => {
+  //   if (imageRef.current) {
+  //     gsap.to(imageRef.current, { 
+  //       opacity: 1, 
+  //       scale: hoveredProject ? 1 : 0.98, 
+  //       duration: 0.4, 
+  //       ease: 'power2.out' 
+  //     });
+  //   }
+  // }, [hoveredProject]);
 
-  useEffect(() => {
-    if (imageRef.current) {
-      gsap.to(imageRef.current, { 
-        opacity: 1, 
-        scale: hoveredProject ? 1 : 0.98, 
-        duration: 0.4, 
-        ease: 'power2.out' 
-      });
-    }
-  }, [hoveredProject]);
-
-  const hoveredProjectData = filteredProjects.find(p => p.id === hoveredProject);
+  const hoveredProjectData = projects.find(p => p.id === hoveredProject);
 
   const handleProjectClick = (projectId: string) => {
     router.push(`/services/${category}/${projectId}`);
@@ -65,28 +63,24 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   return (
     <div className="min-h-screen bg-surface">
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border">
+      <div /*ref={headerRef}*/ className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-          {/* Title with Icon */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
             <div className="text-white">
               {categoryIcons[category]}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white">
-              {categoryData?.title}
+              {categoryDetails?.title}
             </h1>
           </div>
-          
           <p className="text-base sm:text-lg text-gray max-w-2xl leading-relaxed">
-            {categoryData?.description}
+            {categoryDetails?.description}
           </p>
-
-          {/* Stats */}
           <div className="mt-6 sm:mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <FaFolder className="w-4 h-4 text-white" />
               <span className="text-gray">
-                <strong className="text-white font-semibold">{filteredProjects.length}</strong> projetos
+                <strong className="text-white font-semibold">{projects.length}</strong> projetos
               </span>
             </div>
           </div>
@@ -96,19 +90,17 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
       {/* Projects Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Lista de Projetos */}
           <div className="space-y-4 sm:space-y-6">
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <div
                 key={project.id}
-                ref={el => { projectsRef.current[index] = el; }}
+                // ref={el => { projectsRef.current[index] = el; }} // Comentado para depuração
                 onClick={() => handleProjectClick(project.id)}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
                 className="group cursor-pointer"
               >
                 <div className="bg-surface border-2 border-border hover:border-primary  rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                  {/* Mobile Image */}
                   <div className="lg:hidden mb-4 rounded-xl overflow-hidden bg-surface-alt">
                     <img 
                       src={project.image} 
@@ -116,19 +108,13 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                       className="w-full h-48 object-cover"
                     />
                   </div>
-
-                  {/* Title */}
                   <h3 className="text-2xl font-bold text-text mb-3 group-hover:primary transition-colors flex items-center gap-2">
                     {project.title}
                     <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
-
-                  {/* Description */}
                   <p className="text-sm sm:text-base text-text-muted mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  
-                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 4).map(tech => (
                       <span 
@@ -144,8 +130,6 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                       </span>
                     )}
                   </div>
-
-                  {/* Footer */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm pt-4 border-t border-border">
                     <span className="text-text-muted">{project.client}</span>
                     <span className="flex items-center gap-2 text-primary font-semibold">
@@ -161,7 +145,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
           {/* Preview de Imagem - Desktop Only */}
           <div className="hidden lg:block sticky top-24 self-start">
             <div 
-              ref={imageRef}
+              // ref={imageRef} // Comentado para depuração
               className="w-full aspect-[4/3] bg-surface-alt rounded-2xl overflow-hidden shadow-2xl border-2 border-border"
             >
               {hoveredProjectData ? (
@@ -182,8 +166,6 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                 </div>
               )}
             </div>
-            
-            {/* Info abaixo da imagem - Sempre visível quando hover */}
             <div className={`mt-6 p-4 bg-surface border border-border rounded-xl transition-all duration-300 ${hoveredProjectData ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
               {hoveredProjectData && (
                 <>
