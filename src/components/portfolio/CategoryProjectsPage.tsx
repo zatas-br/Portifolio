@@ -65,14 +65,14 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   return (
     <div className="min-h-screen bg-surface">
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-surface-alt to-surface border-b border-border">
+      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           {/* Title with Icon */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
             <div className="text-white">
               {categoryIcons[category]}
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">
               {categoryData?.title}
             </h1>
           </div>
@@ -84,9 +84,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
           {/* Stats */}
           <div className="mt-6 sm:mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
-              <FaFolder className="w-4 h-4 text-primary" />
-              <span className="text-text-muted">
-                <strong className="text-text font-semibold">{filteredProjects.length}</strong> projetos
+              <FaFolder className="w-4 h-4 text-white" />
+              <span className="text-gray">
+                <strong className="text-white font-semibold">{filteredProjects.length}</strong> projetos
               </span>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                ref={el => { projectsRef.current[index] = el; }}
+                ref={el => projectsRef.current[index] = el}
                 onClick={() => handleProjectClick(project.id)}
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}
@@ -118,9 +118,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-start sm:items-center gap-2">
-                    <span className="flex-1">{project.title}</span>
-                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1 sm:mt-0" />
+                  <h3 className="text-2xl font-bold text-text mb-3 group-hover:primary transition-colors flex items-center gap-2">
+                    {project.title}
+                    <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
 
                   {/* Description */}
@@ -183,7 +183,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
               )}
             </div>
             
-            {/* Info abaixo da imagem */}
+            {/* Info abaixo da imagem - Sempre visível quando hover */}
             <div className={`mt-6 p-4 bg-surface border border-border rounded-xl transition-all duration-300 ${hoveredProjectData ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
               {hoveredProjectData && (
                 <>

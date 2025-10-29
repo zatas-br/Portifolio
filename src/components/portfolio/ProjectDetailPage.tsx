@@ -50,7 +50,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
         <div className="max-w-6xl mx-auto px-6 py-4">
           <button
             onClick={() => router.push(`/services/${category}`)}
-            className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors font-medium cursor-pointer group"
+            className="flex items-center gap-2 text-text-muted hover:text-text transition-colors font-medium cursor-pointer group"
           >
             <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Voltar para projetos
@@ -61,14 +61,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
         {/* Header */}
         <div ref={headerRef} className="mb-12">
-          {/* Badge */}
-          <div className="flex items-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
-              <HiSparkles className="w-4 h-4 text-primary" />
-              Estudo de Caso
-            </span>
-          </div>
-
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
             {project.title}
@@ -82,14 +74,14 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           {/* Meta Info */}
           <div className="flex flex-wrap gap-6 text-text-muted">
             <div className="flex items-center gap-2">
-              <FaCalendar className="w-4 h-4 text-primary" />
+              <FaCalendar className="w-4 h-4 text-primary-icon" />
               <div>
                 <span className="block text-xs text-text-muted mb-0.5">Ano</span>
                 <span className="font-semibold text-text">{project.year}</span>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <FaUsers className="w-4 h-4 text-primary" />
+              <FaUsers className="w-4 h-4 text-primary-icon" />
               <div>
                 <span className="block text-xs text-text-muted mb-0.5">Equipe</span>
                 <span className="font-semibold text-text">{project.author}</span>
@@ -97,7 +89,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             </div>
             {project.client && (
               <div className="flex items-center gap-2">
-                <FaBriefcase className="w-4 h-4 text-primary" />
+                <FaBriefcase className="w-4 h-4 text-primary-icon" />
                 <div>
                   <span className="block text-xs text-text-muted mb-0.5">Cliente</span>
                   <span className="font-semibold text-text">{project.client}</span>
@@ -143,7 +135,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 {project.technologies.map(tech => (
                   <div 
                     key={tech} 
-                    className="bg-surface-alt border border-border text-primary px-4 py-3 rounded-lg font-medium text-sm hover:border-primary transition-colors"
+                    className="bg-surface-alt border border-border text-spare-text px-4 py-3 rounded-lg font-medium text-sm hover:border-primary transition-colors"
                   >
                     {tech}
                   </div>
@@ -177,7 +169,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               {project.gallery.map((img, index) => (
                 <div
                   key={index}
-                  ref={el => { galleryRef.current[index] = el; }}
+                  ref={el => galleryRef.current[index] = el}
                   className="rounded-xl overflow-hidden shadow-lg border-2 border-border hover:shadow-2xl hover:border-primary transition-all duration-300 group cursor-pointer"
                 >
                   <img 

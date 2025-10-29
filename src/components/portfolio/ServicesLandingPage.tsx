@@ -74,7 +74,7 @@ export default function ServicesLandingPage() {
             <span className="text-primary">ideia</span>
             <br />
             <span className="text-text">em </span>
-            <span className="bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">realidade</span>
+            <span className="bg-gradient-to-r from-start-gradient to-final-gradient bg-clip-text text-transparent">realidade</span>
           </h1>
           
           {/* Subtitle */}
@@ -90,7 +90,7 @@ export default function ServicesLandingPage() {
           {CATEGORIES.map((category, index) => (
             <div
               key={category.id}
-              ref={el => { cardsRef.current[index] = el; }}
+              ref={el => cardsRef.current[index] = el}
               onClick={() => router.push(`/services/${category.id}`)}
               className="group cursor-pointer"
             >
