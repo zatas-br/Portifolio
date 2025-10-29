@@ -39,7 +39,7 @@ export const CardNavTop = ({
     }, []);
 
     return (
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[0.5rem] md:pl-[1.1rem] pr-[0.5rem] z-[2]">
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 z-[2]">
             {/* Lado Esquerdo: Botões de Tema e Idioma */}
             <div className="flex items-center gap-2">
                 {/* Botão de Tema */}
@@ -77,12 +77,16 @@ export const CardNavTop = ({
                 </Link>
             </div>
 
-            {/* Lado Direito: Menu Hambúrguer */}
-            <HamburgerMenu
-                isOpen={isHamburgerOpen}
-                onClick={onMenuToggle}
-                color={menuColor}
-            />
+            {/* Lado Direito: Menu Hambúrguer - COM PADDING IGUAL */}
+            <div className="flex items-center">
+                <div className="w-[38px] h-[38px] md:w-[44px] md:h-[44px] flex items-center justify-center">
+                    <HamburgerMenu
+                        isOpen={isHamburgerOpen}
+                        onClick={onMenuToggle}
+                        color={menuColor}
+                    />
+                </div>
+            </div>
         </div>
     );
 };

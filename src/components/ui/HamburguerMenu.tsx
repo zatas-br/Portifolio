@@ -14,6 +14,7 @@ export const HamburgerMenu = ({
     className = '' 
 }: HamburgerMenuProps) => {
     const t = useTranslations('HamburgerMenu');
+    
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -23,7 +24,7 @@ export const HamburgerMenu = ({
 
     return (
         <div
-            className={`group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] ${className}`}
+            className={`group flex flex-col items-center justify-center cursor-pointer gap-[6px] w-full h-full ${className}`}
             onClick={onClick}
             onKeyDown={handleKeyDown}
             role="button"
@@ -33,12 +34,12 @@ export const HamburgerMenu = ({
             style={{ color }}
         >
             <div
-                className={`w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${
+                className={`w-[24px] md:w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${
                     isOpen ? 'translate-y-[4px] rotate-45 scale-110' : ''
                 } group-hover:opacity-75`}
             />
             <div
-                className={`w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${
+                className={`w-[24px] md:w-[30px] h-[2px] bg-current transition-all duration-500 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [transform-origin:center] ${
                     isOpen ? '-translate-y-[4px] -rotate-45 scale-110' : ''
                 } group-hover:opacity-75`}
             />
