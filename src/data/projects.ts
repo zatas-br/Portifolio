@@ -1,21 +1,21 @@
 import { Project, Category } from '@/types';
 
 export const CATEGORIES: Category[] = [
-  { 
-    id: 'desenvolvimento', 
-    title: 'Desenvolvimento', 
+  {
+    id: 'desenvolvimento',
+    title: 'Desenvolvimento',
     icon: '💻',
     description: 'Soluções web e mobile sob medida'
   },
-  { 
-    id: 'design', 
-    title: 'Design', 
+  {
+    id: 'design',
+    title: 'Design',
     icon: '🎨',
     description: 'Identidade visual e interfaces incríveis'
   },
-  { 
-    id: 'marketing', 
-    title: 'Marketing', 
+  {
+    id: 'marketing',
+    title: 'Marketing',
     icon: '📢',
     description: 'Estratégias digitais que convertem'
   }
@@ -203,7 +203,158 @@ export const PROJECTS: Project[] = [
       'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800'
     ],
     client: 'Tech Blog'
+  },
+
+  // REAIS
+
+  //DESIGN
+  {
+    id: 'luiz-gustavo-adv',
+    title: 'Luiz Gustavo Advogado - Social Media Design',
+    category: 'design',
+    image: 'https://i.postimg.cc/vB20tRq7/capa-luiz-gustavo-adv.png',
+    description: 'Projeto de Social Media – Direito do Passageiro Aéreo',
+    year: 2025,
+    authors: [
+      {
+        name: 'Thiago Bryan',
+        role: 'CMO - Head of Marketing & Design',
+        avatar: 'https://i.postimg.cc/pTm67XFP/perfil-bryan.jpg',
+        linkedin: 'https://linkedin.com/in/thbryann',
+      }
+    ],
+    technologies: ['Canva', 'Freepik'],
+    fullDescription: 'Este projeto de social media foi desenvolvido para um advogado especializado em Direito do Passageiro Aéreo, com o objetivo de fortalecer sua presença digital e transmitir confiança ao público. Criado em 2025, o design foi produzido utilizando Canva e recursos do Freepik, explorando uma paleta de tons de azul e dourado, que remetem à credibilidade, profissionalismo e excelência. O resultado é uma identidade visual moderna e coerente com o nicho jurídico, reforçando autoridade e clareza na comunicação com os seguidores.',
+    gallery: [
+      'https://i.postimg.cc/qRN5YM3B/luiz-gustavo01.png',
+      'https://i.postimg.cc/765WcY24/luiz-gustavo04.png',
+      'https://i.postimg.cc/638mS5vt/luiz-gustavo02.png',
+      'https://i.postimg.cc/bJZBMNtj/luiz-gustavo05.png',
+      'https://i.postimg.cc/50XRGNCV/luiz-gustavo06.png',
+      'https://i.postimg.cc/3Rkc6Jv5/luiz-gustavo03.png'
+    ],
+    client: 'Luiz Gustavo Advogado'
+  },
+  {
+    id: 'montela-brand',
+    title: 'MONTELA - Identidade Visual de Marca',
+    category: 'design',
+    image: 'https://i.postimg.cc/2yMbwTfD/montela-capa.jpg',
+    description: 'Projeto de Identidade Visual – MONTELA, Inteligência que trabalha por você',
+    year: 2025,
+    authors: [
+      {
+        name: 'Antony Brito',
+        role: 'CPO - Head of Growth & Product',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
+        linkedin: 'https://linkedin.com/in/britoantony',
+        github: 'https://github.com/antonybrito'
+      }
+    ],
+    technologies: ['Photoshop', 'Illustrator'],
+    fullDescription: `Este projeto de identidade visual foi desenvolvido para a marca MONTELA, 
+uma empresa focada em inteligência e inovação. O conceito nasce da fusão entre “MONTE”, que representa solidez e excelência, 
+e “LA”, o laboratório de ideias e tecnologia. A proposta visual reflete o equilíbrio entre sabedoria e inovação, 
+traduzidos nos tons de roxo, preto, branco e cinza, que reforçam elegância, confiança e sofisticação.`,
+    gallery: [
+      'https://i.postimg.cc/L5wYTvM9/montela01.jpg',
+      'https://i.postimg.cc/NGzHBGrq/montela02.jpg',
+      'https://i.postimg.cc/pV6FRVnH/montela03.jpg',
+      'https://i.postimg.cc/T24Df25F/montela04.jpg'
+    ],
+    client: 'MONTELA'
+  },
+  {
+    id: 'zatas',
+    title: 'ZATAS - Identidade Visual de Marca',
+    category: 'design',
+    image: 'https://i.postimg.cc/fy9gWzZq/zatas-capa.jpg',
+    description: 'Projeto de Identidade Visual – ZATAS, sua visão em tecnologia e sua tecnologia em resultados',
+    year: 2025,
+    authors: [
+      {
+        name: 'Antony Brito',
+        role: 'CPO - Head of Growth & Product',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
+        linkedin: 'https://linkedin.com/in/britoantony',
+        github: 'https://github.com/antonybrito'
+      }
+    ],
+    technologies: ['Photoshop', 'Illustrator'],
+    fullDescription: `A identidade visual da ZATAS foi desenvolvida com base em precisão, estratégia e inovação. 
+Inspirada em Monte Carlo, a marca nasce com a filosofia de trabalhar “do Z ao A”: 
+partindo do objetivo final para construir estratégias completas desde o início. As cores escolhidas — preto, cinza, branco e tons de azul — representam confiança, tecnologia e estabilidade, 
+traduzindo a união entre sofisticação e eficiência. 
+A tipografia Montserrat, em variações Regular e Medium, reforça a clareza e o equilíbrio geométrico, 
+simbolizando a fusão entre design e performance. O resultado é uma marca moderna, tecnológica e de forte presença visual, 
+que comunica solidez, inovação e propósito em cada detalhe.`,
+    gallery: [
+      'https://i.postimg.cc/5yCk941D/zatas01.jpg',
+      'https://i.postimg.cc/hvd34Dgk/zatas02.jpg',
+      'https://i.postimg.cc/FzLnFrmq/zatas03.jpg'
+    ],
+    client: 'ZATAS'
+  },
+  {
+    id: 'aureni-brito-fisioterapeuta',
+    title: 'Aureni Brito Fisioterapeuta - Logotipo e Cartão de Visitas',
+    category: 'design',
+    image: 'https://i.postimg.cc/52bYmsHK/aureni-capa.jpg',
+    description: 'Desenvolvida para a Fisioterapeuta Aureni Brito, com foco em leveza, confiança e profissionalismo.',
+    year: 2025,
+    authors: [
+      {
+        name: 'Antony Brito',
+        role: 'CPO - Head of Growth & Product',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
+        linkedin: 'https://linkedin.com/in/britoantony',
+        github: 'https://github.com/antonybrito'
+      }
+    ],
+    technologies: ['Photoshop', 'Illustrator'],
+    fullDescription: 'Este projeto foi desenvolvido para a fisioterapeuta Aureni Brito, com o objetivo de criar uma identidade visual que transmitisse bem-estar, cuidado e confiança — valores essenciais à área da saúde. O logotipo foi desenhado com formas orgânicas e tipografia suave, representando movimento, equilíbrio e leveza. A paleta de cores combina tons de dourado e verde, simbolizando tranquilidade, vitalidade e harmonia. O cartão de visitas segue a mesma linguagem visual, garantindo unidade entre o material impresso e a presença digital. O resultado é uma identidade moderna e acolhedora, que comunica profissionalismo e empatia de forma clara e elegante.',
+    gallery: [
+      'https://i.postimg.cc/FHpfC03X/aureni01.jpg',
+      'https://i.postimg.cc/HkzJvb5f/aureni02.jpg',
+      'https://i.postimg.cc/Cx7ZrbDt/aureni03.jpg',
+    ],
+    client: 'Souza e Vilela'
+  },
+  {
+    id: 'carlos-advogado',
+    title: 'Carlos Advogado - Social Media Design',
+    category: 'design',
+    image: 'https://i.postimg.cc/bJtwPnDd/Capa-Carlos-1.png',
+    description: 'Projeto de Social Media – Advocacia',
+    year: 2025,
+    authors: [
+      {
+        name: 'Thiago Bryan',
+        role: 'CMO - Head of Marketing & Design',
+        avatar: 'https://i.postimg.cc/pTm67XFP/perfil-bryan.jpg',
+        linkedin: 'https://linkedin.com/in/thbryann',
+      }
+    ],
+    technologies: ['Canva', 'Freepik'],
+    fullDescription: 'Este projeto de social media foi criado para um advogado especializado no setor jurídico, com foco em transmitir autoridade, confiança e profissionalismo por meio do design.',
+    gallery: [
+      'https://i.postimg.cc/d1yVFC7b/10.png',
+      'https://i.postimg.cc/s28gbmXy/12.png',
+      'https://i.postimg.cc/Pxw5HDLB/18.png',
+      'https://i.postimg.cc/HLKkFzxY/19.png',
+      'https://i.postimg.cc/tgf48kT9/20.png',
+      'https://i.postimg.cc/fL9RsdtT/4.png',
+      'https://i.postimg.cc/W3k1VZF2/5.png',
+      'https://i.postimg.cc/9M7Q29RV/6.png',
+      'https://i.postimg.cc/HxykmMcC/9.png',
+      'https://i.postimg.cc/PJ6XzQ0w/23.png',
+      'https://i.postimg.cc/j28xQ4By/Carlos-Advogados11.png',
+      'https://i.postimg.cc/nrVVDPSq/Carlos-Advogadosc2.png',
+    ],
+    client: 'Carlos'
   }
+
+
 ];
 
 // Função para buscar projetos por categoria
