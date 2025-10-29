@@ -64,6 +64,17 @@ export interface CardNavProps {
     colors?: NavColors;
 }
 
+export interface ProjectAuthor {
+  name: string;
+  role?: string;
+  avatar?: string;
+  linkedin?: string;
+  github?: string;
+  instagram?: string;
+  portfolio?: string;
+  email?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -71,7 +82,7 @@ export interface Project {
   image: string;
   description: string;
   year: number;
-  author: string;
+  authors?: ProjectAuthor[];
   technologies: string[];
   fullDescription: string;
   gallery: string[];

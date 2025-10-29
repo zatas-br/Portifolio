@@ -10,11 +10,13 @@ import {
   FaUsers, 
   FaBriefcase,
   FaCode,
-  FaImages
+  FaImages,
+  FaUser
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { PROJECTS } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
+import AuthorCard from '@/src/components/portfolio/AuthorCard';
 
 interface ProjectDetailPageProps {
   projectId: string;
@@ -43,14 +45,18 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
 
   if (!project) return null;
 
+  // Determinar se há autores para exibir
+  const hasAuthors = project.authors && project.authors.length > 0;
+  const isSingleAuthor = hasAuthors && project.authors!.length === 1;
+
   return (
     <div className="min-h-screen bg-surface">
       {/* Back Button */}
       <div className="border-b border-border bg-surface sticky top-0 z-10 backdrop-blur-sm bg-surface/80">
-        <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
           <button
             onClick={() => router.push(`/services/${category}`)}
-            className="flex items-center gap-2 text-text-muted hover:text-text transition-colors font-medium cursor-pointer group"
+            className="flex items-center gap-2 text-text-muted hover:text-primary transition-colors font-medium cursor-pointer group"
           >
             <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Voltar para projetos
@@ -58,38 +64,39 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Header */}
         <div ref={headerRef} className="mb-12">
+          {/* Badge */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
+              <HiSparkles className="w-4 h-4 text-primary" />
+              Estudo de Caso
+            </span>
+          </div>
+
           {/* Title */}
-          <h1 className="text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
             {project.title}
           </h1>
           
           {/* Description */}
-          <p className="text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl">
+          <p className="text-base sm:text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl">
             {project.description}
           </p>
           
           {/* Meta Info */}
-          <div className="flex flex-wrap gap-6 text-text-muted">
+          <div className="flex flex-wrap gap-6 text-text-muted mb-8">
             <div className="flex items-center gap-2">
-              <FaCalendar className="w-4 h-4 text-primary-icon" />
+              <FaCalendar className="w-4 h-4 text-primary" />
               <div>
                 <span className="block text-xs text-text-muted mb-0.5">Ano</span>
                 <span className="font-semibold text-text">{project.year}</span>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <FaUsers className="w-4 h-4 text-primary-icon" />
-              <div>
-                <span className="block text-xs text-text-muted mb-0.5">Equipe</span>
-                <span className="font-semibold text-text">{project.author}</span>
-              </div>
-            </div>
             {project.client && (
               <div className="flex items-center gap-2">
-                <FaBriefcase className="w-4 h-4 text-primary-icon" />
+                <FaBriefcase className="w-4 h-4 text-primary" />
                 <div>
                   <span className="block text-xs text-text-muted mb-0.5">Cliente</span>
                   <span className="font-semibold text-text">{project.client}</span>
@@ -97,6 +104,50 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               </div>
             )}
           </div>
+
+          {/* Authors Section */}
+          {hasAuthors && (
+            <div className="bg-surface-alt border border-border rounded-2xl p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-6">
+                {isSingleAuthor ? (
+                  <FaUser className="w-5 h-5 text-primary" />
+                ) : (
+                  <FaUsers className="w-5 h-5 text-primary" />
+                )}
+                <h3 className="text-xl font-bold text-text">
+                  {isSingleAuthor ? 'Responsável pelo Projeto' : 'Equipe do Projeto'}
+                </h3>
+              </div>
+
+              {/* Grid responsivo baseado no número de autores */}
+              <div className={`grid gap-4 ${
+                isSingleAuthor 
+                  ? 'sm:grid-cols-1' 
+                  : project.authors!.length === 2
+                    ? 'sm:grid-cols-2'
+                    : 'sm:grid-cols-2 lg:grid-cols-3'
+              }`}>
+                {project.authors!.map((author, index) => (
+                  <AuthorCard 
+                    key={index} 
+                    author={author} 
+                    variant="default"
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Fallback para projetos antigos sem campo authors */}
+          {!hasAuthors && project.author && (
+            <div className="bg-surface-alt border border-border rounded-2xl p-6">
+              <div className="flex items-center gap-2">
+                <FaUser className="w-4 h-4 text-primary" />
+                <span className="text-sm text-text-muted">Criado por:</span>
+                <span className="font-semibold text-text">{project.author}</span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Hero Image */}
@@ -104,7 +155,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           <img 
             src={project.image} 
             alt={project.title} 
-            className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500" 
+            className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500" 
           />
         </div>
 
@@ -135,7 +186,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 {project.technologies.map(tech => (
                   <div 
                     key={tech} 
-                    className="bg-surface-alt border border-border text-spare-text px-4 py-3 rounded-lg font-medium text-sm hover:border-primary transition-colors"
+                    className="bg-surface-alt border border-border text-primary px-4 py-3 rounded-lg font-medium text-sm hover:border-primary transition-colors"
                   >
                     {tech}
                   </div>
