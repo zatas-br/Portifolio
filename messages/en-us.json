@@ -278,8 +278,8 @@
       },
       "bruno-santiago": {
         "name": "Bruno Santiago",
-        "role": "CTO & Co-Founder",
-        "bio": "Full-Stack Developer with expertise in performance, scaling, and architecture; Technical Lead focused on innovation.",
+        "role": "CTO & Co-founder",
+        "bio": "Full-Stack Developer with knowledge in performance, scalability, and architecture. Technical leader focused on innovation.",
         "skills": [
           "Software Architecture",
           "Cloud Computing",
@@ -297,17 +297,18 @@
           {
             "company": "Zatas",
             "role": "CTO & Co-founder",
-            "period": "2025 - Presente",
-            "description": "Responsible for product technology and management of the development team."
+            "period": "2025 - Present",
+            "description": "Responsible for the product’s technology and management of the development team."
           },
           {
             "company": "Novaes Engenharia",
             "role": "Full-Stack Developer",
-            "period": "2024 - Presente",
-            "description": "Solving Internal Problems with Technological Solutions"
+            "period": "2024 - Present",
+            "description": "Solving internal problems with technological solutions."
           }
         ]
       },
+
       "gabriel-cardoso": {
         "name": "Gabriel Cardoso",
         "role": "CFO & Co-founder",

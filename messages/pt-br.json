@@ -280,17 +280,17 @@
       "bruno-santiago": {
         "name": "Bruno Santiago",
         "role": "CTO & Co-fundador",
-        "bio": "Desenvolvedor Full-Stack, com conhecimentos de performancel, escalonamento e arquitetura, Lider Tecnico com foco em Inovacao.",
+        "bio": "Desenvolvedor Full-Stack com conhecimentos em performance, escalabilidade e arquitetura. Líder técnico com foco em inovação.",
         "skills": [
           "Arquitetura de Software",
-          "Cloud Computing",
+          "Computação em Nuvem",
           "DevOps",
           "Gestão Técnica"
         ],
         "education": [
           {
             "institution": "SENAI-601",
-            "degree": "Analise e Desenvolvimento de Sistemas",
+            "degree": "Análise e Desenvolvimento de Sistemas",
             "year": "2024"
           }
         ],
@@ -299,16 +299,17 @@
             "company": "Zatas",
             "role": "CTO & Co-fundador",
             "period": "2025 - Presente",
-            "description": "Responsavel pela Tecnologia do produto e gestão da equipe de Desenvolvimento"
+            "description": "Responsável pela tecnologia do produto e pela gestão da equipe de desenvolvimento."
           },
           {
             "company": "Novaes Engenharia",
             "role": "Desenvolvedor Full-Stack",
             "period": "2024 - Presente",
-            "description": "Resolvendo Problemas Internos com Solucoes Tecnologicas"
+            "description": "Resolução de problemas internos com soluções tecnológicas."
           }
         ]
       },
+
       "gabriel-cardoso": {
         "name": "Gabriel Cardoso",
         "role": "CFO e Co-fundador",
