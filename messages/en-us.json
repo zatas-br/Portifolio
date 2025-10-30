@@ -21,7 +21,7 @@
         "links": [
           { "label": "Development", "href": "/services/development", "ariaLabel": "Web Development" },
           { "label": "Design", "href": "/services/design", "ariaLabel": "Design and UX/UI" },
-          { "label": "Consulting", "href": "/services/consulting", "ariaLabel": "Tech Consulting" }
+          { "label": "Marketing", "href": "/services/consulting", "ariaLabel": "Digital Marketing" }
         ]
       },
       "contact": {
