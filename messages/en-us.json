@@ -126,67 +126,67 @@
     "hero": {
       "title1": "Build the Future",
       "title2": "with Zatas",
-      "subtitle": "Connect with an exponentially growing company. Become a partner, investor, or strategic ally.",
+      "subtitle": "Connect with a company in exponential growth. Become a partner, investor, or strategic ally.",
       "stats": {
-        "stat1": "300% growth",
-        "stat2": "100+ projects delivered",
-        "stat3": "5 countries served"
+        "stat1": "Proven growth",
+        "stat2": "Recognized excellence",
+        "stat3": "Global vision"
       },
       "buttonProject": "Explore Projects",
-      "buttonInstagram": "Folow on Instagram"
+      "buttonInstagram": "Follow on Instagram"
     },
     "partnershipTypes": {
       "title": "Partnership Opportunities",
-      "subtitle": "Choose the best way to be part of our growth journey",
+      "subtitle": "Find the best way to collaborate and grow together with Zatas",
       "types": [
         {
           "title": "Strategic Partners",
-          "description": "We are looking for partners who share our vision of transforming the digital market with innovation and excellence.",
+          "description": "We seek people and companies who believe in our potential and want to build something solid from the start.",
           "benefits": [
-            "Profit sharing",
-            "Strategic decisions",
-            "Shared growth"
+            "Real participation in decisions",
+            "Mutual growth",
+            "Building a solid foundation"
           ]
         },
         {
           "title": "Investors",
-          "description": "A fast-growing company seeking investment for national and international expansion.",
+          "description": "We are looking for investors who share our vision for growth and believe in the potential of a team dedicated to building the future.",
           "benefits": [
-            "Competitive ROI",
-            "Full transparency",
-            "Monthly reports"
+            "Transparent access to results",
+            "Direct communication with the founders",
+            "Participation in strategic decisions"
           ]
         },
         {
           "title": "Commercial Partners",
-          "description": "Build a solid business network with us. Referrals, joint projects, and mutual growth.",
+          "description": "We create partnerships with agencies, freelancers, and companies that seek to join forces on technology, design, and marketing projects.",
           "benefits": [
-            "Attractive commissions",
-            "Full support",
-            "Exclusive projects"
+            "Collaboration on real projects",
+            "Expanding network of contacts",
+            "Shared growth and learning"
           ]
         }
       ]
     },
     "whyPartner": {
       "title": "Why partner with us?",
-      "subtitle": "Numbers and results that prove our potential",
+      "subtitle": "We turn ideas into results through strategy, quality, and commitment.",
       "reasons": [
         {
-          "title": "Accelerated Growth",
-          "desc": "300% growth in the last 2 years"
+          "title": "Strategic growth",
+          "desc": "Our approach prioritizes solid partnerships and consistent results."
         },
         {
-          "title": "Elite Portfolio",
-          "desc": "More than 100 successful projects delivered"
+          "title": "Multidisciplinary team",
+          "desc": "We bring together experts in development, design, and digital marketing to deliver complete and integrated solutions."
         },
         {
-          "title": "Experienced Team",
-          "desc": "50+ highly qualified professionals"
+          "title": "Human-centered service",
+          "desc": "Each project is handled with exclusivity, clear communication, and close support throughout all stages."
         },
         {
-          "title": "Constant Innovation",
-          "desc": "Cutting-edge technologies and agile methodologies"
+          "title": "Innovation driven by results",
+          "desc": "We apply technology and creativity intelligently to generate real impact on our clients’ performance."
         }
       ]
     },
@@ -196,7 +196,7 @@
       "areas": [
         {
           "title": "Development",
-          "desc": "Web, Mobile, APIs and Complex Systems"
+          "desc": "Web, Mobile, APIs, and Custom Solutions"
         },
         {
           "title": "Design & UX",
@@ -209,17 +209,18 @@
       ]
     },
     "mainCTA": {
-      "title": "Let's talk?",
-      "subtitle": "Get in touch and find out how we can grow together. Schedule a no-obligation meeting.",
+      "title": "Shall we talk?",
+      "subtitle": "Get in touch and discover how we can grow together. Schedule a meeting with no commitment.",
       "whatsapp": "WhatsApp",
-      "email": "E-mail"
+      "email": "Email"
     },
     "secondaryCTA": {
-      "title": "Want to be part of the team?",
-      "subtitle": "We are also always looking for exceptional talent",
+      "title": "Want to join our team?",
+      "subtitle": "We’re always looking for exceptional talent",
       "button": "Send your resume"
     }
   },
+
   "TeamPage": {
     "title": "Our Team",
     "description": "Meet the founders who make it all possible",
@@ -238,12 +239,7 @@
         "name": "Antony Brito",
         "role": "CPO & Co-founder",
         "bio": "Extensive experience in full-stack development and digital design, combining technical and aesthetic vision to create scalable products and engaging digital experiences. Works on planning and implementing innovative technological solutions, focusing on performance, usability, and consistent visual identity.",
-        "skills": [
-          "Strategy",
-          "Leadership",
-          "Innovation",
-          "Product"
-        ],
+        "skills": ["Strategy", "Leadership", "Innovation", "Product"],
         "education": [
           {
             "institution": "Microsoft and LinkedIn",
@@ -422,29 +418,17 @@
     "desenvolvimento": {
       "title": "Desenvolvimento",
       "description": "Criamos soluções de software robustas, desde APIs escaláveis até aplicações web e móveis interativas.",
-      "tags": [
-        "Web",
-        "Mobile",
-        "APIs"
-      ]
+      "tags": ["Web", "Mobile", "APIs"]
     },
     "design": {
       "title": "Design",
       "description": "Desenhamos interfaces intuitivas e marcas memoráveis que conectam sua empresa ao seu público.",
-      "tags": [
-        "UI/UX",
-        "Branding",
-        "Identidade"
-      ]
+      "tags": ["UI/UX", "Branding", "Identidade"]
     },
     "marketing": {
       "title": "Marketing",
       "description": "Estratégias digitais focadas em crescimento, engajamento e resultados mensuráveis.",
-      "tags": [
-        "SEO",
-        "Copywriting",
-        "Ads"
-      ]
+      "tags": ["SEO", "Copywriting", "Ads"]
     }
   },
   "Projects": {
@@ -570,13 +554,7 @@
     "moreProjects": "View more {category} projects"
   },
   "Slogan": {
-    "words": [
-      "Design",
-      "|",
-      "Code",
-      "|",
-      "Impact"
-    ]
+    "words": ["Design", "|", "Code", "|", "Impact"]
   },
   "HamburgerMenu": {
     "open": "Open menu",
@@ -598,21 +576,9 @@
     "ctaSubtitle": "Get in touch and let's turn your idea into reality",
     "ctaButton": "Talk to the team",
     "categoryTags": [
-      [
-        "Web",
-        "Mobile",
-        "APIs"
-      ],
-      [
-        "UI/UX",
-        "Branding",
-        "Identity"
-      ],
-      [
-        "SEO",
-        "Social Media",
-        "Content"
-      ]
+      ["Web", "Mobile", "APIs"],
+      ["UI/UX", "Branding", "Identity"],
+      ["SEO", "Social Media", "Content"]
     ]
   },
   "CategoryProjectsPage": {

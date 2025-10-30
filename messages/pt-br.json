@@ -122,71 +122,72 @@
       }
     }
   },
+
   "PartnershipsPage": {
     "hero": {
       "title1": "Construa o Futuro",
       "title2": "com a Zatas",
       "subtitle": "Conecte-se com uma empresa em crescimento exponencial. Seja sócio, investidor ou parceiro estratégico.",
       "stats": {
-        "stat1": "300% de crescimento",
-        "stat2": "100+ projetos entregues",
-        "stat3": "5 países atendidos"
+        "stat1": "Crescimento comprovado",
+        "stat2": "Excelência reconhecida",
+        "stat3": "Visão global"
       },
       "buttonProject": "Explorar Projetos",
       "buttonInstagram": "Siga no Instagram"
     },
     "partnershipTypes": {
       "title": "Oportunidades de Parceria",
-      "subtitle": "Escolha a melhor forma de fazer parte da nossa jornada de crescimento",
+      "subtitle": "Encontre a melhor forma de colaborar e crescer junto com a Zatas",
       "types": [
         {
           "title": "Sócios Estratégicos",
-          "description": "Procuramos parceiros que compartilham nossa visão de transformar o mercado digital com inovação e excelência.",
+          "description": "Buscamos pessoas e empresas que acreditam no nosso potencial e queiram construir algo sólido desde o início.",
           "benefits": [
-            "Participação nos lucros",
-            "Decisões estratégicas",
-            "Crescimento compartilhado"
+            "Participação real nas decisões",
+            "Crescimento conjunto",
+            "Construção de base sólida"
           ]
         },
         {
           "title": "Investidores",
-          "description": "Empresa em crescimento acelerado buscando investimento para expansão nacional e internacional.",
+          "description": "Buscamos investidores que compartilham nossa visão de crescimento e acreditam no potencial de um time dedicado a construir o futuro.",
           "benefits": [
-            "ROI competitivo",
-            "Transparência total",
-            "Relatórios mensais"
+            "Acesso transparente aos resultados",
+            "Comunicação direta com os fundadores",
+            "Participação em decisões estratégicas"
           ]
         },
         {
           "title": "Parceiros Comerciais",
-          "description": "Construa uma rede de negócios sólida conosco. Indicações, projetos conjuntos e crescimento mútuo.",
+          "description": "Criamos parcerias com agências, freelancers e empresas que buscam somar forças em projetos de tecnologia, design e marketing.",
           "benefits": [
-            "Comissões atrativas",
-            "Suporte completo",
-            "Projetos exclusivos"
+            "Colaboração em projetos reais",
+            "Rede de contatos em expansão",
+            "Crescimento conjunto e aprendizado"
           ]
         }
       ]
     },
     "whyPartner": {
       "title": "Por que fazer parceria conosco?",
-      "subtitle": "Números e resultados que comprovam nosso potencial",
+      "subtitle": "Transformamos ideias em resultados com estratégia, qualidade e comprometimento.",
       "reasons": [
         {
-          "title": "Crescimento Acelerado",
-          "desc": "300% de crescimento nos últimos 2 anos"
+          "title": "Crescimento estratégico",
+          "desc": "Nosso modelo de atuação prioriza parcerias sólidas e resultados consistentes."
         },
         {
-          "title": "Portfólio de Elite",
-          "desc": "Mais de 100 projetos de sucesso entregues"
+          "title": "Equipe multidisciplinar",
+          "desc": "Reunimos especialistas em desenvolvimento, design e marketing digital para oferecer soluções completas e integradas."
         },
         {
-          "title": "Time Experiente",
-          "desc": "50+ profissionais altamente qualificados"
+          "title": "Atendimento humanizado",
+          "desc": "Cada projeto é tratado de forma exclusiva, com comunicação clara e acompanhamento próximo em todas as etapas."
         },
         {
-          "title": "Inovação Constante",
-          "desc": "Tecnologias de ponta e metodologias ágeis"
+          "title": "Inovação orientada a resultados",
+          "desc": "Aplicamos tecnologia e criatividade de forma inteligente para gerar impacto real no desempenho dos nossos clientes."
         }
       ]
     },
@@ -196,7 +197,7 @@
       "areas": [
         {
           "title": "Desenvolvimento",
-          "desc": "Web, Mobile, APIs e Sistemas Complexos"
+          "desc": "Web, Mobile, APIs e Soluções sob medida"
         },
         {
           "title": "Design & UX",
@@ -220,6 +221,7 @@
       "button": "Envie seu currículo"
     }
   },
+
   "TeamPage": {
     "title": "Nossa Equipe",
     "description": "Conheça os fundadores que tornam tudo isso possível",
@@ -238,12 +240,7 @@
         "name": "Antony Brito",
         "role": "CPO & Co-fundador",
         "bio": "Ampla experiência em desenvolvimento full-stack e design digital, unindo visão técnica e estética para criar produtos escaláveis e experiências digitais. Atua no planejamento e na implementação de soluções tecnológicas inovadoras, com foco em performance, usabilidade e identidade visual consistente.",
-        "skills": [
-          "Estratégia",
-          "Liderança",
-          "Inovação",
-          "Produto"
-        ],
+        "skills": ["Estratégia", "Liderança", "Inovação", "Produto"],
         "education": [
           {
             "institution": "Microsoft e LinkedIn",
@@ -422,29 +419,17 @@
     "desenvolvimento": {
       "title": "Desenvolvimento",
       "description": "Criamos soluções de software robustas, desde APIs escaláveis até aplicações web e móveis interativas.",
-      "tags": [
-        "Web",
-        "Mobile",
-        "APIs"
-      ]
+      "tags": ["Web", "Mobile", "APIs"]
     },
     "design": {
       "title": "Design",
       "description": "Desenhamos interfaces intuitivas e marcas memoráveis que conectam sua empresa ao seu público.",
-      "tags": [
-        "UI/UX",
-        "Branding",
-        "Identidade"
-      ]
+      "tags": ["UI/UX", "Branding", "Identidade"]
     },
     "marketing": {
       "title": "Marketing",
       "description": "Estratégias digitais focadas em crescimento, engajamento e resultados mensuráveis.",
-      "tags": [
-        "SEO",
-        "Copywriting",
-        "Ads"
-      ]
+      "tags": ["SEO", "Copywriting", "Ads"]
     }
   },
   "Projects": {
@@ -570,13 +555,7 @@
     "moreProjects": "Ver mais projetos de {category}"
   },
   "Slogan": {
-    "words": [
-      "Design",
-      "|",
-      "Código",
-      "|",
-      "Impacto"
-    ]
+    "words": ["Design", "|", "Código", "|", "Impacto"]
   },
   "HamburgerMenu": {
     "open": "Abrir menu",
@@ -598,21 +577,9 @@
     "ctaSubtitle": "Entre em contato e vamos transformar sua ideia em realidade",
     "ctaButton": "Falar com a equipe",
     "categoryTags": [
-      [
-        "Web",
-        "Mobile",
-        "APIs"
-      ],
-      [
-        "UI/UX",
-        "Branding",
-        "Identidade"
-      ],
-      [
-        "SEO",
-        "Social Media",
-        "Conteúdo"
-      ]
+      ["Web", "Mobile", "APIs"],
+      ["UI/UX", "Branding", "Identidade"],
+      ["SEO", "Social Media", "Conteúdo"]
     ]
   },
   "CategoryProjectsPage": {
