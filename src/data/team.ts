@@ -27,11 +27,11 @@ export const TEAM_PROFILES: TeamProfile[] = [
     }
   },
   {
-    id: 'ana-costa',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400',
+    id: 'thiago-bryan',
+    image: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/anacosta',
-      twitter: 'https://twitter.com/anacosta'
+      linkedin: 'https://www.linkedin.com/in/thbryann',
+      twitter: 'https://www.instagram.com/thbryann'
     }
   }
 ];

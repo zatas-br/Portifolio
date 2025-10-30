@@ -357,26 +357,34 @@
           }
         ]
       },
-      "ana-costa": {
-        "name": "Ana Costa",
+      "thiago-bryan": {
+        "name": "Thiago Bryan",
         "role": "CMO & Co-founder",
-        "bio": "Specialist in growth marketing and branding. Built marketing strategies that generated 300% growth in startups.",
+        "bio": "Experience in marketing and digital design, combining strategic planning and creative execution to generate real results. Focus on performance, branding, and digital presence, ensuring solutions that unite purpose and aesthetics.",
         "skills": [
-          "Growth Marketing",
-          "Branding",
-          "Analytics",
-          "Content Strategy"
+          "Team Work",
+          "Good communication",
+          "Proactivity",
+          "Organization",
+          "Ease of learning",
+          "Discipline",
+          "Adaptability"
         ],
         "education": [
           {
-            "institution": "Harvard Business School",
-            "degree": "MBA in Marketing",
-            "year": "2015"
+            "institution": "High School",
+            "degree": "E.E Arlindo Bittencourt",
+            "year": "2018 - 2024"
           },
           {
-            "institution": "FGV",
-            "degree": "Business Administration",
-            "year": "2011"
+            "institution": "Basic English",
+            "degree": "Wizard idiomas",
+            "year": "2021 - 2022"
+          },
+          {
+            "institution": "Journalism",
+            "degree": "Estácio De Sá ",
+            "year": "2025 - actual"
           }
         ],
         "experience": [
@@ -384,13 +392,13 @@
             "company": "Zatas",
             "role": "CMO & Co-founder",
             "period": "2020 - Present",
-            "description": "Leading all marketing and brand growth initiatives."
+            "description": "Responsible for marketing strategy and design."
           },
           {
-            "company": "Rock Content",
-            "role": "Marketing Director",
-            "period": "2016 - 2020",
-            "description": "Responsible for 10x growth in the customer base."
+            "company": "Graphic Designer",
+            "role": "Go Marketing Digital",
+            "period": "2023 - 2024",
+            "description": "Responsible for creating artwork for social media posts and logos."
           }
         ]
       }
