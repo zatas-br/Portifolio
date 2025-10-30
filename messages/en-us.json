@@ -278,7 +278,40 @@
       "fullDescription": "Este projeto envolveu a criação de um backend robusto com Spring Boot e um aplicativo móvel multiplataforma com React Native, focado em usabilidade e funcionalidade offline.",
       "client": "Projeto Pessoal",
       "year": "2024"
+    },
+    
+    "gerenciador-de-alunos": {
+      "title": "Student Manager",
+      "description": "The System manages and centralizes classes from various schools",
+      "fullDescription": "The system was developed with the purpose of managing the professor's different classes across various schools, addressing a failing of the government platform intended for teachers. The system, in turn, centralizes and organizes this information management.",
+      "client": "Marcos",
+      "year": "2024"
+    },
+    "trainingSec": {
+      "title": "E-commerce Platform",
+      "description": "Platform developed to manage and centralize NOVAES’s safety training, integrating employees, job roles, and Regulatory Standards.",
+      "fullDescription": "This safety training platform was developed with the goal of centralizing the logistics of NOVAES’s internal training, including employee management and the relationships between job positions and the Regulatory Standards required for each role.",
+      "client": "NOVAES",
+      "year": "2025"
+    },
+    "EPI-stock": {
+      "title": "EPI - Stock",
+      "description": "Platform for managing PPE inventory, with item tracking and CSV report export.",
+      "fullDescription": "This platform is a PPE inventory manager designed to replace spreadsheet-based control. It allows users to record item check-ins and check-outs, as well as export reports in CSV format.",
+      "client": "NOVAES",
+      "year": "2025"
+    },
+    "cash-flow": {
+      "title": "Cash Flow",
+      "description": "Project by the MDS group (ADS Senai-601/2024) to centralize reimbursement and expense control for corporate travel.",
+      "fullDescription": "This project was developed by the MDS group (Magic and Software Development) from the 2024 class of the Systems Analysis and Development (ADS) course at Senai-601. The goal of the project was to centralize the logistics of reimbursements and expense control for employees on corporate trips.",
+      "client": "Final Project - Senai",
+      "year": "2024"
     }
+
+
+
+
   },
 
   "AllProjectsPage": {

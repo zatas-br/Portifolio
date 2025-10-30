@@ -326,7 +326,37 @@
       "fullDescription": "Este projeto envolveu a criação de um backend robusto com Spring Boot e um aplicativo móvel multiplataforma com React Native, focado em usabilidade e funcionalidade offline.",
       "client": "Projeto Pessoal",
       "year": "2024"
+    },
+    "gerenciador-de-alunos" :{
+      "title": "Gerenciador de Alunos",
+      "description": "O Sistema gerencia e centraliza as turmas de diversas escolas",
+      "fullDescription": "O sistema foi desenvolvido com o intuito de gerenciar as diferentes turmas de diversas escolas que o professor possuía. Esse era um objetivo no qual a plataforma do governo destinada aos professores falhava. O sistema, por sua vez, centraliza e organiza essa gestão de informações.",
+      "client": "Marcos",
+      "year": "2024"
+    },
+    "trainingSec": {
+      "title": "Plataforma de E-commerce",
+      "description": "Plataforma desenvolvida para gerenciar e centralizar os treinamentos de segurança da NOVAES, integrando funcionários, cargos e Normas Regulamentadoras.",
+      "fullDescription": "Esta plataforma de treinamentos de segurança foi desenvolvida com o objetivo de centralizar a logística dos treinamentos internos da NOVAES, incluindo o gerenciamento dos funcionários e as relações entre cargos e as Normas Regulamentadoras necessárias para cada função.",
+      "client": "NOVAES",
+      "year": "2025"
+    },
+    "EPI-stock": {
+      "title": "EPI - Stock",
+      "description": "Plataforma para gerenciamento de estoque de EPIs, com controle de entradas, saídas e exportação de relatórios em CSV",
+      "fullDescription": "Esta plataforma é um gerenciador de estoque de EPIs, desenvolvida com o intuito de substituir o controle manual feito por planilhas. Nela, é possível registrar as entradas e saídas de itens, além de exportar relatórios em formato CSV.",
+      "client": "NOVAES",
+      "year": "2025"
+    },
+    "cash-flow": {
+      "title": "Cash Flow",
+      "description": "Projeto do grupo MDS (ADS Senai-601/2024) para centralizar o reembolso e o controle de despesas em viagens corporativas.",
+      "fullDescription": "Este foi o projeto desenvolvido pelo grupo MDS (Magia e Desenvolvimento de Software) da turma de 2024 do curso de Análise e Desenvolvimento de Sistemas (ADS) do Senai-601. O objetivo do projeto foi centralizar a logística de reembolso e o controle de gastos de funcionários em viagens corporativas.",
+      "client": "TCC - Senai",
+      "year": "2024"
     }
+
+
   },
 
   "AllProjectsPage": {
