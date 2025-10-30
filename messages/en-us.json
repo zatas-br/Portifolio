@@ -27,9 +27,9 @@
       "contact": {
         "label": "Contact",
         "links": [
-          { "label": "Email", "href": "mailto:contact@zatas.com.br", "ariaLabel": "Send us an email" },
-          { "label": "WhatsApp", "href": "https://wa.me/5516000000000", "ariaLabel": "Chat on WhatsApp" },
-          { "label": "LinkedIn", "href": "https://linkedin.com/company/zatas", "ariaLabel": "Connect on LinkedIn" }
+          { "label": "Email", "href": "mailto:contato@zatas.com.br", "ariaLabel": "Send us an email" },
+          { "label": "WhatsApp", "href": "https://wa.me/5516994418460", "ariaLabel": "Chat on WhatsApp" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/company/zatas/about", "ariaLabel": "Connect on LinkedIn" }
         ]
       }
   },

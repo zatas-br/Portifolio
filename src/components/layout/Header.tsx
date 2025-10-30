@@ -70,9 +70,9 @@ export default function Header() {
       bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
-        { label: t('contact.links.0.label'), href: 'mailto:contact@zatas.com.br', ariaLabel: t('contact.links.0.ariaLabel') },
-        { label: t('contact.links.1.label'), href: 'https://wa.me/5516000000000', ariaLabel: t('contact.links.1.ariaLabel') },
-        { label: t('contact.links.2.label'), href: 'https://linkedin.com/company/zatas', ariaLabel: t('contact.links.2.ariaLabel') }
+        { label: t('contact.links.0.label'), href: 'mailto:contato@zatas.com.br', ariaLabel: t('contact.links.0.ariaLabel') },
+        { label: t('contact.links.1.label'), href: 'https://wa.me/5516994418460', ariaLabel: t('contact.links.1.ariaLabel') },
+        { label: t('contact.links.2.label'), href: 'https://www.linkedin.com/company/zatas/about', ariaLabel: t('contact.links.2.ariaLabel') }
       ]
     }
   ];
