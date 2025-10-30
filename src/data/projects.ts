@@ -68,10 +68,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
   {
     id: 'gerenciador-de-alunos',
     category: 'desenvolvimento',
-    image: '/images/projects/personal-app/hero.jpg',
+    image: 'https://i.postimg.cc/P57PRFkR/g1.jpg',
     technologies: ['Java', 'Gradlew', 'SQLite', 'JUnit', "Swing", "Flatlaf"],
     link: null,
-    gallery:  [],
+    gallery:  [
+      'https://i.postimg.cc/P57PRFkR/g1.jpg',
+      'https://i.postimg.cc/7ZRfWQyQ/g2.jpg',
+      'https://i.postimg.cc/fRPJrgh2/g3.jpg',
+      'https://i.postimg.cc/sgLvN0R8/g4.jpg'
+    ],
     authors: [
       { 
         name: 'Bruno', 
@@ -90,10 +95,17 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
   {
     id: 'trainingSec',
     category: 'desenvolvimento',
-    image: '/images/projects/personal-app/hero.jpg',
+    image: 'https://i.postimg.cc/Qd73j67s/n1.jpg',
     technologies: ['Java', 'Gradlew', 'Spring', 'JUnit', "PostgreSQL", "H2 Database", "NextJS", "TypeScript", "Tailwind", "Radix"],
     link: null,
-    gallery:  [],
+    gallery:  [
+      'https://i.postimg.cc/Qd73j67s/n1.jpg',
+      'https://i.postimg.cc/htmBKCmS/n2.jpg',
+      'https://i.postimg.cc/9Q9hcx9z/n3.jpg',
+      'https://i.postimg.cc/DwGT7CGh/n4.jpg',
+      'https://i.postimg.cc/vZnsGPnw/n5.jpg',
+      'https://i.postimg.cc/52zVfPzM/n6.jpg'
+    ],
     authors: [
       { 
         name: 'Bruno', 
@@ -112,10 +124,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
   {
     id: 'EPI-stock',
     category: 'desenvolvimento',
-    image: '/images/projects/personal-app/hero.jpg',
+    image: 'https://i.postimg.cc/gkF9NVQp/s1.jpg',
     technologies: ['TypeScript', 'JavaScript', 'Node', 'MySQL', "Vite", "React", "Tailwind"],
     link: null,
-    gallery:  [],
+    gallery:  [
+      'https://i.postimg.cc/gkF9NVQp/s1.jpg',
+      'https://i.postimg.cc/YqKcb6Zw/s2.jpg',
+      'https://i.postimg.cc/WbLRXGCL/s3.jpg', 
+      'https://i.postimg.cc/kXx0ZV3h/s4.jpg',
+    ],
     authors: [
       { 
         name: 'Bruno', 
@@ -128,10 +145,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
   {
     id: 'cash-flow',
     category: 'desenvolvimento',
-    image: '/images/projects/personal-app/hero.jpg',
+    image: 'https://i.postimg.cc/bYLbRgd6/c1.png',
     technologies: ['Java', 'H2DB', 'Spring', 'JUnit', "Thymeleaf", "expo GO", "React Native", "JavaScript"],
     link: null,
-    gallery:  [],
+    gallery:  [
+      'https://i.postimg.cc/bYLbRgd6/c1.png',
+      'https://i.postimg.cc/yxfZY1wh/c2.png',
+      'https://i.postimg.cc/pr0FXWgf/c3.png', 
+      'https://i.postimg.cc/Kj9MvGdr/c4.png',
+    ],
     authors: [
       { 
         name: 'Bruno', 
