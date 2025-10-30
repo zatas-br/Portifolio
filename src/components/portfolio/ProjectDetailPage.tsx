@@ -13,7 +13,7 @@ import {
   FaImages,
   FaUser
 } from 'react-icons/fa';
-import { PROJECTS } from '@/src/data/projects';
+import { PROJECTS_STATIC } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import AuthorCard from '@/src/components/portfolio/AuthorCard';
 import { useTranslations } from 'next-intl';
@@ -25,8 +25,11 @@ interface ProjectDetailPageProps {
 
 export default function ProjectDetailPage({ projectId, category }: ProjectDetailPageProps) {
   const t = useTranslations('ProjectDetailPage');
+  const tCategory = useTranslations(`Categories.${category}`);
+  const tProject = useTranslations(`Projects.${projectId}`);
+
   const router = useRouter();
-  const project = PROJECTS.find(p => p.id === projectId);
+  const project = PROJECTS_STATIC.find(p => p.id === projectId);
   const headerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -46,7 +49,13 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
 
   if (!project) return null;
 
-  // Determinar se há autores para exibir
+  const title = tProject('title');
+  const description = tProject('description');
+  const fullDescription = tProject('fullDescription');
+  const year = tProject('year');
+  const client = tProject('client');
+  const categoryTitle = tCategory('title');
+
   const hasAuthors = project.authors && project.authors.length > 0;
   const isSingleAuthor = hasAuthors && project.authors!.length === 1;
 
@@ -71,12 +80,12 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
 
           {/* Title */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
-            {project.title}
+            {title}
           </h1>
           
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl">
-            {project.description}
+            {description}
           </p>
           
           {/* Meta Info */}
@@ -85,15 +94,15 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               <FaCalendar className="w-4 h-4 text-primary" />
               <div>
                 <span className="block text-xs text-text-muted mb-0.5">{t('meta.year')}</span>
-                <span className="font-semibold text-text">{project.year}</span>
+                <span className="font-semibold text-text">{year}</span>
               </div>
             </div>
-            {project.client && (
+            {client && (
               <div className="flex items-center gap-2">
                 <FaBriefcase className="w-4 h-4 text-primary" />
                 <div>
                   <span className="block text-xs text-text-muted mb-0.5">{t('meta.client')}</span>
-                  <span className="font-semibold text-text">{project.client}</span>
+                  <span className="font-semibold text-text">{client}</span>
                 </div>
               </div>
             )}
@@ -150,7 +159,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
         <div ref={heroRef} className="mb-16 rounded-2xl overflow-hidden shadow-2xl border-2 border-border group">
           <img 
             src={project.image} 
-            alt={project.title} 
+            alt={title}
             className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500" 
           />
         </div>
@@ -165,7 +174,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 <h2 className="text-2xl md:text-3xl font-bold text-text">{t('about')}</h2>
               </div>
               <p className="text-base md:text-lg text-text-muted leading-relaxed">
-                {project.fullDescription}
+                {fullDescription}
               </p>
             </div>
           </div>
@@ -219,9 +228,9 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                   ref={el => { galleryRef.current[index] = el; }}
                   className="rounded-xl overflow-hidden shadow-lg border-2 border-border hover:shadow-2xl hover:border-primary transition-all duration-300 group cursor-pointer"
                 >
-                  <img 
-                    src={img} 
-                    alt={`${project.title} - ${index + 1}`} 
+                  <img
+                    src={img}
+                    alt={`${title} - ${index + 1}`}
                     className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 </div>

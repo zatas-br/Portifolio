@@ -18,7 +18,7 @@ import {
 import { 
   HiSparkles 
 } from 'react-icons/hi';
-import { CATEGORIES } from '@/src/data/projects';
+import { CATEGORIES_STATIC } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import { useTranslations } from 'next-intl';
 
@@ -41,6 +41,8 @@ const tagIcons: Record<string, React.ReactNode> = {
 
 export default function ServicesLandingPage() {
   const t = useTranslations('ServicesLandingPage');
+  const tCategories = useTranslations('Categories');
+
   const router = useRouter();
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -51,13 +53,19 @@ export default function ServicesLandingPage() {
     animateEnter(cardsRef.current, 0.15);
   }, [animateEnter, animateFadeIn]);
 
-  const categoryTags = t.raw('categoryTags') as string[][];
 
   return (
     <div className="min-h-screen bg-surface">
       {/* Header */}
       <div ref={headerRef} className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
+          {/* Badge */}
+          <div className="flex justify-center mb-6">
+            <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
+              <HiSparkles className="w-4 h-4 text-primary" />
+              {t('badge')}
+            </span>
+          </div>
           
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold text-center mb-6">
@@ -78,52 +86,60 @@ export default function ServicesLandingPage() {
       {/* Categories Grid */}
       <div className="max-w-7xl mx-auto px-6 pb-20">
         <div className="grid md:grid-cols-3 gap-8">
-          {CATEGORIES.map((category, index) => (
-            <div
-              key={category.id}
-              ref={el => { cardsRef.current[index] = el; }}
-              onClick={() => router.push(`/services/${category.id}`)}
-              className="group cursor-pointer"
-            >
-              <div className="bg-surface border-2 border-border rounded-3xl p-8 h-full hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                {/* Icon */}
-                <div className="text-primary mb-6 group-hover:scale-110 group-hover:text-primary-hover transition-all duration-300">
-                  {categoryIcons[category.id] || category.icon}
-                </div>
+          {/* Mapeia os dados ESTÁTICOS */}
+          {CATEGORIES_STATIC.map((category, index) => {
+            // Busca os dados traduzíveis usando o ID
+            const title = tCategories(`${category.id}.title`);
+            const description = tCategories(`${category.id}.description`);
+            const tags = tCategories.raw(`${category.id}.tags`) as string[];
 
-                {/* Title */}
-                <h2 className="text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">
-                  {category.title}
-                </h2>
+            return (
+              <div
+                key={category.id}
+                ref={el => { cardsRef.current[index] = el; }}
+                onClick={() => router.push(`/services/${category.id}`)}
+                className="group cursor-pointer"
+              >
+                <div className="bg-surface border-2 border-border rounded-3xl p-8 h-full hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                  {/* Icon (usa o ID estático) */}
+                  <div className="text-primary mb-6 group-hover:scale-110 group-hover:text-primary-hover transition-all duration-300">
+                    {categoryIcons[category.id]}
+                  </div>
 
-                {/* Description */}
-                <p className="text-lg text-text-muted mb-8 leading-relaxed">
-                  {category.description}
-                </p>
+                  {/* Title (traduzido) */}
+                  <h2 className="text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">
+                    {title}
+                  </h2>
 
-                {/* CTA */}
-                <div className="flex items-center gap-2 text-primary font-semibold cursor-pointer">
-                  <span>{t('viewProjects')}</span>
-                  <FaArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                </div>
+                  {/* Description (traduzido) */}
+                  <p className="text-lg text-text-muted mb-8 leading-relaxed">
+                    {description}
+                  </p>
 
-                {/* Decorative element with icons */}
-                <div className="mt-8 pt-6 border-t border-border">
-                  <div className="flex flex-wrap gap-3">
-                    {categoryTags[index].map((tag) => (
-                      <span 
-                        key={tag}
-                        className="flex items-center gap-1.5 text-sm text-text-muted bg-surface-alt px-3 py-1.5 rounded-full"
-                      >
-                        {tagIcons[tag]}
-                        {tag}
-                      </span>
-                    ))}
+                  {/* CTA */}
+                  <div className="flex items-center gap-2 text-primary font-semibold cursor-pointer">
+                    <span>{t('viewProjects')}</span>
+                    <FaArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  </div>
+
+                  {/* Tags (traduzidas) */}
+                  <div className="mt-8 pt-6 border-t border-border">
+                    <div className="flex flex-wrap gap-3">
+                      {tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="flex items-center gap-1.5 text-sm text-text-muted bg-surface-alt px-3 py-1.5 rounded-full"
+                        >
+                          {tagIcons[tag]}
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Stats ou CTA adicional */}

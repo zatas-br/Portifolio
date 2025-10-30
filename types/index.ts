@@ -66,8 +66,8 @@ export interface CardNavProps {
 
 export interface ProjectAuthor {
   name: string;
-  role?: string;
   avatar?: string;
+  role?: string;
   linkedin?: string;
   github?: string;
   instagram?: string;
@@ -75,39 +75,44 @@ export interface ProjectAuthor {
   email?: string;
 }
 
-export interface Project {
-  id: string;
+
+export type CategoryID = 'desenvolvimento' | 'design' | 'marketing';
+
+export interface CategoryStatic {
+  id: CategoryID;
+}
+
+export interface CategoryContent {
   title: string;
-  category: 'desenvolvimento' | 'design' | 'marketing';
-  image: string;
   description: string;
-  year: number;
+  tags: string[];
+}
+
+export interface Category extends CategoryStatic, CategoryContent {}
+
+export interface ProjectStatic {
+  id: string;
+  category: CategoryID;
+  image: string;
   authors?: ProjectAuthor[];
   technologies: string[];
-  fullDescription: string;
   gallery: string[];
-  client?: string;
-  link?: string;
+  link?: string | null;
 }
 
-export interface Category {
-  id: string;
+export interface ProjectContent {
   title: string;
-  icon: string;
   description: string;
+  year: string;
+  fullDescription: string;
+  client?: string;
 }
 
-// 📁 src/types/about.ts
+export interface Project extends ProjectStatic, ProjectContent {}
 
-export interface TeamMember {
+export interface TeamProfile {
   id: string;
-  name: string;
-  role: string;
   image: string;
-  bio: string;
-  skills: string[];
-  education: Education[];
-  experience: Experience[];
   social: {
     linkedin?: string;
     github?: string;
@@ -128,23 +133,13 @@ export interface Experience {
   description: string;
 }
 
-export interface Job {
-  id: string;
-  title: string;
-  department: string;
-  location: string;
-  type: 'full-time' | 'part-time' | 'freelance';
-  description: string;
-  requirements: string[];
-  benefits: string[];
+export interface MemberContent {
+  name: string;
+  role: string;
+  bio: string;
+  skills: string[];
+  education: Education[];
+  experience: Experience[];
 }
 
-export type TeamProfile = {
-  id: string;
-  image: string;
-  social: {
-    linkedin?: string;
-    github?: string;
-    twitter?: string;
-  };
-};
+export interface TeamMember extends TeamProfile, MemberContent {}

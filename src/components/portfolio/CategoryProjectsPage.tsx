@@ -10,7 +10,7 @@ import {
   FaExternalLinkAlt,
   FaFolder
 } from 'react-icons/fa';
-import { PROJECTS, CATEGORIES } from '@/src/data/projects';
+import { PROJECTS_STATIC } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import { useTranslations } from 'next-intl';
 import { Category, Project } from '@/types';
@@ -18,8 +18,6 @@ import gsap from 'gsap';
 
 interface CategoryProjectsPageProps {
   category: 'desenvolvimento' | 'design' | 'marketing';
-  projects: Project[];
-  categoryDetails: Category | undefined;
 }
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -30,19 +28,24 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 export default function CategoryProjectsPage({ category }: CategoryProjectsPageProps) {
   const t = useTranslations('CategoryProjectsPage');
+  const tCategories = useTranslations('Categories');
+  const tProjects = useTranslations('Projects');
+
   const router = useRouter();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const imageRef = useRef<HTMLDivElement>(null);
   const { animateFadeIn } = usePortfolioAnimations();
   
   // Flag para controlar se as animações iniciais já foram executadas
   const animationsExecutedRef = useRef(false);
 
-  const filteredProjects = PROJECTS.filter(p => p.category === category);
-  const categoryData = CATEGORIES.find(c => c.id === category);
+  const filteredProjects = PROJECTS_STATIC.filter(p => p.category === category);
 
-  // Animações iniciais - executam apenas uma vez
+  const categoryTitle = tCategories(`${category}.title`);
+  const categoryDescription = tCategories(`${category}.description`);
+
   useEffect(() => {
     if (animationsExecutedRef.current) return;
     
@@ -57,6 +60,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   }, [animateFadeIn]);
 
   const hoveredProjectData = filteredProjects.find(p => p.id === hoveredProject);
+  const hoveredProjectTitle = hoveredProjectData ? tProjects(`${hoveredProjectData.id}.title`) : '';
+  const hoveredProjectDescription = hoveredProjectData ? tProjects(`${hoveredProjectData.id}.description`) : '';
+  const hoveredProjectClient = hoveredProjectData? tProjects(`${hoveredProjectData.id}.client`) : '';
 
   const handleProjectClick = (projectId: string) => {
     router.push(`/services/${category}/${projectId}`);
@@ -72,11 +78,11 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
               {categoryIcons[category]}
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white">
-              {categoryData?.title}
+              {categoryTitle}
             </h1>
           </div>
           <p className="text-base sm:text-lg text-gray max-w-2xl leading-relaxed">
-            {categoryData?.description}
+            {categoryDescription}
           </p>
           <div className="mt-6 sm:mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
@@ -94,7 +100,13 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Lista de Projetos */}
           <div className="space-y-4 sm:space-y-6">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project, index) => {
+            
+            const title = tProjects(`${project.id}.title`);
+            const description = tProjects(`${project.id}.description`);
+            const client = tProjects(`${project.id}.client`);
+
+            return (
               <div
                 key={project.id}
                 ref={el => { projectsRef.current[index] = el; }}
@@ -107,18 +119,18 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   {/* Imagem Mobile */}
                   <div className="lg:hidden mb-4 rounded-xl overflow-hidden bg-surface-alt">
                     <img 
-                      src={project.image} 
-                      alt={project.title}
+                      src={project.image}
+                      alt={title}
                       className="w-full h-48 object-cover"
                     />
                   </div>
 
                   <h3 className="text-2xl font-bold text-text mb-3 group-hover:text-primary transition-colors flex items-center gap-2">
-                    {project.title}
+                    {title}
                     <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h3>
                   <p className="text-sm sm:text-base text-text-muted mb-4 leading-relaxed">
-                    {project.description}
+                    {description}
                   </p>
                   
                   {/* Tags de Tecnologia */}
@@ -140,7 +152,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
 
                   {/* Footer */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm pt-4 border-t border-border">
-                    <span className="text-text-muted">{project.client}</span>
+                    <span className="text-text-muted">{client}</span>
                     <span className="flex items-center gap-2 text-primary font-semibold">
                       {t('viewProject')} 
                       <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -148,7 +160,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                   </div>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
 
           {/* Preview de Imagem - Desktop Only com Info Sobreposta */}
@@ -158,7 +170,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
               {hoveredProjectData ? (
                 <img
                   src={hoveredProjectData.image}
-                  alt={hoveredProjectData.title}
+                  alt={hoveredProjectTitle}
                   className="w-full h-full object-cover transition-all duration-500"
                 />
               ) : (
@@ -185,13 +197,13 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                       {t('preview')}
                     </p>
                     <h3 className="text-xl font-bold mb-2">
-                      {hoveredProjectData.title}
+                      {hoveredProjectTitle}
                     </h3>
                     <p className="text-sm text-white/90 line-clamp-2 mb-3">
-                      {hoveredProjectData.description}
+                      {hoveredProjectDescription}
                     </p>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-white/80">{hoveredProjectData.client}</span>
+                      <span className="text-white/80">{hoveredProjectClient}</span>
                       <span className="flex items-center gap-1 text-white font-medium">
                         Ver detalhes
                         <FaArrowRight className="w-3 h-3" />

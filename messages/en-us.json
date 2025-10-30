@@ -246,6 +246,46 @@
       "submit": "Send Message"
     }
   },
+  "Categories": {
+    "desenvolvimento": {
+      "title": "Desenvolvimento",
+      "description": "Criamos soluções de software robustas, desde APIs escaláveis até aplicações web e móveis interativas.",
+      "tags": ["Web", "Mobile", "APIs"]
+    },
+    "design": {
+      "title": "Design",
+      "description": "Desenhamos interfaces intuitivas e marcas memoráveis que conectam sua empresa ao seu público.",
+      "tags": ["UI/UX", "Branding", "Identidade"]
+    },
+    "marketing": {
+      "title": "Marketing",
+      "description": "Estratégias digitais focadas em crescimento, engajamento e resultados mensuráveis.",
+      "tags": ["SEO", "Copywriting", "Ads"]
+    }
+  },
+
+  "Projects": {
+    "zatas-website": {
+      "title": "Website Zatas",
+      "description": "Desenvolvimento do website institucional da Zatas, focado em performance e animações.",
+      "fullDescription": "Uma descrição muito mais longa e detalhada sobre o desafio, a solução e os resultados do projeto do website da Zatas. Explicando as escolhas tecnológicas e o impacto para o cliente.",
+      "client": "Zatas (Interno)",
+      "year": "2025"
+    },
+    "personal-app": {
+      "title": "Aplicativo de Treino",
+      "description": "App mobile para personal trainers e alunos gerenciarem treinos e progresso.",
+      "fullDescription": "Este projeto envolveu a criação de um backend robusto com Spring Boot e um aplicativo móvel multiplataforma com React Native, focado em usabilidade e funcionalidade offline.",
+      "client": "Projeto Pessoal",
+      "year": "2024"
+    }
+  },
+
+  "AllProjectsPage": {
+    "title": "Todos os Projetos",
+    "subtitle": "Explore nosso portfólio completo",
+    "allButton": "Todos"
+  },
   "ProjectDetailPage": {
     "backButton": "Back to projects",
     "badge": "Case Study",

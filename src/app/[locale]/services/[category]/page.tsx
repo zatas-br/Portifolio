@@ -3,27 +3,33 @@
 import CategoryProjectsPage from '@/src/components/portfolio/CategoryProjectsPage';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
-import { getCategoryData } from '@/src/data/projects';
+import { notFound } from 'next/navigation';
+import { CATEGORIES_STATIC } from '@/src/data/projects'; // Importamos os dados estáticos
+import { CategoryID } from '@/types'; // Importamos o tipo que definimos
 
 type Props = {
-  params: Promise<{ locale: string; category: string }>;
+  params: { 
+    locale: string;
+    category: CategoryID;
+  };
 };
 
-// Mapeia os valores da URL para as chaves de tradução
-const categoryTranslationKeys: { [key: string]: string } = {
-  'desenvolvimento': 'development',
-  'design': 'design',
-  'marketing': 'marketing',
-};
+function isValidCategory(category: string): category is CategoryID {
+  return CATEGORIES_STATIC.some(c => c.id === category);
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, category } = await params;
-  const t = await getTranslations({ locale, namespace: 'PageTitles' });
-  
-  const translationKey = categoryTranslationKeys[category] || 'services';
-  const { categoryData } = getCategoryData(category);
 
-  const title = categoryData ? t(translationKey) : t('services');
+  if (!isValidCategory(category)) {
+    const tDefault = await getTranslations({ locale, namespace: 'Navigation' });
+    return {
+      title: `${tDefault('home')} | Zatas`,
+    };
+  }
+
+  const t = await getTranslations({ locale, namespace: 'Categories' });
+  const title = t(`${category}.title`);
 
   return {
     title: `${title} | Zatas`,
@@ -32,14 +38,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  // Buscando os dados aqui e passando para o client component
-  const { categoryData, filteredProjects } = getCategoryData(category);
-  
+
+  if (!isValidCategory(category)) {
+    notFound();
+  }
+
   return (
     <CategoryProjectsPage 
-      category={category as 'desenvolvimento' | 'design' | 'marketing'} 
-      projects={filteredProjects}
-      categoryDetails={categoryData}
+      category={category} 
     />
   );
 }
