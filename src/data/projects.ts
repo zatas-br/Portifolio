@@ -1,6 +1,6 @@
 // 📁 src/data/projects.ts
 // (Você precisará definir estes tipos em seu arquivo types.ts)
-import { CategoryStatic, ProjectStatic } from '@/types'; 
+import { CategoryStatic, ProjectStatic } from '@/types';
 
 /**
  * Contém apenas dados estáticos de categorias (ID e ícone).
@@ -31,31 +31,31 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/76JszL3C/z5.png',
     ],
     // A estrutura de autores já parece estar correta e desacoplada.
-    authors: [ 
-      { 
-        name: 'Thiago Bryan', 
-        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg', 
+    authors: [
+      {
+        name: 'Thiago Bryan',
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
         role: 'Head of marketing and design',
         linkedin: 'https://www.linkedin.com/in/thbryann',
         instagram: 'https://www.instagram.com/thbryann',
       },
-      { 
-        name: 'Bruno Santiago', 
-        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg', 
+      {
+        name: 'Bruno Santiago',
+        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b',
         instagram: 'https://www.instagram.com/bruno_s4nt',
       },
-      { 
-        name: 'Antony Brito', 
-        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/britoantony',
         instagram: 'https://www.instagram.com/antonybriito',
       },
-      { 
-        name: 'Gabriel Cardoso', 
-        avatar: 'https://i.postimg.cc/1XYgw9sY/brya.jpg', 
+      {
+        name: 'Gabriel Cardoso',
+        avatar: 'https://i.postimg.cc/1XYgw9sY/brya.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328',
         instagram: 'https://www.instagram.com/gabrielcardos095',
@@ -79,23 +79,23 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/7ZbghWMz/dm4.jpg',
     ],
     authors: [
-       { 
-        name: 'Bruno Santiago', 
-        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg', 
+      {
+        name: 'Bruno Santiago',
+        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b',
         instagram: 'https://www.instagram.com/bruno_s4nt',
       },
-      { 
-        name: 'Antony Brito', 
-        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/britoantony',
         instagram: 'https://www.instagram.com/antonybriito',
       },
-      { 
-        name: 'Gabriel Cardoso', 
-        avatar: 'https://i.postimg.cc/1XYgw9sY/brya.jpg', 
+      {
+        name: 'Gabriel Cardoso',
+        avatar: 'https://i.postimg.cc/1XYgw9sY/brya.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328',
         instagram: 'https://www.instagram.com/gabrielcardos095',
@@ -108,22 +108,22 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     image: 'https://i.postimg.cc/P57PRFkR/g1.jpg',
     technologies: ['Java', 'Gradlew', 'SQLite', 'JUnit', "Swing", "Flatlaf"],
     link: null,
-    gallery:  [
+    gallery: [
       'https://i.postimg.cc/P57PRFkR/g1.jpg',
       'https://i.postimg.cc/7ZRfWQyQ/g2.jpg',
       'https://i.postimg.cc/fRPJrgh2/g3.jpg',
       'https://i.postimg.cc/sgLvN0R8/g4.jpg'
     ],
     authors: [
-      { 
-        name: 'Bruno Santiago', 
-        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg', 
+      {
+        name: 'Bruno Santiago',
+        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       },
-      { 
-        name: 'Jose', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Jose',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       }
@@ -135,7 +135,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     image: 'https://i.postimg.cc/Qd73j67s/n1.jpg',
     technologies: ['Java', 'Gradlew', 'Spring', 'JUnit', "PostgreSQL", "H2 Database", "NextJS", "TypeScript", "Tailwind", "Radix"],
     link: null,
-    gallery:  [
+    gallery: [
       'https://i.postimg.cc/Qd73j67s/n1.jpg',
       'https://i.postimg.cc/htmBKCmS/n2.jpg',
       'https://i.postimg.cc/9Q9hcx9z/n3.jpg',
@@ -144,15 +144,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/52zVfPzM/n6.jpg'
     ],
     authors: [
-      { 
-        name: 'Bruno Santiago', 
-        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg', 
+      {
+        name: 'Bruno Santiago',
+        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       },
-      { 
-        name: 'Luigi', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Luigi',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       }
@@ -164,16 +164,16 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     image: 'https://i.postimg.cc/gkF9NVQp/s1.jpg',
     technologies: ['TypeScript', 'JavaScript', 'Node', 'MySQL', "Vite", "React", "Tailwind"],
     link: null,
-    gallery:  [
+    gallery: [
       'https://i.postimg.cc/gkF9NVQp/s1.jpg',
       'https://i.postimg.cc/YqKcb6Zw/s2.jpg',
-      'https://i.postimg.cc/WbLRXGCL/s3.jpg', 
+      'https://i.postimg.cc/WbLRXGCL/s3.jpg',
       'https://i.postimg.cc/kXx0ZV3h/s4.jpg',
     ],
     authors: [
-      { 
-        name: 'Bruno Santiago', 
-        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg', 
+      {
+        name: 'Bruno Santiago',
+        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       }
@@ -185,54 +185,54 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     image: 'https://i.postimg.cc/bYLbRgd6/c1.png',
     technologies: ['Java', 'H2DB', 'Spring', 'JUnit', "Thymeleaf", "expo GO", "React Native", "JavaScript"],
     link: null,
-    gallery:  [
+    gallery: [
       'https://i.postimg.cc/bYLbRgd6/c1.png',
       'https://i.postimg.cc/yxfZY1wh/c2.png',
-      'https://i.postimg.cc/pr0FXWgf/c3.png', 
+      'https://i.postimg.cc/pr0FXWgf/c3.png',
       'https://i.postimg.cc/Kj9MvGdr/c4.png',
     ],
     authors: [
-      { 
-        name: 'Bruno Santiago', 
-        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg', 
+      {
+        name: 'Bruno Santiago',
+        avatar: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       },
-      { 
-        name: 'Jose', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Jose',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       },
-      { 
-        name: 'Willson', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Willson',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       },
-      { 
-        name: 'Gustavo', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Gustavo',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       },
-      { 
-        name: 'Camila', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Camila',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       },
-      { 
-        name: 'Roberto', 
-        avatar: '/images/team/bruno.jpg', 
+      {
+        name: 'Roberto',
+        avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       },
     ]
   },
-  
+
   {
-  id: 'carlos-advogado',
+    id: 'carlos-advogado',
     category: 'design',
     image: 'https://i.postimg.cc/bJtwPnDd/Capa-Carlos-1.png',
     technologies: ['Canva', 'Freepik'],
@@ -249,15 +249,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/s28gbmXy/12.png',
     ],
     authors: [
-      { 
-        name: 'Thiago Bryan', 
-        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg', 
+      {
+        name: 'Thiago Bryan',
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
         role: 'Head of marketing and design',
         linkedin: 'https://www.linkedin.com/in/thbryann',
         instagram: 'https://www.instagram.com/thbryann',
       }
     ]
-  },{
+  }, {
     id: 'souzaevilela',
     category: 'design',
     image: 'https://i.postimg.cc/fLXbxdvJ/E-ESSE-AQUI-OO.png',
@@ -274,15 +274,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/h4s0xQZ6/Bancario-Souza-e-Vilela6-1.png',
     ],
     authors: [
-      { 
-        name: 'Thiago Bryan', 
-        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg', 
+      {
+        name: 'Thiago Bryan',
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
         role: 'Head of marketing and design',
         linkedin: 'https://www.linkedin.com/in/thbryann',
         instagram: 'https://www.instagram.com/thbryann',
       }
     ]
-  },{
+  }, {
     id: 'luiz-gustavo',
     category: 'design',
     image: 'https://i.postimg.cc/Qt8gXyH5/Apresentacoes-Portifolio1-1.png',
@@ -297,9 +297,9 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/13M5k71Z/Maio-Luiz-Gustavo-234-1.png',
     ],
     authors: [
-      { 
-        name: 'Thiago Bryan', 
-        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg', 
+      {
+        name: 'Thiago Bryan',
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
         role: 'Head of marketing and design',
         linkedin: 'https://www.linkedin.com/in/thbryann',
         instagram: 'https://www.instagram.com/thbryann',
@@ -319,9 +319,9 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/T24Df25F/montela04.jpg',
     ],
     authors: [
-      { 
-        name: 'Antony Brito', 
-        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
         role: 'Head of Growth & Product',
         linkedin: 'https://www.linkedin.com/in/britoantony',
         instagram: 'https://www.instagram.com/antonybriito',
@@ -340,40 +340,40 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/QCRfSZqp/l3.png',
     ],
     authors: [
-      { 
-        name: 'Raissa', 
+      {
+        name: 'Raissa',
         avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...',
       },
-      { 
-        name: 'Antony Brito', 
-        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
         role: 'Head of Growth & Product',
         linkedin: 'https://www.linkedin.com/in/britoantony',
         instagram: 'https://www.instagram.com/antonybriito',
       },
-      { 
-        name: 'Gabriel Cardoso', 
-        avatar: 'https://i.postimg.cc/1XYgw9sY/brya.jpg', 
+      {
+        name: 'Gabriel Cardoso',
+        avatar: 'https://i.postimg.cc/1XYgw9sY/brya.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: 'https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328',
         instagram: 'https://www.instagram.com/gabrielcardos095',
       },
-      { 
-        name: 'Juliana', 
+      {
+        name: 'Juliana',
         avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...',
       },
-      { 
-        name: 'João Gabriel', 
+      {
+        name: 'João Gabriel',
         avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...',
       },
-      { 
-        name: 'Vitoria', 
+      {
+        name: 'Vitoria',
         avatar: '/images/team/bruno.jpg',
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...',
@@ -381,7 +381,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     ]
   },
   {
-  id: 'zatas',
+    id: 'zatas',
     category: 'design',
     image: 'https://i.postimg.cc/fy9gWzZq/zatas-capa.jpg',
     technologies: ['Photoshop', 'Illustrator'],
@@ -392,9 +392,9 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/FzLnFrmq/zatas03.jpg',
     ],
     authors: [
-      { 
-        name: 'Antony Brito', 
-        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
         role: 'Head of Growth & Product',
         linkedin: 'https://www.linkedin.com/in/britoantony',
         instagram: 'https://www.instagram.com/antonybriito',
@@ -402,11 +402,41 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     ]
   },
   {
-  id: 'jersey-hub',
+    id: 'aureni-brito',
+    category: 'design',
+    image: 'https://i.postimg.cc/52bYmsHK/aureni-capa.jpg',
+    technologies: ['Photoshop', 'Illustrator'],
+    link: null,
+    gallery: [
+      'https://i.postimg.cc/FHpfC03X/aureni01.jpg',
+      'https://i.postimg.cc/HkzJvb5f/aureni02.jpg',
+      'https://i.postimg.cc/Cx7ZrbDt/aureni03.jpg'
+    ],
+       authors: [
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
+        role: 'Head of Growth & Product',
+        linkedin: 'https://www.linkedin.com/in/britoantony',
+        instagram: 'https://www.instagram.com/antonybriito',
+        email: 'brito@zatas.com.br'
+      },
+      {
+        name: 'Thiago Bryan',
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
+        role: 'Head of marketing and design',
+        linkedin: 'https://www.linkedin.com/in/thbryann',
+        instagram: 'https://www.instagram.com/thbryann',
+        email: 'bryan@zatas.com.br'
+      }
+    ]
+  },
+  {
+    id: 'jersey-hub',
     category: 'marketing',
     image: 'https://i.postimg.cc/bJHGMbkX/jh-capa.png',
     technologies: ['Social Media', 'Content Strategy', 'Organic Growth', 'Analytics', 'Engagement'],
-    link: null,
+    link: 'https://x.com/jerseyhubBR',
     gallery: [
       'https://i.postimg.cc/vBL1j9fF/jh-05.jpg',
       'https://i.postimg.cc/L6mkH48W/jh-04.jpg',
@@ -416,17 +446,17 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       'https://i.postimg.cc/tCD370sS/jh01.jpg'
     ],
     authors: [
-      { 
-        name: 'Antony Brito', 
-        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+      {
+        name: 'Antony Brito',
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
         role: 'Head of Growth & Product',
         linkedin: 'https://www.linkedin.com/in/britoantony',
         instagram: 'https://www.instagram.com/antonybriito',
         email: 'brito@zatas.com.br'
       },
-      { 
-        name: 'Thiago Bryan', 
-        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg', 
+      {
+        name: 'Thiago Bryan',
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg',
         role: 'Head of marketing and design',
         linkedin: 'https://www.linkedin.com/in/thbryann',
         instagram: 'https://www.instagram.com/thbryann',
