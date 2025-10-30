@@ -354,8 +354,29 @@
       "fullDescription": "Este foi o projeto desenvolvido pelo grupo MDS (Magia e Desenvolvimento de Software) da turma de 2024 do curso de Análise e Desenvolvimento de Sistemas (ADS) do Senai-601. O objetivo do projeto foi centralizar a logística de reembolso e o controle de gastos de funcionários em viagens corporativas.",
       "client": "TCC - Senai",
       "year": "2024"
-    }
-
+    },
+    
+     "carlos-advogado": {
+            "title": "Carlos Advogado - Social Media Design",
+            "description": "Projeto de Social Media – Advocacia**",
+            "fullDescription": "Este projeto de social media foi criado para um advogado especializado no setor jurídico, com foco em transmitir autoridade, confiança e profissionalismo por meio do design.",
+            "client": "Carlos",
+            "year": "2025"
+        },
+        "souzaevilela": {
+            "title": "Souza e vilela Direito Bancário - Social Media Design",
+            "description": "Projeto de Social Media – Advocacia",
+            "fullDescription": "Este projeto de social media foi desenvolvido para um advogado especializado no nicho bancário, com o objetivo de fortalecer sua presença digital e transmitir credibilidade, confiança e autoridade no setor jurídico.",
+            "client": "Souza e Vilela",
+            "year": "2025"
+        },
+        "luiz-gustavo": {
+            "title": "Luiz Gustavo - Social Media Design",
+            "description": "Projeto de Social Media – Advocacia",
+            "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
+            "client": "Luiz Gustavo",
+            "year": "2025"
+        }
 
   },
 
