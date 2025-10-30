@@ -122,8 +122,8 @@ export default function PartnershipsPage() {
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {partnershipTypes.map((type, index) => (
-              <div key={index} className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary transition-all hover:shadow-2xl hover:-translate-y-2 group">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all">
+              <div key={index} className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-2xl hover:-translate-y-2 group">
+                <div className="w-16 h-16 bg-primary-v2/10 rounded-2xl flex items-center justify-center mb-6 text-icons group-hover:bg-primary-v2 group-hover:text-white transition-all">
                   {type.icon}
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{type.title}</h3>
@@ -131,7 +131,7 @@ export default function PartnershipsPage() {
                 <div className="space-y-2">
                   {type.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-text-muted">
-                      <FaCheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                      <FaCheckCircle className="w-4 h-4 text-primary-v2 flex-shrink-0" />
                       <span>{benefit}</span>
                     </div>
                   ))}
@@ -152,8 +152,8 @@ export default function PartnershipsPage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {whyPartner.map((item, index) => (
-              <div key={index} className="bg-surface border-2 border-border rounded-2xl p-6 text-center hover:border-primary transition-all hover:shadow-lg group">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+              <div key={index} className="bg-surface border-2 border-border rounded-2xl p-6 text-center hover:border-primary-v2 transition-all hover:shadow-lg group">
+                <div className="w-14 h-14 bg-primary-v2/10 rounded-xl flex items-center justify-center mx-auto mb-4 text-icons text-2xl group-hover:bg-primary-v2 group-hover:text-white transition-all">
                   {item.icon}
                 </div>
                 <h4 className="text-lg font-bold text-text mb-2">{item.title}</h4>
@@ -225,8 +225,8 @@ export default function PartnershipsPage() {
         {/* Secondary CTA - Join Team */}
         <div ref={el => { sectionsRef.current[4] = el; }}>
           <div className="bg-surface-alt border-2 border-border rounded-2xl p-8 md:p-10 text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <FaUsers className="w-8 h-8 text-primary" />
+            <div className="w-16 h-16 bg-gray/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <FaUsers className="w-8 h-8 text-icons" />
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-text mb-4">{t('secondaryCTA.title')}</h3>
             <p className="text-lg text-text-muted mb-6 max-w-xl mx-auto">
@@ -234,7 +234,7 @@ export default function PartnershipsPage() {
             </p>
             <a
               href="mailto:rh@zatas.com.br"
-              className="inline-flex items-center gap-2 bg-surface text-primary border-2 border-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 bg-surface text-icons border-2 border-icons px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all cursor-pointer"
             >
               {t('secondaryCTA.button')}
               <FaArrowRight className="w-4 h-4" />
