@@ -11,11 +11,11 @@ export const TEAM_PROFILES: TeamProfile[] = [
     }
   },
   {
-    id: 'maria-santos',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
+    id: 'bruno-santiago',
+    image: 'https://i.postimg.cc/HnPJXpdv/runo.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/mariasantos',
-      github: 'https://github.com/mariasantos'
+      linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b',
+      github: 'https://github.com/Bruno1776'
     }
   },
   {

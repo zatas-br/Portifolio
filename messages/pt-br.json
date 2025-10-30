@@ -231,18 +231,17 @@
           { "company": "TechCorp Brasil", "role": "Diretor de Produto", "period": "2015 - 2020", "description": "Responsável por lançar 3 produtos que geraram R$50M em receita." }
         ]
       },
-      "maria-santos": {
-        "name": "Maria Santos",
-        "role": "CTO & Co-fundadora",
-        "bio": "Engenheira de software com especialização em arquitetura de sistemas escaláveis. Líder técnica com foco em inovação e qualidade.",
+      "bruno-santiago": {
+        "name": "Bruno Santiago",
+        "role": "CTO & Co-fundador",
+        "bio": "Desenvolvedor Full-Stack, com conhecimentos de performancel, escalonamento e arquitetura, Lider Tecnico com foco em Inovacao.",
         "skills": ["Arquitetura de Software", "Cloud Computing", "DevOps", "Gestão Técnica"],
         "education": [
-          { "institution": "Stanford University", "degree": "Mestrado em Ciência da Computação", "year": "2014" },
-          { "institution": "UNICAMP", "degree": "Engenharia de Software", "year": "2012" }
+          { "institution": "SENAI-601", "degree": "Analise e Desenvolvimento de Sistemas", "year": "2024" }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CTO & Co-fundadora", "period": "2020 - Presente", "description": "Liderando time de 50+ engenheiros, construindo infraestrutura que atende 1M+ usuários." },
-          { "company": "Amazon Web Services", "role": "Senior Solutions Architect", "period": "2016 - 2020", "description": "Consultoria para empresas Fortune 500 em migração para cloud." }
+          { "company": "Zatas", "role": "CTO & Co-fundador", "period": "2025 - Presente", "description": "Responsavel pela Tecnologia do produto e gestao da equipe de Desenvolvimento" },
+          { "company": "Novaes Engenharia", "role": "Desenvolvedor Full-Stack", "period": "2024 - Presente", "description": "Resolvendo Problemas Internos com Solucoes Tecnologicas" }
         ]
       },
       "pedro-oliveira": {

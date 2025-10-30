@@ -183,18 +183,17 @@
           { "company": "TechCorp Brazil", "role": "Product Director", "period": "2015 - 2020", "description": "Responsible for launching 3 products that generated R$50M in revenue." }
         ]
       },
-      "maria-santos": {
-        "name": "Maria Santos",
-        "role": "CTO & Co-founder",
-        "bio": "Software engineer specializing in scalable system architecture. Technical leader focused on innovation and quality.",
+      "bruno-santiago": {
+        "name": "Bruno Santiago",
+        "role": "CTO & Co-Founder",
+        "bio": "Full-Stack Developer with expertise in performance, scaling, and architecture; Technical Lead focused on innovation.",
         "skills": ["Software Architecture", "Cloud Computing", "DevOps", "Technical Management"],
         "education": [
-          { "institution": "Stanford University", "degree": "Master's in Computer Science", "year": "2014" },
-          { "institution": "UNICAMP", "degree": "Software Engineering", "year": "2012" }
+          { "institution": "SENAI-601", "degree": "Systems Analysis and Development", "year": "2024" }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CTO & Co-founder", "period": "2020 - Present", "description": "Leading a team of 50+ engineers, building infrastructure serving 1M+ users." },
-          { "company": "Amazon Web Services", "role": "Senior Solutions Architect", "period": "2016 - 2020", "description": "Consulting for Fortune 500 companies on cloud migration." }
+          { "company": "Zatas", "role": "CTO & Co-founder", "period": "2025 - Presente", "description": "Responsible for product technology and management of the development team." },
+          { "company": "Novaes Engenharia", "role": "Full-Stack Developer", "period": "2024 - Presente", "description": "Solving Internal Problems with Technological Solutions" }
         ]
       },
       "pedro-oliveira": {
