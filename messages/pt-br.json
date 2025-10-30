@@ -6,8 +6,8 @@
     "home": "Início",
     "about": "Sobre"
   },
-      "CardNav":{
-        "logoAlt": "Zatas Logo",
+  "CardNav": {
+    "logoAlt": "Zatas Logo",
     "about": {
       "label": "Sobre",
       "links": [
@@ -86,7 +86,6 @@
     "cardVisionText": "Ser referência global em desenvolvimento de produtos digitais, reconhecida pela excelência e impacto positivo.",
     "cardValuesTitle": "Valores",
     "cardValuesText": "Inovação contínua, excelência técnica, trabalho em equipe, transparência e foco no cliente.",
-    
     "numbersTitle": "Zatas em Números",
     "numbersItems": {
       "professionals": "Profissionais",
@@ -97,12 +96,30 @@
     "cultureTitle": "Nossa Cultura",
     "cultureDescription": "Acreditamos que um ambiente de trabalho saudável e colaborativo é essencial para a inovação. Na Zatas, valorizamos:",
     "cultureItems": {
-      "autonomy": { "title": "Autonomia", "desc": "Confiamos em nosso time para tomar decisões" },
-      "learning": { "title": "Aprendizado", "desc": "Incentivamos crescimento contínuo" },
-      "diversity": { "title": "Diversidade", "desc": "Celebramos diferentes perspectivas" },
-      "transparency": { "title": "Transparência", "desc": "Comunicação aberta em todos os níveis" },
-      "balance": { "title": "Work-life balance", "desc": "Equilíbrio entre vida pessoal e profissional" },
-      "impact": { "title": "Impacto", "desc": "Foco em resultados que importam" }
+      "autonomy": {
+        "title": "Autonomia",
+        "desc": "Confiamos em nosso time para tomar decisões"
+      },
+      "learning": {
+        "title": "Aprendizado",
+        "desc": "Incentivamos crescimento contínuo"
+      },
+      "diversity": {
+        "title": "Diversidade",
+        "desc": "Celebramos diferentes perspectivas"
+      },
+      "transparency": {
+        "title": "Transparência",
+        "desc": "Comunicação aberta em todos os níveis"
+      },
+      "balance": {
+        "title": "Work-life balance",
+        "desc": "Equilíbrio entre vida pessoal e profissional"
+      },
+      "impact": {
+        "title": "Impacto",
+        "desc": "Foco em resultados que importam"
+      }
     }
   },
   "PartnershipsPage": {
@@ -115,8 +132,8 @@
         "stat2": "100+ projetos entregues",
         "stat3": "5 países atendidos"
       },
-      "buttonProject":"Explorar Projetos",
-      "buttonInstagram":"Siga no Instagram"
+      "buttonProject": "Explorar Projetos",
+      "buttonInstagram": "Siga no Instagram"
     },
     "partnershipTypes": {
       "title": "Oportunidades de Parceria",
@@ -221,30 +238,78 @@
         "name": "Antony Brito",
         "role": "CPO & Co-fundador",
         "bio": "Ampla experiência em desenvolvimento full-stack e design digital, unindo visão técnica e estética para criar produtos escaláveis e experiências digitais. Atua no planejamento e na implementação de soluções tecnológicas inovadoras, com foco em performance, usabilidade e identidade visual consistente.",
-        "skills": ["Estratégia", "Liderança", "Inovação", "Produto"],
+        "skills": [
+          "Estratégia",
+          "Liderança",
+          "Inovação",
+          "Produto"
+        ],
         "education": [
-          { "institution": "Microsoft e LinkedIn", "degree": "Fundamentos para Desenvolvimento de Software", "year": "2024" },
-          { "institution": "SENAI-601", "degree": "Analise e Desenvolvimento de Sistemas", "year": "2024 - 2025" },
-          { "institution": "HubX Digital", "degree": "Profissional em Design", "year": "2023" },
-          { "institution": "Linkedin", "degree": "Mais de 40 licenças e certificações concluídas. Para mais detalhes, acesse meu perfil no LinkedIn." }
-          
+          {
+            "institution": "Microsoft e LinkedIn",
+            "degree": "Fundamentos para Desenvolvimento de Software",
+            "year": "2024"
+          },
+          {
+            "institution": "SENAI-601",
+            "degree": "Analise e Desenvolvimento de Sistemas",
+            "year": "2024 - 2025"
+          },
+          {
+            "institution": "HubX Digital",
+            "degree": "Profissional em Design",
+            "year": "2023"
+          },
+          {
+            "institution": "Linkedin",
+            "degree": "Mais de 40 licenças e certificações concluídas. Para mais detalhes, acesse meu perfil no LinkedIn."
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CPO & Co-fundador", "period": "2025 - Presente", "description": "Responsável pela estratégia tecnológica, desenvolvimento do produto e gestão da equipe." },
-          { "company": "Tecumseh", "role": "Programador", "period": "2024 - 2025", "description": "Responsável por apoiar o desenvolvimento de novas funcionalidades e dar suporte às rotinas da equipe de tecnologia." }
+          {
+            "company": "Zatas",
+            "role": "CPO & Co-fundador",
+            "period": "2025 - Presente",
+            "description": "Responsável pela estratégia tecnológica, desenvolvimento do produto e gestão da equipe."
+          },
+          {
+            "company": "Tecumseh",
+            "role": "Programador",
+            "period": "2024 - 2025",
+            "description": "Responsável por apoiar o desenvolvimento de novas funcionalidades e dar suporte às rotinas da equipe de tecnologia."
+          }
         ]
       },
       "bruno-santiago": {
         "name": "Bruno Santiago",
         "role": "CTO & Co-fundador",
         "bio": "Desenvolvedor Full-Stack, com conhecimentos de performancel, escalonamento e arquitetura, Lider Tecnico com foco em Inovacao.",
-        "skills": ["Arquitetura de Software", "Cloud Computing", "DevOps", "Gestão Técnica"],
+        "skills": [
+          "Arquitetura de Software",
+          "Cloud Computing",
+          "DevOps",
+          "Gestão Técnica"
+        ],
         "education": [
-          { "institution": "SENAI-601", "degree": "Analise e Desenvolvimento de Sistemas", "year": "2024" }
+          {
+            "institution": "SENAI-601",
+            "degree": "Analise e Desenvolvimento de Sistemas",
+            "year": "2024"
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CTO & Co-fundador", "period": "2025 - Presente", "description": "Responsavel pela Tecnologia do produto e gestão da equipe de Desenvolvimento" },
-          { "company": "Novaes Engenharia", "role": "Desenvolvedor Full-Stack", "period": "2024 - Presente", "description": "Resolvendo Problemas Internos com Solucoes Tecnologicas" }
+          {
+            "company": "Zatas",
+            "role": "CTO & Co-fundador",
+            "period": "2025 - Presente",
+            "description": "Responsavel pela Tecnologia do produto e gestão da equipe de Desenvolvimento"
+          },
+          {
+            "company": "Novaes Engenharia",
+            "role": "Desenvolvedor Full-Stack",
+            "period": "2024 - Presente",
+            "description": "Resolvendo Problemas Internos com Solucoes Tecnologicas"
+          }
         ]
       },
       "gabriel-cardoso": {
@@ -294,19 +359,42 @@
             "description": "Responsável pela gestão financeira e estratégica da empresa, além de contribuir ativamente no desenvolvimento de projetos de software e soluções digitais personalizadas."
           }
         ]
-},
+      },
       "ana-costa": {
         "name": "Ana Costa",
         "role": "CMO & Co-fundadora",
         "bio": "Especialista em growth marketing e branding. Construiu estratégias de marketing que geraram crescimento de 300% em startups.",
-        "skills": ["Growth Marketing", "Branding", "Analytics", "Estratégia de Conteúdo"],
+        "skills": [
+          "Growth Marketing",
+          "Branding",
+          "Analytics",
+          "Estratégia de Conteúdo"
+        ],
         "education": [
-          { "institution": "Harvard Business School", "degree": "MBA em Marketing", "year": "2015" },
-          { "institution": "FGV", "degree": "Administração de Empresas", "year": "2011" }
+          {
+            "institution": "Harvard Business School",
+            "degree": "MBA em Marketing",
+            "year": "2015"
+          },
+          {
+            "institution": "FGV",
+            "degree": "Administração de Empresas",
+            "year": "2011"
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CMO & Co-fundadora", "period": "2020 - Presente", "description": "Liderando todas as iniciativas de marketing e crescimento da marca." },
-          { "company": "Rock Content", "role": "Diretora de Marketing", "period": "2016 - 2020", "description": "Responsável por crescimento de 10x na base de clientes." }
+          {
+            "company": "Zatas",
+            "role": "CMO & Co-fundadora",
+            "period": "2020 - Presente",
+            "description": "Liderando todas as iniciativas de marketing e crescimento da marca."
+          },
+          {
+            "company": "Rock Content",
+            "role": "Diretora de Marketing",
+            "period": "2016 - 2020",
+            "description": "Responsável por crescimento de 10x na base de clientes."
+          }
         ]
       }
     }
@@ -334,20 +422,31 @@
     "desenvolvimento": {
       "title": "Desenvolvimento",
       "description": "Criamos soluções de software robustas, desde APIs escaláveis até aplicações web e móveis interativas.",
-      "tags": ["Web", "Mobile", "APIs"]
+      "tags": [
+        "Web",
+        "Mobile",
+        "APIs"
+      ]
     },
     "design": {
       "title": "Design",
       "description": "Desenhamos interfaces intuitivas e marcas memoráveis que conectam sua empresa ao seu público.",
-      "tags": ["UI/UX", "Branding", "Identidade"]
+      "tags": [
+        "UI/UX",
+        "Branding",
+        "Identidade"
+      ]
     },
     "marketing": {
       "title": "Marketing",
       "description": "Estratégias digitais focadas em crescimento, engajamento e resultados mensuráveis.",
-      "tags": ["SEO", "Copywriting", "Ads"]
+      "tags": [
+        "SEO",
+        "Copywriting",
+        "Ads"
+      ]
     }
   },
-
   "Projects": {
     "zatas-website": {
       "title": "Website Zatas",
@@ -363,7 +462,7 @@
       "client": "Projeto Pessoal",
       "year": "2024"
     },
-    "gerenciador-de-alunos" :{
+    "gerenciador-de-alunos": {
       "title": "Gerenciador de Alunos",
       "description": "O Sistema gerencia e centraliza as turmas de diversas escolas",
       "fullDescription": "O sistema foi desenvolvido com o intuito de gerenciar as diferentes turmas de diversas escolas que o professor possuía. Esse era um objetivo no qual a plataforma do governo destinada aos professores falhava. O sistema, por sua vez, centraliza e organiza essa gestão de informações.",
@@ -391,52 +490,56 @@
       "client": "TCC - Senai",
       "year": "2024"
     },
-    
-     "carlos-advogado": {
-            "title": "Carlos Advogado - Social Media Design",
-            "description": "Projeto de Social Media – Advocacia**",
-            "fullDescription": "Este projeto de social media foi criado para um advogado especializado no setor jurídico, com foco em transmitir autoridade, confiança e profissionalismo por meio do design.",
-            "client": "Carlos",
-            "year": "2025"
-        },
-        "souzaevilela": {
-            "title": "Souza e vilela Direito Bancário - Social Media Design",
-            "description": "Projeto de Social Media – Advocacia",
-            "fullDescription": "Este projeto de social media foi desenvolvido para um advogado especializado no nicho bancário, com o objetivo de fortalecer sua presença digital e transmitir credibilidade, confiança e autoridade no setor jurídico.",
-            "client": "Souza e Vilela",
-            "year": "2025"
-        },
-        "luiz-gustavo": {
-            "title": "Luiz Gustavo - Social Media Design",
-            "description": "Projeto de Social Media – Advocacia",
-            "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
-            "client": "Luiz Gustavo",
-            "year": "2025"
-        },
-        "montela-brand": {
-            "title": "MONTELA - Identidade Visual de Marca",
-            "description": "Projeto de Identidade Visual – MONTELA, Inteligência que trabalha por você",
-            "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
-            "client": "MONTELA",
-            "year": "2025"
-        },
-        "lyria": {
-            "title": "Lyria",
-            "description": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas.",
-            "fullDescription": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas. A aplicação possui interface web moderna e back-end robusto, utilizando LLM (Large Language Model) para gerar respostas dinâmicas e contextuais.✨ O objetivo é proporcionar uma experiência de conversação natural, capaz de responder perguntas gerais e buscar informações atualizadas na web para garantir precisão.",
-            "client": "TCC - Senai",
-            "year": "2025"
-        },
-        "zatas": {
-            "title": "ZATAS - Identidade Visual de Marca",
-            "description": "Projeto de Identidade Visual – ZATAS, sua visão em tecnologia e sua tecnologia em resultados",
-            "fullDescription": "A identidade visual da ZATAS foi desenvolvida com base em precisão, estratégia e inovação. Inspirada em Monte Carlo, a marca nasce com a filosofia de trabalhar “do Z ao A”: partindo do objetivo final para construir estratégias completas desde o início. As cores escolhidas — preto, cinza, branco e tons de azul — representam confiança, tecnologia e estabilidade, traduzindo a união entre sofisticação e eficiência. A tipografia Montserrat, em variações Regular e Medium, reforça a clareza e o equilíbrio geométrico, simbolizando a fusão entre design e performance. O resultado é uma marca moderna, tecnológica e de forte presença visual, que comunica solidez, inovação e propósito em cada detalhe",
-            "client": "Zatas",
-            "year": "2025"
-        }
-
+    "carlos-advogado": {
+      "title": "Carlos Advogado - Social Media Design",
+      "description": "Projeto de Social Media – Advocacia**",
+      "fullDescription": "Este projeto de social media foi criado para um advogado especializado no setor jurídico, com foco em transmitir autoridade, confiança e profissionalismo por meio do design.",
+      "client": "Carlos",
+      "year": "2025"
+    },
+    "souzaevilela": {
+      "title": "Souza e vilela Direito Bancário - Social Media Design",
+      "description": "Projeto de Social Media – Advocacia",
+      "fullDescription": "Este projeto de social media foi desenvolvido para um advogado especializado no nicho bancário, com o objetivo de fortalecer sua presença digital e transmitir credibilidade, confiança e autoridade no setor jurídico.",
+      "client": "Souza e Vilela",
+      "year": "2025"
+    },
+    "luiz-gustavo": {
+      "title": "Luiz Gustavo - Social Media Design",
+      "description": "Projeto de Social Media – Advocacia",
+      "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
+      "client": "Luiz Gustavo",
+      "year": "2025"
+    },
+    "montela-brand": {
+      "title": "MONTELA - Identidade Visual de Marca",
+      "description": "Projeto de Identidade Visual – MONTELA, Inteligência que trabalha por você",
+      "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
+      "client": "MONTELA",
+      "year": "2025"
+    },
+    "lyria": {
+      "title": "Lyria",
+      "description": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas.",
+      "fullDescription": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas. A aplicação possui interface web moderna e back-end robusto, utilizando LLM (Large Language Model) para gerar respostas dinâmicas e contextuais.✨ O objetivo é proporcionar uma experiência de conversação natural, capaz de responder perguntas gerais e buscar informações atualizadas na web para garantir precisão.",
+      "client": "TCC - Senai",
+      "year": "2025"
+    },
+    "zatas": {
+      "title": "ZATAS - Identidade Visual de Marca",
+      "description": "Projeto de Identidade Visual – ZATAS, sua visão em tecnologia e sua tecnologia em resultados",
+      "fullDescription": "A identidade visual da ZATAS foi desenvolvida com base em precisão, estratégia e inovação. Inspirada em Monte Carlo, a marca nasce com a filosofia de trabalhar “do Z ao A”: partindo do objetivo final para construir estratégias completas desde o início. As cores escolhidas — preto, cinza, branco e tons de azul — representam confiança, tecnologia e estabilidade, traduzindo a união entre sofisticação e eficiência. A tipografia Montserrat, em variações Regular e Medium, reforça a clareza e o equilíbrio geométrico, simbolizando a fusão entre design e performance. O resultado é uma marca moderna, tecnológica e de forte presença visual, que comunica solidez, inovação e propósito em cada detalhe",
+      "client": "Zatas",
+      "year": "2025"
+    },
+    "jersey-hub": {
+      "title": "Jersey Hub - Estratégia de Marketing e Mídias Sociais",
+      "description": "Projeto de marketing digital com foco em redes sociais para a Jersey Hub, loja de camisetas personalizadas.",
+      "fullDescription": "A Jersey Hub recebeu uma estratégia completa de marketing digital e gestão de redes sociais desenvolvida pela nossa equipe. O projeto incluiu a criação de posts interativos e campanhas comerciais voltadas para engajamento e conversão. Com uma identidade visual consistente e conteúdos criativos, o resultado foi um crescimento expressivo da presença online da marca: mais de 500 mil impressões, 1.500 novos seguidores e mais de 400 vendas geradas diretamente pelas ações de marketing.",
+      "client": "Jersey Hub",
+      "year": "2025"
+    }
   },
-
   "AllProjectsPage": {
     "title": "Todos os Projetos",
     "subtitle": "Explore nosso portfólio completo",
@@ -459,50 +562,68 @@
     "gallery": "Galeria do Projeto",
     "moreProjects": "Ver mais projetos de {category}"
   },
-    "Slogan": {
-      "words": ["Design", "|", "Código", "|", "Impacto"]
-    },
-    "HamburgerMenu": {
-      "open": "Abrir menu",
-      "close": "Fechar menu"
-    },
-    "Hero": {
-      "button1": "Explorar Projetos",
-      "button2": "Siga no Instagram"
-    },
-    "ServicesLandingPage": {
-      "badge": "O que fazemos",
-      "title1": "Transforme sua",
-      "title2": "ideia",
-      "title3": "em",
-      "title4": "realidade",
-      "subtitle": "Soluções completas em desenvolvimento, design e marketing digital",
-      "viewProjects": "Ver projetos",
-      "ctaTitle": "Pronto para começar seu projeto?",
-      "ctaSubtitle": "Entre em contato e vamos transformar sua ideia em realidade",
-      "ctaButton": "Falar com a equipe",
-      "categoryTags": [
-        ["Web", "Mobile", "APIs"],
-        ["UI/UX", "Branding", "Identidade"],
-        ["SEO", "Social Media", "Conteúdo"]
+  "Slogan": {
+    "words": [
+      "Design",
+      "|",
+      "Código",
+      "|",
+      "Impacto"
+    ]
+  },
+  "HamburgerMenu": {
+    "open": "Abrir menu",
+    "close": "Fechar menu"
+  },
+  "Hero": {
+    "button1": "Explorar Projetos",
+    "button2": "Siga no Instagram"
+  },
+  "ServicesLandingPage": {
+    "badge": "O que fazemos",
+    "title1": "Transforme sua",
+    "title2": "ideia",
+    "title3": "em",
+    "title4": "realidade",
+    "subtitle": "Soluções completas em desenvolvimento, design e marketing digital",
+    "viewProjects": "Ver projetos",
+    "ctaTitle": "Pronto para começar seu projeto?",
+    "ctaSubtitle": "Entre em contato e vamos transformar sua ideia em realidade",
+    "ctaButton": "Falar com a equipe",
+    "categoryTags": [
+      [
+        "Web",
+        "Mobile",
+        "APIs"
+      ],
+      [
+        "UI/UX",
+        "Branding",
+        "Identidade"
+      ],
+      [
+        "SEO",
+        "Social Media",
+        "Conteúdo"
       ]
-    },
-    "CategoryProjectsPage": {
-      "projects": "projetos",
-      "viewProject": "Ver projeto",
-      "hoverPreview": "Passe o mouse sobre um projeto",
-      "hoverPreviewSubtitle": "para visualizar a prévia",
-      "preview": "Preview"
-    },
-    "PageTitles": {
-      "home": "Zatas",
-      "about": "Sobre",
-      "team": "Equipe",
-      "partnerships": "Parcerias",
-      "services": "Serviços",
-      "development": "Desenvolvimento",
-      "design": "Design",
-      "marketing": "Marketing",
-      "contact": "Contato"
-    }
+    ]
+  },
+  "CategoryProjectsPage": {
+    "projects": "projetos",
+    "viewProject": "Ver projeto",
+    "hoverPreview": "Passe o mouse sobre um projeto",
+    "hoverPreviewSubtitle": "para visualizar a prévia",
+    "preview": "Preview"
+  },
+  "PageTitles": {
+    "home": "Zatas",
+    "about": "Sobre",
+    "team": "Equipe",
+    "partnerships": "Parcerias",
+    "services": "Serviços",
+    "development": "Desenvolvimento",
+    "design": "Design",
+    "marketing": "Marketing",
+    "contact": "Contato"
+  }
 }

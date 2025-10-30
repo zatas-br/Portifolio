@@ -401,5 +401,38 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       }
     ]
   },
+  {
+  id: 'jersey-hub',
+    category: 'marketing',
+    image: 'https://i.postimg.cc/bJHGMbkX/jh-capa.png',
+    technologies: ['Social Media', 'Content Strategy', 'Organic Growth', 'Analytics', 'Engagement'],
+    link: null,
+    gallery: [
+      'https://i.postimg.cc/vBL1j9fF/jh-05.jpg',
+      'https://i.postimg.cc/L6mkH48W/jh-04.jpg',
+      'https://i.postimg.cc/7YX3bv5t/jh-02.jpg',
+      'https://i.postimg.cc/5Nf5x92Z/jh-03.png',
+      'https://i.postimg.cc/YqtNp2Cn/jh-07.png',
+      'https://i.postimg.cc/tCD370sS/jh01.jpg'
+    ],
+    authors: [
+      { 
+        name: 'Antony Brito', 
+        avatar: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg', 
+        role: 'Head of Growth & Product',
+        linkedin: 'https://www.linkedin.com/in/britoantony',
+        instagram: 'https://www.instagram.com/antonybriito',
+        email: 'brito@zatas.com.br'
+      },
+      { 
+        name: 'Thiago Bryan', 
+        avatar: 'https://i.postimg.cc/fyg3mwD2/gabel.jpg', 
+        role: 'Head of marketing and design',
+        linkedin: 'https://www.linkedin.com/in/thbryann',
+        instagram: 'https://www.instagram.com/thbryann',
+        email: 'bryan@zatas.com.br'
+      }
+    ]
+  },
   // ... outros projetos
 ];
