@@ -496,5 +496,31 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       },
     ],
   },
-  // ... outros projetos
+  {
+    id: "vulcan-films",
+    category: "marketing",
+    image: "https://i.postimg.cc/QxC6GLJp/vulcan.png",
+    technologies: [
+      "Social Media",
+      "Content Strategy",
+      "Organic Growth",
+      "Analytics",
+      "Engagement",
+    ],
+    link: "https://www.instagram.com/vulcan.filmes?igsh=dGlhbDRobGE3YmJm",
+    gallery: [
+      "https://i.postimg.cc/NFgzr5Xz/i1.jpg",
+      "https://i.postimg.cc/wM6Gs7N0/i2.jpg",
+      "https://i.postimg.cc/Gtc5sHDg/i3.jpg"
+    ],
+    authors: [
+      {
+        name: "Thiago Bryan",
+        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
+        role: "Head of marketing & design",
+        linkedin: "https://www.linkedin.com/in/thbryann",
+        instagram: "https://www.instagram.com/thbryann",
+      },
+    ],
+  },
 ];
