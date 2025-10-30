@@ -511,7 +511,8 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     gallery: [
       "https://i.postimg.cc/NFgzr5Xz/i1.jpg",
       "https://i.postimg.cc/wM6Gs7N0/i2.jpg",
-      "https://i.postimg.cc/Gtc5sHDg/i3.jpg"
+      "https://i.postimg.cc/Gtc5sHDg/i3.jpg",
+      "https://i.postimg.cc/VsGt5wvQ/v.png"
     ],
     authors: [
       {
