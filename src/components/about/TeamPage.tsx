@@ -78,7 +78,7 @@ export default function TeamPage() {
               onClick={() => handleSelectMember(profile)}
               className="group cursor-pointer"
             >
-              <div className="bg-surface border-2 border-border rounded-xl md:rounded-2xl overflow-hidden hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+              <div className="bg-surface border-2 border-border rounded-xl md:rounded-2xl overflow-hidden hover:border-primary-v2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="aspect-square overflow-hidden bg-surface-alt">
                   <img
                     src={profile.image}
@@ -87,12 +87,12 @@ export default function TeamPage() {
                   />
                 </div>
                 <div className="p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-bold text-text mb-1 md:mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg md:text-xl font-bold text-text mb-1 md:mb-2 group-hover:text-primary-v2 transition-colors">
                     {t(`members.${profile.id}.name`)}
                   </h3>
-                  <p className="text-primary font-medium mb-2 md:mb-3 text-xs md:text-sm">{t(`members.${profile.id}.role`)}</p>
+                  <p className="text-primary-v2 font-medium mb-2 md:mb-3 text-xs md:text-sm">{t(`members.${profile.id}.role`)}</p>
                   <p className="text-text-muted text-xs md:text-sm line-clamp-3 leading-relaxed mb-3 md:mb-4">{t(`members.${profile.id}.bio`)}</p>
-                  <div className="flex items-center gap-2 text-primary font-semibold text-xs md:text-sm">
+                  <div className="flex items-center gap-2 text-primary-v2 font-semibold text-xs md:text-sm">
                     {t('card.viewProfile')}
                     <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>

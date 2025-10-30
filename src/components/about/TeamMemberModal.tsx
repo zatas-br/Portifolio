@@ -152,7 +152,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
             >
               <div className="mb-6 md:mb-8">
                 <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
-                  <FaUsers className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                  <FaUsers className="w-4 h-4 md:w-5 md:h-5 text-primary-v2" />
                   {t('modal.about')}
                 </h3>
                 <p className="text-text-muted leading-relaxed text-sm md:text-base">{member.bio}</p>
@@ -160,12 +160,12 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
 
               <div className="mb-6 md:mb-8">
                 <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
-                  <FaCode className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                  <FaCode className="w-4 h-4 md:w-5 md:h-5 text-primary-v2" />
                   {t('modal.skills')}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {member.skills.map(skill => (
-                    <span key={skill} className="bg-surface-alt border border-border text-primary px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:border-primary transition-colors">
+                    <span key={skill} className="bg-surface-alt border border-border text-icons px-3 py-1.5 md:px-4 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:border-primary transition-colors">
                       {skill}
                     </span>
                   ))}
@@ -174,12 +174,12 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
 
               <div className="mb-6 md:mb-8">
                 <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
-                  <FaGraduationCap className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                  <FaGraduationCap className="w-4 h-4 md:w-5 md:h-5 text-primary-v2" />
                   {t('modal.education')}
                 </h3>
                 <div className="space-y-3 md:space-y-4">
                   {member.education.map((edu, i) => (
-                    <div key={i} className="border-l-4 border-primary pl-3 md:pl-4 py-2 bg-surface-alt/50 rounded-r-lg pr-3 md:pr-4">
+                    <div key={i} className="border-l-4 border-primary-v2 pl-3 md:pl-4 py-2 bg-surface-alt/50 rounded-r-lg pr-3 md:pr-4">
                       <h4 className="font-bold text-text text-sm md:text-base">{edu.degree}</h4>
                       <p className="text-text-muted text-xs md:text-sm">{edu.institution}</p>
                       <p className="text-xs text-text-muted/70">{edu.year}</p>
@@ -190,14 +190,14 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
 
               <div className="pb-20 md:pb-4">
                 <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
-                  <FaBriefcase className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                  <FaBriefcase className="w-4 h-4 md:w-5 md:h-5 text-primary-v2" />
                   {t('modal.experience')}
                 </h3>
                 <div className="space-y-4 md:space-y-6">
                   {member.experience.map((exp, i) => (
-                    <div key={i} className="border-l-4 border-border pl-3 md:pl-4 py-2 hover:border-primary transition-colors">
+                    <div key={i} className="border-l-4 border-border pl-3 md:pl-4 py-2 hover:border-primary-v2 transition-colors">
                       <h4 className="font-bold text-text text-sm md:text-base">{exp.role}</h4>
-                      <p className="text-primary font-medium text-sm md:text-base">{exp.company}</p>
+                      <p className="text-primary-v2 font-medium text-sm md:text-base">{exp.company}</p>
                       <p className="text-xs md:text-sm text-text-muted/70 mb-2">{exp.period}</p>
                       <p className="text-text-muted text-xs md:text-sm leading-relaxed">{exp.description}</p>
                     </div>
@@ -209,7 +209,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
             {/* Indicador de scroll */}
             {showScrollIndicator && (
               <div className="absolute bottom-6 md:bottom-4 left-1/2 -translate-x-1/2 pointer-events-none">
-                <div className="animate-bounce text-primary bg-surface/80 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                <div className="animate-bounce text-primary-v2 bg-surface/80 backdrop-blur-sm rounded-full p-2 shadow-lg">
                   <FaChevronDown className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
               </div>
