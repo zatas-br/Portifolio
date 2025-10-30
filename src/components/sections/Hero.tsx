@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
 import Link from "next/link";
-import AnimatedLogo from '../ui/AnimatedLogo';
-import Slogan from '../ui/AnimatedSlogan';
-import AnimatedButton from '../ui/AnimatedButton';
-import { FaInstagram } from 'react-icons/fa';
+import AnimatedLogo from "../ui/AnimatedLogo";
+import Slogan from "../ui/AnimatedSlogan";
+import AnimatedButton from "../ui/AnimatedButton";
+import { FaInstagram } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 
 const HeroSection = () => {
-  const t = useTranslations('Hero');
+  const t = useTranslations("Hero");
 
   return (
     <div className="h-full w-full bg-surface flex items-center justify-center relative overflow-hidden">
@@ -31,21 +31,23 @@ const HeroSection = () => {
 
         {/* Botões de ação - Agora com largura igual no mobile */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
-          <Link href='/services' className="w-full sm:w-auto">
+          <Link href="/services" className="w-full sm:w-auto">
             <AnimatedButton
               variant="primary"
               icon={<span>→</span>}
-              onClick={() => console.log('Ver Projetos')}
+              onClick={() => console.log("Ver Projetos")}
             >
-              {t('button1')}
+              {t("button1")}
             </AnimatedButton>
           </Link>
           <AnimatedButton
             variant="secondary"
             icon={<FaInstagram size={18} />}
-            onClick={() => window.open('https://instagram.com/suaempresa', '_blank')}
+            onClick={() =>
+              window.open("https://instagram.com/zatas.com.br", "_blank")
+            }
           >
-            {t('button2')}
+            {t("button2")}
           </AnimatedButton>
         </div>
       </div>

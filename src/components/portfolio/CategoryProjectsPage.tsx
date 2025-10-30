@@ -1,39 +1,43 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import {
   FaCode,
   FaPalette,
   FaBullhorn,
   FaArrowRight,
+  FaArrowLeft,
   FaExternalLinkAlt,
-  FaFolder
-} from 'react-icons/fa';
-import { PROJECTS_STATIC } from '@/src/data/projects';
-import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
-import { useTranslations } from 'next-intl';
-import { Category, Project } from '@/types';
-import gsap from 'gsap';
+  FaFolder,
+} from "react-icons/fa";
+import { PROJECTS_STATIC } from "@/src/data/projects";
+import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
+import { useTranslations } from "next-intl";
+import { Category, Project } from "@/types";
+import gsap from "gsap";
 
 interface CategoryProjectsPageProps {
-  category: 'desenvolvimento' | 'design' | 'marketing';
+  category: "desenvolvimento" | "design" | "marketing";
 }
 
 const categoryIcons: Record<string, React.ReactNode> = {
-  'desenvolvimento': <FaCode className="w-12 h-12" />,
-  'design': <FaPalette className="w-12 h-12" />,
-  'marketing': <FaBullhorn className="w-12 h-12" />
+  desenvolvimento: <FaCode className="w-12 h-12" />,
+  design: <FaPalette className="w-12 h-12" />,
+  marketing: <FaBullhorn className="w-12 h-12" />,
 };
 
-export default function CategoryProjectsPage({ category }: CategoryProjectsPageProps) {
-  const t = useTranslations('CategoryProjectsPage');
-  const tCategories = useTranslations('Categories');
-  const tProjects = useTranslations('Projects');
+export default function CategoryProjectsPage({
+  category,
+}: CategoryProjectsPageProps) {
+  const t = useTranslations("CategoryProjectsPage");
+  const tCategories = useTranslations("Categories");
+  const tProjects = useTranslations("Projects");
 
   const router = useRouter();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const backButtonRef = useRef<HTMLButtonElement>(null);
   const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
   const imageRef = useRef<HTMLDivElement>(null);
   const { animateFadeIn } = usePortfolioAnimations();
@@ -41,7 +45,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   // Flag para controlar se as animações iniciais já foram executadas
   const animationsExecutedRef = useRef(false);
 
-  const filteredProjects = PROJECTS_STATIC.filter(p => p.category === category);
+  const filteredProjects = PROJECTS_STATIC.filter(
+    (p) => p.category === category
+  );
 
   const categoryTitle = tCategories(`${category}.title`);
   const categoryDescription = tCategories(`${category}.description`);
@@ -49,34 +55,69 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
   useEffect(() => {
     if (animationsExecutedRef.current) return;
 
+    // Anima header e botão de voltar
     animateFadeIn(headerRef.current, 0);
+    animateFadeIn(backButtonRef.current, 0.1);
+
     gsap.fromTo(
       projectsRef.current.filter(Boolean),
       { opacity: 0, x: -20 },
-      { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, delay: 0.2, ease: 'power3.out' }
+      {
+        opacity: 1,
+        x: 0,
+        stagger: 0.1,
+        duration: 0.5,
+        delay: 0.2,
+        ease: "power3.out",
+      }
     );
 
     animationsExecutedRef.current = true;
   }, [animateFadeIn]);
 
-  const hoveredProjectData = filteredProjects.find(p => p.id === hoveredProject);
-  const hoveredProjectTitle = hoveredProjectData ? tProjects(`${hoveredProjectData.id}.title`) : '';
-  const hoveredProjectDescription = hoveredProjectData ? tProjects(`${hoveredProjectData.id}.description`) : '';
-  const hoveredProjectClient = hoveredProjectData ? tProjects(`${hoveredProjectData.id}.client`) : '';
+  const hoveredProjectData = filteredProjects.find(
+    (p) => p.id === hoveredProject
+  );
+  const hoveredProjectTitle = hoveredProjectData
+    ? tProjects(`${hoveredProjectData.id}.title`)
+    : "";
+  const hoveredProjectDescription = hoveredProjectData
+    ? tProjects(`${hoveredProjectData.id}.description`)
+    : "";
+  const hoveredProjectClient = hoveredProjectData
+    ? tProjects(`${hoveredProjectData.id}.client`)
+    : "";
 
   const handleProjectClick = (projectId: string) => {
     router.push(`/services/${category}/${projectId}`);
   };
 
+  const handleBackClick = () => {
+    router.push("/services");
+  };
+
   return (
     <div className="min-h-screen bg-surface">
+      {/* Back Button - Posicionado acima do header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+        <button
+          ref={backButtonRef}
+          onClick={handleBackClick}
+          className="group flex items-center gap-2 text-text-muted hover:text-primary transition-colors duration-300 font-medium cursor-pointer"
+        >
+          <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+          <span>{t("backToServices")}</span>
+        </button>
+      </div>
+
       {/* Header */}
-      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border">
+      <div
+        ref={headerRef}
+        className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
-            <div className="text-white">
-              {categoryIcons[category]}
-            </div>
+            <div className="text-white">{categoryIcons[category]}</div>
             <h1 className="text-4xl md:text-5xl font-bold text-white">
               {categoryTitle}
             </h1>
@@ -88,7 +129,10 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
             <div className="flex items-center gap-2">
               <FaFolder className="w-4 h-4 text-white" />
               <span className="text-gray">
-                <strong className="text-white font-semibold">{filteredProjects.length}</strong> {t('projects')}
+                <strong className="text-white font-semibold">
+                  {filteredProjects.length}
+                </strong>{" "}
+                {t("projects")}
               </span>
             </div>
           </div>
@@ -101,7 +145,6 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
           {/* Lista de Projetos */}
           <div className="space-y-4 sm:space-y-6">
             {filteredProjects.map((project, index) => {
-
               const title = tProjects(`${project.id}.title`);
               const description = tProjects(`${project.id}.description`);
               const client = tProjects(`${project.id}.client`);
@@ -109,7 +152,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
               return (
                 <div
                   key={project.id}
-                  ref={el => { projectsRef.current[index] = el; }}
+                  ref={(el) => {
+                    projectsRef.current[index] = el;
+                  }}
                   onClick={() => handleProjectClick(project.id)}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
@@ -135,7 +180,7 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
 
                     {/* Tags de Tecnologia */}
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 4).map(tech => (
+                      {project.technologies.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
                           className="text-xs font-medium bg-surface-alt text-icons border border-border px-3 py-1.5 rounded-full"
@@ -154,13 +199,13 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm pt-4 border-t border-border">
                       <span className="text-text-muted">{client}</span>
                       <span className="flex items-center gap-2 text-icons font-semibold">
-                        {t('viewProject')}
+                        {t("viewProject")}
                         <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
 
@@ -178,23 +223,26 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                 <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center">
                   <FaFolder className="w-16 h-16 text-primary mb-4 opacity-50" />
                   <p className="text-text-muted text-lg font-medium mb-2">
-                    {t('hoverPreview')}
+                    {t("hoverPreview")}
                   </p>
                   <p className="text-text-muted text-sm opacity-75">
-                    {t('hoverPreviewSubtitle')}
+                    {t("hoverPreviewSubtitle")}
                   </p>
                 </div>
               )}
 
               {/* Info Card Sobreposta - Aparece apenas com hover */}
               <div
-                className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6 transition-all duration-300 ${hoveredProjectData ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
-                  }`}
+                className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6 transition-all duration-300 ${
+                  hoveredProjectData
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4 pointer-events-none"
+                }`}
               >
                 {hoveredProjectData && (
                   <div className="text-white">
                     <p className="text-xs uppercase tracking-wider text-white/70 mb-1">
-                      {t('preview')}
+                      {t("preview")}
                     </p>
                     <h3 className="text-xl font-bold mb-2">
                       {hoveredProjectTitle}
@@ -203,7 +251,9 @@ export default function CategoryProjectsPage({ category }: CategoryProjectsPageP
                       {hoveredProjectDescription}
                     </p>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-white/80">{hoveredProjectClient}</span>
+                      <span className="text-white/80">
+                        {hoveredProjectClient}
+                      </span>
                       <span className="flex items-center gap-1 text-white font-medium">
                         Ver detalhes
                         <FaArrowRight className="w-3 h-3" />

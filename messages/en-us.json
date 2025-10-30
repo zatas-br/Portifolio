@@ -402,9 +402,9 @@
     "submitting": "Sending...",
     "success": "Success message send! Thanks for contact.",
     "error": {
-        "default": "An error occurred while sending. Please try again.",
-        "network": "Network error. Check your connection and try again."
-      },
+      "default": "An error occurred while sending. Please try again.",
+      "network": "Network error. Check your connection and try again."
+    },
     "form": {
       "name": {
         "label": "Name",
@@ -588,6 +588,7 @@
     ]
   },
   "CategoryProjectsPage": {
+    "backToServices": "Back to Services",
     "projects": "projects",
     "viewProject": "View project",
     "hoverPreview": "Hover over a project",

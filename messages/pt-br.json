@@ -403,9 +403,9 @@
     "submitting": "Enviando...",
     "success": "Mensagem enviada com sucesso! Obrigado pelo contato.",
     "error": {
-        "default": "Ocorreu um erro ao enviar. Tente novamente.",
-        "network": "Erro de rede. Verifique sua conexão e tente novamente."
-      },
+      "default": "Ocorreu um erro ao enviar. Tente novamente.",
+      "network": "Erro de rede. Verifique sua conexão e tente novamente."
+    },
     "form": {
       "name": {
         "label": "Nome",
@@ -590,6 +590,7 @@
     ]
   },
   "CategoryProjectsPage": {
+    "backToServices": "Voltar para Serviços",
     "projects": "projetos",
     "viewProject": "Ver projeto",
     "hoverPreview": "Passe o mouse sobre um projeto",
