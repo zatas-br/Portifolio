@@ -30,10 +30,32 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     // A estrutura de autores já parece estar correta e desacoplada.
     authors: [ 
       { 
-        name: 'Bruno', 
+        name: 'Thiago Bryan', 
+        avatar: '/images/team/bruno.jpg', 
+        role: 'Head of marketing and design',
+        linkedin: 'https://www.linkedin.com/in/thbryann',
+        instagram: 'https://www.instagram.com/thbryann',
+      },
+      { 
+        name: 'Bruno Santiago', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b',
+        instagram: 'https://www.instagram.com/bruno_s4nt',
+      },
+      { 
+        name: 'Antony Brito', 
+        avatar: '/images/team/bruno.jpg', 
+        role: 'Desenvolvedor Full-Stack',
+        linkedin: 'https://www.linkedin.com/in/britoantony',
+        instagram: 'https://www.instagram.com/antonybriito',
+      },
+      { 
+        name: 'Gabriel Cardoso', 
+        avatar: '/images/team/bruno.jpg', 
+        role: 'Desenvolvedor Full-Stack',
+        linkedin: 'https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328',
+        instagram: 'https://www.instagram.com/gabrielcardos095',
       }
     ]
   },
@@ -49,19 +71,22 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
         name: 'Bruno Santiago', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b',
+        instagram: 'https://www.instagram.com/bruno_s4nt',
       },
       { 
         name: 'Antony Brito', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/britoantony',
+        instagram: 'https://www.instagram.com/antonybriito',
       },
       { 
         name: 'Gabriel Cardoso', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328',
+        instagram: 'https://www.instagram.com/gabrielcardos095',
       }
     ]
   },
@@ -82,7 +107,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
         name: 'Bruno', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       },
       { 
         name: 'Jose', 
@@ -111,7 +136,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
         name: 'Bruno', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       },
       { 
         name: 'Luigi', 
@@ -138,7 +163,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
         name: 'Bruno', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       }
     ]
   },
@@ -159,7 +184,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
         name: 'Bruno', 
         avatar: '/images/team/bruno.jpg', 
         role: 'Desenvolvedor Full-Stack',
-        linkedin: '...'
+        linkedin: 'https://www.linkedin.com/in/bruno-santiago-b8169637b'
       },
       { 
         name: 'Jose', 
@@ -191,6 +216,82 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
         role: 'Desenvolvedor Full-Stack',
         linkedin: '...'
       },
+    ]
+  },
+  
+  {
+  id: 'carlos-advogado',
+    category: 'design',
+    image: 'https://i.postimg.cc/bJtwPnDd/Capa-Carlos-1.png',
+    technologies: ['Canva', 'Freepik'],
+    link: null,
+    gallery: [
+      'https://i.postimg.cc/nrVVDPSq/Carlos-Advogadosc2.png',
+      'https://i.postimg.cc/j28xQ4By/Carlos-Advogados11.png',
+      'https://i.postimg.cc/PJ6XzQ0w/23.png',
+      'https://i.postimg.cc/HxykmMcC/9.png',
+      'https://i.postimg.cc/fL9RsdtT/4.png',
+      'https://i.postimg.cc/W3k1VZF2/5.png',
+      'https://i.postimg.cc/Pxw5HDLB/18.png',
+      'https://i.postimg.cc/HLKkFzxY/19.png',
+      'https://i.postimg.cc/s28gbmXy/12.png',
+    ],
+    authors: [
+      { 
+        name: 'Thiago Bryan', 
+        avatar: '/images/team/bruno.jpg', 
+        role: 'Head of marketing and design',
+        linkedin: 'https://www.linkedin.com/in/thbryann',
+        instagram: 'https://www.instagram.com/thbryann',
+      }
+    ]
+  },{
+    id: 'souzaevilela',
+    category: 'design',
+    image: 'https://i.postimg.cc/fLXbxdvJ/E-ESSE-AQUI-OO.png',
+    technologies: ['Canva', 'Freepik'],
+    link: null,
+    gallery: [
+      'https://i.postimg.cc/vmrjfHV8/Bancario-Souza-e-Vilela5ed-1.png',
+      'https://i.postimg.cc/Y2sX4msQ/Bancario-Souza-e-Vilela3.png',
+      'https://i.postimg.cc/SR2fLDvW/Bancario-Souza-e-Vilela2-1.png',
+      'https://i.postimg.cc/WbmX5f4w/Bancario-Souza-e-Vilelae-1.png',
+      'https://i.postimg.cc/FHR30PkZ/Bancario-Souza-e-Vilela12.png',
+      'https://i.postimg.cc/T37ScHkQ/Bancario-Souza-e-Vilela9.png',
+      'https://i.postimg.cc/4NXSRTqW/Bancario-Souza-e-Vilela7-1.png',
+      'https://i.postimg.cc/h4s0xQZ6/Bancario-Souza-e-Vilela6-1.png',
+    ],
+    authors: [
+      { 
+        name: 'Thiago Bryan', 
+        avatar: '/images/team/bruno.jpg', 
+        role: 'Head of marketing and design',
+        linkedin: 'https://www.linkedin.com/in/thbryann',
+        instagram: 'https://www.instagram.com/thbryann',
+      }
+    ]
+  },{
+    id: 'luiz-gustavo',
+    category: 'design',
+    image: 'https://i.postimg.cc/Qt8gXyH5/Apresentacoes-Portifolio1-1.png',
+    technologies: ['Canva', 'Freepik'],
+    link: null,
+    gallery: [
+      'https://i.postimg.cc/7ZXYFtr4/75-1.png',
+      'https://i.postimg.cc/kgwX0YPm/82-1.png',
+      'https://i.postimg.cc/kgwX0YP6/Maio-Luiz-Gustavo.png',
+      'https://i.postimg.cc/L8v6cQFK/Maio-Luiz-Gustavo-1-1.png',
+      'https://i.postimg.cc/pLkXwcMy/Maio-Luiz-Gustavo-2.png',
+      'https://i.postimg.cc/13M5k71Z/Maio-Luiz-Gustavo-234-1.png',
+    ],
+    authors: [
+      { 
+        name: 'Thiago Bryan', 
+        avatar: '/images/team/bruno.jpg', 
+        role: 'Head of marketing and design',
+        linkedin: 'https://www.linkedin.com/in/thbryann',
+        instagram: 'https://www.instagram.com/thbryann',
+      }
     ]
   },
   // ... outros projetos

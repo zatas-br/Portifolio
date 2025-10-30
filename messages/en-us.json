@@ -307,9 +307,28 @@
       "fullDescription": "This project was developed by the MDS group (Magic and Software Development) from the 2024 class of the Systems Analysis and Development (ADS) course at Senai-601. The goal of the project was to centralize the logistics of reimbursements and expense control for employees on corporate trips.",
       "client": "Final Project - Senai",
       "year": "2024"
-    }
-
-
+    },
+    "carlos-advogado": {
+            "title": "Carlos Lawyer - Social Media Design",
+            "description": "Social Media Project – Law Firm",
+            "fullDescription": "This social media project was created for a lawyer specializing in the legal field, focusing on conveying authority, trust, and professionalism through design.",
+            "client": "Carlos",
+            "year": "2025"
+        },
+        "souzaevilela": {
+            "title": "Souza & Vilela Banking Law - Social Media Design",
+            "description": "Social Media Project – Law Firm",
+            "fullDescription": "This social media project was developed for a lawyer specialized in the banking sector, with the goal of strengthening their digital presence and conveying credibility, trust, and authority within the legal industry.",
+            "client": "Souza & Vilela",
+            "year": "2025"
+        },
+        "luiz-gustavo": {
+            "title": "Luiz Gustavo - Social Media Design",
+            "description": "Social Media Project – Law Firm",
+            "fullDescription": "This social media project was developed for a lawyer in the legal niche, aiming to express authority, credibility, and sophistication through design.",
+            "client": "Luiz Gustavo",
+            "year": "2025"
+        }
 
 
   },
