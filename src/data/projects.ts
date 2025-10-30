@@ -78,10 +78,10 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/y8WFxbXm/d2.png",
       "https://i.postimg.cc/jSCz2FQQ/d3.png",
       "https://i.postimg.cc/13TDqrJ8/d4.png",
-      "https://i.postimg.cc/nhMvrPY9/dm1.jpg",
-      "https://i.postimg.cc/8zshc0B6/dm2.jpg",
-      "https://i.postimg.cc/RZqchDQn/dm3.jpg",
-      "https://i.postimg.cc/7ZbghWMz/dm4.jpg",
+      "https://i.postimg.cc/htNpHxTt/10.png",
+      "https://i.postimg.cc/t482LPWC/7.png",
+      "https://i.postimg.cc/RZ2XjfKF/8.png",
+      "https://i.postimg.cc/bw43KbkY/9.png",
     ],
     authors: [
       {
