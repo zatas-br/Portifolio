@@ -358,40 +358,48 @@
           }
         ]
       },
-      "ana-costa": {
-        "name": "Ana Costa",
-        "role": "CMO & Co-fundadora",
-        "bio": "Especialista em growth marketing e branding. Construiu estratégias de marketing que geraram crescimento de 300% em startups.",
+      "thiago-bryan": {
+        "name": "Thiago Bryan",
+        "role": "CMO & Co-founder",
+        "bio": "Experiência em marketing e design digital, combinando planejamento estratégico e execução criativa para gerar resultados reais. Foco em performance, branding e presença digital, garantindo soluções que unem propósito e estética.",
         "skills": [
-          "Growth Marketing",
-          "Branding",
-          "Analytics",
-          "Estratégia de Conteúdo"
+          "Trabalho em equipe",
+          "Boa comunicação",
+          "Proatividade",
+          "Organização",
+          "Facilidade de aprendizagem",
+          "Disciplina",
+          "Adaptabilidade"
         ],
         "education": [
           {
-            "institution": "Harvard Business School",
-            "degree": "MBA em Marketing",
-            "year": "2015"
+            "institution": "Ensino Médio",
+            "degree": "E.E Arlindo Bittencourt",
+            "year": "2018 - 2024"
           },
           {
-            "institution": "FGV",
-            "degree": "Administração de Empresas",
-            "year": "2011"
+            "institution": "Inglês Basico",
+            "degree": "Wizard idiomas",
+            "year": "2021 - 2022"
+          },
+          {
+            "institution": "Jornalismo",
+            "degree": "Estácio De Sá ",
+            "year": "2025 - actual"
           }
         ],
         "experience": [
           {
             "company": "Zatas",
-            "role": "CMO & Co-fundadora",
-            "period": "2020 - Presente",
-            "description": "Liderando todas as iniciativas de marketing e crescimento da marca."
+            "role": "CMO & Co-founder",
+            "period": "2025 - Present",
+            "description": "Responsável pela estrategia de marketing e design"
           },
           {
-            "company": "Rock Content",
-            "role": "Diretora de Marketing",
-            "period": "2016 - 2020",
-            "description": "Responsável por crescimento de 10x na base de clientes."
+            "company": "Graphic Designer",
+            "role": "Go Marketing Digital",
+            "period": "2023 - 2024",
+            "description": "Responsável pela criação de artes para posts de redes sociais e logotipos"
           }
         ]
       }
