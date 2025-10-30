@@ -376,6 +376,27 @@
             "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
             "client": "Luiz Gustavo",
             "year": "2025"
+        },
+        "montela-brand": {
+            "title": "MONTELA - Identidade Visual de Marca",
+            "description": "Projeto de Identidade Visual – MONTELA, Inteligência que trabalha por você",
+            "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
+            "client": "MONTELA",
+            "year": "2025"
+        },
+        "lyria": {
+            "title": "Lyria",
+            "description": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas.",
+            "fullDescription": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas. A aplicação possui interface web moderna e back-end robusto, utilizando LLM (Large Language Model) para gerar respostas dinâmicas e contextuais.✨ O objetivo é proporcionar uma experiência de conversação natural, capaz de responder perguntas gerais e buscar informações atualizadas na web para garantir precisão.",
+            "client": "TCC - Senai",
+            "year": "2025"
+        },
+        "zatas": {
+            "title": "ZATAS - Identidade Visual de Marca",
+            "description": "Projeto de Identidade Visual – ZATAS, sua visão em tecnologia e sua tecnologia em resultados",
+            "fullDescription": "A identidade visual da ZATAS foi desenvolvida com base em precisão, estratégia e inovação. Inspirada em Monte Carlo, a marca nasce com a filosofia de trabalhar “do Z ao A”: partindo do objetivo final para construir estratégias completas desde o início. As cores escolhidas — preto, cinza, branco e tons de azul — representam confiança, tecnologia e estabilidade, traduzindo a união entre sofisticação e eficiência. A tipografia Montserrat, em variações Regular e Medium, reforça a clareza e o equilíbrio geométrico, simbolizando a fusão entre design e performance. O resultado é uma marca moderna, tecnológica e de forte presença visual, que comunica solidez, inovação e propósito em cada detalhe",
+            "client": "Zatas",
+            "year": "2025"
         }
 
   },

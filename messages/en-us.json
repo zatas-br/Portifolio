@@ -328,7 +328,29 @@
             "fullDescription": "This social media project was developed for a lawyer in the legal niche, aiming to express authority, credibility, and sophistication through design.",
             "client": "Luiz Gustavo",
             "year": "2025"
+        },
+        "montela-brand": {
+          "title": "MONTELA - Brand Visual Identity",
+          "description": "Visual Identity Project – MONTELA, Intelligence that works for you",
+          "fullDescription": "This visual identity project was created for MONTELA, with the goal of conveying authority, credibility, and sophistication through design.",
+          "client": "MONTELA",
+          "year": "2025"
+        },
+        "lyria": {
+          "title": "Lyria",
+          "description": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course.",
+          "fullDescription": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course. The application features a modern web interface and a robust back-end, using an LLM (Large Language Model) to generate dynamic and contextual responses. ✨ The goal is to provide a natural conversational experience, capable of answering general questions and retrieving up-to-date information from the web to ensure accuracy.",
+          "client": "Final Project - Senai",
+          "year": "2025"
+        },
+        "zatas": {
+          "title": "ZATAS - Brand Visual Identity",
+          "description": "Visual Identity Project – ZATAS, your vision in technology and your technology in results",
+          "fullDescription": "The visual identity of ZATAS was developed with a foundation of precision, strategy, and innovation. Inspired by Monte Carlo, the brand was created under the philosophy of working 'from Z to A' — starting from the final goal to build complete strategies from the very beginning. The chosen colors — black, gray, white, and shades of blue — represent trust, technology, and stability, expressing the balance between sophistication and efficiency. The Montserrat typeface, in Regular and Medium variations, reinforces clarity and geometric harmony, symbolizing the fusion between design and performance. The result is a modern, technology-driven brand with a strong visual presence that communicates solidity, innovation, and purpose in every detail.",
+          "client": "Zatas",
+          "year": "2025"
         }
+
 
 
   },
