@@ -36,26 +36,32 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'marketing': <FaBullhorn className="w-16 h-16" />
 };
 
-// Ícones para as tags - COMPLETO COM MARKETING
+// Ícones para as tags - 3 principais por categoria
 const tagIcons: Record<string, React.ReactNode> = {
-  // Desenvolvimento
+  // Desenvolvimento - 3 principais
   'Web': <FaLaptopCode className="w-3 h-3" />,
   'Mobile': <FaMobileAlt className="w-3 h-3" />,
   'APIs': <FaServer className="w-3 h-3" />,
   
-  // Design
+  // Design - 3 principais
   'UI/UX': <MdDesignServices className="w-3 h-3" />,
   'Branding': <MdBrandingWatermark className="w-3 h-3" />,
   'Identidade': <HiSparkles className="w-3 h-3" />,
   
-  // Marketing - 3 PRINCIPAIS
+  // Marketing - 3 principais
   'SEO': <FaSearch className="w-3 h-3" />,
   'Social Media': <FaHashtag className="w-3 h-3" />,
   'Redes Sociais': <FaHashtag className="w-3 h-3" />,
   'Ads': <FaAd className="w-3 h-3" />,
   'Anúncios': <FaAd className="w-3 h-3" />,
-  'Analytics': <FaChartLine className="w-3 h-3" />,
-  'Copywriting': <FaPen className="w-3 h-3" />
+  'Analytics': <FaChartLine className="w-3 h-3" />
+};
+
+// Tags fixas e otimizadas para cada categoria (3 tags cada)
+const categoryTagsOverride: Record<string, string[]> = {
+  'desenvolvimento': ['Web', 'Mobile', 'APIs'],
+  'design': ['UI/UX', 'Branding', 'Identidade'],
+  'marketing': ['SEO', 'Ads', 'Analytics']
 };
 
 export default function ServicesLandingPage() {
@@ -102,18 +108,19 @@ export default function ServicesLandingPage() {
             // Busca os dados traduzíveis usando o ID
             const title = tCategories(`${category.id}.title`);
             const description = tCategories(`${category.id}.description`);
-            const tags = tCategories.raw(`${category.id}.tags`) as string[];
+            // Usa as tags fixas otimizadas (3 tags por categoria)
+            const tags = categoryTagsOverride[category.id] || [];
 
             return (
               <div
                 key={category.id}
                 ref={el => { cardsRef.current[index] = el; }}
                 onClick={() => router.push(`/services/${category.id}`)}
-                className="group cursor-pointer"
+                className="group cursor-pointer h-full"
               >
-                <div className="bg-surface border-2 border-border rounded-3xl p-8 h-full hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div className="bg-surface border-2 border-border rounded-3xl p-8 h-full hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
                   {/* Icon (usa o ID estático) */}
-                  <div className="text-primary mb-6 group-hover:scale-110 group-hover:text-primary-hover transition-all duration-300">
+                  <div className="text-primary-v2 mb-6 group-hover:scale-110 group-hover:text-primary-hover transition-all duration-300">
                     {categoryIcons[category.id]}
                   </div>
 
@@ -122,27 +129,32 @@ export default function ServicesLandingPage() {
                     {title}
                   </h2>
 
-                  {/* Description (traduzido) */}
-                  <p className="text-lg text-text-muted mb-8 leading-relaxed">
+                  {/* Description (traduzido) - Altura fixa */}
+                  <p className="text-lg text-text-muted mb-8 leading-relaxed h-[120px] overflow-hidden">
                     {description}
                   </p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-primary font-semibold cursor-pointer">
+                  <div className="flex items-center gap-2 text-icons font-semibold cursor-pointer mb-8">
                     <span>{t('viewProjects')}</span>
                     <FaArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
 
-                  {/* Tags (traduzidas) com ÍCONES */}
-                  <div className="mt-8 pt-6 border-t border-border">
-                    <div className="flex flex-wrap gap-3">
+                  {/* Tags (3 fixas por categoria) com ÍCONES - Fixo no bottom */}
+                  <div className="mt-auto pt-6 border-t border-border">
+                    <div className="grid grid-cols-3 gap-2">
                       {tags.map((tag) => (
                         <span 
                           key={tag}
-                          className="flex items-center gap-1.5 text-sm text-text-muted bg-surface-alt px-3 py-1.5 rounded-full"
+                          className="flex items-center justify-center gap-1.5 text-xs text-text-muted bg-surface-alt px-2 py-2 rounded-full h-[36px] whitespace-nowrap overflow-hidden text-ellipsis"
+                          title={tag}
                         >
-                          {tagIcons[tag]}
-                          {tag}
+                          <span className="flex-shrink-0">
+                            {tagIcons[tag]}
+                          </span>
+                          <span className="truncate">
+                            {tag}
+                          </span>
                         </span>
                       ))}
                     </div>
