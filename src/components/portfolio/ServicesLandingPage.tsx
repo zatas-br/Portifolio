@@ -9,15 +9,22 @@ import {
   FaArrowRight,
   FaLaptopCode,
   FaMobileAlt,
-  FaServer
+  FaServer,
+  FaChartLine,
+  FaAd,
+  FaSearch,
+  FaPen
 } from 'react-icons/fa';
 import { 
   MdDesignServices, 
-  MdBrandingWatermark 
+  MdBrandingWatermark
 } from 'react-icons/md';
 import { 
   HiSparkles 
 } from 'react-icons/hi';
+import { 
+  FaHashtag
+} from 'react-icons/fa';
 import { CATEGORIES_STATIC } from '@/src/data/projects';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import { useTranslations } from 'next-intl';
@@ -29,14 +36,26 @@ const categoryIcons: Record<string, React.ReactNode> = {
   'marketing': <FaBullhorn className="w-16 h-16" />
 };
 
-// Ícones para as tags
+// Ícones para as tags - COMPLETO COM MARKETING
 const tagIcons: Record<string, React.ReactNode> = {
+  // Desenvolvimento
   'Web': <FaLaptopCode className="w-3 h-3" />,
   'Mobile': <FaMobileAlt className="w-3 h-3" />,
   'APIs': <FaServer className="w-3 h-3" />,
+  
+  // Design
   'UI/UX': <MdDesignServices className="w-3 h-3" />,
   'Branding': <MdBrandingWatermark className="w-3 h-3" />,
-  'Identidade': <HiSparkles className="w-3 h-3" />
+  'Identidade': <HiSparkles className="w-3 h-3" />,
+  
+  // Marketing - 3 PRINCIPAIS
+  'SEO': <FaSearch className="w-3 h-3" />,
+  'Social Media': <FaHashtag className="w-3 h-3" />,
+  'Redes Sociais': <FaHashtag className="w-3 h-3" />,
+  'Ads': <FaAd className="w-3 h-3" />,
+  'Anúncios': <FaAd className="w-3 h-3" />,
+  'Analytics': <FaChartLine className="w-3 h-3" />,
+  'Copywriting': <FaPen className="w-3 h-3" />
 };
 
 export default function ServicesLandingPage() {
@@ -53,27 +72,19 @@ export default function ServicesLandingPage() {
     animateEnter(cardsRef.current, 0.15);
   }, [animateEnter, animateFadeIn]);
 
-
   return (
     <div className="min-h-screen bg-surface">
       {/* Header */}
       <div ref={headerRef} className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          {/* Badge */}
-          <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 bg-surface-alt border border-border text-text-muted px-4 py-2 rounded-full text-sm font-medium">
-              <HiSparkles className="w-4 h-4 text-primary" />
-              {t('badge')}
-            </span>
-          </div>
           
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold text-center mb-6">
             <span className="text-text">{t('title1')} </span>
-            <span className="text-primary">{t('title2')}</span>
+            <span className="text-primary-v2">{t('title2')}</span>
             <br />
             <span className="text-text">{t('title3')} </span>
-            <span className="bg-gradient-to-r from-start-gradient to-final-gradient bg-clip-text text-transparent">{t('title4')}</span>
+            <span className="text-primary-v2 font-extrabold">{t('title4')}</span>
           </h1>
           
           {/* Subtitle */}
@@ -122,7 +133,7 @@ export default function ServicesLandingPage() {
                     <FaArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
 
-                  {/* Tags (traduzidas) */}
+                  {/* Tags (traduzidas) com ÍCONES */}
                   <div className="mt-8 pt-6 border-t border-border">
                     <div className="flex flex-wrap gap-3">
                       {tags.map((tag) => (
