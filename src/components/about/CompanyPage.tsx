@@ -6,16 +6,12 @@ import {
   FaEye, 
   FaHeart,
   FaUsers,
-  FaProjectDiagram,
-  FaGlobeAmericas,
-  FaAward,
   FaLightbulb,
   FaStar,
   FaHandshake,
   FaChartLine,
   FaBalanceScale
 } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import { useMessages, useTranslations } from 'next-intl';
 
@@ -80,9 +76,9 @@ export default function CompanyPage() {
 
         {/* Missão, Visão, Valores */}
         <div ref={el => { sectionsRef.current[1] = el; }} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-24">
-          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary transition-all hover:shadow-lg">
+          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
-              <FaRocket className="w-8 h-8 text-primary" />
+              <FaRocket className="w-8 h-8 text-primary-v2" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardMissionTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
@@ -90,9 +86,9 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary transition-all hover:shadow-lg">
+          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
-              <FaEye className="w-8 h-8 text-primary" />
+              <FaEye className="w-8 h-8 text-primary-v2" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardVisionTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
@@ -100,9 +96,9 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary transition-all hover:shadow-lg">
+          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
-              <FaHeart className="w-8 h-8 text-primary" />
+              <FaHeart className="w-8 h-8 text-primary-v2" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardValuesTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
@@ -114,7 +110,7 @@ export default function CompanyPage() {
         {/* Cultura */}
         <div ref={el => { sectionsRef.current[3] = el; }}>
           <div className="flex items-center gap-3 mb-6">
-            <FaHeart className="w-6 h-6 text-primary" />
+            <FaHeart className="w-6 h-6 text-primary-v2" />
             {/* ATUALIZADO */}
             <h2 className="text-3xl md:text-4xl font-bold text-text">{t('cultureTitle')}</h2>
           </div>
@@ -125,9 +121,9 @@ export default function CompanyPage() {
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {/* ATUALIZADO (agora consome o array 'cultureValues' que usa 't()') */}
             {cultureValues.map((item, i) => (
-              <div key={i} className="bg-surface border-2 border-border rounded-2xl p-6 hover:border-primary transition-all hover:shadow-lg group cursor-default">
+              <div key={i} className="bg-surface border-2 border-border rounded-2xl p-6 hover:border-primary-v2 transition-all hover:shadow-lg group cursor-default">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-surface-alt rounded-xl flex items-center justify-center flex-shrink-0 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-surface-alt rounded-xl flex items-center justify-center flex-shrink-0 text-primary-v2 group-hover:bg-primary group-hover:text-white transition-colors">
                     <div className="w-12 h-12 flex items-center justify-center">{item.icon}</div>
                   </div>
                   <div>
