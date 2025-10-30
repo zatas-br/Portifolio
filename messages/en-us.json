@@ -398,6 +398,13 @@
   "ContactPage": {
     "title": "Contact",
     "subtitle": "Have an idea or project? We'd love to hear from you.",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Success message send! Thanks for contact.",
+    "error": {
+        "default": "An error occurred while sending. Please try again.",
+        "network": "Network error. Check your connection and try again."
+      },
     "form": {
       "name": {
         "label": "Name",
@@ -410,8 +417,7 @@
       "message": {
         "label": "Message",
         "placeholder": "How can we help?"
-      },
-      "submit": "Send Message"
+      }
     }
   },
   "Categories": {

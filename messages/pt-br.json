@@ -399,6 +399,13 @@
   "ContactPage": {
     "title": "Contato",
     "subtitle": "Tem uma ideia ou projeto? Adoraríamos ouvir de você.",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "success": "Mensagem enviada com sucesso! Obrigado pelo contato.",
+    "error": {
+        "default": "Ocorreu um erro ao enviar. Tente novamente.",
+        "network": "Erro de rede. Verifique sua conexão e tente novamente."
+      },
     "form": {
       "name": {
         "label": "Nome",
