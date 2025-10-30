@@ -450,17 +450,17 @@
   },
   "Projects": {
     "zatas-website": {
-      "title": "Website Zatas",
-      "description": "Desenvolvimento do website institucional da Zatas, focado em performance e animações.",
-      "fullDescription": "Uma descrição muito mais longa e detalhada sobre o desafio, a solução e os resultados do projeto do website da Zatas. Explicando as escolhas tecnológicas e o impacto para o cliente.",
+      "title": "Website Zatas | Portfólio Institucional",
+      "description": "Website institucional desenvolvido sob medida para apresentar projetos das 3 áreas (Desenvolvimento, Design e Marketing) e capturar clientes e investidores.",
+      "fullDescription": "Portfólio institucional desenvolvido sob medida para a Zatas com o objetivo de apresentar de forma impactante os projetos das três áreas de atuação da empresa: Desenvolvimento, Design e Marketing Digital. O site foi projetado para capturar a atenção de potenciais clientes e investidores através de um design moderno e sofisticado, com animações fluidas e interativas que valorizam cada projeto. O website conta com tema claro e escuro para melhor experiência do usuário, sistema de internacionalização (português e inglês), navegação intuitiva por categorias, páginas de detalhes de projetos com estudos de caso completos, e seções institucionais sobre a empresa, equipe e oportunidades de parcerias. Cada elemento foi pensado para transmitir profissionalismo, inovação e a identidade visual única da Zatas, criando uma experiência premium que reflete a excelência técnica e criativa da empresa.",
       "client": "Zatas (Interno)",
       "year": "2025"
     },
     "personal-app": {
-      "title": "Aplicativo de Treino",
-      "description": "App mobile para personal trainers e alunos gerenciarem treinos e progresso.",
-      "fullDescription": "Este projeto envolveu a criação de um backend robusto com Spring Boot e um aplicativo móvel multiplataforma com React Native, focado em usabilidade e funcionalidade offline.",
-      "client": "Projeto Pessoal",
+      "title": "DPJ - Personal Trainer | Solução sob medida",
+      "description": "Solução completa sob medida com app mobile para treinos e acompanhamento, e plataforma web para gestão de alunos.",
+      "fullDescription": "Solução completa desenvolvida sob medida para personal trainers, composta por um aplicativo mobile para treinos e acompanhamento do administrador, integrado a uma aplicação web robusta para gerenciamento completo de alunos e treinos. O sistema permite que os alunos acessem seus treinos personalizados pelo app, enquanto o personal trainer gerencia toda a base de clientes, cria e edita treinos, acompanha progresso e mantém controle total através da plataforma web. A solução foi desenvolvida com backend em Spring Boot, aplicativo móvel multiplataforma em React Native e interface web moderna, garantindo sincronização em tempo real entre as plataformas, usabilidade intuitiva e funcionalidade offline para não interromper os treinos dos alunos.",
+      "client": "DPJ Personal Trainer",
       "year": "2024"
     },
     "gerenciador-de-alunos": {

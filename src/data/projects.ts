@@ -21,7 +21,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
     id: "zatas-website",
     category: "desenvolvimento",
     image: "https://i.postimg.cc/YSsDjFWp/z1.png",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "GSAP"],
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "GSAP", "Motion"],
     link: "https://zatas.com.br",
     gallery: [
       "https://i.postimg.cc/YSsDjFWp/z1.png",
@@ -70,7 +70,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
   {
     id: "personal-app",
     category: "desenvolvimento",
-    image: "https://i.postimg.cc/4xnzySbz/d1.png",
+    image: "https://i.postimg.cc/pXJSxQgk/capa-deusmar.png",
     technologies: ["React Native", "Expo", "Java", "Spring Boot", "MySQL"],
     link: null,
     gallery: [
