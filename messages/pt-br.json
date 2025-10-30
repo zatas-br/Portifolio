@@ -244,20 +244,54 @@
           { "company": "Novaes Engenharia", "role": "Desenvolvedor Full-Stack", "period": "2024 - Presente", "description": "Resolvendo Problemas Internos com Solucoes Tecnologicas" }
         ]
       },
-      "pedro-oliveira": {
-        "name": "Pedro Oliveira",
-        "role": "CPO & Co-fundador",
-        "bio": "Designer de produto com foco em experiência do usuário. Acredita que design é sobre resolver problemas, não apenas estética.",
-        "skills": ["Product Design", "UX Research", "Design Systems", "Prototipagem"],
+      "gabriel-cardoso": {
+        "name": "Gabriel Cardoso",
+        "role": "CFO e Co-fundador",
+        "bio": "Profissional multidisciplinar com experiência em gestão financeira e desenvolvimento de software. Como cofundador da Zatas, atua tanto na administração financeira quanto na criação de soluções tecnológicas inovadoras para clientes de diferentes setores.",
+        "skills": [
+          "Gestão Financeira",
+          "Planejamento Estratégico",
+          "Desenvolvimento de Software",
+          "Python",
+          "Power BI",
+          "Análise de Sistemas"
+        ],
         "education": [
-          { "institution": "Parsons School of Design - NYC", "degree": "Mestrado em Design Interaction", "year": "2016" },
-          { "institution": "ESPM", "degree": "Design Gráfico", "year": "2013" }
+          {
+            "institution": "Escola Estadual Doutor Álvaro Guião",
+            "degree": "Ensino Médio Completo",
+            "year": "2023"
+          },
+          {
+            "institution": "SENAC",
+            "degree": "Montador e Reparador de Computadores",
+            "year": "2024"
+          },
+          {
+            "institution": "SENAI",
+            "degree": "Desenvolvimento de Sistemas",
+            "year": "2024 - 2025"
+          },
+          {
+            "institution": "SENAI",
+            "degree": "Microsoft Power BI",
+            "year": "2024"
+          },
+          {
+            "institution": "SENAI",
+            "degree": "Python",
+            "year": "2024 - 2025"
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CPO & Co-fundador", "period": "2020 - Presente", "description": "Liderando a visão de produto e design, criando experiências premiadas." },
-          { "company": "Nubank", "role": "Lead Product Designer", "period": "2017 - 2020", "description": "Responsável pelo redesign do app usado por 40M+ clientes." }
+          {
+            "company": "Zatas",
+            "role": "CFO e Co-fundador",
+            "period": "2025 - Presente",
+            "description": "Responsável pela gestão financeira e estratégica da empresa, além de contribuir ativamente no desenvolvimento de projetos de software e soluções digitais personalizadas."
+          }
         ]
-      },
+},
       "ana-costa": {
         "name": "Ana Costa",
         "role": "CMO & Co-fundadora",

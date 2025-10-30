@@ -19,11 +19,11 @@ export const TEAM_PROFILES: TeamProfile[] = [
     }
   },
   {
-    id: 'pedro-oliveira',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400',
+    id: 'gabriel-cardoso',
+    image: 'https://i.postimg.cc/1XYgw9sY/brya.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/pedrooliveira',
-      twitter: 'https://twitter.com/pedrooliv'
+      linkedin: 'https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328',
+      github: 'https://github.com/GabrielCardoso76'
     }
   },
   {
