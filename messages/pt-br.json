@@ -217,18 +217,21 @@
       "experience": "Experiência"
     },
     "members": {
-      "joao-silva": {
-        "name": "João Silva",
-        "role": "CEO & Co-fundador",
-        "bio": "Empreendedor serial com mais de 15 anos de experiência em tecnologia. Apaixonado por criar soluções que impactam milhões de pessoas.",
-        "skills": ["Estratégia", "Liderança", "Produto", "Visão de Negócio"],
+      "antony-brito": {
+        "name": "Antony Brito",
+        "role": "CPO & Co-fundador",
+        "bio": "Ampla experiência em desenvolvimento full-stack e design digital, unindo visão técnica e estética para criar produtos escaláveis e experiências digitais. Atua no planejamento e na implementação de soluções tecnológicas inovadoras, com foco em performance, usabilidade e identidade visual consistente.",
+        "skills": ["Estratégia", "Liderança", "Inovação", "Produto"],
         "education": [
-          { "institution": "MIT - Massachusetts Institute of Technology", "degree": "MBA em Gestão de Tecnologia", "year": "2015" },
-          { "institution": "USP - Universidade de São Paulo", "degree": "Engenharia da Computação", "year": "2010" }
+          { "institution": "Microsoft e LinkedIn", "degree": "Fundamentos para Desenvolvimento de Software", "year": "2024" },
+          { "institution": "SENAI-601", "degree": "Analise e Desenvolvimento de Sistemas", "year": "2024 - 2025" },
+          { "institution": "HubX Digital", "degree": "Profissional em Design", "year": "2023" },
+          { "institution": "Linkedin", "degree": "Mais de 40 licenças e certificações concluídas. Para mais detalhes, acesse meu perfil no LinkedIn." }
+          
         ],
         "experience": [
-          { "company": "Zatas", "role": "CEO & Co-fundador", "period": "2020 - Presente", "description": "Liderando a visão estratégica e crescimento da empresa, expandindo para 5 países." },
-          { "company": "TechCorp Brasil", "role": "Diretor de Produto", "period": "2015 - 2020", "description": "Responsável por lançar 3 produtos que geraram R$50M em receita." }
+          { "company": "Zatas", "role": "CPO & Co-fundador", "period": "2025 - Presente", "description": "Responsável pela estratégia tecnológica, desenvolvimento do produto e gestão da equipe." },
+          { "company": "Tecumseh", "role": "Programador", "period": "2024 - 2025", "description": "Responsável por apoiar o desenvolvimento de novas funcionalidades e dar suporte às rotinas da equipe de tecnologia." }
         ]
       },
       "bruno-santiago": {
@@ -240,7 +243,7 @@
           { "institution": "SENAI-601", "degree": "Analise e Desenvolvimento de Sistemas", "year": "2024" }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CTO & Co-fundador", "period": "2025 - Presente", "description": "Responsavel pela Tecnologia do produto e gestao da equipe de Desenvolvimento" },
+          { "company": "Zatas", "role": "CTO & Co-fundador", "period": "2025 - Presente", "description": "Responsavel pela Tecnologia do produto e gestão da equipe de Desenvolvimento" },
           { "company": "Novaes Engenharia", "role": "Desenvolvedor Full-Stack", "period": "2024 - Presente", "description": "Resolvendo Problemas Internos com Solucoes Tecnologicas" }
         ]
       },

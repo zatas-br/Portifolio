@@ -3,11 +3,11 @@ import { TeamProfile } from "@/types";
 
 export const TEAM_PROFILES: TeamProfile[] = [
   {
-    id: 'joao-silva',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
+    id: 'antony-brito',
+    image: 'https://i.postimg.cc/C1DKj84K/perfil-antony.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/joaosilva',
-      twitter: 'https://twitter.com/joaosilva'
+      linkedin: 'https://linkedin.com/in/britoantony',
+      github: 'https://github.com/AntonyBrito'
     }
   },
   {

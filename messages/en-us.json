@@ -6,32 +6,68 @@
     "home": "Home",
     "about": "About"
   },
-  "CardNav":{
-      "logoAlt": "Zatas Logo",
-      "about": {
-        "label": "About",
-        "links": [
-          { "label": "Company", "href": "/about", "ariaLabel": "About Zatas Company" },
-          { "label": "Team", "href": "/team", "ariaLabel": "Meet our Team" },
-          { "label": "Partnerships", "href": "/partnerships", "ariaLabel": "Partnership Opportunities" }
-        ]
-      },
-      "services": {
-        "label": "Services",
-        "links": [
-          { "label": "Development", "href": "/services/development", "ariaLabel": "Web Development" },
-          { "label": "Design", "href": "/services/design", "ariaLabel": "Design and UX/UI" },
-          { "label": "Marketing", "href": "/services/consulting", "ariaLabel": "Digital Marketing" }
-        ]
-      },
-      "contact": {
-        "label": "Contact",
-        "links": [
-          { "label": "Email", "href": "mailto:contato@zatas.com.br", "ariaLabel": "Send us an email" },
-          { "label": "WhatsApp", "href": "https://wa.me/5516994418460", "ariaLabel": "Chat on WhatsApp" },
-          { "label": "LinkedIn", "href": "https://www.linkedin.com/company/zatas/about", "ariaLabel": "Connect on LinkedIn" }
-        ]
-      }
+  "CardNav": {
+    "logoAlt": "Zatas Logo",
+    "about": {
+      "label": "About",
+      "links": [
+        {
+          "label": "Company",
+          "href": "/about",
+          "ariaLabel": "About Zatas Company"
+        },
+        {
+          "label": "Team",
+          "href": "/team",
+          "ariaLabel": "Meet our Team"
+        },
+        {
+          "label": "Partnerships",
+          "href": "/partnerships",
+          "ariaLabel": "Partnership Opportunities"
+        }
+      ]
+    },
+    "services": {
+      "label": "Services",
+      "links": [
+        {
+          "label": "Development",
+          "href": "/services/development",
+          "ariaLabel": "Web Development"
+        },
+        {
+          "label": "Design",
+          "href": "/services/design",
+          "ariaLabel": "Design and UX/UI"
+        },
+        {
+          "label": "Marketing",
+          "href": "/services/consulting",
+          "ariaLabel": "Digital Marketing"
+        }
+      ]
+    },
+    "contact": {
+      "label": "Contact",
+      "links": [
+        {
+          "label": "Email",
+          "href": "mailto:contato@zatas.com.br",
+          "ariaLabel": "Send us an email"
+        },
+        {
+          "label": "WhatsApp",
+          "href": "https://wa.me/5516994418460",
+          "ariaLabel": "Chat on WhatsApp"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/company/zatas/about",
+          "ariaLabel": "Connect on LinkedIn"
+        }
+      ]
+    }
   },
   "CompanyPage": {
     "title": "About Zatas",
@@ -50,7 +86,6 @@
     "cardVisionText": "To be a global leader in digital product development, recognized for excellence and positive impact.",
     "cardValuesTitle": "Values",
     "cardValuesText": "Continuous innovation, technical excellence, teamwork, transparency, and customer focus.",
-    
     "numbersTitle": "Zatas by the Numbers",
     "numbersItems": {
       "professionals": "Professionals",
@@ -61,12 +96,30 @@
     "cultureTitle": "Our Culture",
     "cultureDescription": "We believe a healthy and collaborative work environment is essential for innovation. At Zatas, we value:",
     "cultureItems": {
-      "autonomy": { "title": "Autonomy", "desc": "We trust our team to make decisions" },
-      "learning": { "title": "Learning", "desc": "We encourage continuous growth" },
-      "diversity": { "title": "Diversity", "desc": "We celebrate different perspectives" },
-      "transparency": { "title": "Transparency", "desc": "Open communication at all levels" },
-      "balance": { "title": "Work-life balance", "desc": "Balance between personal and professional life" },
-      "impact": { "title": "Impact", "desc": "Focus on results that matter" }
+      "autonomy": {
+        "title": "Autonomy",
+        "desc": "We trust our team to make decisions"
+      },
+      "learning": {
+        "title": "Learning",
+        "desc": "We encourage continuous growth"
+      },
+      "diversity": {
+        "title": "Diversity",
+        "desc": "We celebrate different perspectives"
+      },
+      "transparency": {
+        "title": "Transparency",
+        "desc": "Open communication at all levels"
+      },
+      "balance": {
+        "title": "Work-life balance",
+        "desc": "Balance between personal and professional life"
+      },
+      "impact": {
+        "title": "Impact",
+        "desc": "Focus on results that matter"
+      }
     }
   },
   "PartnershipsPage": {
@@ -79,8 +132,8 @@
         "stat2": "100+ projects delivered",
         "stat3": "5 countries served"
       },
-      "buttonProject":"Explore Projects",
-      "buttonInstagram":"Folow on Instagram"
+      "buttonProject": "Explore Projects",
+      "buttonInstagram": "Folow on Instagram"
     },
     "partnershipTypes": {
       "title": "Partnership Opportunities",
@@ -89,17 +142,29 @@
         {
           "title": "Strategic Partners",
           "description": "We are looking for partners who share our vision of transforming the digital market with innovation and excellence.",
-          "benefits": ["Profit sharing", "Strategic decisions", "Shared growth"]
+          "benefits": [
+            "Profit sharing",
+            "Strategic decisions",
+            "Shared growth"
+          ]
         },
         {
           "title": "Investors",
           "description": "A fast-growing company seeking investment for national and international expansion.",
-          "benefits": ["Competitive ROI", "Full transparency", "Monthly reports"]
+          "benefits": [
+            "Competitive ROI",
+            "Full transparency",
+            "Monthly reports"
+          ]
         },
         {
           "title": "Commercial Partners",
           "description": "Build a solid business network with us. Referrals, joint projects, and mutual growth.",
-          "benefits": ["Attractive commissions", "Full support", "Exclusive projects"]
+          "benefits": [
+            "Attractive commissions",
+            "Full support",
+            "Exclusive projects"
+          ]
         }
       ]
     },
@@ -169,31 +234,82 @@
       "experience": "Experience"
     },
     "members": {
-      "joao-silva": {
-        "name": "João Silva",
-        "role": "CEO & Co-founder",
-        "bio": "Serial entrepreneur with over 15 years of experience in technology. Passionate about creating solutions that impact millions of people.",
-        "skills": ["Strategy", "Leadership", "Product", "Business Vision"],
+      "antony-brito": {
+        "name": "Antony Brito",
+        "role": "CPO & Co-founder",
+        "bio": "Extensive experience in full-stack development and digital design, combining technical and aesthetic vision to create scalable products and engaging digital experiences. Works on planning and implementing innovative technological solutions, focusing on performance, usability, and consistent visual identity.",
+        "skills": [
+          "Strategy",
+          "Leadership",
+          "Innovation",
+          "Product"
+        ],
         "education": [
-          { "institution": "MIT - Massachusetts Institute of Technology", "degree": "MBA in Technology Management", "year": "2015" },
-          { "institution": "USP - University of São Paulo", "degree": "Computer Engineering", "year": "2010" }
+          {
+            "institution": "Microsoft and LinkedIn",
+            "degree": "Foundations for Software Development",
+            "year": "2024"
+          },
+          {
+            "institution": "SENAI-601",
+            "degree": "Systems Analysis and Development",
+            "year": "2024 - 2025"
+          },
+          {
+            "institution": "HubX Digital",
+            "degree": "Professional in Design",
+            "year": "2023"
+          },
+          {
+            "institution": "LinkedIn",
+            "degree": "Over 40 licenses and certifications completed. For more details, visit my LinkedIn profile."
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CEO & Co-founder", "period": "2020 - Present", "description": "Leading the strategic vision and growth of the company, expanding to 5 countries." },
-          { "company": "TechCorp Brazil", "role": "Product Director", "period": "2015 - 2020", "description": "Responsible for launching 3 products that generated R$50M in revenue." }
+          {
+            "company": "Zatas",
+            "role": "CPO & Co-founder",
+            "period": "2025 - Present",
+            "description": "Responsible for technological strategy, product development, and team management."
+          },
+          {
+            "company": "Tecumseh",
+            "role": "Developer",
+            "period": "2024 - 2025",
+            "description": "Responsible for supporting the development of new features and assisting the technology team in daily routines."
+          }
         ]
       },
       "bruno-santiago": {
         "name": "Bruno Santiago",
         "role": "CTO & Co-Founder",
         "bio": "Full-Stack Developer with expertise in performance, scaling, and architecture; Technical Lead focused on innovation.",
-        "skills": ["Software Architecture", "Cloud Computing", "DevOps", "Technical Management"],
+        "skills": [
+          "Software Architecture",
+          "Cloud Computing",
+          "DevOps",
+          "Technical Management"
+        ],
         "education": [
-          { "institution": "SENAI-601", "degree": "Systems Analysis and Development", "year": "2024" }
+          {
+            "institution": "SENAI-601",
+            "degree": "Systems Analysis and Development",
+            "year": "2024"
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CTO & Co-founder", "period": "2025 - Presente", "description": "Responsible for product technology and management of the development team." },
-          { "company": "Novaes Engenharia", "role": "Full-Stack Developer", "period": "2024 - Presente", "description": "Solving Internal Problems with Technological Solutions" }
+          {
+            "company": "Zatas",
+            "role": "CTO & Co-founder",
+            "period": "2025 - Presente",
+            "description": "Responsible for product technology and management of the development team."
+          },
+          {
+            "company": "Novaes Engenharia",
+            "role": "Full-Stack Developer",
+            "period": "2024 - Presente",
+            "description": "Solving Internal Problems with Technological Solutions"
+          }
         ]
       },
       "gabriel-cardoso": {
@@ -248,14 +364,37 @@
         "name": "Ana Costa",
         "role": "CMO & Co-founder",
         "bio": "Specialist in growth marketing and branding. Built marketing strategies that generated 300% growth in startups.",
-        "skills": ["Growth Marketing", "Branding", "Analytics", "Content Strategy"],
+        "skills": [
+          "Growth Marketing",
+          "Branding",
+          "Analytics",
+          "Content Strategy"
+        ],
         "education": [
-          { "institution": "Harvard Business School", "degree": "MBA in Marketing", "year": "2015" },
-          { "institution": "FGV", "degree": "Business Administration", "year": "2011" }
+          {
+            "institution": "Harvard Business School",
+            "degree": "MBA in Marketing",
+            "year": "2015"
+          },
+          {
+            "institution": "FGV",
+            "degree": "Business Administration",
+            "year": "2011"
+          }
         ],
         "experience": [
-          { "company": "Zatas", "role": "CMO & Co-founder", "period": "2020 - Present", "description": "Leading all marketing and brand growth initiatives." },
-          { "company": "Rock Content", "role": "Marketing Director", "period": "2016 - 2020", "description": "Responsible for 10x growth in the customer base." }
+          {
+            "company": "Zatas",
+            "role": "CMO & Co-founder",
+            "period": "2020 - Present",
+            "description": "Leading all marketing and brand growth initiatives."
+          },
+          {
+            "company": "Rock Content",
+            "role": "Marketing Director",
+            "period": "2016 - 2020",
+            "description": "Responsible for 10x growth in the customer base."
+          }
         ]
       }
     }
@@ -283,20 +422,31 @@
     "desenvolvimento": {
       "title": "Desenvolvimento",
       "description": "Criamos soluções de software robustas, desde APIs escaláveis até aplicações web e móveis interativas.",
-      "tags": ["Web", "Mobile", "APIs"]
+      "tags": [
+        "Web",
+        "Mobile",
+        "APIs"
+      ]
     },
     "design": {
       "title": "Design",
       "description": "Desenhamos interfaces intuitivas e marcas memoráveis que conectam sua empresa ao seu público.",
-      "tags": ["UI/UX", "Branding", "Identidade"]
+      "tags": [
+        "UI/UX",
+        "Branding",
+        "Identidade"
+      ]
     },
     "marketing": {
       "title": "Marketing",
       "description": "Estratégias digitais focadas em crescimento, engajamento e resultados mensuráveis.",
-      "tags": ["SEO", "Copywriting", "Ads"]
+      "tags": [
+        "SEO",
+        "Copywriting",
+        "Ads"
+      ]
     }
   },
-
   "Projects": {
     "zatas-website": {
       "title": "Website Zatas",
@@ -312,7 +462,6 @@
       "client": "Projeto Pessoal",
       "year": "2024"
     },
-    
     "gerenciador-de-alunos": {
       "title": "Student Manager",
       "description": "The System manages and centralizes classes from various schools",
@@ -342,52 +491,48 @@
       "year": "2024"
     },
     "carlos-advogado": {
-            "title": "Carlos Lawyer - Social Media Design",
-            "description": "Social Media Project – Law Firm",
-            "fullDescription": "This social media project was created for a lawyer specializing in the legal field, focusing on conveying authority, trust, and professionalism through design.",
-            "client": "Carlos",
-            "year": "2025"
-        },
-        "souzaevilela": {
-            "title": "Souza & Vilela Banking Law - Social Media Design",
-            "description": "Social Media Project – Law Firm",
-            "fullDescription": "This social media project was developed for a lawyer specialized in the banking sector, with the goal of strengthening their digital presence and conveying credibility, trust, and authority within the legal industry.",
-            "client": "Souza & Vilela",
-            "year": "2025"
-        },
-        "luiz-gustavo": {
-            "title": "Luiz Gustavo - Social Media Design",
-            "description": "Social Media Project – Law Firm",
-            "fullDescription": "This social media project was developed for a lawyer in the legal niche, aiming to express authority, credibility, and sophistication through design.",
-            "client": "Luiz Gustavo",
-            "year": "2025"
-        },
-        "montela-brand": {
-          "title": "MONTELA - Brand Visual Identity",
-          "description": "Visual Identity Project – MONTELA, Intelligence that works for you",
-          "fullDescription": "This visual identity project was created for MONTELA, with the goal of conveying authority, credibility, and sophistication through design.",
-          "client": "MONTELA",
-          "year": "2025"
-        },
-        "lyria": {
-          "title": "Lyria",
-          "description": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course.",
-          "fullDescription": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course. The application features a modern web interface and a robust back-end, using an LLM (Large Language Model) to generate dynamic and contextual responses. ✨ The goal is to provide a natural conversational experience, capable of answering general questions and retrieving up-to-date information from the web to ensure accuracy.",
-          "client": "Final Project - Senai",
-          "year": "2025"
-        },
-        "zatas": {
-          "title": "ZATAS - Brand Visual Identity",
-          "description": "Visual Identity Project – ZATAS, your vision in technology and your technology in results",
-          "fullDescription": "The visual identity of ZATAS was developed with a foundation of precision, strategy, and innovation. Inspired by Monte Carlo, the brand was created under the philosophy of working 'from Z to A' — starting from the final goal to build complete strategies from the very beginning. The chosen colors — black, gray, white, and shades of blue — represent trust, technology, and stability, expressing the balance between sophistication and efficiency. The Montserrat typeface, in Regular and Medium variations, reinforces clarity and geometric harmony, symbolizing the fusion between design and performance. The result is a modern, technology-driven brand with a strong visual presence that communicates solidity, innovation, and purpose in every detail.",
-          "client": "Zatas",
-          "year": "2025"
-        }
-
-
-
+      "title": "Carlos Lawyer - Social Media Design",
+      "description": "Social Media Project – Law Firm",
+      "fullDescription": "This social media project was created for a lawyer specializing in the legal field, focusing on conveying authority, trust, and professionalism through design.",
+      "client": "Carlos",
+      "year": "2025"
+    },
+    "souzaevilela": {
+      "title": "Souza & Vilela Banking Law - Social Media Design",
+      "description": "Social Media Project – Law Firm",
+      "fullDescription": "This social media project was developed for a lawyer specialized in the banking sector, with the goal of strengthening their digital presence and conveying credibility, trust, and authority within the legal industry.",
+      "client": "Souza & Vilela",
+      "year": "2025"
+    },
+    "luiz-gustavo": {
+      "title": "Luiz Gustavo - Social Media Design",
+      "description": "Social Media Project – Law Firm",
+      "fullDescription": "This social media project was developed for a lawyer in the legal niche, aiming to express authority, credibility, and sophistication through design.",
+      "client": "Luiz Gustavo",
+      "year": "2025"
+    },
+    "montela-brand": {
+      "title": "MONTELA - Brand Visual Identity",
+      "description": "Visual Identity Project – MONTELA, Intelligence that works for you",
+      "fullDescription": "This visual identity project was created for MONTELA, with the goal of conveying authority, credibility, and sophistication through design.",
+      "client": "MONTELA",
+      "year": "2025"
+    },
+    "lyria": {
+      "title": "Lyria",
+      "description": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course.",
+      "fullDescription": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course. The application features a modern web interface and a robust back-end, using an LLM (Large Language Model) to generate dynamic and contextual responses. ✨ The goal is to provide a natural conversational experience, capable of answering general questions and retrieving up-to-date information from the web to ensure accuracy.",
+      "client": "Final Project - Senai",
+      "year": "2025"
+    },
+    "zatas": {
+      "title": "ZATAS - Brand Visual Identity",
+      "description": "Visual Identity Project – ZATAS, your vision in technology and your technology in results",
+      "fullDescription": "The visual identity of ZATAS was developed with a foundation of precision, strategy, and innovation. Inspired by Monte Carlo, the brand was created under the philosophy of working 'from Z to A' — starting from the final goal to build complete strategies from the very beginning. The chosen colors — black, gray, white, and shades of blue — represent trust, technology, and stability, expressing the balance between sophistication and efficiency. The Montserrat typeface, in Regular and Medium variations, reinforces clarity and geometric harmony, symbolizing the fusion between design and performance. The result is a modern, technology-driven brand with a strong visual presence that communicates solidity, innovation, and purpose in every detail.",
+      "client": "Zatas",
+      "year": "2025"
+    }
   },
-
   "AllProjectsPage": {
     "title": "Todos os Projetos",
     "subtitle": "Explore nosso portfólio completo",
@@ -411,7 +556,13 @@
     "moreProjects": "View more {category} projects"
   },
   "Slogan": {
-    "words": ["Design", "|", "Code", "|", "Impact"]
+    "words": [
+      "Design",
+      "|",
+      "Code",
+      "|",
+      "Impact"
+    ]
   },
   "HamburgerMenu": {
     "open": "Open menu",
@@ -433,9 +584,21 @@
     "ctaSubtitle": "Get in touch and let's turn your idea into reality",
     "ctaButton": "Talk to the team",
     "categoryTags": [
-      ["Web", "Mobile", "APIs"],
-      ["UI/UX", "Branding", "Identity"],
-      ["SEO", "Social Media", "Content"]
+      [
+        "Web",
+        "Mobile",
+        "APIs"
+      ],
+      [
+        "UI/UX",
+        "Branding",
+        "Identity"
+      ],
+      [
+        "SEO",
+        "Social Media",
+        "Content"
+      ]
     ]
   },
   "CategoryProjectsPage": {
@@ -453,7 +616,7 @@
     "services": "Services",
     "development": "Development",
     "design": "Design",
-      "marketing": "Marketing",
-      "contact": "Contact"
+    "marketing": "Marketing",
+    "contact": "Contact"
   }
 }
