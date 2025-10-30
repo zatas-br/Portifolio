@@ -200,7 +200,7 @@ export default function PartnershipsPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="https://wa.me/5516000000000?text=Olá! Gostaria de conversar sobre parcerias"
+                  href="https://wa.me/5516994418460?text=Olá! Gostaria de conversar sobre parcerias"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-white/90 transition-all shadow-2xl hover:shadow-3xl hover:scale-105 cursor-pointer text-lg w-full sm:w-auto justify-center"
@@ -211,7 +211,7 @@ export default function PartnershipsPage() {
                   {t('mainCTA.whatsapp')}
                 </a>
                 <a
-                  href="mailto:parcerias@zatas.com.br"
+                  href="mailto:contato@zatas.com.br"
                   className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all shadow-2xl hover:shadow-3xl hover:scale-105 cursor-pointer text-lg w-full sm:w-auto justify-center"
                 >
                   <FaEnvelope className="w-5 h-5" />
@@ -233,7 +233,7 @@ export default function PartnershipsPage() {
               {t('secondaryCTA.subtitle')}
             </p>
             <a
-              href="mailto:rh@zatas.com.br"
+              href="mailto:contato@zatas.com.br"
               className="inline-flex items-center gap-2 bg-surface text-icons border-2 border-icons px-6 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all cursor-pointer"
             >
               {t('secondaryCTA.button')}
