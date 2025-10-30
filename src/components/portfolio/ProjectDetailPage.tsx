@@ -91,7 +91,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           {/* Meta Info */}
           <div className="flex flex-wrap gap-6 text-text-muted mb-8">
             <div className="flex items-center gap-2">
-              <FaCalendar className="w-4 h-4 text-primary" />
+              <FaCalendar className="w-4 h-4 text-primary-v2" />
               <div>
                 <span className="block text-xs text-text-muted mb-0.5">{t('meta.year')}</span>
                 <span className="font-semibold text-text">{year}</span>
@@ -99,7 +99,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             </div>
             {client && (
               <div className="flex items-center gap-2">
-                <FaBriefcase className="w-4 h-4 text-primary" />
+                <FaBriefcase className="w-4 h-4 text-primary-v2" />
                 <div>
                   <span className="block text-xs text-text-muted mb-0.5">{t('meta.client')}</span>
                   <span className="font-semibold text-text">{client}</span>
@@ -113,9 +113,9 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             <div className="bg-surface-alt border border-border rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-2 mb-6">
                 {isSingleAuthor ? (
-                  <FaUser className="w-5 h-5 text-primary" />
+                  <FaUser className="w-5 h-5 text-primary-v2" />
                 ) : (
-                  <FaUsers className="w-5 h-5 text-primary" />
+                  <FaUsers className="w-5 h-5 text-primary-v2" />
                 )}
                 <h3 className="text-xl font-bold text-text">
                   {isSingleAuthor ? t('authors.single') : t('authors.multiple')}
@@ -146,7 +146,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           {!hasAuthors && project.author && (
             <div className="bg-surface-alt border border-border rounded-2xl p-6">
               <div className="flex items-center gap-2">
-                <FaUser className="w-4 h-4 text-primary" />
+                <FaUser className="w-4 h-4 text-primary-v2" />
                 <span className="text-sm text-text-muted">Criado por:</span>
                 {/* @ts-ignore */}
                 <span className="font-semibold text-text">{project.author}</span>
@@ -170,7 +170,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           <div className="md:col-span-2 space-y-8">
             <div className="bg-surface border border-border rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-2 mb-4">
-                <FaCode className="w-5 h-5 text-primary" />
+                <FaCode className="w-5 h-5 text-primary-v2" />
                 <h2 className="text-2xl md:text-3xl font-bold text-text">{t('about')}</h2>
               </div>
               <p className="text-base md:text-lg text-text-muted leading-relaxed">
@@ -184,14 +184,14 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             {/* Technologies */}
             <div className="bg-surface border border-border rounded-2xl p-6">
               <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
-                <FaCode className="w-4 h-4 text-primary" />
+                <FaCode className="w-4 h-4 text-primary-v2" />
                 {t('technologies')}
               </h3>
               <div className="space-y-2">
                 {project.technologies.map(tech => (
                   <div 
                     key={tech} 
-                    className="bg-surface-alt border border-border text-primary px-4 py-3 rounded-lg font-medium text-sm hover:border-primary transition-colors"
+                    className="bg-surface-alt border border-border text-icons px-4 py-3 rounded-lg font-medium text-sm hover:border-primary-v2 transition-colors"
                   >
                     {tech}
                   </div>
@@ -205,7 +205,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-primary text-white py-4 rounded-xl hover:bg-primary-hover active:bg-primary-active transition-colors font-semibold shadow-lg hover:shadow-xl cursor-pointer"
+                className="flex items-center justify-center gap-2 bg-primary-v2 text-white py-4 rounded-xl hover:bg-primary-hover-v3 active:bg-primary-active transition-colors font-semibold shadow-lg hover:shadow-xl cursor-pointer"
               >
                 {t('liveProject')}
                 <FaExternalLinkAlt className="w-4 h-4" />
@@ -218,7 +218,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
         {project.gallery && project.gallery.length > 0 && (
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <FaImages className="w-6 h-6 text-primary" />
+              <FaImages className="w-6 h-6 text-primary-v2" />
               <h2 className="text-2xl md:text-3xl font-bold text-text">{t('gallery')}</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">

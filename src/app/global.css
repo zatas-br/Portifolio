@@ -9,6 +9,7 @@
   --color-primary-icon:var(--color-primary);
   --color-primary-hover: #395ca0;
   --color-primary-hover-v2: #1d3f7d;
+  --color-primary-hover-v3: #395ca0;
   --color-primary-active: #1d3f7d;
   
   --color-icons: #2b4d8f;
@@ -41,6 +42,7 @@
     --color-primary-icon:var(--color-text);
     --color-primary-hover: #d3cece;
     --color-primary-hover-v2: #d3cece;
+    --color-primary-hover-v3: #0d2552;
     --color-start-gradient: var(--color-primary);
     --color-final-gradient: #000000;
     --color-primary-active: #131313;

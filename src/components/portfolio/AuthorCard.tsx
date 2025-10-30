@@ -52,7 +52,7 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
       url: author.linkedin,
       icon: FaLinkedin,
       label: 'LinkedIn',
-      color: 'hover:bg-[#0077b5]'
+      color: 'hover:bg-primary-v2'
     });
   }
   
@@ -62,7 +62,7 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
       url: author.github,
       icon: FaGithub,
       label: 'GitHub',
-      color: 'hover:bg-gray-700'
+      color: 'hover:bg-primary-v2'
     });
   }
   
@@ -82,7 +82,7 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
       url: author.portfolio,
       icon: FaGlobe,
       label: 'Portfolio',
-      color: 'hover:bg-primary'
+      color: 'hover:bg-primary-v2'
     });
   }
   
@@ -92,7 +92,7 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
       url: author.email,
       icon: FaEnvelope,
       label: 'Email',
-      color: 'hover:bg-primary',
+      color: 'hover:bg-primary-v2',
       isEmail: true
     });
   }
@@ -193,7 +193,7 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
 
   // Versão padrão (card horizontal)
   return (
-    <div className="bg-surface border border-border rounded-xl p-4 hover:border-primary transition-all hover:shadow-lg group">
+    <div className="bg-surface border border-border rounded-xl p-4 hover:border-primary-v2 transition-all hover:shadow-lg group">
       <div className="flex flex-col gap-3">
         <div className="flex items-start gap-3">
           {/* Avatar */}
@@ -213,7 +213,7 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
 
           {/* Info */}
           <div className="flex-1 min-w-0">
-            <h4 className="font-bold text-text text-sm truncate group-hover:text-primary transition-colors">
+            <h4 className="font-bold text-text text-sm truncate group-hover:text-primary-v2 transition-colors">
               {author.name}
             </h4>
             {author.role && (
