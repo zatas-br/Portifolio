@@ -86,7 +86,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
         <button
           onClick={handleClose}
           aria-label={t('modal.closeLabel')}
-          className="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 md:w-10 md:h-10 bg-surface-alt hover:bg-border rounded-full flex items-center justify-center transition-colors z-[101] cursor-pointer shadow-lg md:shadow-none"
+          className="absolute top-12 right-4 md:top-6 md:right-6 w-12 h-12 md:w-10 md:h-10 bg-surface-alt hover:bg-border rounded-full flex items-center justify-center transition-colors z-[101] cursor-pointer shadow-lg md:shadow-none"
         >
           <FaTimes className="w-6 h-6 md:w-5 md:h-5 text-text" />
         </button>
