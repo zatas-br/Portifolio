@@ -1,0 +1,29 @@
+{
+  "badge": "O que fazemos",
+  "title1": "Transforme sua",
+  "title2": "ideia",
+  "title3": "em",
+  "title4": "realidade",
+  "subtitle": "Soluções completas em desenvolvimento, design e marketing digital",
+  "viewProjects": "Ver projetos",
+  "ctaTitle": "Pronto para começar seu projeto?",
+  "ctaSubtitle": "Entre em contato e vamos transformar sua ideia em realidade",
+  "ctaButton": "Falar com a equipe",
+  "categoryTags": [
+    [
+      "Web",
+      "Mobile",
+      "APIs"
+    ],
+    [
+      "UI/UX",
+      "Branding",
+      "Identidade"
+    ],
+    [
+      "SEO",
+      "Social Media",
+      "Conteúdo"
+    ]
+  ]
+}

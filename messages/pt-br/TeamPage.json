@@ -1,0 +1,187 @@
+{
+  "title": "Nossa Equipe",
+  "description": "Conheça os fundadores que tornam tudo isso possível",
+  "card": {
+    "viewProfile": "Ver perfil"
+  },
+  "modal": {
+    "closeLabel": "Fechar modal",
+    "about": "Sobre",
+    "skills": "Especialidades",
+    "education": "Formação",
+    "experience": "Experiência"
+  },
+  "members": {
+    "antony-brito": {
+      "name": "Antony Brito",
+      "role": "CPO & Co-fundador",
+      "bio": "Ampla experiência em desenvolvimento full-stack e design digital, unindo visão técnica e estética para criar produtos escaláveis e experiências digitais. Atua no planejamento e na implementação de soluções tecnológicas inovadoras, com foco em performance, usabilidade e identidade visual consistente.",
+      "skills": [
+        "Estratégia",
+        "Liderança",
+        "Inovação",
+        "Produto"
+      ],
+      "education": [
+        {
+          "institution": "Microsoft e LinkedIn",
+          "degree": "Fundamentos para Desenvolvimento de Software",
+          "year": "2024"
+        },
+        {
+          "institution": "SENAI-601",
+          "degree": "Analise e Desenvolvimento de Sistemas",
+          "year": "2024 - 2025"
+        },
+        {
+          "institution": "HubX Digital",
+          "degree": "Profissional em Design",
+          "year": "2023"
+        },
+        {
+          "institution": "Linkedin",
+          "degree": "Mais de 40 licenças e certificações concluídas. Para mais detalhes, acesse meu perfil no LinkedIn."
+        }
+      ],
+      "experience": [
+        {
+          "company": "Zatas",
+          "role": "CPO & Co-fundador",
+          "period": "2025 - Presente",
+          "description": "Responsável pela estratégia tecnológica, desenvolvimento do produto e gestão da equipe."
+        },
+        {
+          "company": "Tecumseh",
+          "role": "Programador",
+          "period": "2024 - 2025",
+          "description": "Responsável por apoiar o desenvolvimento de novas funcionalidades e dar suporte às rotinas da equipe de tecnologia."
+        }
+      ]
+    },
+    "bruno-santiago": {
+      "name": "Bruno Santiago",
+      "role": "CTO & Co-fundador",
+      "bio": "Desenvolvedor Full-Stack com conhecimentos em performance, escalabilidade e arquitetura. Líder técnico com foco em inovação.",
+      "skills": [
+        "Arquitetura de Software",
+        "Computação em Nuvem",
+        "DevOps",
+        "Gestão Técnica"
+      ],
+      "education": [
+        {
+          "institution": "SENAI-601",
+          "degree": "Análise e Desenvolvimento de Sistemas",
+          "year": "2024"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Zatas",
+          "role": "CTO & Co-fundador",
+          "period": "2025 - Presente",
+          "description": "Responsável pela tecnologia do produto e pela gestão da equipe de desenvolvimento."
+        },
+        {
+          "company": "Novaes Engenharia",
+          "role": "Desenvolvedor Full-Stack",
+          "period": "2024 - Presente",
+          "description": "Resolução de problemas internos com soluções tecnológicas."
+        }
+      ]
+    },
+    "gabriel-cardoso": {
+      "name": "Gabriel Cardoso",
+      "role": "CFO e Co-fundador",
+      "bio": "Profissional multidisciplinar com experiência em gestão financeira e desenvolvimento de software. Como cofundador da Zatas, atua tanto na administração financeira quanto na criação de soluções tecnológicas inovadoras para clientes de diferentes setores.",
+      "skills": [
+        "Gestão Financeira",
+        "Planejamento Estratégico",
+        "Desenvolvimento de Software",
+        "Python",
+        "Power BI",
+        "Análise de Sistemas"
+      ],
+      "education": [
+        {
+          "institution": "Escola Estadual Doutor Álvaro Guião",
+          "degree": "Ensino Médio Completo",
+          "year": "2023"
+        },
+        {
+          "institution": "SENAC",
+          "degree": "Montador e Reparador de Computadores",
+          "year": "2024"
+        },
+        {
+          "institution": "SENAI",
+          "degree": "Desenvolvimento de Sistemas",
+          "year": "2024 - 2025"
+        },
+        {
+          "institution": "SENAI",
+          "degree": "Microsoft Power BI",
+          "year": "2024"
+        },
+        {
+          "institution": "SENAI",
+          "degree": "Python",
+          "year": "2024 - 2025"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Zatas",
+          "role": "CFO e Co-fundador",
+          "period": "2025 - Presente",
+          "description": "Responsável pela gestão financeira e estratégica da empresa, além de contribuir ativamente no desenvolvimento de projetos de software e soluções digitais personalizadas."
+        }
+      ]
+    },
+    "thiago-bryan": {
+      "name": "Thiago Bryan",
+      "role": "CMO & Co-fundador",
+      "bio": "Experiência em marketing e design digital, combinando planejamento estratégico e execução criativa para gerar resultados reais. Foco em performance, branding e presença digital, garantindo soluções que unem propósito e estética.",
+      "skills": [
+        "Trabalho em equipe",
+        "Boa comunicação",
+        "Proatividade",
+        "Organização",
+        "Facilidade de aprendizagem",
+        "Disciplina",
+        "Adaptabilidade"
+      ],
+      "education": [
+        {
+          "institution": "Ensino Médio",
+          "degree": "E.E Arlindo Bittencourt",
+          "year": "2018 - 2024"
+        },
+        {
+          "institution": "Inglês Basico",
+          "degree": "Wizard idiomas",
+          "year": "2021 - 2022"
+        },
+        {
+          "institution": "Jornalismo",
+          "degree": "Estácio De Sá ",
+          "year": "2025 - actual"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Zatas",
+          "role": "CMO & Co-founder",
+          "period": "2025 - Present",
+          "description": "Responsável pela estrategia de marketing e design"
+        },
+        {
+          "company": "Graphic Designer",
+          "role": "Go Marketing Digital",
+          "period": "2023 - 2024",
+          "description": "Responsável pela criação de artes para posts de redes sociais e logotipos"
+        }
+      ]
+    }
+  }
+}

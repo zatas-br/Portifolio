@@ -1,0 +1,17 @@
+{
+  "backButton": "Back to projects",
+  "badge": "Case Study",
+  "meta": {
+    "year": "Year",
+    "client": "Client"
+  },
+  "authors": {
+    "single": "Project Lead",
+    "multiple": "Project Team"
+  },
+  "about": "About the Project",
+  "technologies": "Technologies",
+  "liveProject": "View Live Project",
+  "gallery": "Project Gallery",
+  "moreProjects": "View more {category} projects"
+}

@@ -1,0 +1,29 @@
+{
+  "desenvolvimento": {
+    "title": "Development",
+    "description": "We create robust software solutions, from scalable APIs to interactive web and mobile applications.",
+    "tags": [
+      "Web",
+      "Mobile",
+      "APIs"
+    ]
+  },
+  "design": {
+    "title": "Design",
+    "description": "We design intuitive interfaces and memorable brands that connect your company to your audience.",
+    "tags": [
+      "UI/UX",
+      "Branding",
+      "Identity"
+    ]
+  },
+  "marketing": {
+    "title": "Marketing",
+    "description": "Digital strategies focused on growth, engagement, and measurable results.",
+    "tags": [
+      "SEO",
+      "Copywriting",
+      "Ads"
+    ]
+  }
+}

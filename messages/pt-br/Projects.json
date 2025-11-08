@@ -1,0 +1,107 @@
+{
+  "zatas-website": {
+    "title": "Website Zatas | Portfólio Institucional",
+    "description": "Website institucional desenvolvido sob medida para apresentar projetos das 3 áreas (Desenvolvimento, Design e Marketing) e capturar clientes e investidores.",
+    "fullDescription": "Portfólio institucional desenvolvido sob medida para a Zatas com o objetivo de apresentar de forma impactante os projetos das três áreas de atuação da empresa: Desenvolvimento, Design e Marketing Digital. O site foi projetado para capturar a atenção de potenciais clientes e investidores através de um design moderno e sofisticado, com animações fluidas e interativas que valorizam cada projeto. O website conta com tema claro e escuro para melhor experiência do usuário, sistema de internacionalização (português e inglês), navegação intuitiva por categorias, páginas de detalhes de projetos com estudos de caso completos, e seções institucionais sobre a empresa, equipe e oportunidades de parcerias. Cada elemento foi pensado para transmitir profissionalismo, inovação e a identidade visual única da Zatas, criando uma experiência premium que reflete a excelência técnica e criativa da empresa.",
+    "client": "Zatas (Interno)",
+    "year": "2025"
+  },
+  "personal-app": {
+    "title": "DPJ - Personal Trainer | Solução sob medida",
+    "description": "Solução completa sob medida com app mobile para treinos e acompanhamento, e plataforma web para gestão de alunos.",
+    "fullDescription": "Solução completa desenvolvida sob medida para personal trainers, composta por um aplicativo mobile para treinos e acompanhamento do administrador, integrado a uma aplicação web robusta para gerenciamento completo de alunos e treinos. O sistema permite que os alunos acessem seus treinos personalizados pelo app, enquanto o personal trainer gerencia toda a base de clientes, cria e edita treinos, acompanha progresso e mantém controle total através da plataforma web. A solução foi desenvolvida com backend em Spring Boot, aplicativo móvel multiplataforma em React Native e interface web moderna, garantindo sincronização em tempo real entre as plataformas, usabilidade intuitiva e funcionalidade offline para não interromper os treinos dos alunos.",
+    "client": "DPJ Personal Trainer",
+    "year": "2024"
+  },
+  "gerenciador-de-alunos": {
+    "title": "Gerenciador de Alunos",
+    "description": "O Sistema gerencia e centraliza as turmas de diversas escolas",
+    "fullDescription": "O sistema foi desenvolvido com o intuito de gerenciar as diferentes turmas de diversas escolas que o professor possuía. Esse era um objetivo no qual a plataforma do governo destinada aos professores falhava. O sistema, por sua vez, centraliza e organiza essa gestão de informações.",
+    "client": "Marcos",
+    "year": "2024"
+  },
+  "trainingSec": {
+    "title": "Plataforma de Treinamentos",
+    "description": "Plataforma desenvolvida para gerenciar e centralizar os treinamentos de segurança da NOVAES, integrando funcionários, cargos e Normas Regulamentadoras.",
+    "fullDescription": "Esta plataforma de treinamentos de segurança foi desenvolvida com o objetivo de centralizar a logística dos treinamentos internos da NOVAES, incluindo o gerenciamento dos funcionários e as relações entre cargos e as Normas Regulamentadoras necessárias para cada função.",
+    "client": "NOVAES",
+    "year": "2025"
+  },
+  "EPI-stock": {
+    "title": "EPI - Stock",
+    "description": "Plataforma para gerenciamento de estoque de EPIs, com controle de entradas, saídas e exportação de relatórios em CSV",
+    "fullDescription": "Esta plataforma é um gerenciador de estoque de EPIs, desenvolvida com o intuito de substituir o controle manual feito por planilhas. Nela, é possível registrar as entradas e saídas de itens, além de exportar relatórios em formato CSV.",
+    "client": "NOVAES",
+    "year": "2025"
+  },
+  "cash-flow": {
+    "title": "Cash Flow",
+    "description": "Projeto do grupo MDS (ADS Senai-601/2024) para centralizar o reembolso e o controle de despesas em viagens corporativas.",
+    "fullDescription": "Este foi o projeto desenvolvido pelo grupo MDS (Magia e Desenvolvimento de Software) da turma de 2024 do curso de Análise e Desenvolvimento de Sistemas (ADS) do Senai-601. O objetivo do projeto foi centralizar a logística de reembolso e o controle de gastos de funcionários em viagens corporativas.",
+    "client": "TCC - Senai",
+    "year": "2024"
+  },
+  "carlos-advogado": {
+    "title": "Carlos Advogado - Social Media Design",
+    "description": "Projeto de Social Media – Advocacia**",
+    "fullDescription": "Este projeto de social media foi criado para um advogado especializado no setor jurídico, com foco em transmitir autoridade, confiança e profissionalismo por meio do design.",
+    "client": "Carlos",
+    "year": "2025"
+  },
+  "souzaevilela": {
+    "title": "Souza e vilela Direito Bancário - Social Media Design",
+    "description": "Projeto de Social Media – Advocacia",
+    "fullDescription": "Este projeto de social media foi desenvolvido para um advogado especializado no nicho bancário, com o objetivo de fortalecer sua presença digital e transmitir credibilidade, confiança e autoridade no setor jurídico.",
+    "client": "Souza e Vilela",
+    "year": "2025"
+  },
+  "luiz-gustavo": {
+    "title": "Luiz Gustavo - Social Media Design",
+    "description": "Projeto de Social Media – Advocacia",
+    "fullDescription": "Este projeto de social media foi desenvolvido para um advogado do nicho jurídico, com o propósito de transmitir autoridade, credibilidade e sofisticação através do design.",
+    "client": "Luiz Gustavo",
+    "year": "2025"
+  },
+  "montela-brand": {
+    "title": "MONTELA - Identidade Visual de Marca",
+    "description": "Projeto de Identidade Visual – MONTELA, Inteligência que trabalha por você",
+    "fullDescription": "Este projeto de identidade visual foi desenvolvido para a marca MONTELA, uma empresa focada em inteligência e inovação. O conceito nasce da fusão entre “MONTE”, que representa solidez e excelência,  e “LA”, o laboratório de ideias e tecnologia. A proposta visual reflete o equilíbrio entre sabedoria e inovação, traduzidos nos tons de roxo, preto, branco e cinza, que reforçam elegância, confiança e sofisticação.",
+    "client": "MONTELA",
+    "year": "2025"
+  },
+  "lyria": {
+    "title": "Lyria",
+    "description": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas.",
+    "fullDescription": "LyrIA é uma assistente virtual inteligente desenvolvida como projeto de conclusão do curso de Técnico em Desenvolvimento de Sistemas. A aplicação possui interface web moderna e back-end robusto, utilizando LLM (Large Language Model) para gerar respostas dinâmicas e contextuais.✨ O objetivo é proporcionar uma experiência de conversação natural, capaz de responder perguntas gerais e buscar informações atualizadas na web para garantir precisão.",
+    "client": "TCC - Senai",
+    "year": "2025"
+  },
+  "zatas": {
+    "title": "ZATAS - Identidade Visual de Marca",
+    "description": "Projeto de Identidade Visual – ZATAS, sua visão em tecnologia e sua tecnologia em resultados",
+    "fullDescription": "A identidade visual da ZATAS foi desenvolvida com base em precisão, estratégia e inovação. Inspirada em Monte Carlo, a marca nasce com a filosofia de trabalhar “do Z ao A”: partindo do objetivo final para construir estratégias completas desde o início. As cores escolhidas — preto, cinza, branco e tons de azul — representam confiança, tecnologia e estabilidade, traduzindo a união entre sofisticação e eficiência. A tipografia Montserrat, em variações Regular e Medium, reforça a clareza e o equilíbrio geométrico, simbolizando a fusão entre design e performance. O resultado é uma marca moderna, tecnológica e de forte presença visual, que comunica solidez, inovação e propósito em cada detalhe",
+    "client": "Zatas",
+    "year": "2025"
+  },
+  "aureni-brito": {
+    "title": "Aureni Brito Fisioterapeuta - Logotipo e Cartão de Visitas",
+    "description": "Identidade visual desenvolvida para a fisioterapeuta Aureni Brito, transmitindo leveza, confiança e profissionalismo.",
+    "fullDescription": "O projeto foi criado com o objetivo de representar os valores essenciais da área da saúde: bem-estar, cuidado e confiança. O logotipo utiliza formas orgânicas e tipografia suave, simbolizando movimento e equilíbrio. A paleta de cores, em tons de dourado e verde, reforça a sensação de tranquilidade, vitalidade e harmonia. O cartão de visitas segue a mesma linguagem visual, garantindo consistência entre materiais impressos e digitais. O resultado é uma identidade moderna, acolhedora e elegante.",
+    "client": "Aureni Brito",
+    "year": "2025"
+  },
+  "jersey-hub": {
+    "title": "Jersey Hub - Estratégia de Marketing e Mídias Sociais",
+    "description": "Projeto de marketing digital com foco em redes sociais para a Jersey Hub, loja de camisetas personalizadas.",
+    "fullDescription": "A Jersey Hub recebeu uma estratégia completa de marketing digital e gestão de redes sociais desenvolvida pela nossa equipe. O projeto incluiu a criação de posts interativos e campanhas comerciais voltadas para engajamento e conversão. Com uma identidade visual consistente e conteúdos criativos, o resultado foi um crescimento expressivo da presença online da marca: mais de 500 mil impressões, 1.500 novos seguidores e mais de 400 vendas geradas diretamente pelas ações de marketing.",
+    "client": "Jersey Hub",
+    "year": "2025"
+  },
+  "vulcan-films": {
+    "title": "Vulcan - Estratégia de Marketing e Mídias Sociais",
+    "description": "Vulcan is a project focused on content marketing in the film and entertainment niche.",
+    "fullDescription": "Vulcan é um projeto voltado para o marketing de conteúdo no nicho de filmes e entretenimento, com o objetivo de atrair e engajar o público por meio de vídeos criativos e dinâmicos. Utilizando ferramentas de edição de vídeo e estratégias de engajamento, a página alcançou mais de 200 mil impressões, consolidando-se como um exemplo de crescimento orgânico e presença digital consistente.",
+    "client": "Vulcan",
+    "year": "2025"
+  }
+}
