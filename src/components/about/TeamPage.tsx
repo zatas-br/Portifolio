@@ -5,9 +5,9 @@ import {
   FaUsers,
   FaArrowRight
 } from 'react-icons/fa';
-import { TEAM_PROFILES } from '@/src/data/team';
+import { TEAM_AUTHORS } from '@/src/data/team';
 import { useMessages, useTranslations } from 'next-intl';
-import { TeamMember, TeamProfile } from '@/types';
+import { TeamMember, ProjectAuthor } from '@/types';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import TeamMemberModal from './TeamMemberModal';
 
@@ -44,12 +44,18 @@ export default function TeamPage() {
     animateEnter(cardsRef.current, 0.15);
   }, [animateEnter, animateFadeIn]);
 
-  const handleSelectMember = (profile: TeamProfile) => {
+  const handleSelectMember = (profile: ProjectAuthor & { id: string }) => {
     const content = memberContentData[profile.id];
     if (content) {
       const fullMember: TeamMember = {
-        ...profile,
         ...content,
+        id: profile.id,
+        image: profile.avatar || '',
+        avatar: profile.avatar || '',
+        social: {
+          linkedin: profile.linkedin,
+          github: profile.github,
+        },
       };
       setSelectedMember(fullMember);
     }
@@ -71,27 +77,27 @@ export default function TeamPage() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {TEAM_PROFILES.map((profile, index) => (
+          {Object.entries(TEAM_AUTHORS).map(([id, profile], index) => (
             <div
-              key={profile.id}
+              key={id}
               ref={el => { cardsRef.current[index] = el; }}
-              onClick={() => handleSelectMember(profile)}
+              onClick={() => handleSelectMember({ ...profile, id })}
               className="group cursor-pointer"
             >
               <div className="bg-surface border-2 border-border rounded-xl md:rounded-2xl overflow-hidden hover:border-primary-v2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                 <div className="aspect-square overflow-hidden bg-surface-alt">
                   <img
-                    src={profile.image}
-                    alt={t(`members.${profile.id}.name`)}
+                    src={profile.avatar}
+                    alt={t(`members.${id}.name`)}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4 md:p-6">
                   <h3 className="text-lg md:text-xl font-bold text-text mb-1 md:mb-2 group-hover:text-primary-v2 transition-colors">
-                    {t(`members.${profile.id}.name`)}
+                    {t(`members.${id}.name`)}
                   </h3>
-                  <p className="text-primary-v2 font-medium mb-2 md:mb-3 text-xs md:text-sm">{t(`members.${profile.id}.role`)}</p>
-                  <p className="text-text-muted text-xs md:text-sm line-clamp-3 leading-relaxed mb-3 md:mb-4">{t(`members.${profile.id}.bio`)}</p>
+                  <p className="text-primary-v2 font-medium mb-2 md:mb-3 text-xs md:text-sm">{t(`members.${id}.role`)}</p>
+                  <p className="text-text-muted text-xs md:text-sm line-clamp-3 leading-relaxed mb-3 md:mb-4">{t(`members.${id}.bio`)}</p>
                   <div className="flex items-center gap-2 text-primary-v2 font-semibold text-xs md:text-sm">
                     {t('card.viewProfile')}
                     <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

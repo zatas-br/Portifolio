@@ -1,4 +1,7 @@
-import gsap from 'gsap';
+import { Project, ProjectAuthor } from '@/types';
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const usePortfolioAnimations = () => {
   const animateEnter = (elements: (HTMLElement | null)[], stagger = 0.15) => {

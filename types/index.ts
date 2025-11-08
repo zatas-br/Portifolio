@@ -65,6 +65,7 @@ export interface CardNavProps {
 }
 
 export interface ProjectAuthor {
+  id?: string;
   name: string;
   avatar?: string;
   role?: string;
