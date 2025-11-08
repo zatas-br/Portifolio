@@ -1,6 +1,5 @@
 import { CategoryStatic, ProjectStatic } from "@/types";
 
-
 export const CATEGORIES_STATIC: CategoryStatic[] = [
   { id: "desenvolvimento" },
   { id: "design" },
@@ -21,41 +20,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/jjF3Cf7R/z4.png",
       "https://i.postimg.cc/76JszL3C/z5.png",
     ],
-    authors: [
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-        email: "bryan@zatas.com.br",
-      },
-      {
-        name: "Bruno Santiago",
-        avatar: "https://i.postimg.cc/HnPJXpdv/runo.jpg",
-        role: "Head of Technology",
-        linkedin: "https://www.linkedin.com/in/bruno-santiago-b8169637b",
-        instagram: "https://www.instagram.com/bruno_s4nt",
-        email: "santiago@zatas.com.br",
-      },
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-      {
-        name: "Gabriel Cardoso",
-        avatar: "https://i.postimg.cc/1XYgw9sY/brya.jpg",
-        role: "Head of Finance & Operations",
-        linkedin:
-          "https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328",
-        instagram: "https://www.instagram.com/gabrielcardos095",
-        email: "torres@zatas.com.br",
-      },
-    ],
+    authorIds: ["thiago-bryan", "bruno-santiago", "antony-brito", "gabriel-cardoso"]
   },
   {
     id: "personal-app",
@@ -73,33 +38,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/RZ2XjfKF/8.png",
       "https://i.postimg.cc/bw43KbkY/9.png",
     ],
-    authors: [
-      {
-        name: "Bruno Santiago",
-        avatar: "https://i.postimg.cc/HnPJXpdv/runo.jpg",
-        role: "Head of Technology",
-        linkedin: "https://www.linkedin.com/in/bruno-santiago-b8169637b",
-        instagram: "https://www.instagram.com/bruno_s4nt",
-        email: "santiago@zatas.com.br",
-      },
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-      {
-        name: "Gabriel Cardoso",
-        avatar: "https://i.postimg.cc/1XYgw9sY/brya.jpg",
-        role: "Head of Finance & Operations",
-        linkedin:
-          "https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328",
-        instagram: "https://www.instagram.com/gabrielcardos095",
-        email: "torres@zatas.com.br",
-      },
-    ],
+    authorIds: ["bruno-santiago", "antony-brito", "gabriel-cardoso"]
   },
   {
     id: "gerenciador-de-alunos",
@@ -113,35 +52,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/fRPJrgh2/g3.jpg",
       "https://i.postimg.cc/sgLvN0R8/g4.jpg",
     ],
-    authors: [
-      {
-        name: "Bruno Santiago",
-        avatar: "https://i.postimg.cc/HnPJXpdv/runo.jpg",
-        role: "Head of Technology",
-        linkedin: "https://www.linkedin.com/in/bruno-santiago-b8169637b",
-        email: "santiago@zatas.com.br",
-      },
-      {
-        name: "Jose",
-        role: "Desenvolvedor Full-Stack",
-      },
-    ],
+    authorIds: ["bruno-santiago", "jose"]
   },
   {
     id: "trainingSec",
     category: "desenvolvimento",
     image: "https://i.postimg.cc/Qd73j67s/n1.jpg",
     technologies: [
-      "Java",
-      "Gradlew",
-      "Spring",
-      "JUnit",
-      "PostgreSQL",
-      "H2 Database",
-      "NextJS",
-      "TypeScript",
-      "Tailwind",
-      "Radix",
+      "Java", "Gradlew", "Spring", "JUnit", "PostgreSQL", "H2 Database",
+      "NextJS", "TypeScript", "Tailwind", "Radix"
     ],
     link: null,
     gallery: [
@@ -152,32 +71,14 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/vZnsGPnw/n5.jpg",
       "https://i.postimg.cc/52zVfPzM/n6.jpg",
     ],
-    authors: [
-      {
-        name: "Bruno Santiago",
-        avatar: "https://i.postimg.cc/HnPJXpdv/runo.jpg",
-        role: "Head of Technology",
-        linkedin: "https://www.linkedin.com/in/bruno-santiago-b8169637b",
-        email: "santiago@zatas.com.br",
-      },
-      {
-        name: "Luigi",
-        role: "Desenvolvedor Full-Stack",
-      },
-    ],
+    authorIds: ["bruno-santiago", "luigi"]
   },
   {
     id: "EPI-stock",
     category: "desenvolvimento",
     image: "https://i.postimg.cc/gkF9NVQp/s1.jpg",
     technologies: [
-      "TypeScript",
-      "JavaScript",
-      "Node",
-      "MySQL",
-      "Vite",
-      "React",
-      "Tailwind",
+      "TypeScript", "JavaScript", "Node", "MySQL", "Vite", "React", "Tailwind"
     ],
     link: null,
     gallery: [
@@ -186,29 +87,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/WbLRXGCL/s3.jpg",
       "https://i.postimg.cc/kXx0ZV3h/s4.jpg",
     ],
-    authors: [
-      {
-        name: "Bruno Santiago",
-        avatar: "https://i.postimg.cc/HnPJXpdv/runo.jpg",
-        role: "Head of Technology",
-        linkedin: "https://www.linkedin.com/in/bruno-santiago-b8169637b",
-        email: "santiago@zatas.com.br",
-      },
-    ],
+    authorIds: ["bruno-santiago"]
   },
   {
     id: "cash-flow",
     category: "desenvolvimento",
     image: "https://i.postimg.cc/bYLbRgd6/c1.png",
     technologies: [
-      "Java",
-      "H2DB",
-      "Spring",
-      "JUnit",
-      "Thymeleaf",
-      "expo GO",
-      "React Native",
-      "JavaScript",
+      "Java", "H2DB", "Spring", "JUnit", "Thymeleaf",
+      "expo GO", "React Native", "JavaScript"
     ],
     link: null,
     gallery: [
@@ -217,37 +104,8 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/pr0FXWgf/c3.png",
       "https://i.postimg.cc/Kj9MvGdr/c4.png",
     ],
-    authors: [
-      {
-        name: "Bruno Santiago",
-        avatar: "https://i.postimg.cc/HnPJXpdv/runo.jpg",
-        role: "Head of Technology",
-        linkedin: "https://www.linkedin.com/in/bruno-santiago-b8169637b",
-        email: "santiago@zatas.com.br",
-      },
-      {
-        name: "Jose",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "Willson",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "Gustavo",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "Camila",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "Roberto",
-        role: "Desenvolvedor Full-Stack",
-      },
-    ],
+    authorIds: ["bruno-santiago", "jose", "willson", "gustavo", "camila", "roberto"]
   },
-
   {
     id: "carlos-advogado",
     category: "design",
@@ -265,15 +123,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/HLKkFzxY/19.png",
       "https://i.postimg.cc/s28gbmXy/12.png",
     ],
-    authors: [
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-      },
-    ],
+    authorIds: ["thiago-bryan"]
   },
   {
     id: "souzaevilela",
@@ -291,15 +141,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/4NXSRTqW/Bancario-Souza-e-Vilela7-1.png",
       "https://i.postimg.cc/h4s0xQZ6/Bancario-Souza-e-Vilela6-1.png",
     ],
-    authors: [
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-      },
-    ],
+    authorIds: ["thiago-bryan"]
   },
   {
     id: "luiz-gustavo",
@@ -315,15 +157,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/pLkXwcMy/Maio-Luiz-Gustavo-2.png",
       "https://i.postimg.cc/13M5k71Z/Maio-Luiz-Gustavo-234-1.png",
     ],
-    authors: [
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-      },
-    ],
+    authorIds: ["thiago-bryan"]
   },
   {
     id: "montela-brand",
@@ -337,16 +171,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/pV6FRVnH/montela03.jpg",
       "https://i.postimg.cc/T24Df25F/montela04.jpg",
     ],
-    authors: [
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-    ],
+    authorIds: ["antony-brito"]
   },
   {
     id: "lyria",
@@ -359,41 +184,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/sxBnpg5m/l2.png",
       "https://i.postimg.cc/QCRfSZqp/l3.png",
     ],
-    authors: [
-      {
-        name: "Raissa",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-      {
-        name: "Gabriel Cardoso",
-        avatar: "https://i.postimg.cc/1XYgw9sY/brya.jpg",
-        role: "Head of Finance & Operations",
-        linkedin:
-          "https://www.linkedin.com/in/gabriel-cardoso-torres-b76a59328",
-        instagram: "https://www.instagram.com/gabrielcardos095",
-        email: "torres@zatas.com.br",
-      },
-      {
-        name: "Juliana",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "João Gabriel",
-        role: "Desenvolvedor Full-Stack",
-      },
-      {
-        name: "Vitoria",
-        role: "Desenvolvedor Full-Stack",
-      },
-    ],
+    authorIds: ["raissa", "antony-brito", "gabriel-cardoso", "juliana", "joao-gabriel", "vitoria"]
   },
   {
     id: "zatas",
@@ -406,16 +197,7 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/hvd34Dgk/zatas02.jpg",
       "https://i.postimg.cc/FzLnFrmq/zatas03.jpg",
     ],
-    authors: [
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-    ],
+    authorIds: ["antony-brito"]
   },
   {
     id: "aureni-brito",
@@ -428,35 +210,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/HkzJvb5f/aureni02.jpg",
       "https://i.postimg.cc/Cx7ZrbDt/aureni03.jpg",
     ],
-    authors: [
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-        email: "bryan@zatas.com.br",
-      },
-    ],
+    authorIds: ["antony-brito", "thiago-bryan"]
   },
   {
     id: "jersey-hub",
     category: "marketing",
     image: "https://i.postimg.cc/bJHGMbkX/jh-capa.png",
     technologies: [
-      "Social Media",
-      "Content Strategy",
-      "Organic Growth",
-      "Analytics",
-      "Engagement",
+      "Social Media", "Content Strategy", "Organic Growth",
+      "Analytics", "Engagement"
     ],
     link: "https://x.com/jerseyhubBR",
     gallery: [
@@ -467,35 +229,15 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/YqtNp2Cn/jh-07.png",
       "https://i.postimg.cc/tCD370sS/jh01.jpg",
     ],
-    authors: [
-      {
-        name: "Antony Brito",
-        avatar: "https://i.postimg.cc/C1DKj84K/perfil-antony.jpg",
-        role: "Head of Growth & Product",
-        linkedin: "https://www.linkedin.com/in/britoantony",
-        instagram: "https://www.instagram.com/antonybriito",
-        email: "brito@zatas.com.br",
-      },
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-        email: "bryan@zatas.com.br",
-      },
-    ],
+    authorIds: ["antony-brito", "thiago-bryan"]
   },
   {
     id: "vulcan-films",
     category: "marketing",
     image: "https://i.postimg.cc/QxC6GLJp/vulcan.png",
     technologies: [
-      "Social Media",
-      "Content Strategy",
-      "Organic Growth",
-      "Analytics",
-      "Engagement",
+      "Social Media", "Content Strategy", "Organic Growth",
+      "Analytics", "Engagement"
     ],
     link: "https://www.instagram.com/vulcan.filmes?igsh=dGlhbDRobGE3YmJm",
     gallery: [
@@ -504,14 +246,6 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/Gtc5sHDg/i3.jpg",
       "https://i.postimg.cc/VsGt5wvQ/v.png"
     ],
-    authors: [
-      {
-        name: "Thiago Bryan",
-        avatar: "https://i.postimg.cc/fyg3mwD2/gabel.jpg",
-        role: "Head of marketing & design",
-        linkedin: "https://www.linkedin.com/in/thbryann",
-        instagram: "https://www.instagram.com/thbryann",
-      },
-    ],
+    authorIds: ["thiago-bryan"]
   },
 ];

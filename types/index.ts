@@ -79,7 +79,7 @@ export interface ProjectAuthor {
 export type CategoryID = 'desenvolvimento' | 'design' | 'marketing';
 
 export interface CategoryStatic {
-  id: CategoryID;
+  id: string;
 }
 
 export interface CategoryContent {
@@ -92,12 +92,12 @@ export interface Category extends CategoryStatic, CategoryContent {}
 
 export interface ProjectStatic {
   id: string;
-  category: CategoryID;
+  category: string;
   image: string;
-  authors?: ProjectAuthor[];
   technologies: string[];
+  link: string | null;
   gallery: string[];
-  link?: string | null;
+  authorIds: string[];
 }
 
 export interface ProjectContent {
@@ -113,6 +113,7 @@ export interface Project extends ProjectStatic, ProjectContent {}
 export interface TeamProfile {
   id: string;
   image: string;
+  avatar: string;
   social: {
     linkedin?: string;
     github?: string;

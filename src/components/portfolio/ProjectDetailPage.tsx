@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
 import {
   FaArrowLeft,
@@ -13,10 +14,11 @@ import {
   FaImages,
   FaUser
 } from 'react-icons/fa';
+
 import { PROJECTS_STATIC } from '@/src/data/projects';
+import { resolveAuthors } from '@/src/utils/resolveAuthors';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import AuthorCard from '@/src/components/portfolio/AuthorCard';
-import { useTranslations } from 'next-intl';
 
 interface ProjectDetailPageProps {
   projectId: string;
@@ -49,15 +51,15 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
 
   if (!project) return null;
 
+  const authors = resolveAuthors(project.authorIds);
+  const hasAuthors = authors.length > 0;
+  const isSingleAuthor = authors.length === 1;
+
   const title = tProject('title');
   const description = tProject('description');
   const fullDescription = tProject('fullDescription');
   const year = tProject('year');
   const client = tProject('client');
-  const categoryTitle = tCategory('title');
-
-  const hasAuthors = project.authors && project.authors.length > 0;
-  const isSingleAuthor = hasAuthors && project.authors!.length === 1;
 
   return (
     <div className="min-h-screen bg-surface">
@@ -74,8 +76,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        <div ref={headerRef} className="mb-12">
-
+        <header ref={headerRef} className="mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
             {title}
           </h1>
@@ -83,7 +84,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           <p className="text-base sm:text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl">
             {description}
           </p>
-          
+
           <div className="flex flex-wrap gap-6 text-text-muted mb-8">
             <div className="flex items-center gap-2">
               <FaCalendar className="w-4 h-4 text-primary-v2" />
@@ -102,71 +103,89 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               </div>
             )}
           </div>
+
           {hasAuthors && (
-            <div className="bg-surface-alt border border-border rounded-2xl p-6 md:p-8">
+            <section 
+              className="bg-surface-alt border border-border rounded-2xl p-6 md:p-8"
+              aria-label={isSingleAuthor ? t('authors.single') : t('authors.multiple')}
+            >
               <div className="flex items-center gap-2 mb-6">
                 {isSingleAuthor ? (
                   <FaUser className="w-5 h-5 text-primary-v2" />
                 ) : (
                   <FaUsers className="w-5 h-5 text-primary-v2" />
                 )}
-                <h3 className="text-xl font-bold text-text">
+                <h2 className="text-xl font-bold text-text">
                   {isSingleAuthor ? t('authors.single') : t('authors.multiple')}
-                </h3>
+                </h2>
               </div>
+
               <div className={`grid gap-4 ${
-                isSingleAuthor
-                  ? 'sm:grid-cols-1'
-                  : project.authors!.length === 2
+                isSingleAuthor 
+                  ? 'sm:grid-cols-1' 
+                  : authors.length === 2
                     ? 'sm:grid-cols-2'
                     : 'sm:grid-cols-2 lg:grid-cols-3'
               }`}>
-                {project.authors!.map((author, index) => (
-                  <AuthorCard
-                    key={index}
-                    author={author}
+                {authors.map((author) => (
+                  <AuthorCard 
+                    key={author.name} 
+                    author={author} 
                     variant="default"
                   />
                 ))}
               </div>
-            </div>
+            </section>
           )}
-        </div>
-        <div ref={heroRef} className="mb-16 rounded-2xl overflow-hidden shadow-2xl border-2 border-border group">
-          <img
-            src={project.image}
+        </header>
+
+        {/* Hero Image */}
+        <div 
+          ref={heroRef} 
+          className="mb-16 rounded-2xl overflow-hidden shadow-2xl border-2 border-border group"
+        >
+          <img 
+            src={project.image} 
             alt={title}
             className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500" 
           />
         </div>
+
+        {/* Main Content Grid */}
         <div ref={contentRef} className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
+          {/* About Section */}
           <div className="md:col-span-2 space-y-8">
-            <div className="bg-surface border border-border rounded-2xl p-6 md:p-8">
+            <article className="bg-surface border border-border rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-2 mb-4">
                 <FaCode className="w-5 h-5 text-primary-v2" />
-                <h2 className="text-2xl md:text-3xl font-bold text-text">{t('about')}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-text">
+                  {t('about')}
+                </h2>
               </div>
               <p className="text-base md:text-lg text-text-muted leading-relaxed">
                 {fullDescription}
               </p>
-            </div>
+            </article>
           </div>
-          <div className="space-y-6">
+
+          {/* Sidebar */}
+          <aside className="space-y-6">
+            {/* Technologies */}
             <div className="bg-surface border border-border rounded-2xl p-6">
               <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
                 <FaCode className="w-4 h-4 text-primary-v2" />
                 {t('technologies')}
               </h3>
-              <div className="space-y-2">
+              <ul className="space-y-2">
                 {project.technologies.map(tech => (
-                  <div
-                    key={tech}
+                  <li 
+                    key={tech} 
                     className="bg-surface-alt border border-border text-icons px-4 py-3 rounded-lg font-medium text-sm hover:border-primary-v2 transition-colors"
                   >
                     {tech}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             {project.link && (
               <a
@@ -174,18 +193,23 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-primary-v2 text-white py-4 rounded-xl hover:bg-primary-hover-v3 active:bg-primary-active transition-colors font-semibold shadow-lg hover:shadow-xl cursor-pointer"
+                aria-label={t('liveProject')}
               >
                 {t('liveProject')}
                 <FaExternalLinkAlt className="w-4 h-4" />
               </a>
             )}
-          </div>
+          </aside>
         </div>
+
+        {/* Gallery Section */}
         {project.gallery && project.gallery.length > 0 && (
-          <div>
+          <section aria-label={t('gallery')}>
             <div className="flex items-center gap-3 mb-8">
               <FaImages className="w-6 h-6 text-primary-v2" />
-              <h2 className="text-2xl md:text-3xl font-bold text-text">{t('gallery')}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-text">
+                {t('gallery')}
+              </h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4 md:gap-6">
               {project.gallery.map((img, index) => (
@@ -196,24 +220,26 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 >
                   <img
                     src={img}
-                    alt={`${title} - ${index + 1}`}
-                    className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    alt={`${title} - Imagem ${index + 1}`}
+                    className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
               ))}
             </div>
-          </div>
+          </section>
         )}
 
-        <div className="mt-16 pt-8 border-t border-border">
+        {/* Navigation Footer */}
+        <footer className="mt-16 pt-8 border-t border-border">
           <button
             onClick={() => router.push(`/services/${category}`)}
             className="flex items-center gap-2 text-primary hover:text-primary-hover transition-colors font-semibold cursor-pointer group mx-auto"
+            aria-label={t('moreProjects', { category })}
           >
             <FaArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             {t('moreProjects', { category })}
           </button>
-        </div>
+        </footer>
       </div>
     </div>
   );
