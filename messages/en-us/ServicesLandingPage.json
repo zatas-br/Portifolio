@@ -1,0 +1,29 @@
+{
+  "badge": "What we do",
+  "title1": "Turn your",
+  "title2": "idea",
+  "title3": "into",
+  "title4": "reality",
+  "subtitle": "Complete solutions in development, design and digital marketing",
+  "viewProjects": "View projects",
+  "ctaTitle": "Ready to start your project?",
+  "ctaSubtitle": "Get in touch and let's turn your idea into reality",
+  "ctaButton": "Talk to the team",
+  "categoryTags": [
+    [
+      "Web",
+      "Mobile",
+      "APIs"
+    ],
+    [
+      "UI/UX",
+      "Branding",
+      "Identity"
+    ],
+    [
+      "SEO",
+      "Social Media",
+      "Content"
+    ]
+  ]
+}

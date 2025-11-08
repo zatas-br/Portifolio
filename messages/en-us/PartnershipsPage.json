@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "title1": "Build the Future",
+    "title2": "with Zatas",
+    "subtitle": "Connect with a company in exponential growth. Become a partner, investor, or strategic ally.",
+    "stats": {
+      "stat1": "Proven growth",
+      "stat2": "Recognized excellence",
+      "stat3": "Global vision"
+    },
+    "buttonProject": "Explore Projects",
+    "buttonInstagram": "Follow on Instagram"
+  },
+  "partnershipTypes": {
+    "title": "Partnership Opportunities",
+    "subtitle": "Find the best way to collaborate and grow together with Zatas",
+    "types": [
+      {
+        "title": "Strategic Partners",
+        "description": "We seek people and companies who believe in our potential and want to build something solid from the start.",
+        "benefits": [
+          "Real participation in decisions",
+          "Mutual growth",
+          "Building a solid foundation"
+        ]
+      },
+      {
+        "title": "Investors",
+        "description": "We are looking for investors who share our vision for growth and believe in the potential of a team dedicated to building the future.",
+        "benefits": [
+          "Transparent access to results",
+          "Direct communication with the founders",
+          "Participation in strategic decisions"
+        ]
+      },
+      {
+        "title": "Commercial Partners",
+        "description": "We create partnerships with agencies, freelancers, and companies that seek to join forces on technology, design, and marketing projects.",
+        "benefits": [
+          "Collaboration on real projects",
+          "Expanding network of contacts",
+          "Shared growth and learning"
+        ]
+      }
+    ]
+  },
+  "whyPartner": {
+    "title": "Why partner with us?",
+    "subtitle": "We turn ideas into results through strategy, quality, and commitment.",
+    "reasons": [
+      {
+        "title": "Strategic growth",
+        "desc": "Our approach prioritizes solid partnerships and consistent results."
+      },
+      {
+        "title": "Multidisciplinary team",
+        "desc": "We bring together experts in development, design, and digital marketing to deliver complete and integrated solutions."
+      },
+      {
+        "title": "Human-centered service",
+        "desc": "Each project is handled with exclusivity, clear communication, and close support throughout all stages."
+      },
+      {
+        "title": "Innovation driven by results",
+        "desc": "We apply technology and creativity intelligently to generate real impact on our clients’ performance."
+      }
+    ]
+  },
+  "expertiseAreas": {
+    "title": "Our Expertise",
+    "subtitle": "Three pillars that support our success and that of our partners",
+    "areas": [
+      {
+        "title": "Development",
+        "desc": "Web, Mobile, APIs, and Custom Solutions"
+      },
+      {
+        "title": "Design & UX",
+        "desc": "Modern interfaces and memorable experiences"
+      },
+      {
+        "title": "Digital Marketing",
+        "desc": "Strategies that convert and engage"
+      }
+    ]
+  },
+  "mainCTA": {
+    "title": "Shall we talk?",
+    "subtitle": "Get in touch and discover how we can grow together. Schedule a meeting with no commitment.",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  },
+  "secondaryCTA": {
+    "title": "Want to join our team?",
+    "subtitle": "We’re always looking for exceptional talent",
+    "button": "Send your resume"
+  }
+}

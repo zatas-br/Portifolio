@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "title1": "Construa o Futuro",
+    "title2": "com a Zatas",
+    "subtitle": "Conecte-se com uma empresa em crescimento exponencial. Seja sócio, investidor ou parceiro estratégico.",
+    "stats": {
+      "stat1": "Crescimento comprovado",
+      "stat2": "Excelência reconhecida",
+      "stat3": "Visão global"
+    },
+    "buttonProject": "Explorar Projetos",
+    "buttonInstagram": "Siga no Instagram"
+  },
+  "partnershipTypes": {
+    "title": "Oportunidades de Parceria",
+    "subtitle": "Encontre a melhor forma de colaborar e crescer junto com a Zatas",
+    "types": [
+      {
+        "title": "Sócios Estratégicos",
+        "description": "Buscamos pessoas e empresas que acreditam no nosso potencial e queiram construir algo sólido desde o início.",
+        "benefits": [
+          "Participação real nas decisões",
+          "Crescimento conjunto",
+          "Construção de base sólida"
+        ]
+      },
+      {
+        "title": "Investidores",
+        "description": "Buscamos investidores que compartilham nossa visão de crescimento e acreditam no potencial de um time dedicado a construir o futuro.",
+        "benefits": [
+          "Acesso transparente aos resultados",
+          "Comunicação direta com os fundadores",
+          "Participação em decisões estratégicas"
+        ]
+      },
+      {
+        "title": "Parceiros Comerciais",
+        "description": "Criamos parcerias com agências, freelancers e empresas que buscam somar forças em projetos de tecnologia, design e marketing.",
+        "benefits": [
+          "Colaboração em projetos reais",
+          "Rede de contatos em expansão",
+          "Crescimento conjunto e aprendizado"
+        ]
+      }
+    ]
+  },
+  "whyPartner": {
+    "title": "Por que fazer parceria conosco?",
+    "subtitle": "Transformamos ideias em resultados com estratégia, qualidade e comprometimento.",
+    "reasons": [
+      {
+        "title": "Crescimento estratégico",
+        "desc": "Nosso modelo de atuação prioriza parcerias sólidas e resultados consistentes."
+      },
+      {
+        "title": "Equipe multidisciplinar",
+        "desc": "Reunimos especialistas em desenvolvimento, design e marketing digital para oferecer soluções completas e integradas."
+      },
+      {
+        "title": "Atendimento humanizado",
+        "desc": "Cada projeto é tratado de forma exclusiva, com comunicação clara e acompanhamento próximo em todas as etapas."
+      },
+      {
+        "title": "Inovação orientada a resultados",
+        "desc": "Aplicamos tecnologia e criatividade de forma inteligente para gerar impacto real no desempenho dos nossos clientes."
+      }
+    ]
+  },
+  "expertiseAreas": {
+    "title": "Nossa Expertise",
+    "subtitle": "Três pilares que sustentam nosso sucesso e o dos nossos parceiros",
+    "areas": [
+      {
+        "title": "Desenvolvimento",
+        "desc": "Web, Mobile, APIs e Soluções sob medida"
+      },
+      {
+        "title": "Design & UX",
+        "desc": "Interfaces modernas e experiências memoráveis"
+      },
+      {
+        "title": "Marketing Digital",
+        "desc": "Estratégias que convertem e engajam"
+      }
+    ]
+  },
+  "mainCTA": {
+    "title": "Vamos conversar?",
+    "subtitle": "Entre em contato e descubra como podemos crescer juntos. Agende uma reunião sem compromisso.",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail"
+  },
+  "secondaryCTA": {
+    "title": "Quer fazer parte do time?",
+    "subtitle": "Também estamos sempre em busca de talentos excepcionais",
+    "button": "Envie seu currículo"
+  }
+}

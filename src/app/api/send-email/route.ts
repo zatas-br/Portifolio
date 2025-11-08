@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
-
 const emailDestinos = [
   'contato@zatas.com.br',
   'santiago@zatas.com.br',
@@ -52,6 +49,7 @@ function getEmailHtml(name: string, email: string, message: string): string {
 }
 
 export async function POST(req: NextRequest) {
+  const fromEmail = process.env.FROM_EMAIL;
   if (!fromEmail || !process.env.RESEND_API_KEY) {
     console.error('Variáveis de ambiente (RESEND_API_KEY ou FROM_EMAIL) não configuradas.');
     return NextResponse.json({ error: 'Erro interno do servidor' }, { status: 500 });
@@ -63,7 +61,8 @@ export async function POST(req: NextRequest) {
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Todos os campos são obrigatórios' }, { status: 400 });
     }
-
+    
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
       from: `Contato Portfólio <${fromEmail}>`,
       to: emailDestinos,

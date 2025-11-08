@@ -1,0 +1,53 @@
+{
+  "title": "About Zatas",
+  "description": "We transform ideas into digital products that impact millions of people around the world",
+  "historyTitle": "Our History",
+  "history": [
+    "Zatas' journey began when a personal trainer, recommended by other programmers, contacted one of the partners, Bruno, looking for a way to optimize his student management. With this proposal in hand, Bruno invited Gabriel and Antony to collaborate on the application's development.",
+    "The project was a success and showed the team the power of collaboration. To complement the group's technical skills, Bryan was invited to the partnership, bringing his expertise in marketing and design.",
+    "Zatas was founded on this foundation: the union of diverse skills with the purpose of offering complete solutions. The company started by solving a specific problem and today continues with the same passion for turning each client's challenges into successful projects.",
+    "The Meaning of 'Zatas'",
+    "The name 'Zatas' was chosen for its strong and memorable sound. It refers to the word 'exact', reflecting the essence of the company's work: the search for precision, logic, and data intelligence in the construction of each solution. Zatas is synonymous with the exact solution for each client's challenge."
+  ],
+  "cardMissionTitle": "Mission",
+  "cardMissionText": "To create innovative digital solutions that transform businesses and improve people's lives through technology.",
+  "cardVisionTitle": "Vision",
+  "cardVisionText": "To be a global leader in digital product development, recognized for excellence and positive impact.",
+  "cardValuesTitle": "Values",
+  "cardValuesText": "Continuous innovation, technical excellence, teamwork, transparency, and customer focus.",
+  "numbersTitle": "Zatas by the Numbers",
+  "numbersItems": {
+    "professionals": "Professionals",
+    "projects": "Projects Delivered",
+    "users": "Users Impacted",
+    "countries": "Countries Served"
+  },
+  "cultureTitle": "Our Culture",
+  "cultureDescription": "We believe a healthy and collaborative work environment is essential for innovation. At Zatas, we value:",
+  "cultureItems": {
+    "autonomy": {
+      "title": "Autonomy",
+      "desc": "We trust our team to make decisions"
+    },
+    "learning": {
+      "title": "Learning",
+      "desc": "We encourage continuous growth"
+    },
+    "diversity": {
+      "title": "Diversity",
+      "desc": "We celebrate different perspectives"
+    },
+    "transparency": {
+      "title": "Transparency",
+      "desc": "Open communication at all levels"
+    },
+    "balance": {
+      "title": "Work-life balance",
+      "desc": "Balance between personal and professional life"
+    },
+    "impact": {
+      "title": "Impact",
+      "desc": "Focus on results that matter"
+    }
+  }
+}

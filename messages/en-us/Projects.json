@@ -1,0 +1,107 @@
+{
+  "zatas-website": {
+    "title": "Zatas Website | Institutional Portfolio",
+    "description": "Custom institutional website developed to showcase projects across 3 areas (Development, Design, and Marketing) and attract clients and investors.",
+    "fullDescription": "Institutional portfolio custom-built for Zatas with the goal of impactfully presenting projects from the company's three areas of expertise: Development, Design, and Digital Marketing. The site was designed to capture the attention of potential clients and investors through modern, sophisticated design with fluid, interactive animations that highlight each project. The website features light and dark themes for enhanced user experience, internationalization system (Portuguese and English), intuitive category navigation, project detail pages with complete case studies, and institutional sections about the company, team, and partnership opportunities. Every element was designed to convey professionalism, innovation, and Zatas' unique visual identity, creating a premium experience that reflects the company's technical and creative excellence.",
+    "client": "Zatas (Internal)",
+    "year": "2025"
+  },
+  "personal-app": {
+    "title": "DPJ - Personal Trainer | Custom Solution",
+    "description": "Complete custom solution with mobile app for workouts and tracking, and web platform for client management.",
+    "fullDescription": "Complete custom solution developed for personal trainers, consisting of a mobile application for workouts and administrator tracking, integrated with a robust web application for comprehensive client and workout management. The system allows clients to access their personalized workouts through the app, while the personal trainer manages the entire client base, creates and edits workouts, tracks progress, and maintains full control through the web platform. The solution was developed with a Spring Boot backend, cross-platform mobile app in React Native, and modern web interface, ensuring real-time synchronization between platforms, intuitive usability, and offline functionality to keep workouts uninterrupted.",
+    "client": "DPJ Personal Trainer",
+    "year": "2024"
+  },
+  "gerenciador-de-alunos": {
+    "title": "Student Manager",
+    "description": "The System manages and centralizes classes from various schools",
+    "fullDescription": "The system was developed with the purpose of managing the professor's different classes across various schools, addressing a failing of the government platform intended for teachers. The system, in turn, centralizes and organizes this information management.",
+    "client": "Marcos",
+    "year": "2024"
+  },
+  "trainingSec": {
+    "title": "Training Platform",
+    "description": "Platform developed to manage and centralize NOVAES’s safety training, integrating employees, job roles, and Regulatory Standards.",
+    "fullDescription": "This safety training platform was developed with the goal of centralizing the logistics of NOVAES’s internal training, including employee management and the relationships between job positions and the Regulatory Standards required for each role.",
+    "client": "NOVAES",
+    "year": "2025"
+  },
+  "EPI-stock": {
+    "title": "EPI - Stock",
+    "description": "Platform for managing PPE inventory, with item tracking and CSV report export.",
+    "fullDescription": "This platform is a PPE inventory manager designed to replace spreadsheet-based control. It allows users to record item check-ins and check-outs, as well as export reports in CSV format.",
+    "client": "NOVAES",
+    "year": "2025"
+  },
+  "cash-flow": {
+    "title": "Cash Flow",
+    "description": "Project by the MDS group (ADS Senai-601/2024) to centralize reimbursement and expense control for corporate travel.",
+    "fullDescription": "This project was developed by the MDS group (Magic and Software Development) from the 2024 class of the Systems Analysis and Development (ADS) course at Senai-601. The goal of the project was to centralize the logistics of reimbursements and expense control for employees on corporate trips.",
+    "client": "Final Project - Senai",
+    "year": "2024"
+  },
+  "carlos-advogado": {
+    "title": "Carlos Lawyer - Social Media Design",
+    "description": "Social Media Project – Law Firm",
+    "fullDescription": "This social media project was created for a lawyer specializing in the legal field, focusing on conveying authority, trust, and professionalism through design.",
+    "client": "Carlos",
+    "year": "2025"
+  },
+  "souzaevilela": {
+    "title": "Souza & Vilela Banking Law - Social Media Design",
+    "description": "Social Media Project – Law Firm",
+    "fullDescription": "This social media project was developed for a lawyer specialized in the banking sector, with the goal of strengthening their digital presence and conveying credibility, trust, and authority within the legal industry.",
+    "client": "Souza & Vilela",
+    "year": "2025"
+  },
+  "luiz-gustavo": {
+    "title": "Luiz Gustavo - Social Media Design",
+    "description": "Social Media Project – Law Firm",
+    "fullDescription": "This social media project was developed for a lawyer in the legal niche, aiming to express authority, credibility, and sophistication through design.",
+    "client": "Luiz Gustavo",
+    "year": "2025"
+  },
+  "montela-brand": {
+    "title": "MONTELA - Brand Visual Identity",
+    "description": "Visual Identity Project – MONTELA, Intelligence that works for you",
+    "fullDescription": "This visual identity project was developed for the MONTELA brand, a company focused on intelligence and innovation. The concept stems from the fusion of 'MONTE', representing solidity and excellence, and 'LA', the laboratory of ideas and technology. The visual proposal reflects the balance between wisdom and innovation, translated into shades of purple, black, white, and gray, which reinforce elegance, confidence, and sophistication.",
+    "client": "MONTELA",
+    "year": "2025"
+  },
+  "lyria": {
+    "title": "Lyria",
+    "description": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course.",
+    "fullDescription": "LyrIA is an intelligent virtual assistant developed as the final project for the Systems Development Technician course. The application features a modern web interface and a robust back-end, using an LLM (Large Language Model) to generate dynamic and contextual responses. ✨ The goal is to provide a natural conversational experience, capable of answering general questions and retrieving up-to-date information from the web to ensure accuracy.",
+    "client": "Final Project - Senai",
+    "year": "2025"
+  },
+  "zatas": {
+    "title": "ZATAS - Brand Visual Identity",
+    "description": "Visual Identity Project – ZATAS, your vision in technology and your technology in results",
+    "fullDescription": "The visual identity of ZATAS was developed with a foundation of precision, strategy, and innovation. Inspired by Monte Carlo, the brand was created under the philosophy of working 'from Z to A' — starting from the final goal to build complete strategies from the very beginning. The chosen colors — black, gray, white, and shades of blue — represent trust, technology, and stability, expressing the balance between sophistication and efficiency. The Montserrat typeface, in Regular and Medium variations, reinforces clarity and geometric harmony, symbolizing the fusion between design and performance. The result is a modern, technology-driven brand with a strong visual presence that communicates solidity, innovation, and purpose in every detail.",
+    "client": "Zatas",
+    "year": "2025"
+  },
+  "aureni-brito": {
+    "title": "Aureni Brito Physiotherapist - Logo and Business Card Design",
+    "description": "Visual identity developed for physiotherapist Aureni Brito, conveying lightness, trust, and professionalism.",
+    "fullDescription": "This project was created to represent the essential values of healthcare: well-being, care, and trust. The logo uses organic shapes and soft typography to symbolize movement and balance. The color palette, in shades of gold and green, reinforces the sense of tranquility, vitality, and harmony. The business card follows the same visual language, ensuring consistency between print and digital materials. The result is a modern, welcoming, and elegant identity that communicates professionalism and empathy.",
+    "client": "Aureni Brito",
+    "year": "2025"
+  },
+  "jersey-hub": {
+    "title": "Jersey Hub - Marketing and Social Media Strategy",
+    "description": "Digital marketing project focused on social media for Jersey Hub, a personalized t-shirt store.",
+    "fullDescription": "Jersey Hub received a comprehensive digital marketing and social media strategy developed by our team. The project included the creation of interactive posts and promotional campaigns aimed at engagement and conversions. With a consistent visual identity and creative content, the results were significant: over 500,000 impressions, 1,500 new followers, and more than 400 sales generated directly from the marketing actions.",
+    "client": "Jersey Hub",
+    "year": "2025"
+  },
+  "vulcan-films": {
+    "title": "Vulcan - Marketing and Social Media Strategy",
+    "description": "Vulcan is a project focused on content marketing in the film and entertainment niche.",
+    "fullDescription": "Vulcan is a content marketing project focused on the film and entertainment niche, aiming to attract and engage audiences through creative and dynamic videos. Using video editing tools and engagement strategies, the page has achieved over 200,000 in revenue, establishing itself as an example of organic growth and a consistent digital presence.",
+    "client": "Vulcan",
+    "year": "2025"
+  }
+}

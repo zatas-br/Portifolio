@@ -1,0 +1,63 @@
+{
+  "logoAlt": "Zatas Logo",
+  "about": {
+    "label": "About",
+    "links": [
+      {
+        "label": "Company",
+        "href": "/about",
+        "ariaLabel": "About Zatas Company"
+      },
+      {
+        "label": "Team",
+        "href": "/team",
+        "ariaLabel": "Meet our Team"
+      },
+      {
+        "label": "Partnerships",
+        "href": "/partnerships",
+        "ariaLabel": "Partnership Opportunities"
+      }
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "links": [
+      {
+        "label": "Development",
+        "href": "/services/development",
+        "ariaLabel": "Web Development"
+      },
+      {
+        "label": "Design",
+        "href": "/services/design",
+        "ariaLabel": "Design and UX/UI"
+      },
+      {
+        "label": "Marketing",
+        "href": "/services/consulting",
+        "ariaLabel": "Digital Marketing"
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "links": [
+      {
+        "label": "Email",
+        "href": "mailto:contato@zatas.com.br",
+        "ariaLabel": "Send us an email"
+      },
+      {
+        "label": "WhatsApp",
+        "href": "https://wa.me/5516994418460",
+        "ariaLabel": "Chat on WhatsApp"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/zatas/about",
+        "ariaLabel": "Connect on LinkedIn"
+      }
+    ]
+  }
+}

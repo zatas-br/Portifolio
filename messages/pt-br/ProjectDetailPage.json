@@ -1,0 +1,17 @@
+{
+  "backButton": "Voltar para projetos",
+  "badge": "Estudo de Caso",
+  "meta": {
+    "year": "Ano",
+    "client": "Cliente"
+  },
+  "authors": {
+    "single": "Responsável pelo Projeto",
+    "multiple": "Equipe do Projeto"
+  },
+  "about": "Sobre o Projeto",
+  "technologies": "Tecnologias",
+  "liveProject": "Ver Projeto Live",
+  "gallery": "Galeria do Projeto",
+  "moreProjects": "Ver mais projetos de {category}"
+}
