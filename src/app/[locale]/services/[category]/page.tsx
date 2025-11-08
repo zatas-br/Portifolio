@@ -1,11 +1,9 @@
-// 📁 app/[locale]/services/[category]/page.tsx
-
 import CategoryProjectsPage from '@/src/components/portfolio/CategoryProjectsPage';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { CATEGORIES_STATIC } from '@/src/data/projects'; // Importamos os dados estáticos
-import { CategoryID } from '@/types'; // Importamos o tipo que definimos
+import { CATEGORIES_STATIC } from '@/src/data/projects';
+import { CategoryID } from '@/types';
 
 type Props = {
   params: { 
@@ -44,8 +42,8 @@ export default async function CategoryPage({ params }: Props) {
   }
 
   return (
-    <CategoryProjectsPage 
-      category={category} 
+    <CategoryProjectsPage
+      category={category}
     />
   );
 }

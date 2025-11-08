@@ -4,11 +4,11 @@ import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
-import { 
-  FaArrowLeft, 
-  FaExternalLinkAlt, 
-  FaCalendar, 
-  FaUsers, 
+import {
+  FaArrowLeft,
+  FaExternalLinkAlt,
+  FaCalendar,
+  FaUsers,
   FaBriefcase,
   FaCode,
   FaImages,
@@ -187,8 +187,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 ))}
               </ul>
             </div>
-
-            {/* CTA Button */}
             {project.link && (
               <a
                 href={project.link}

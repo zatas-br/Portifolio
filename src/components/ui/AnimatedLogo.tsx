@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import zatasLogoBlue from '@/public/images/Identidade_visual/zatas-blue.svg';
-import zatasLogoWhite from '@/public/images/Identidade_visual/zatas-white.svg'; // Ajuste o caminho
+import zatasLogoWhite from '@/public/images/Identidade_visual/zatas-white.svg';
 
 const AnimatedLogo = () => {
   const { resolvedTheme } = useTheme();

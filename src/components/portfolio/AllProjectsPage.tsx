@@ -1,5 +1,3 @@
-// 📁 src/components/portfolio/AllProjectsPage.tsx
-
 'use client'
 
 import { useState, useEffect, useRef } from 'react';

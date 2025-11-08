@@ -11,8 +11,8 @@ interface AnimatedButtonProps {
   className?: string;
 }
 
-const AnimatedButton = ({ 
-  children, 
+const AnimatedButton = ({
+  children,
   icon,
   variant = 'primary',
   onClick,
@@ -28,13 +28,13 @@ const AnimatedButton = ({
     
     gsap.fromTo(
       buttonRef.current,
-      { 
-        opacity: 0, 
-        y: 30 
+      {
+        opacity: 0,
+        y: 30
       },
-      { 
-        opacity: 1, 
-        y: 0, 
+      {
+        opacity: 1,
+        y: 0,
         duration: 0.8,
         delay: delay,
         ease: 'power3.out'
@@ -83,14 +83,12 @@ const AnimatedButton = ({
       `}
       style={{ opacity: 0 }}
     >
-      {/* Fundo animado */}
       <div
         ref={bgRef}
         className={`absolute inset-0 ${bgColor} origin-left`}
         style={{ transform: 'scaleX(0)' }}
       />
       
-      {/* Conteúdo (texto e ícone) */}
       <span className={`relative z-10 transition-colors duration-300 group-hover:text-surface`}>
         {children}
       </span>
