@@ -1,21 +1,12 @@
-// 📁 src/data/projects.ts
-// (Você precisará definir estes tipos em seu arquivo types.ts)
 import { CategoryStatic, ProjectStatic } from "@/types";
 
-/**
- * Contém apenas dados estáticos de categorias (ID e ícone).
- * O conteúdo (title, description) virá do i18n.
- */
+
 export const CATEGORIES_STATIC: CategoryStatic[] = [
   { id: "desenvolvimento" },
   { id: "design" },
   { id: "marketing" },
 ];
 
-/**
- * Contém apenas dados estáticos de projetos.
- * O conteúdo (title, description, client, etc.) virá do i18n.
- */
 export const PROJECTS_STATIC: ProjectStatic[] = [
   {
     id: "zatas-website",
@@ -30,7 +21,6 @@ export const PROJECTS_STATIC: ProjectStatic[] = [
       "https://i.postimg.cc/jjF3Cf7R/z4.png",
       "https://i.postimg.cc/76JszL3C/z5.png",
     ],
-    // A estrutura de autores já parece estar correta e desacoplada.
     authors: [
       {
         name: "Thiago Bryan",

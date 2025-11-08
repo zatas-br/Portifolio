@@ -8,7 +8,6 @@ interface AuthorCardProps {
   variant?: 'default' | 'compact' | 'detailed';
 }
 
-// Função para gerar iniciais do nome
 const getInitials = (name: string) => {
   return name
     .split(' ')
@@ -18,7 +17,6 @@ const getInitials = (name: string) => {
     .slice(0, 2);
 };
 
-// Função para gerar cor baseada no nome
 const getColorFromName = (name: string) => {
   const colors = [
     'bg-blue-500',
@@ -43,7 +41,6 @@ const getColorFromName = (name: string) => {
 };
 
 export default function AuthorCard({ author, variant = 'default' }: AuthorCardProps) {
-  // Criar array de links sociais que existem
   const socialLinks = [];
   
   if (author.linkedin) {
@@ -98,12 +95,9 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
   }
 
   const hasAnySocial = socialLinks.length > 0;
-
-  // Versão compacta (inline)
   if (variant === 'compact') {
     return (
       <div className="flex items-center gap-3">
-        {/* Avatar */}
         {author.avatar ? (
           <img
             src={author.avatar}
@@ -117,8 +111,6 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
             {getInitials(author.name)}
           </div>
         )}
-
-        {/* Info */}
         <div className="flex-1 min-w-0">
           <h4 className="font-semibold text-text text-sm truncate">
             {author.name}
@@ -132,13 +124,10 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
       </div>
     );
   }
-
-  // Versão detalhada (card completo)
   if (variant === 'detailed') {
     return (
       <div className="bg-surface border border-border rounded-xl p-6 hover:border-primary transition-all hover:shadow-lg group">
         <div className="flex flex-col items-center text-center">
-          {/* Avatar */}
           {author.avatar ? (
             <img
               src={author.avatar}
@@ -152,8 +141,6 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
               {getInitials(author.name)}
             </div>
           )}
-
-          {/* Info */}
           <h4 className="font-bold text-text text-lg mb-1 group-hover:text-primary transition-colors">
             {author.name}
           </h4>
@@ -162,14 +149,11 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
               {author.role}
             </p>
           )}
-
-          {/* Social Links */}
           {hasAnySocial && (
             <div className="flex gap-2 flex-wrap justify-center">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 const href = social.isEmail ? `mailto:${social.url}` : social.url;
-
                 return (
                   <a
                     key={social.key}
@@ -190,13 +174,10 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
       </div>
     );
   }
-
-  // Versão padrão (card horizontal)
   return (
     <div className="bg-surface border border-border rounded-xl p-4 hover:border-primary-v2 transition-all hover:shadow-lg group">
       <div className="flex flex-col gap-3">
         <div className="flex items-start gap-3">
-          {/* Avatar */}
           {author.avatar ? (
             <img
               src={author.avatar}
@@ -210,8 +191,6 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
               {getInitials(author.name)}
             </div>
           )}
-
-          {/* Info */}
           <div className="flex-1 min-w-0">
             <h4 className="font-bold text-text text-sm truncate group-hover:text-primary-v2 transition-colors">
               {author.name}
@@ -223,14 +202,11 @@ export default function AuthorCard({ author, variant = 'default' }: AuthorCardPr
             )}
           </div>
         </div>
-
-        {/* Social Links */}
         {hasAnySocial && (
           <div className="flex gap-1.5 flex-wrap">
             {socialLinks.map((social) => {
               const Icon = social.icon;
               const href = social.isEmail ? `mailto:${social.url}` : social.url;
-
               return (
                 <a
                   key={social.key}

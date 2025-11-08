@@ -7,11 +7,11 @@ interface HamburgerMenuProps {
     className?: string;
 }
 
-export const HamburgerMenu = ({ 
-    isOpen, 
-    onClick, 
+export const HamburgerMenu = ({
+    isOpen,
+    onClick,
     color = '#000',
-    className = '' 
+    className = ''
 }: HamburgerMenuProps) => {
     const t = useTranslations('HamburgerMenu');
     

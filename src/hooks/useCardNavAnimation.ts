@@ -1,4 +1,3 @@
-// Salve como, por exemplo, 'hooks/useCardNavAnimation.ts'
 'use client';
 
 import { useState, useRef, useLayoutEffect, useCallback } from 'react';

@@ -1,5 +1,3 @@
-// 📁 app/layout.tsx
-
 import './global.css';
 import ThemeRegistry from '@/src/components/providers/ThemeRegistry';
 

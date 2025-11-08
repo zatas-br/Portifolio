@@ -22,26 +22,21 @@ import { CATEGORIES_STATIC } from "@/src/data/projects";
 import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
 import { useTranslations } from "next-intl";
 
-// Ícones modernos para cada categoria
 const categoryIcons: Record<string, React.ReactNode> = {
   desenvolvimento: <FaCode className="w-16 h-16" />,
   design: <FaPalette className="w-16 h-16" />,
   marketing: <FaBullhorn className="w-16 h-16" />,
 };
 
-// Ícones para as tags - 3 principais por categoria
 const tagIcons: Record<string, React.ReactNode> = {
-  // Desenvolvimento - 3 principais
   Web: <FaLaptopCode className="w-3 h-3" />,
   Mobile: <FaMobileAlt className="w-3 h-3" />,
   APIs: <FaServer className="w-3 h-3" />,
 
-  // Design - 3 principais
   "UI/UX": <MdDesignServices className="w-3 h-3" />,
   Branding: <MdBrandingWatermark className="w-3 h-3" />,
   Identidade: <HiSparkles className="w-3 h-3" />,
 
-  // Marketing - 3 principais
   SEO: <FaSearch className="w-3 h-3" />,
   "Social Media": <FaHashtag className="w-3 h-3" />,
   "Redes Sociais": <FaHashtag className="w-3 h-3" />,
@@ -50,7 +45,6 @@ const tagIcons: Record<string, React.ReactNode> = {
   Analytics: <FaChartLine className="w-3 h-3" />,
 };
 
-// Tags fixas e otimizadas para cada categoria (3 tags cada)
 const categoryTagsOverride: Record<string, string[]> = {
   desenvolvimento: ["Web", "Mobile", "APIs"],
   design: ["UI/UX", "Branding", "Identidade"],
@@ -73,10 +67,8 @@ export default function ServicesLandingPage() {
 
   return (
     <div className="min-h-screen bg-surface">
-      {/* Header */}
       <div ref={headerRef} className="pt-24 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold text-center mb-6">
             <span className="text-text">{t("title1")} </span>
             <span className="text-primary-v2">{t("title2")}</span>
@@ -86,25 +78,17 @@ export default function ServicesLandingPage() {
               {t("title4")}
             </span>
           </h1>
-
-          {/* Subtitle */}
           <p className="text-lg text-text-muted max-w-2xl mx-auto text-center leading-relaxed">
             {t("subtitle")}
           </p>
         </div>
       </div>
-
-      {/* Categories Grid */}
       <div className="max-w-7xl mx-auto px-6 pb-20">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Mapeia os dados ESTÁTICOS */}
           {CATEGORIES_STATIC.map((category, index) => {
-            // Busca os dados traduzíveis usando o ID
             const title = tCategories(`${category.id}.title`);
             const description = tCategories(`${category.id}.description`);
-            // Usa as tags fixas otimizadas (3 tags por categoria)
             const tags = categoryTagsOverride[category.id] || [];
-
             return (
               <div
                 key={category.id}
@@ -115,28 +99,19 @@ export default function ServicesLandingPage() {
                 className="group cursor-pointer h-full"
               >
                 <div className="bg-surface border-2 border-border rounded-3xl p-8 h-full hover:border-primary transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 flex flex-col">
-                  {/* Icon (usa o ID estático) */}
                   <div className="text-primary-v2 mb-6 group-hover:scale-110 group-hover:text-primary-hover transition-all duration-300">
                     {categoryIcons[category.id]}
                   </div>
-
-                  {/* Title (traduzido) */}
                   <h2 className="text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">
                     {title}
                   </h2>
-
-                  {/* Description (traduzido) - Altura fixa */}
                   <p className="text-lg text-text-muted mb-8 leading-relaxed h-[120px] overflow-hidden">
                     {description}
                   </p>
-
-                  {/* CTA */}
                   <div className="flex items-center gap-2 text-icons font-semibold cursor-pointer mb-8">
                     <span>{t("viewProjects")}</span>
                     <FaArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
-
-                  {/* Tags (3 fixas por categoria) com ÍCONES - Fixo no bottom */}
                   <div className="mt-auto pt-6 border-t border-border">
                     <div className="grid grid-cols-3 gap-2">
                       {tags.map((tag) => (
@@ -156,8 +131,6 @@ export default function ServicesLandingPage() {
             );
           })}
         </div>
-
-        {/* Stats ou CTA adicional */}
         <div className="mt-20 text-center">
           <div className="bg-surface rounded-2xl p-12 border-2 border-border max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold text-text mb-4">

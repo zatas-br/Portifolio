@@ -36,7 +36,6 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
 
-      // Verifica se precisa do indicador de scroll
       setTimeout(() => {
         if (scrollContentRef.current) {
           const hasScroll = scrollContentRef.current.scrollHeight > scrollContentRef.current.clientHeight;
@@ -73,16 +72,15 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
   if (!member) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] flex items-center justify-center p-0 md:p-4"
       onClick={handleClose}
     >
-      <div 
+      <div
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
         className="bg-surface rounded-none md:rounded-3xl max-w-4xl w-full h-screen md:h-auto md:max-h-[90vh] relative border-0 md:border-2 md:border-border overflow-hidden flex flex-col"
       >
-        {/* Botão de fechar */}
         <button
           onClick={handleClose}
           aria-label={t('modal.closeLabel')}
@@ -92,7 +90,6 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
         </button>
 
         <div className="grid md:grid-cols-3 h-full md:h-auto overflow-hidden">
-          {/* Coluna esquerda - Info básica */}
           <div className="bg-gradient-to-br from-start-gradient to-final-gradient text-white p-6 md:p-8 rounded-none md:rounded-l-3xl pt-20 md:pt-8 pb-4 md:pb-8 flex-shrink-0 md:flex-shrink">
             <img
               src={member.image}
@@ -139,9 +136,8 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
             </div>
           </div>
 
-          {/* Coluna direita - Conteúdo scrollável */}
           <div className="md:col-span-2 relative flex-1 md:flex-none overflow-hidden md:max-h-[calc(90vh-4rem)]">
-            <div 
+            <div
               ref={scrollContentRef}
               onScroll={handleScroll}
               className="h-full overflow-y-auto scrollbar-hide p-6 md:p-8"
@@ -206,7 +202,6 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
               </div>
             </div>
 
-            {/* Indicador de scroll */}
             {showScrollIndicator && (
               <div className="absolute bottom-6 md:bottom-4 left-1/2 -translate-x-1/2 pointer-events-none">
                 <div className="animate-bounce text-primary-v2 bg-surface/80 backdrop-blur-sm rounded-full p-2 shadow-lg">

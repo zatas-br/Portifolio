@@ -12,24 +12,16 @@ const HeroSection = () => {
 
   return (
     <div className="h-full w-full bg-surface flex items-center justify-center relative overflow-hidden">
-      {/* Background decorativo */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" />
       </div>
-
-      {/* Conteúdo principal - centralizado verticalmente */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center w-full">
-        {/* Logo Animado */}
         <div className="mb-8">
           <AnimatedLogo />
         </div>
-
-        {/* Slogan */}
         <div className="mb-12">
           <Slogan />
         </div>
-
-        {/* Botões de ação - Agora com largura igual no mobile */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
           <Link href="/services" className="w-full sm:w-auto">
             <AnimatedButton
@@ -51,8 +43,6 @@ const HeroSection = () => {
           </AnimatedButton>
         </div>
       </div>
-
-      {/* Efeito de vignette sutil */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-radial from-transparent via-transparent to-surface/30" />
     </div>
   );

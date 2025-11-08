@@ -14,7 +14,6 @@ import {
 import { PROJECTS_STATIC } from "@/src/data/projects";
 import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
 import { useTranslations } from "next-intl";
-import { Category, Project } from "@/types";
 import gsap from "gsap";
 
 interface CategoryProjectsPageProps {
@@ -42,7 +41,6 @@ export default function CategoryProjectsPage({
   const imageRef = useRef<HTMLDivElement>(null);
   const { animateFadeIn } = usePortfolioAnimations();
 
-  // Flag para controlar se as animações iniciais já foram executadas
   const animationsExecutedRef = useRef(false);
 
   const filteredProjects = PROJECTS_STATIC.filter(
@@ -55,7 +53,6 @@ export default function CategoryProjectsPage({
   useEffect(() => {
     if (animationsExecutedRef.current) return;
 
-    // Anima header e botão de voltar
     animateFadeIn(headerRef.current, 0);
     animateFadeIn(backButtonRef.current, 0.1);
 
@@ -98,7 +95,6 @@ export default function CategoryProjectsPage({
 
   return (
     <div className="min-h-screen bg-surface">
-      {/* Back Button - Posicionado acima do header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
         <button
           ref={backButtonRef}
@@ -110,7 +106,6 @@ export default function CategoryProjectsPage({
         </button>
       </div>
 
-      {/* Header */}
       <div
         ref={headerRef}
         className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border"
@@ -138,17 +133,13 @@ export default function CategoryProjectsPage({
           </div>
         </div>
       </div>
-
-      {/* Projects Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Lista de Projetos */}
           <div className="space-y-4 sm:space-y-6">
             {filteredProjects.map((project, index) => {
               const title = tProjects(`${project.id}.title`);
               const description = tProjects(`${project.id}.description`);
               const client = tProjects(`${project.id}.client`);
-
               return (
                 <div
                   key={project.id}
@@ -161,7 +152,6 @@ export default function CategoryProjectsPage({
                   className="group cursor-pointer"
                 >
                   <div className="bg-surface border-2 border-border hover:border-primary-v2 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:shadow-2xl">
-                    {/* Imagem Mobile */}
                     <div className="lg:hidden mb-4 rounded-xl overflow-hidden bg-surface-alt">
                       <img
                         src={project.image}
@@ -169,7 +159,6 @@ export default function CategoryProjectsPage({
                         className="w-full h-48 object-cover"
                       />
                     </div>
-
                     <h3 className="text-2xl font-bold text-text mb-3 group-hover:text-primary-v2 transition-colors flex items-center gap-2">
                       {title}
                       <FaExternalLinkAlt className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -177,8 +166,6 @@ export default function CategoryProjectsPage({
                     <p className="text-sm sm:text-base text-text-muted mb-4 leading-relaxed">
                       {description}
                     </p>
-
-                    {/* Tags de Tecnologia */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 4).map((tech) => (
                         <span
@@ -194,8 +181,6 @@ export default function CategoryProjectsPage({
                         </span>
                       )}
                     </div>
-
-                    {/* Footer */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-sm pt-4 border-t border-border">
                       <span className="text-text-muted">{client}</span>
                       <span className="flex items-center gap-2 text-icons font-semibold">
@@ -208,11 +193,8 @@ export default function CategoryProjectsPage({
               );
             })}
           </div>
-
-          {/* Preview de Imagem - Desktop Only com Info Sobreposta */}
           <div className="hidden lg:block sticky top-24 self-start">
             <div className="relative w-full aspect-[4/3] bg-surface-alt rounded-2xl overflow-hidden shadow-2xl border-2 border-border">
-              {/* Imagem */}
               {hoveredProjectData ? (
                 <img
                   src={hoveredProjectData.image}
@@ -230,8 +212,6 @@ export default function CategoryProjectsPage({
                   </p>
                 </div>
               )}
-
-              {/* Info Card Sobreposta - Aparece apenas com hover */}
               <div
                 className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6 transition-all duration-300 ${
                   hoveredProjectData
@@ -255,7 +235,7 @@ export default function CategoryProjectsPage({
                         {hoveredProjectClient}
                       </span>
                       <span className="flex items-center gap-1 text-white font-medium">
-                        Ver detalhes
+                        {t("seeDetails")}
                         <FaArrowRight className="w-3 h-3" />
                       </span>
                     </div>

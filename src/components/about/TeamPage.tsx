@@ -56,7 +56,7 @@ export default function TeamPage() {
   };
 
   return (
-    <div className="min-h-screen bg-surface"> 
+    <div className="min-h-screen bg-surface">
       <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border py-12 md:py-16 lg:py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
@@ -103,9 +103,9 @@ export default function TeamPage() {
         </div>
       </div>
 
-      <TeamMemberModal 
-        member={selectedMember} 
-        onClose={() => setSelectedMember(null)} 
+      <TeamMemberModal
+        member={selectedMember}
+        onClose={() => setSelectedMember(null)}
       />
     </div>
   );

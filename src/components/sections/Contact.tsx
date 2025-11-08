@@ -69,12 +69,12 @@ export default function Contact() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-text-muted mb-2">{t('form.name.label')}</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              placeholder={t('form.name.placeholder')} 
-              className="w-full px-4 py-3 bg-surface-alt border-2 border-border rounded-lg focus:ring-primary focus:border-primary transition-all" 
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder={t('form.name.placeholder')}
+              className="w-full px-4 py-3 bg-surface-alt border-2 border-border rounded-lg focus:ring-primary focus:border-primary transition-all"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -83,25 +83,25 @@ export default function Contact() {
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-text-muted mb-2">{t('form.email.label')}</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              placeholder={t('form.email.placeholder')} 
-              className="w-full px-4 py-3 bg-surface-alt border-2 border-border rounded-lg focus:ring-primary focus:border-primary transition-all" 
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder={t('form.email.placeholder')}
+              className="w-full px-4 py-3 bg-surface-alt border-2 border-border rounded-lg focus:ring-primary focus:border-primary transition-all"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required 
+              required
               disabled={isLoading}
             />
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-text-muted mb-2">{t('form.message.label')}</label>
-            <textarea 
-              id="message" 
-              name="message" 
-              rows={4} 
-              placeholder={t('form.message.placeholder')} 
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder={t('form.message.placeholder')}
               className="w-full px-4 py-3 bg-surface-alt border-2 border-border rounded-lg focus:ring-primary focus:border-primary transition-all"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -110,8 +110,8 @@ export default function Contact() {
             ></textarea>
           </div>
           <div>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-black active:bg-primary- transition-colors shadow-lg hover:shadow-xl cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isLoading}
             >

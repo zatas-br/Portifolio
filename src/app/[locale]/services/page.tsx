@@ -1,5 +1,3 @@
-// 📁 app/[locale]/services/page.tsx
-
 import ServicesLandingPage from '@/src/components/portfolio/ServicesLandingPage';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';

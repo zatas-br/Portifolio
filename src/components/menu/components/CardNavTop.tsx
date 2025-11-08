@@ -40,9 +40,7 @@ export const CardNavTop = ({
 
     return (
         <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 z-[2]">
-            {/* Lado Esquerdo: Botões de Tema e Idioma */}
             <div className="flex items-center gap-2">
-                {/* Botão de Tema */}
                 {mounted && (
                     <button
                         type="button"
@@ -51,14 +49,13 @@ export const CardNavTop = ({
                         style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
                         aria-label={currentTheme === 'light' ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
                     >
-                        {currentTheme === 'light' ? 
-                            <MoonIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" /> : 
+                        {currentTheme === 'light' ?
+                            <MoonIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" /> :
                             <SunIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" />
                         }
                     </button>
                 )}
 
-                {/* Botão de Idioma */}
                 <button
                     type="button"
                     onClick={onLanguageToggle}
@@ -70,14 +67,12 @@ export const CardNavTop = ({
                 </button>
             </div>
 
-            {/* Centro: Logo */}
             <div className="logo-container absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <Link href="/">
                     <img src={logo} alt={logoAlt} className="logo h-[24px] md:h-[28px]" />
                 </Link>
             </div>
 
-            {/* Lado Direito: Menu Hambúrguer - COM PADDING IGUAL */}
             <div className="flex items-center">
                 <div className="w-[38px] h-[38px] md:w-[44px] md:h-[44px] flex items-center justify-center">
                     <HamburgerMenu

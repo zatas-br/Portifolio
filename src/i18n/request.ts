@@ -5,7 +5,6 @@ import { promises as fs } from 'fs';
 import path from 'path';
  
 export default getRequestConfig(async ({requestLocale}) => {
-  // Typically corresponds to the `[locale]` segment
   const requested = await requestLocale;
   const locale = hasLocale(routing.locales, requested)
     ? requested

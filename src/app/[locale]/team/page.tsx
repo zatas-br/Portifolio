@@ -1,5 +1,3 @@
-// 📁 app/[locale]/team/page.tsx
-
 import TeamPage from '@/src/components/about/TeamPage';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';

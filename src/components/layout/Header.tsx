@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react';
 import CardNav from '@/src/components/menu/cardNav';
 import zatasIcon from '@/public/images/Identidade_visual/icon-zatas-white.svg';
 import { useTranslations, useLocale } from 'next-intl';
@@ -10,7 +9,7 @@ import { useTheme } from 'next-themes';
 
 export default function Header() {
   const {theme, setTheme} = useTheme()
-  const currentLocale = useLocale(); // Usado para o estado 'current' do botão
+  const currentLocale = useLocale();
   const router = useRouter(); 
   const fullPathname = usePathname();
 
@@ -60,7 +59,7 @@ export default function Header() {
       bgColor: "var(--color-primary-active)",
       textColor: "var(--color-surface)",
       links: [
-       { label: t('services.links.0.label'), href: '/services/desenvolvimento', ariaLabel: 'Ver projetos de desenvolvimento' },
+      { label: t('services.links.0.label'), href: '/services/desenvolvimento', ariaLabel: 'Ver projetos de desenvolvimento' },
       { label: t('services.links.1.label'), href: '/services/design', ariaLabel: 'Ver projetos de design' },
       { label: t('services.links.2.label'), href: '/services/marketing', ariaLabel: 'Ver projetos de marketing' }
       ]

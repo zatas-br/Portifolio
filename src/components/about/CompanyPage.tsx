@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useRef } from 'react';
-import { 
-  FaRocket, 
-  FaEye, 
+import {
+  FaRocket,
+  FaEye,
   FaHeart,
   FaUsers,
   FaLightbulb,
@@ -18,8 +18,6 @@ import { useMessages, useTranslations } from 'next-intl';
 type Messages = {
   CompanyPage: {
     history: string[];
-    // Nota: 'cultureItems' não é mais necessário aqui, 
-    // pois estamos usando t() diretamente no array.
   };
 };
 
@@ -32,7 +30,6 @@ export default function CompanyPage() {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
 
-  // Mova o array para dentro do componente para ter acesso ao 't'
   const cultureValues = [
     { icon: <FaLightbulb />, title: t('cultureItems.autonomy.title'), desc: t('cultureItems.autonomy.desc') },
     { icon: <FaStar />, title: t('cultureItems.learning.title'), desc: t('cultureItems.learning.desc') },
@@ -45,11 +42,10 @@ export default function CompanyPage() {
   useEffect(() => {
     animateFadeIn(heroRef.current, 0);
     animateEnter(sectionsRef.current, 0.2);
-  }, [animateEnter, animateFadeIn]); // Adicionei dependências ao useEffect
+  }, [animateEnter, animateFadeIn]);
 
   return (
     <div className="min-h-screen bg-surface">
-      {/* Hero */}
       <div ref={heroRef} className="bg-gradient-to-br from-start-gradient to-final-gradient text-white py-20 md:py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('title')}</h1>
@@ -60,7 +56,6 @@ export default function CompanyPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
-        {/* Nossa História */}
         <div ref={el => { sectionsRef.current[0] = el; }} className="mb-20 md:mb-24">
           <div className="flex items-center gap-3 mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-text">{t('historyTitle')}</h2>
@@ -74,7 +69,6 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* Missão, Visão, Valores */}
         <div ref={el => { sectionsRef.current[1] = el; }} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-24">
           <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
             <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
@@ -107,19 +101,15 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* Cultura */}
         <div ref={el => { sectionsRef.current[3] = el; }}>
           <div className="flex items-center gap-3 mb-6">
             <FaHeart className="w-6 h-6 text-primary-v2" />
-            {/* ATUALIZADO */}
             <h2 className="text-3xl md:text-4xl font-bold text-text">{t('cultureTitle')}</h2>
           </div>
-          {/* ATUALIZADO */}
           <p className="text-lg md:text-xl text-text-muted mb-8 leading-relaxed">
             {t('cultureDescription')}
           </p>
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            {/* ATUALIZADO (agora consome o array 'cultureValues' que usa 't()') */}
             {cultureValues.map((item, i) => (
               <div key={i} className="bg-surface border-2 border-border rounded-2xl p-6 hover:border-primary-v2 transition-all hover:shadow-lg group cursor-default">
                 <div className="flex items-start gap-4">

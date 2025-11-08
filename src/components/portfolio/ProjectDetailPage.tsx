@@ -3,11 +3,11 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import gsap from 'gsap';
-import { 
-  FaArrowLeft, 
-  FaExternalLinkAlt, 
-  FaCalendar, 
-  FaUsers, 
+import {
+  FaArrowLeft,
+  FaExternalLinkAlt,
+  FaCalendar,
+  FaUsers,
   FaBriefcase,
   FaCode,
   FaImages,
@@ -61,7 +61,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
 
   return (
     <div className="min-h-screen bg-surface">
-      {/* Back Button */}
       <div className="border-b border-border bg-surface sticky top-0 z-10 backdrop-blur-sm bg-surface/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
           <button
@@ -75,20 +74,16 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-        {/* Header */}
         <div ref={headerRef} className="mb-12">
 
-          {/* Title */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-text mb-6 leading-tight">
             {title}
           </h1>
           
-          {/* Description */}
           <p className="text-base sm:text-lg md:text-xl text-text-muted mb-8 leading-relaxed max-w-3xl">
             {description}
           </p>
           
-          {/* Meta Info */}
           <div className="flex flex-wrap gap-6 text-text-muted mb-8">
             <div className="flex items-center gap-2">
               <FaCalendar className="w-4 h-4 text-primary-v2" />
@@ -107,8 +102,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               </div>
             )}
           </div>
-
-          {/* Authors Section */}
           {hasAuthors && (
             <div className="bg-surface-alt border border-border rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-2 mb-6">
@@ -121,52 +114,32 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                   {isSingleAuthor ? t('authors.single') : t('authors.multiple')}
                 </h3>
               </div>
-
-              {/* Grid responsivo baseado no número de autores */}
               <div className={`grid gap-4 ${
-                isSingleAuthor 
-                  ? 'sm:grid-cols-1' 
+                isSingleAuthor
+                  ? 'sm:grid-cols-1'
                   : project.authors!.length === 2
                     ? 'sm:grid-cols-2'
                     : 'sm:grid-cols-2 lg:grid-cols-3'
               }`}>
                 {project.authors!.map((author, index) => (
-                  <AuthorCard 
-                    key={index} 
-                    author={author} 
+                  <AuthorCard
+                    key={index}
+                    author={author}
                     variant="default"
                   />
                 ))}
               </div>
             </div>
           )}
-
-          {/* Fallback para projetos antigos sem campo authors */}
-          {/* @ts-ignore */}
-          {!hasAuthors && project.author && (
-            <div className="bg-surface-alt border border-border rounded-2xl p-6">
-              <div className="flex items-center gap-2">
-                <FaUser className="w-4 h-4 text-primary-v2" />
-                <span className="text-sm text-text-muted">Criado por:</span>
-                {/* @ts-ignore */}
-                <span className="font-semibold text-text">{project.author}</span>
-              </div>
-            </div>
-          )}
         </div>
-
-        {/* Hero Image */}
         <div ref={heroRef} className="mb-16 rounded-2xl overflow-hidden shadow-2xl border-2 border-border group">
-          <img 
-            src={project.image} 
+          <img
+            src={project.image}
             alt={title}
             className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500" 
           />
         </div>
-
-        {/* Content */}
         <div ref={contentRef} className="grid md:grid-cols-3 gap-8 md:gap-12 mb-16">
-          {/* Main Content */}
           <div className="md:col-span-2 space-y-8">
             <div className="bg-surface border border-border rounded-2xl p-6 md:p-8">
               <div className="flex items-center gap-2 mb-4">
@@ -178,10 +151,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               </p>
             </div>
           </div>
-
-          {/* Sidebar */}
           <div className="space-y-6">
-            {/* Technologies */}
             <div className="bg-surface border border-border rounded-2xl p-6">
               <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
                 <FaCode className="w-4 h-4 text-primary-v2" />
@@ -189,8 +159,8 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
               </h3>
               <div className="space-y-2">
                 {project.technologies.map(tech => (
-                  <div 
-                    key={tech} 
+                  <div
+                    key={tech}
                     className="bg-surface-alt border border-border text-icons px-4 py-3 rounded-lg font-medium text-sm hover:border-primary-v2 transition-colors"
                   >
                     {tech}
@@ -198,8 +168,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                 ))}
               </div>
             </div>
-
-            {/* CTA Button */}
             {project.link && (
               <a
                 href={project.link}
@@ -213,8 +181,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
             )}
           </div>
         </div>
-
-        {/* Gallery */}
         {project.gallery && project.gallery.length > 0 && (
           <div>
             <div className="flex items-center gap-3 mb-8">
@@ -231,7 +197,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
                   <img
                     src={img}
                     alt={`${title} - ${index + 1}`}
-                    className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               ))}
@@ -239,7 +205,6 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
           </div>
         )}
 
-        {/* Navigation Footer */}
         <div className="mt-16 pt-8 border-t border-border">
           <button
             onClick={() => router.push(`/services/${category}`)}
