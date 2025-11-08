@@ -39,27 +39,38 @@ export default function TeamPage() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
 
+  const allowedIds = [
+    'antony-brito',
+    'bruno-santiago',
+    'gabriel-cardoso',
+    'thiago-bryan'
+  ];
+
   useEffect(() => {
     animateFadeIn(headerRef.current, 0);
     animateEnter(cardsRef.current, 0.15);
   }, [animateEnter, animateFadeIn]);
 
+  const filteredAuthors = Object.entries(TEAM_AUTHORS).filter(([id, profile]) => {
+    return allowedIds.includes(id);
+  });
+
   const handleSelectMember = (profile: ProjectAuthor & { id: string }) => {
-    const content = memberContentData[profile.id];
-    if (content) {
-      const fullMember: TeamMember = {
-        ...content,
-        id: profile.id,
-        image: profile.avatar || '',
-        avatar: profile.avatar || '',
-        social: {
-          linkedin: profile.linkedin,
-          github: profile.github,
-        },
-      };
-      setSelectedMember(fullMember);
-    }
-  };
+    const content = memberContentData[profile.id];
+    if (content) {
+      const fullMember: TeamMember = {
+        ...content,
+        id: profile.id,
+        image: profile.avatar || '',
+        avatar: profile.avatar || '',
+        social: {
+          linkedin: profile.linkedin,
+          github: profile.github,
+        },
+      };
+      setSelectedMember(fullMember);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-surface">
@@ -77,7 +88,7 @@ export default function TeamPage() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {Object.entries(TEAM_AUTHORS).map(([id, profile], index) => (
+          {filteredAuthors.map(([id, profile], index) => (
             <div
               key={id}
               ref={el => { cardsRef.current[index] = el; }}
