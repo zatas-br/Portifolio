@@ -104,16 +104,6 @@
       ],
       "education": [
         {
-          "institution": "Escola Estadual Doutor Álvaro Guião",
-          "degree": "High School Diploma",
-          "year": "2023"
-        },
-        {
-          "institution": "SENAC",
-          "degree": "Computer Assembler and Repair Technician",
-          "year": "2024"
-        },
-        {
           "institution": "SENAI",
           "degree": "Systems Development",
           "year": "2024 - 2025"
@@ -151,23 +141,7 @@
         "Discipline",
         "Adaptability"
       ],
-      "education": [
-        {
-          "institution": "High School",
-          "degree": "E.E Arlindo Bittencourt",
-          "year": "2018 - 2024"
-        },
-        {
-          "institution": "Basic English",
-          "degree": "Wizard idiomas",
-          "year": "2021 - 2022"
-        },
-        {
-          "institution": "Journalism",
-          "degree": "Estácio De Sá ",
-          "year": "2025 - actual"
-        }
-      ],
+      "education": [],
       "experience": [
         {
           "company": "Zatas",
