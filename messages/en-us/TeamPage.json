@@ -30,7 +30,7 @@
         },
         {
           "institution": "SENAI-601",
-          "degree": "Systems Analysis and Development",
+          "degree": "Systems Development",
           "year": "2024 - 2025"
         },
         {
@@ -71,7 +71,7 @@
       "education": [
         {
           "institution": "SENAI-601",
-          "degree": "Systems Analysis and Development",
+          "degree": "Systems Development",
           "year": "2024"
         }
       ],
@@ -107,11 +107,6 @@
           "institution": "SENAI",
           "degree": "Systems Development",
           "year": "2024 - 2025"
-        },
-        {
-          "institution": "SENAI",
-          "degree": "Microsoft Power BI",
-          "year": "2024"
         },
         {
           "institution": "SENAI",
