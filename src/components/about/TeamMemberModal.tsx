@@ -168,21 +168,23 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
                 </div>
               </div>
 
-              <div className="mb-6 md:mb-8">
-                <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
-                  <FaGraduationCap className="w-4 h-4 md:w-5 md:h-5 text-primary-v2" />
-                  {t('modal.education')}
-                </h3>
-                <div className="space-y-3 md:space-y-4">
-                  {member.education.map((edu, i) => (
-                    <div key={i} className="border-l-4 border-primary-v2 pl-3 md:pl-4 py-2 bg-surface-alt/50 rounded-r-lg pr-3 md:pr-4">
-                      <h4 className="font-bold text-text text-sm md:text-base">{edu.degree}</h4>
-                      <p className="text-text-muted text-xs md:text-sm">{edu.institution}</p>
-                      <p className="text-xs text-text-muted/70">{edu.year}</p>
-                    </div>
-                  ))}
+              {member.education && member.education.length > 0 && (
+                <div className="mb-6 md:mb-8">
+                  <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
+                    <FaGraduationCap className="w-4 h-4 md:w-5 md:h-5 text-primary-v2" />
+                    {t('modal.education')}
+                  </h3>
+                  <div className="space-y-3 md:space-y-4">
+                    {member.education.map((edu, i) => (
+                      <div key={i} className="border-l-4 border-primary-v2 pl-3 md:pl-4 py-2 bg-surface-alt/50 rounded-r-lg pr-3 md:pr-4">
+                        <h4 className="font-bold text-text text-sm md:text-base">{edu.degree}</h4>
+                        <p className="text-text-muted text-xs md:text-sm">{edu.institution}</p>
+                        <p className="text-xs text-text-muted/70">{edu.year}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="pb-20 md:pb-4">
                 <h3 className="text-lg md:text-xl font-bold text-text mb-2 md:mb-3 flex items-center gap-2">
