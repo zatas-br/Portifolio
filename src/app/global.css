@@ -37,7 +37,7 @@
 @layer base {
 
   .dark {
-    --color-primary: #4b4b4b;
+    --color-primary: #0d2552;
     --color-primary-v2: #1d3f7d;
     --color-primary-icon:var(--color-text);
     --color-primary-hover: #d3cece;
@@ -45,11 +45,11 @@
     --color-primary-hover-v3: #0d2552;
     --color-start-gradient: var(--color-primary);
     --color-final-gradient: #000000;
-    --color-primary-active: #131313;
+    --color-primary-active: #0d1a2e;
     --color-icons: #f0f0f0;
 
-    --color-surface: #1e1e1e;
-    --color-surface-alt: #2a2a2a;
+    --color-surface: #050e1c;
+    --color-surface-alt: #1a2c4a;
 
     --color-text: #f0f0f0;
     --color-text-slogan: var(--color-text);

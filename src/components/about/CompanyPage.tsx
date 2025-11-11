@@ -70,9 +70,9 @@ export default function CompanyPage() {
         </div>
 
         <div ref={el => { sectionsRef.current[1] = el; }} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-20 md:mb-24">
-          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
-            <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
-              <FaRocket className="w-8 h-8 text-primary-v2" />
+          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg group cursor-default">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4 group-hover:bg-surface-alt transition-colors">
+              <FaRocket className="w-8 h-8 text-white group-hover:text-primary-v2 transition-colors" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardMissionTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
@@ -80,9 +80,9 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
-            <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
-              <FaEye className="w-8 h-8 text-primary-v2" />
+          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg group cursor-default">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4 group-hover:bg-surface-alt transition-colors">
+              <FaEye className="w-8 h-8 text-white group-hover:text-primary-v2 transition-colors" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardVisionTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
@@ -90,9 +90,9 @@ export default function CompanyPage() {
             </p>
           </div>
 
-          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg">
-            <div className="w-16 h-16 bg-surface-alt rounded-2xl flex items-center justify-center mb-4">
-              <FaHeart className="w-8 h-8 text-primary-v2" />
+          <div className="bg-surface border-2 border-border rounded-2xl p-6 md:p-8 hover:border-primary-v2 transition-all hover:shadow-lg group cursor-default">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-4 group-hover:bg-surface-alt transition-colors">
+              <FaHeart className="w-8 h-8 text-white group-hover:text-primary-v2 transition-colors" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold text-text mb-4">{t('cardValuesTitle')}</h3>
             <p className="text-text-muted leading-relaxed">
@@ -113,7 +113,7 @@ export default function CompanyPage() {
             {cultureValues.map((item, i) => (
               <div key={i} className="bg-surface border-2 border-border rounded-2xl p-6 hover:border-primary-v2 transition-all hover:shadow-lg group cursor-default">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-surface-alt rounded-xl flex items-center justify-center flex-shrink-0 text-primary-v2 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white group-hover:bg-surface-alt group-hover:text-primary-v2 transition-colors">
                     <div className="w-12 h-12 flex items-center justify-center">{item.icon}</div>
                   </div>
                   <div>
