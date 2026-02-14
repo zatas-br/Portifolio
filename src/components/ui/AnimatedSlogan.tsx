@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-const Slogan = () => {
+const   Slogan = () => {
   const t = useTranslations('Slogan');
   const words = t.raw('words') as string[];
 
@@ -14,7 +14,7 @@ const Slogan = () => {
         duration: 0.8,
         ease: "easeOut"
       }}
-      className="flex items-center justify-center gap-4 text-gray-800 text-text md:text-xl tracking-wide"
+      className="flex items-center justify-center gap-4 text-white text-text md:text-xl tracking-wide"
     >
       {words.map((word, i) => (
         <motion.span
@@ -25,7 +25,7 @@ const Slogan = () => {
             delay: 1.2 + i * 0.1,
             duration: 0.5
           }}
-          className={word === '|' ? 'text-primary' : ''}
+          className={word === '|' ? 'text-white' : ''}
         >
           {word}
         </motion.span>

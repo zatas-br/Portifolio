@@ -77,7 +77,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full relative min-h-[100px]">
+    <header className="w-full min-h-[100px] absolute">
       <CardNav
         logo={zatasIcon.src}
         logoAlt="Zatas - Seu Portfólio"

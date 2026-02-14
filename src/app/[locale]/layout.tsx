@@ -40,7 +40,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <ScrollResetProvider>
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1">
+          <main >
             {children}
           </main>
         </div>

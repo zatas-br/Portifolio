@@ -1,13 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import zatasLogoBlue from '@/public/images/Identidade_visual/zatas-blue.svg';
 import zatasLogoWhite from '@/public/images/Identidade_visual/zatas-white.svg';
 
 const AnimatedLogo = () => {
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -20,8 +17,7 @@ const AnimatedLogo = () => {
     );
   }
 
-  const isDark = resolvedTheme === 'dark';
-  const logoSrc = isDark ? zatasLogoWhite.src : zatasLogoBlue.src;
+  const logoSrc = zatasLogoWhite.src
 
   return (
     <motion.div

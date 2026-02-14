@@ -19,7 +19,7 @@ export default function RootLayout({
         <head>
           <script defer src="https://cloud.umami.is/script.js" data-website-id="5e8230f4-9fc4-4c40-9d3d-4956289a241d"></script>
         </head>
-        <body className='antialiased'>
+        <body className='antialiased no-scrollbar'>
           <ThemeRegistry>
             {children}
           </ThemeRegistry>

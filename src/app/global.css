@@ -5,6 +5,7 @@
   --font-body: 'Montserrat', sans-serif;
 
   --color-primary: #2b4d8f;
+  --color-dark-blue: #263238;
   --color-primary-v2: #2b4d8f;
   --color-primary-icon:var(--color-primary);
   --color-primary-hover: #395ca0;
@@ -13,6 +14,9 @@
   --color-primary-active: #1d3f7d;
   
   --color-icons: #2b4d8f;
+
+    --color-start-home-gradient: #449EE5;
+    --color-final-home-gradient: #ECEFF1;
 
   --color-start-gradient: var(--color-primary);
   --color-final-gradient: #2a2a2a;
@@ -63,5 +67,16 @@
     font-family: var(--font-body);
     background-color: var(--color-surface);
     color: var(--color-text);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

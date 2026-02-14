@@ -57,11 +57,7 @@ const AnimatedButton = ({
   const handleMouseDown = () => gsap.to(buttonRef.current, { scale: 0.95, duration: 0.1, ease: 'power2.out' });
   const handleMouseUp = () => gsap.to(buttonRef.current, { scale: 1.05, duration: 0.1, ease: 'power2.out' });
 
-  const baseStyles = isPrimary
-    ? 'bg-primary text-white border-2 border-primary'
-    : 'bg-transparent text-text border-2 border-border';
-
-  const bgColor = isPrimary ? 'bg-primary-hover-v2' : 'bg-text';
+  const bgColor = isPrimary ? '' : 'bg-text';
 
 
   return (
@@ -74,11 +70,11 @@ const AnimatedButton = ({
       onMouseUp={handleMouseUp}
       className={`
         group relative overflow-hidden
-        px-8 py-4 rounded-xl font-semibold text-base
+        px-8 py-4 rounded-[2vw] font-semibold text-base
         flex items-center justify-center gap-3 w-full sm:w-auto sm:min-w-[220px]
         cursor-pointer transition-shadow duration-300
         shadow-lg hover:shadow-2xl
-        ${baseStyles}
+        bg-dark-blue text-white
         ${className}
       `}
       style={{ opacity: 0 }}
