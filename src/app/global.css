@@ -12,6 +12,8 @@
   --color-primary-hover-v2: #1d3f7d;
   --color-primary-hover-v3: #395ca0;
   --color-primary-active: #1d3f7d;
+
+  --color-blue-oil: #1e293b;
   
   --color-icons: #2b4d8f;
 
@@ -28,6 +30,7 @@
   --color-text-slogan:#2b4d8f;
   --color-white:#f0f0f0;
   --color-gray: #aaaaaa;
+  --color-dark-gray: #263238;
   --color-text-muted: #555555;
   --color-spare-text: var(--color-primary);
 
