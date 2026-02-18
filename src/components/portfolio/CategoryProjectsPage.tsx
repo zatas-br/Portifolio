@@ -30,7 +30,7 @@ export default function CategoryProjectsPage({
     (p) => p.category === category
   );
 
-  const allProjectImages = PROJECTS_STATIC.map(p => p.image).filter(Boolean);
+  const carouselImages = Array.from({ length: 9 }, (_, i) => `/images/services/projetos/${i + 1}.png`);
 
   const carouselItems = [
     { w: 145, h: 217 },
@@ -119,7 +119,7 @@ export default function CategoryProjectsPage({
               className="bg-[#E0E0E0] rounded-[20px] flex-shrink-0 shadow-lg overflow-hidden relative"
             >
                <img 
-                 src={allProjectImages[index % allProjectImages.length] || ""} 
+                 src={carouselImages[index % carouselImages.length] || ""} 
                  alt="" 
                  className="w-full h-full object-cover"
                />
@@ -129,7 +129,7 @@ export default function CategoryProjectsPage({
       </div>
 
       <div className="max-w-7xl mx-auto px-[30px] pb-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 relative items-start">
+        <div className="grid lg:grid-cols-[861fr_615fr] gap-8 lg:gap-16 relative items-start">
           
           <div className="space-y-8">
             {filteredProjects.map((project, index) => {
@@ -146,7 +146,7 @@ export default function CategoryProjectsPage({
                   onClick={() => handleProjectClick(project.id)}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="group cursor-pointer bg-white rounded-[30px] p-8 shadow-sm border border-transparent hover:border-[#0D47A1]/20 transition-all duration-300 hover:shadow-xl"
+                  className="group cursor-pointer bg-white rounded-[30px] p-8 min-h-[247px] shadow-sm border border-transparent hover:border-[#0D47A1]/20 transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="block lg:hidden mb-6 rounded-[20px] overflow-hidden aspect-video">
                     <img 
@@ -180,7 +180,7 @@ export default function CategoryProjectsPage({
           </div>
 
           <div className="hidden lg:block relative h-full">
-             <div className="sticky top-32 w-full aspect-square bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-inner flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
+             <div className="sticky top-32 w-full aspect-[615/538] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-inner flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
                 {hoveredProjectData ? (
                   <img
                     src={hoveredProjectData.image}
