@@ -1,5 +1,3 @@
-// ARQUIVO: src/components/portfolio/ServicesLandingPage.tsx
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -19,7 +17,7 @@ export default function ServicesLandingPage() {
   useEffect(() => {
     if (headerRef.current) animateFadeIn(headerRef.current, 0.1);
     if (cardsContainerRef.current) {
-      const cards = cardsContainerRef.current.querySelectorAll(".service-card");
+      const cards = cardsContainerRef.current.querySelectorAll<HTMLElement>(".service-card");
       animateEnter(Array.from(cards), 0.3);
     }
   }, [animateFadeIn, animateEnter]);
@@ -31,19 +29,17 @@ export default function ServicesLandingPage() {
   ];
 
   return (
-    // Fundo SEMPRE branco, ignorando o modo escuro do navegador
     <main className="min-h-screen w-full bg-white !bg-white text-[#1E1E1E] relative overflow-hidden flex flex-col">
       <Header />
 
-      <div className="relative z-10 flex-1 flex flex-col items-center pt-36 pb-24 px-6">
+      <div className="relative z-10 flex-1 flex flex-col items-center pt-52 pb-24 px-6">
         
         <div className="w-full max-w-6xl">
-          {/* Títulos colados (sem margem extra) e alinhados com o card de Marketing */}
-          <header ref={headerRef} className="text-left mb-4 opacity-0">
-            <p className="text-2xl md:text-3xl text-[#0D47A1] italic font-medium font-serif leading-none m-0">
+          <header ref={headerRef} className="text-left mb-2 opacity-0 pl-1">
+            <p className="text-[24px] text-[#0D47A1] font-lora leading-none m-0 -mb-1 translate-y-0">
               {t("titleSmall")}
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
+            <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
               {t("titleLarge")}
             </h1>
           </header>
@@ -54,10 +50,9 @@ export default function ServicesLandingPage() {
           >
             {categories.map((cat, index) => (
               <div key={cat.id} className="service-card opacity-0 relative">
-                
-                {/* Imagem de fundo ajustada: caminho correto e posição mais para direita/baixo */}
+
                 {index === 2 && (
-                  <div className="absolute -right-32 -bottom-48 w-[180%] h-[180%] -z-10 pointer-events-none opacity-50">
+                  <div className="absolute -right-72 -bottom-80 w-[140%] h-[140%] -z-10 pointer-events-none">
                     <Image 
                       src="/images/fundo-passaro.svg" 
                       alt="Fundo Pássaro"
@@ -72,6 +67,7 @@ export default function ServicesLandingPage() {
                   path={cat.path}
                   image={cat.image}
                   label={t(`categories.${cat.id}`)} 
+                  isServicePage={true}
                 />
               </div>
             ))}

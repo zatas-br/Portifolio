@@ -46,10 +46,10 @@ const HowWorkingSection = () => {
                     {categories.map((cat, index) => (
                         <AnimatedCardServiceCategory
                             key={index}
-                            title={cat.title}
-                            subtitle={cat.subtitle}
-                            uriImage={cat.image}
-                            type={cat.type}
+                            id={`how-working-${index}`}
+                            path="#"
+                            image={cat.image}
+                            label={cat.title}
                         />
                     ))}
                 </div>
