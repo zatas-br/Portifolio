@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaArrowLeft } from "react-icons/fa";
 import { PROJECTS_STATIC } from "@/src/data/projects";
 import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
 import { useTranslations } from "next-intl";
@@ -22,17 +22,14 @@ export default function CategoryProjectsPage({
   const headerRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
   const { animateFadeIn } = usePortfolioAnimations();
-  const carouselRef = useRef<HTMLDivElement>(null);
-
+  
   const animationsExecutedRef = useRef(false);
 
   const filteredProjects = PROJECTS_STATIC.filter(
     (p) => p.category === category
   );
 
-  const carouselImages = Array.from({ length: 9 }, (_, i) => `/images/services/projetos/${i + 1}.png`);
-
-  const carouselItems = [
+  const baseCarouselItems = [
     { w: 145, h: 217 },
     { w: 204, h: 366 },
     { w: 258, h: 175 },
@@ -44,13 +41,9 @@ export default function CategoryProjectsPage({
     { w: 370, h: 163 },
   ];
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      const scrollWidth = carouselRef.current.scrollWidth;
-      const clientWidth = carouselRef.current.clientWidth;
-      carouselRef.current.scrollLeft = (scrollWidth - clientWidth) / 2;
-    }
+  const carouselItems = [...baseCarouselItems, ...baseCarouselItems, ...baseCarouselItems, ...baseCarouselItems];
 
+  useEffect(() => {
     if (animationsExecutedRef.current) return;
 
     animateFadeIn(headerRef.current, 0);
@@ -84,12 +77,18 @@ export default function CategoryProjectsPage({
 
   return (
     <div className="min-h-screen bg-[#ECEFF1]">
-      <div className="max-w-7xl mx-auto px-[30px] pt-6">
+      <div className="max-w-[1800px] 2xl:px-20 mx-auto px-[30px] pt-24 md:pt-32 relative">
+        <button 
+          onClick={() => router.push('/services')} 
+          className="absolute top-8 left-[30px] 2xl:left-20 text-[#263238] hover:text-[#0D47A1] transition-colors flex items-center gap-2 font-body z-10"
+        >
+          <FaArrowLeft /> Voltar
+        </button>
         <div ref={headerRef} className="py-12 md:py-16 text-center">
           <div className="flex justify-center mb-8">
           </div>
           
-          <h1 className="text-[46px] font-bold text-[#263238] font-body leading-tight mb-4 tracking-wide max-w-[800px] mx-auto">
+          <h1 className="text-[46px] font-bold text-[#263238] font-body leading-tight mb-4 tracking-wide max-w-[800px] mx-auto uppercase">
             Design que transforma<br/>ideias em experiência
           </h1>
           
@@ -97,7 +96,7 @@ export default function CategoryProjectsPage({
             <p className="text-[18px] font-light text-[#263238] font-body leading-snug max-w-[800px]">
               Projetos criados com estratégia, estética e propósito para gerar{" "}
               <br/>
-              <span className="font-lora text-[#0D47A1] font-normal">impacto</span>{" "}
+              <span className="font-lora text-[#0D47A1] font-normal text-[19px]">impacto</span>{" "}
               real.
             </p>
           </div>
@@ -105,10 +104,9 @@ export default function CategoryProjectsPage({
       </div>
 
       <div 
-        ref={carouselRef}
-        className="mb-20 overflow-x-auto scrollbar-hide w-full"
+        className="mb-20 overflow-hidden w-full relative"
       >
-        <div className="flex items-center gap-6 pb-4 w-max px-4 mx-auto">
+        <div className="flex items-center gap-6 pb-4 w-max animate-scroll">
           {carouselItems.map((item, index) => (
             <div
               key={index}
@@ -116,10 +114,10 @@ export default function CategoryProjectsPage({
                 width: `${item.w}px`,
                 height: `${item.h}px`,
               }}
-              className="bg-[#E0E0E0] rounded-[20px] flex-shrink-0 shadow-lg overflow-hidden relative"
+              className="bg-[#E0E0E0] rounded-[30px] flex-shrink-0 shadow-lg overflow-hidden relative"
             >
                <img 
-                 src={carouselImages[index % carouselImages.length] || ""} 
+                 src={`/images/services/projetos/${(index % 9) + 1}.png`} 
                  alt="" 
                  className="w-full h-full object-cover"
                />
@@ -128,7 +126,7 @@ export default function CategoryProjectsPage({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-[30px] pb-20">
+      <div className="max-w-[1800px] 2xl:px-20 mx-auto px-[30px] pb-20">
         <div className="grid lg:grid-cols-[861fr_615fr] gap-8 lg:gap-16 relative items-start">
           
           <div className="space-y-8">
@@ -146,7 +144,7 @@ export default function CategoryProjectsPage({
                   onClick={() => handleProjectClick(project.id)}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="group cursor-pointer bg-white rounded-[30px] p-8 min-h-[247px] shadow-sm border border-transparent hover:border-[#0D47A1]/20 transition-all duration-300 hover:shadow-xl"
+                  className="group cursor-pointer bg-white rounded-[30px] p-6 min-h-[200px] shadow-[0_0_20px_rgba(0,0,0,0.3)] border border-transparent hover:border-[#0D47A1]/20 transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="block lg:hidden mb-6 rounded-[20px] overflow-hidden aspect-video">
                     <img 
@@ -167,10 +165,10 @@ export default function CategoryProjectsPage({
                   <div className="h-px w-full bg-[#B2B2B2] mb-6"></div>
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-[20px] text-[#0d47a1] font-lora">
+                    <span className="text-[20px] text-[#0d47a1] font-lora italic">
                       {client || "Zatas"}
                     </span>
-                    <span className="text-[20px] text-[#0d47a1] font-lora flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                    <span className="text-[20px] text-[#0d47a1] font-lora italic flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                       Ver projeto →
                     </span>
                   </div>
@@ -180,7 +178,7 @@ export default function CategoryProjectsPage({
           </div>
 
           <div className="hidden lg:block relative h-full">
-             <div className="sticky top-32 w-full aspect-[615/538] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-inner flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
+             <div className="sticky top-32 w-full h-[520px] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.3)] flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
                 {hoveredProjectData ? (
                   <img
                     src={hoveredProjectData.image}

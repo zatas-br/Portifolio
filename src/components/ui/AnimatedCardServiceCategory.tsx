@@ -16,7 +16,7 @@ export default function AnimatedCardServiceCategory({ id, path, image, label, is
     <Link href={path} className="group block w-full">
       <div className="relative flex flex-col">
         
-        <div className="w-full aspect-square bg-[#F9FBFC] rounded-[40px] shadow-[0_15px_30px_-5px_rgba(0,0,0,0.1)] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)] flex items-center justify-center border border-gray-100">
+        <div className="w-full aspect-square bg-[#F9FBFC] rounded-[40px] shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] flex items-center justify-center border border-gray-100">
           
           <div className="relative w-full h-full p-1">
             <Image 
@@ -25,7 +25,7 @@ export default function AnimatedCardServiceCategory({ id, path, image, label, is
               fill
               className={`object-contain transition-transform duration-700 ${
                 isServicePage 
-                  ? "p-2 scale-182 group-hover:scale-192" 
+                  ? "p-2 scale-112 group-hover:scale-120" 
                   : "p-6 group-hover:scale-110"
               }`}
               priority

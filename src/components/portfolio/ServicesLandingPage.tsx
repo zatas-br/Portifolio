@@ -23,9 +23,9 @@ export default function ServicesLandingPage() {
   }, [animateFadeIn, animateEnter]);
 
   const categories = [
-    { id: "marketing", path: "/services/marketing", image: "/images/Marketing_Service_Image.png" },
-    { id: "design", path: "/services/design", image: "/images/Design_Service_Image.png" },
-    { id: "desenvolvimento", path: "/services/desenvolvimento", image: "/images/Desenvolvimento_Service_Image.png" },
+    { id: "marketing", path: "/services/marketing", image: "/images/services/marketing.svg" },
+    { id: "design", path: "/services/design", image: "/images/services/design.svg" },
+    { id: "desenvolvimento", path: "/services/desenvolvimento", image: "/images/services/desenvolvimento.svg" },
   ];
 
   return (
@@ -36,7 +36,7 @@ export default function ServicesLandingPage() {
         
         <div className="w-full max-w-6xl">
           <header ref={headerRef} className="text-left mb-2 opacity-0 pl-1">
-            <p className="text-[24px] text-[#0D47A1] font-lora leading-none m-0 -mb-1 translate-y-0">
+            <p className="text-[24px] text-[#0D47A1] font-lora italic leading-none m-0 -mb-1 translate-y-0">
               {t("titleSmall")}
             </p>
             <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
@@ -52,7 +52,7 @@ export default function ServicesLandingPage() {
               <div key={cat.id} className="service-card opacity-0 relative">
 
                 {index === 2 && (
-                  <div className="absolute -right-72 -bottom-80 w-[140%] h-[140%] -z-10 pointer-events-none">
+                  <div className="hidden md:block absolute -right-72 -bottom-80 w-[140%] h-[140%] -z-10 pointer-events-none">
                     <Image 
                       src="/images/fundo-passaro.svg" 
                       alt="Fundo Pássaro"
