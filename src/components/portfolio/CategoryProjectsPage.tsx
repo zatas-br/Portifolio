@@ -84,43 +84,42 @@ export default function CategoryProjectsPage({
         >
           <FaArrowLeft /> Voltar
         </button>
+
         <div ref={headerRef} className="py-12 md:py-16 text-center">
-          <div className="flex justify-center mb-8">
-          </div>
-          
-          <h1 className="text-[46px] font-bold text-[#263238] font-body leading-tight mb-4 tracking-wide max-w-[800px] mx-auto uppercase">
-            Design que transforma<br/>ideias em experiência
+
+          <h1 className="font-sans font-bold text-[44px] text-[#263238] leading-tight mb-4 tracking-wide max-w-[800px] mx-auto uppercase">
+            Design que transforma<br />ideias em experiência
           </h1>
-          
+
           <div className="flex justify-center">
-            <p className="text-[18px] font-light text-[#263238] font-body leading-snug max-w-[800px]">
-              Projetos criados com estratégia, estética e propósito para gerar{" "}
-              <br/>
-              <span className="font-lora text-[#0D47A1] font-normal text-[19px]">impacto</span>{" "}
-              real.
+            <p className="text-[20px] max-w-[550px] leading-snug">
+              <span className="font-sans font-light text-[#263238]">
+                Projetos criados com estratégia, estética e propósito para gerar{" "}
+              </span>
+              <span className="font-lora font-normal not-italic text-[#0D47A1]">
+                impacto
+              </span>
+              <span className="font-sans font-light text-[#263238]">
+                {" "}real.
+              </span>
             </p>
           </div>
         </div>
       </div>
 
-      <div 
-        className="mb-20 overflow-hidden w-full relative"
-      >
+      <div className="mb-20 overflow-hidden w-full relative">
         <div className="flex items-center gap-6 pb-4 w-max animate-scroll">
           {carouselItems.map((item, index) => (
             <div
               key={index}
-              style={{
-                width: `${item.w}px`,
-                height: `${item.h}px`,
-              }}
+              style={{ width: `${item.w}px`, height: `${item.h}px` }}
               className="bg-[#E0E0E0] rounded-[30px] flex-shrink-0 shadow-lg overflow-hidden relative"
             >
-               <img 
-                 src={`/images/services/projetos/${(index % 9) + 1}.png`} 
-                 alt="" 
-                 className="w-full h-full object-cover"
-               />
+              <img 
+                src={`/images/services/projetos/${(index % 9) + 1}.png`} 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
             </div>
           ))}
         </div>
@@ -138,9 +137,7 @@ export default function CategoryProjectsPage({
               return (
                 <div
                   key={project.id}
-                  ref={(el) => {
-                    projectsRef.current[index] = el;
-                  }}
+                  ref={(el) => { projectsRef.current[index] = el; }}
                   onClick={() => handleProjectClick(project.id)}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
@@ -178,28 +175,28 @@ export default function CategoryProjectsPage({
           </div>
 
           <div className="hidden lg:block relative h-full">
-             <div className="sticky top-32 w-full h-[520px] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.3)] flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
-                {hoveredProjectData ? (
-                  <img
-                    src={hoveredProjectData.image}
-                    alt={hoveredProjectTitle}
-                    className="w-full h-full object-cover animate-fadeIn"
-                  />
-                ) : (
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 mx-auto mb-6 text-[#0D47A1] border-4 border-[#0D47A1] rounded-xl flex items-center justify-center">
-                        <FaEye className="w-10 h-10" />
-                    </div>
-                    <p className="text-[#546E7A] text-lg font-body">
-                      Passe o mouse sobre um projeto
-                      <br />
-                      <span className="font-lora text-[#0D47A1] italic">
-                        para visualizar a prévia
-                      </span>
-                    </p>
+            <div className="sticky top-32 w-full h-[520px] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.3)] flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
+              {hoveredProjectData ? (
+                <img
+                  src={hoveredProjectData.image}
+                  alt={hoveredProjectTitle}
+                  className="w-full h-full object-cover animate-fadeIn"
+                />
+              ) : (
+                <div className="text-center p-8">
+                  <div className="w-20 h-20 mx-auto mb-6 text-[#0D47A1] border-4 border-[#0D47A1] rounded-xl flex items-center justify-center">
+                    <FaEye className="w-10 h-10" />
                   </div>
-                )}
-             </div>
+                  <p className="text-[#546E7A] text-lg font-body">
+                    Passe o mouse sobre um projeto
+                    <br />
+                    <span className="font-lora text-[#0D47A1] italic">
+                      para visualizar a prévia
+                    </span>
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
 
         </div>
