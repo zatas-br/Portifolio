@@ -1,15 +1,13 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react';
-import { 
-  FaUsers,
-  FaArrowRight
-} from 'react-icons/fa';
+import Image from 'next/image';
 import { TEAM_AUTHORS } from '@/src/data/team';
 import { useMessages, useTranslations } from 'next-intl';
 import { TeamMember, ProjectAuthor } from '@/types';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import TeamMemberModal from './TeamMemberModal';
+import Header from '@/src/components/layout/Header';
 
 type Education = { institution: string; degree: string; year: string; };
 type Experience = { company: string; role: string; period: string; description: string; };
@@ -37,6 +35,7 @@ export default function TeamPage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const hasAnimated = useRef(false);
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
 
   const allowedIds = [
@@ -47,8 +46,11 @@ export default function TeamPage() {
   ];
 
   useEffect(() => {
-    animateFadeIn(headerRef.current, 0);
-    animateEnter(cardsRef.current, 0.15);
+    if (!hasAnimated.current) {
+      if (headerRef.current) animateFadeIn(headerRef.current, 0.1);
+      if (cardsRef.current.length > 0) animateEnter(cardsRef.current, 0.3);
+      hasAnimated.current = true;
+    }
   }, [animateEnter, animateFadeIn]);
 
   const filteredAuthors = Object.entries(TEAM_AUTHORS).filter(([id, profile]) => {
@@ -56,67 +58,86 @@ export default function TeamPage() {
   });
 
   const handleSelectMember = (profile: ProjectAuthor & { id: string }) => {
-    const content = memberContentData[profile.id];
-    if (content) {
-      const fullMember: TeamMember = {
-        ...content,
-        id: profile.id,
-        image: profile.avatar || '',
-        avatar: profile.avatar || '',
-        social: {
-          linkedin: profile.linkedin,
-          github: profile.github,
-        },
-      };
-      setSelectedMember(fullMember);
-    }
-  };
+    const content = memberContentData[profile.id];
+    if (content) {
+      const fullMember: TeamMember = {
+        ...content,
+        id: profile.id,
+        image: profile.avatar || '',
+        avatar: profile.avatar || '',
+        social: {
+          linkedin: profile.linkedin,
+          github: profile.github,
+        },
+      };
+      setSelectedMember(fullMember);
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-surface">
-      <div ref={headerRef} className="bg-gradient-to-br from-start-gradient to-final-gradient border-b border-border py-12 md:py-16 lg:py-20 px-4 md:px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
-            <FaUsers className="w-6 h-6 md:w-8 md:h-8 text-white" />
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">{t('title')}</h1>
-          </div>
-          <p className="text-base md:text-lg lg:text-xl text-gray max-w-2xl mx-auto px-4">
-            {t('description')}
-          </p>
-        </div>
-      </div>
+    <div className="min-h-screen relative overflow-hidden bg-white text-[#1E1E1E]">
+      <Header />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-          {filteredAuthors.map(([id, profile], index) => (
-            <div
-              key={id}
-              ref={el => { cardsRef.current[index] = el; }}
-              onClick={() => handleSelectMember({ ...profile, id })}
-              className="group cursor-pointer"
-            >
-              <div className="bg-surface border-2 border-border rounded-xl md:rounded-2xl overflow-hidden hover:border-primary-v2 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div className="aspect-square overflow-hidden bg-surface-alt">
-                  <img
-                    src={profile.avatar}
-                    alt={t(`members.${id}.name`)}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-bold text-text mb-1 md:mb-2 group-hover:text-primary-v2 transition-colors">
-                    {t(`members.${id}.name`)}
-                  </h3>
-                  <p className="text-primary-v2 font-medium mb-2 md:mb-3 text-xs md:text-sm">{t(`members.${id}.role`)}</p>
-                  <p className="text-text-muted text-xs md:text-sm line-clamp-3 leading-relaxed mb-3 md:mb-4">{t(`members.${id}.bio`)}</p>
-                  <div className="flex items-center gap-2 text-primary-v2 font-semibold text-xs md:text-sm">
-                    {t('card.viewProfile')}
-                    <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+      <div className="max-w-[1800px] mx-auto px-6 pt-52 pb-24 relative z-10 flex flex-col items-center xl:items-start">
+        
+        <header ref={headerRef} className="text-left mb-[21px] w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
+          <p className="text-[32px] text-[#0D47A1] font-lora italic leading-none m-0 -mb-3">
+            {t("titleSmall")}
+          </p>
+          <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
+            {t("titleLarge")}
+          </h1>
+        </header>
+
+        <div className="w-full max-w-[1600px] mx-auto flex flex-col items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[40px] justify-items-center w-full">
+            {filteredAuthors.map(([id, profile], index) => (
+                <div 
+                  key={id}
+                  ref={el => { cardsRef.current[index] = el; }}
+                  className="relative opacity-0"
+                >
+                  {index === 3 && (
+                    <div className="hidden md:block absolute -right-72 -bottom-82 w-[140%] h-[140%] -z-10 pointer-events-none">
+                      <Image
+                        src="/images/fundo-passaro.svg"
+                        alt="Fundo Pássaro"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
+
+                  <div
+                    className="relative group cursor-pointer w-[360px] h-[420px] rounded-[35px] overflow-hidden shadow-lg bg-gray-100"
+                    onClick={() => handleSelectMember({ ...profile, id })}
+                  >
+                    <img
+                        src={profile.avatar}
+                        alt={t(`members.${id}.name`)}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    <div 
+                        className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[305px] h-[72px] bg-[#263238]/70 backdrop-blur-sm rounded-[15px] flex flex-col justify-center px-5 py-2 shadow-md transition-all duration-300 group-hover:bg-[#263238]/85"
+                    >
+                        <h3 className="font-bold text-[20px] text-white font-body leading-tight uppercase">
+                        {t(`members.${id}.name`)}
+                        </h3>
+
+                        <div className="flex justify-between items-center mt-1 w-full">
+                        <span className="font-lora italic text-[14px] text-white max-w-[60%] truncate">
+                            {t(`members.${id}.role`)}
+                        </span>
+                        <span className="font-lora italic text-[14px] text-white flex items-center gap-1 group-hover:underline whitespace-nowrap">
+                            {t('card.viewProfile')} &rarr;
+                        </span>
+                        </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+            ))}
             </div>
-          ))}
         </div>
       </div>
 
