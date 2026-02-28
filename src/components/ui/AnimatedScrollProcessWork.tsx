@@ -19,7 +19,7 @@ const steps = [
         id: "01",
         title: "DESCOBERTA",
         description: "Diagnosticamos a situação atual, objetivos e entendemos a fundo o cenário do projeto.",
-        image: "/images/img1.jpg", // Substitua pelos seus caminhos reais
+        image: "/images/img1.jpg",
         items: ["Diagnóstico de marca", "Entendimento de público", "Análise de mercado"]
     },
     {
