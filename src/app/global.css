@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --font-body: 'Montserrat', sans-serif;
-  --font-lora: 'Lora', serif;
+  --font-sans: var(--font-montserrat), sans-serif;
+  --font-serif: var(--font-lora), serif;
 
   --color-primary: #2b4d8f;
   --color-dark-blue: #263238;
@@ -69,7 +67,7 @@
   }
 
   body {
-    font-family: var(--font-body);
+    font-family: var(--font-montserrat), sans-serif;
     background-color: var(--color-surface);
     color: var(--color-text);
   }
@@ -92,5 +90,13 @@
 
   .animate-scroll {
     animation: scroll 40s linear infinite;
+  }
+
+  .font-sans {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+
+  .font-serif {
+    font-family: var(--font-lora), serif;
   }
 }

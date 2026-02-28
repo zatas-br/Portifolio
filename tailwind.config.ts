@@ -13,8 +13,8 @@ const config: Config = {
     // como a família da fonte.
     extend: {
       fontFamily: {
-        // Mapeia --font-body para a classe 'font-body'
-        body: ['var(--font-body)', 'sans-serif'], 
+        sans: ['var(--font-montserrat)', 'sans-serif'],
+        serif: ['var(--font-lora)', 'serif'],
       },
     }
   },

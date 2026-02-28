@@ -106,10 +106,10 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
                 />
             </div>
             
-            <h2 className="text-[28px] font-bold text-[#1E1E1E] leading-tight mb-2 uppercase font-body">
+            <h2 className="text-[28px] font-bold text-[#1E1E1E] leading-tight mb-2 uppercase font-sans">
                 {member.name}
             </h2>
-            <p className="text-[16px] text-[#0D47A1] font-lora italic mb-6">
+            <p className="text-[16px] text-[#0D47A1] font-serif italic mb-6">
                 {member.role}
             </p>
             
@@ -157,23 +157,23 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
               className="h-full overflow-y-auto p-8 md:p-10 space-y-8 scrollbar-custom"
             >
               <div>
-                <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-body border-b pb-2 border-gray-100">
+                <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-sans border-b pb-2 border-gray-100">
                   <FaUsers className="w-5 h-5 text-[#0D47A1]" />
                   {t('modal.about')}
                 </h3>
-                <p className="text-[16px] text-gray-600 leading-relaxed font-lora">
+                <p className="text-[16px] text-gray-600 leading-relaxed font-serif">
                     {member.bio}
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-body border-b pb-2 border-gray-100">
+                <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-sans border-b pb-2 border-gray-100">
                   <FaCode className="w-5 h-5 text-[#0D47A1]" />
                   {t('modal.skills')}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {member.skills.map(skill => (
-                    <span key={skill} className="bg-[#E3F2FD] text-[#0D47A1] px-4 py-2 rounded-full text-[14px] font-medium font-body border border-transparent hover:border-[#0D47A1] transition-colors cursor-default">
+                    <span key={skill} className="bg-[#E3F2FD] text-[#0D47A1] px-4 py-2 rounded-full text-[14px] font-medium font-sans border border-transparent hover:border-[#0D47A1] transition-colors cursor-default">
                       {skill}
                     </span>
                   ))}
@@ -182,7 +182,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
 
               {member.education && member.education.length > 0 && (
                 <div>
-                  <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-body border-b pb-2 border-gray-100">
+                  <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-sans border-b pb-2 border-gray-100">
                     <FaGraduationCap className="w-5 h-5 text-[#0D47A1]" />
                     {t('modal.education')}
                   </h3>
@@ -190,7 +190,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
                     {member.education.map((edu, i) => (
                       <div key={i} className="pl-4 border-l-2 border-[#0D47A1]">
                         <h4 className="font-bold text-[#1E1E1E] text-[16px]">{edu.degree}</h4>
-                        <p className="text-gray-600 text-[14px] font-lora italic">{edu.institution}</p>
+                        <p className="text-gray-600 text-[14px] font-serif italic">{edu.institution}</p>
                         <p className="text-gray-400 text-[12px] mt-1">{edu.year}</p>
                       </div>
                     ))}
@@ -199,7 +199,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
               )}
 
               <div className="pb-8">
-                <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-body border-b pb-2 border-gray-100">
+                <h3 className="text-[20px] font-bold text-[#1E1E1E] mb-4 flex items-center gap-3 uppercase font-sans border-b pb-2 border-gray-100">
                   <FaBriefcase className="w-5 h-5 text-[#0D47A1]" />
                   {t('modal.experience')}
                 </h3>
@@ -211,7 +211,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
                           <span className="text-gray-400 text-[12px] font-mono">{exp.period}</span>
                       </div>
                       <p className="text-[#0D47A1] font-medium text-[14px] mb-2">{exp.company}</p>
-                      <p className="text-gray-600 text-[14px] leading-relaxed font-lora">{exp.description}</p>
+                      <p className="text-gray-600 text-[14px] leading-relaxed font-serif">{exp.description}</p>
                     </div>
                   ))}
                 </div>

@@ -35,7 +35,7 @@ export default function AnimatedCardServiceCategory({ id, path, image, label, is
 
         <div className="mt-6 w-full px-1">
           <div className="flex flex-col">
-            <h2 className={`text-[#1E1E1E] transition-colors duration-300 group-hover:text-[#0D47A1] uppercase tracking-tight ${
+            <h2 className={`text-[#1E1E1E] transition-colors duration-300 group-hover:text-[#0D47A1] uppercase tracking-tight font-sans ${
               isServicePage 
                 ? "text-sm font-normal" 
                 : "text-lg md:text-xl font-bold"

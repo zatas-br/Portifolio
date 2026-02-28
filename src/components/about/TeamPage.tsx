@@ -81,10 +81,10 @@ export default function TeamPage() {
       <div className="max-w-[1800px] mx-auto px-6 pt-52 pb-24 relative z-10 flex flex-col items-center xl:items-start">
         
         <header ref={headerRef} className="text-left mb-[21px] w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
-          <p className="text-[32px] text-[#0D47A1] font-lora italic leading-none m-0 -mb-3">
+          <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
             {t("titleSmall")}
           </p>
-          <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
+          <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-normal tracking-normal m-0">
             {t("titleLarge")}
           </h1>
         </header>
@@ -121,15 +121,15 @@ export default function TeamPage() {
                     <div 
                         className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[305px] h-[72px] bg-[#263238]/70 backdrop-blur-sm rounded-[15px] flex flex-col justify-center px-5 py-2 shadow-md transition-all duration-300 group-hover:bg-[#263238]/85"
                     >
-                        <h3 className="font-bold text-[20px] text-white font-body leading-tight uppercase">
+                        <h3 className="font-bold text-[20px] text-white font-sans leading-tight uppercase">
                         {t(`members.${id}.name`)}
                         </h3>
 
                         <div className="flex justify-between items-center mt-1 w-full">
-                        <span className="font-lora italic text-[14px] text-white max-w-[60%] truncate">
+                        <span className="font-serif italic text-[14px] text-white max-w-[60%] truncate">
                             {t(`members.${id}.role`)}
                         </span>
-                        <span className="font-lora italic text-[14px] text-white flex items-center gap-1 group-hover:underline whitespace-nowrap">
+                        <span className="font-serif italic text-[14px] text-white flex items-center gap-1 group-hover:underline whitespace-nowrap">
                             {t('card.viewProfile')} &rarr;
                         </span>
                         </div>

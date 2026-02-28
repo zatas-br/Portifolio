@@ -36,7 +36,7 @@ export default function ServicesLandingPage() {
         <div className="w-full max-w-6xl">
 
           <header ref={headerRef} className="text-left mb-1 opacity-0 pl-1">
-            <p className="text-[32px] text-[#0D47A1] font-lora italic leading-none m-0 -mb-3">
+            <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
               {t("titleSmall")}
             </p>
             <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">

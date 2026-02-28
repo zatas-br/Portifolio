@@ -80,23 +80,24 @@ export default function CategoryProjectsPage({
       <div className="max-w-[1800px] 2xl:px-20 mx-auto px-[30px] pt-24 md:pt-32 relative">
         <button 
           onClick={() => router.push('/services')} 
-          className="absolute top-8 left-[30px] 2xl:left-20 text-[#263238] hover:text-[#0D47A1] transition-colors flex items-center gap-2 font-body z-10"
+          className="absolute top-8 left-[30px] 2xl:left-20 text-[#263238] hover:text-[#0D47A1] transition-colors flex items-center gap-2 font-sans z-10"
         >
           <FaArrowLeft /> Voltar
         </button>
 
         <div ref={headerRef} className="py-12 md:py-16 text-center">
 
-          <h1 className="font-sans font-bold text-[44px] text-[#263238] leading-tight mb-4 tracking-wide max-w-[800px] mx-auto uppercase">
+          <h1 className="font-sans font-bold text-[44px] text-[#1E1E1E] leading-normal mb-4 max-w-[800px] mx-auto uppercase">
             Design que transforma<br />ideias em experiência
           </h1>
 
           <div className="flex justify-center">
-            <p className="text-[20px] max-w-[550px] leading-snug">
+            <p className="text-[20px] max-w-[800px] leading-snug">
               <span className="font-sans font-light text-[#263238]">
-                Projetos criados com estratégia, estética e propósito para gerar{" "}
+                Projetos criados com estratégia, estética e propósito para gerar
+                <br />
               </span>
-              <span className="font-lora font-normal not-italic text-[#0D47A1]">
+              <span className="font-serif font-normal not-italic text-[#0D47A1]">
                 impacto
               </span>
               <span className="font-sans font-light text-[#263238]">
@@ -151,21 +152,21 @@ export default function CategoryProjectsPage({
                     />
                   </div>
 
-                  <h3 className="text-[32px] font-semibold text-[#000000] font-body mb-4 leading-tight">
+                  <h3 className="text-[32px] font-semibold text-[#000000] font-sans mb-4 leading-tight">
                     {title}
                   </h3>
                   
-                  <p className="text-[20px] font-light text-[#000000] font-body mb-8 leading-relaxed">
+                  <p className="text-[20px] font-light text-[#000000] font-sans mb-8 leading-relaxed">
                     {description}
                   </p>
                   
                   <div className="h-px w-full bg-[#B2B2B2] mb-6"></div>
                   
                   <div className="flex justify-between items-center">
-                    <span className="text-[20px] text-[#0d47a1] font-lora italic">
+                    <span className="text-[20px] text-[#0d47a1] font-serif italic">
                       {client || "Zatas"}
                     </span>
-                    <span className="text-[20px] text-[#0d47a1] font-lora italic flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                    <span className="text-[20px] text-[#0d47a1] font-serif italic flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                       Ver projeto →
                     </span>
                   </div>
@@ -187,10 +188,10 @@ export default function CategoryProjectsPage({
                   <div className="w-20 h-20 mx-auto mb-6 text-[#0D47A1] border-4 border-[#0D47A1] rounded-xl flex items-center justify-center">
                     <FaEye className="w-10 h-10" />
                   </div>
-                  <p className="text-[#546E7A] text-lg font-body">
+                  <p className="text-[#546E7A] text-lg font-sans">
                     Passe o mouse sobre um projeto
                     <br />
-                    <span className="font-lora text-[#0D47A1] italic">
+                    <span className="font-serif text-[#0D47A1] italic">
                       para visualizar a prévia
                     </span>
                   </p>
