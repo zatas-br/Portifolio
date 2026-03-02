@@ -78,13 +78,31 @@ export default function TeamPage() {
     <div className="min-h-screen relative overflow-hidden bg-white text-[#1E1E1E]">
       <Header />
 
-      <div className="max-w-[1800px] mx-auto px-6 pt-52 pb-24 relative z-10 flex flex-col items-center xl:items-start">
+      {/*
+          PARA MODIFICAR O DESLOCAMENTO DO BLOCO INTEIRO (Título + Cards):
+          - Altere 'pt-72' (padding-top) para mover tudo para cima ou para baixo.
+          - 'pt-[300px]' por exemplo, desce mais o bloco.
+      */}
+      <div className="max-w-[1800px] mx-auto px-6 pt-72 pb-24 relative z-10 flex flex-col items-center xl:items-start">
         
-        <header ref={headerRef} className="text-left mb-[21px] w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
-          <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
+        {/*
+            PARA MOVER O BLOCO DE TÍTULO ("Nossa EQUIPE") PARA BAIXO (PRÓXIMO AO CARD):
+            - Altere 'mb-[10px]' para um valor menor ou negativo se quiser que fique ainda mais perto dos cards.
+            - Atualmente está deslocado para baixo pelo 'pt-72' do container pai.
+        */}
+        <header ref={headerRef} className="text-left mb-1 w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
+          {/* PARA MODIFICAR A POSIÇÃO DO TEXTO "Nossa":
+              - Altere o margin-bottom negativo (-mb-[32px]) para aproximar ou afastar do texto de baixo.
+              - Use classes como 'translate-y-[10px]' para mover para cima ou para baixo.
+          */}
+          <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-[32px]">
             {t("titleSmall")}
           </p>
-          <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-normal tracking-normal m-0">
+          {/* PARA MODIFICAR A POSIÇÃO DO TEXTO "EQUIPE":
+              - Altere 'leading-[0.85]' para controlar o espaçamento entre linhas.
+              - Use classes de margin (ex: mt-[20px]) para deslocar o bloco.
+          */}
+          <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-[0.85] tracking-tight m-0">
             {t("titleLarge")}
           </h1>
         </header>
@@ -97,17 +115,6 @@ export default function TeamPage() {
                   ref={el => { cardsRef.current[index] = el; }}
                   className="relative opacity-0"
                 >
-                  {index === 3 && (
-                    <div className="hidden md:block absolute -right-72 -bottom-82 w-[140%] h-[140%] -z-10 pointer-events-none">
-                      <Image
-                        src="/images/fundo-passaro.svg"
-                        alt="Fundo Pássaro"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  )}
-
                   <div
                     className="relative group cursor-pointer w-[360px] h-[420px] rounded-[35px] overflow-hidden shadow-lg bg-gray-100"
                     onClick={() => handleSelectMember({ ...profile, id })}
@@ -139,6 +146,16 @@ export default function TeamPage() {
             ))}
             </div>
         </div>
+      </div>
+
+      {/* BACKGROUND BIRD RESPONSIVE - EQUIPE */}
+      <div className="hidden md:block absolute right-0 bottom-0 w-[50%] h-[50%] -z-0 pointer-events-none translate-x-[20%] translate-y-[35%]">
+        <Image
+          src="/images/fundo-tela-equipe.png"
+          alt="Fundo Pássaro"
+          fill
+          className="object-contain opacity-100"
+        />
       </div>
 
       <TeamMemberModal

@@ -16,9 +16,9 @@ export default function AnimatedCardServiceCategory({ id, path, image, label, is
     <Link href={path} className="group block w-full">
       <div className="relative flex flex-col">
         
-        <div className="w-full aspect-square bg-[#F9FBFC] rounded-[40px] shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] flex items-center justify-center border border-gray-100">
+        <div className="w-full aspect-square bg-[#F9FBFC] rounded-[40px] shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] flex items-center justify-center border-[0.5px] border-white">
           
-          <div className="relative w-full h-full p-1">
+          <div className="relative w-full h-full p-0.5">
             <Image 
               src={image}
               alt={label}
@@ -37,7 +37,7 @@ export default function AnimatedCardServiceCategory({ id, path, image, label, is
           <div className="flex flex-col">
             <h2 className={`text-[#1E1E1E] transition-colors duration-300 group-hover:text-[#0D47A1] uppercase tracking-tight font-sans ${
               isServicePage 
-                ? "text-sm font-normal" 
+                ? "text-[16px] font-bold"
                 : "text-lg md:text-xl font-bold"
             }`}>
               {label}

@@ -39,7 +39,7 @@ export default function ServicesLandingPage() {
             <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
               {t("titleSmall")}
             </p>
-            <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
+            <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
               {t("titleLarge")}
             </h1>
           </header>
@@ -48,18 +48,8 @@ export default function ServicesLandingPage() {
             ref={cardsContainerRef}
             className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full relative"
           >
-            {categories.map((cat, index) => (
+            {categories.map((cat) => (
               <div key={cat.id} className="service-card opacity-0 relative">
-                {index === 2 && (
-                  <div className="hidden md:block absolute -right-72 -bottom-80 w-[140%] h-[140%] -z-10 pointer-events-none">
-                    <Image
-                      src="/images/fundo-passaro.svg"
-                      alt="Fundo Pássaro"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                )}
                 <AnimatedCardServiceCategory
                   id={cat.id}
                   path={cat.path}
@@ -69,6 +59,16 @@ export default function ServicesLandingPage() {
                 />
               </div>
             ))}
+          </div>
+
+          {/* BACKGROUND BIRD RESPONSIVE - SERVIÇOS */}
+          <div className="hidden md:block absolute right-0 bottom-0 w-[45%] h-[45%] -z-10 pointer-events-none translate-x-[20%] translate-y-[30%]">
+            <Image
+              src="/images/fundo-tela-equipe.png"
+              alt="Fundo Pássaro"
+              fill
+              className="object-contain opacity-50"
+            />
           </div>
         </div>
       </div>

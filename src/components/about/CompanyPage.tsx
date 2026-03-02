@@ -1,9 +1,12 @@
 'use client'
 
 import Link from 'next/link';
+import { ABOUT_PAGE_DATA } from '@/src/data/about';
 
-// ─── Types ───────────────────────────────────────────────────────────────────
-
+/**
+ * Interface que define a estrutura de um item de serviço.
+ * Cada serviço tem uma descrição, tags, imagem e texto alternativo.
+ */
 interface ServiceItem {
   description: string;
   tags: string[];
@@ -11,6 +14,10 @@ interface ServiceItem {
   imageAlt: string;
 }
 
+/**
+ * Interface de configuração principal para a página Sobre.
+ * Permite personalizar textos, links, vídeos e a lista de serviços.
+ */
 interface AboutPageConfig {
   videoUrl: string | null;
   videoLabel: string;
@@ -34,101 +41,26 @@ interface AboutPageConfig {
   historyImageAlt: string;
 }
 
-// ─── Default Config ───────────────────────────────────────────────────────────
-
-const defaultConfig: AboutPageConfig = {
-  videoUrl: null,
-  videoLabel: 'Precisa de uma ideia?',
-  contactButtonLabel: 'Entrar em contato',
-  contactHref: '/contact',
-  strategicTeamTitle:
-    'O TIME ESTRATÉGICO PARA MARCAS QUE QUEREM CRESCER COM CLAREZA E DIREÇÃO.',
-  strategicTeamDescription1:
-    'Na Zatas, unimos design, desenvolvimento e marketing para transformar ideias em presença digital sólida. Trabalhamos com empresas que entendem que posicionamento não é detalhe — é estratégia.',
-  strategicTeamDescription2:
-    'Seja construindo uma identidade do zero, desenvolvendo um site de alta performance ou estruturando campanhas digitais, nosso foco é simples: criar soluções inteligentes, bem executadas e orientadas a resultado.',
-  commitmentTitle: 'NOSSO COMPROMISSO',
-  commitmentItems: [
-    'Clareza no processo.',
-    'Precisão na execução.',
-    'Consistência no crescimento.',
-  ],
-  commitmentFooter:
-    'Não acreditamos em promessas exageradas. Acreditamos em estratégia, método e evolução contínua.',
-  servicesTitle: 'SERVIÇOS EM DESTAQUE',
-  services: [
-    {
-      description:
-        'Website institucional estratégico. Desenvolvimento completo com foco em performance, identidade visual forte e estrutura pensada para conversão.',
-      tags: ['Responsive', 'UI Design', 'UX Strategy'],
-      image: '/images/about/site-zatas.png',
-      imageAlt: 'Criação de Website',
-    },
-    {
-      description:
-        'Solução completa desenvolvida sobre medida para sua necessidade, composta por aplicativo mobile e integração robusta.',
-      tags: ['Android', 'IOS'],
-      image: '/images/about/app-zatas.png',
-      imageAlt: 'Aplicativo Mobile',
-    },
-    {
-      description:
-        'Rebranding e posicionamento digital. Criação de identidade moderna e consistente, alinhando comunicação, presença online e estratégia de marca.',
-      tags: ['Visual Identity', 'Logo Design', 'Brand Strategy'],
-      image: '/images/about/bykatino.png',
-      imageAlt: 'Identidade Visual',
-    },
-    {
-      description:
-        'Design de impressos estratégicos. Desenvolvimento de materiais gráficos como cartões de visita, papelaria e peças institucionais com identidade visual forte, acabamento profissional e comunicação pensada para gerar credibilidade e impacto.',
-      tags: ['Graphic Assets', 'Print'],
-      image: '/images/about/zatas-cartao.png',
-      imageAlt: 'Design de Impressos',
-    },
-    {
-      description:
-        'Campanhas estratégicas focadas em posicionamento, geração de leads e aumento de vendas. Planejamento completo com criativos, segmentação e análise de performance para maximizar resultados.',
-      tags: ['Perfomance', 'Conversão'],
-      image: '/images/about/potencialize-sua-marca.png',
-      imageAlt: 'Campanhas de Marketing',
-    },
-    {
-      description:
-        'Gestão estratégica de redes sociais com foco em crescimento, autoridade e engajamento. Planejamento de conteúdo, identidade visual consistente e comunicação alinhada à marca.',
-      tags: ['Engajamento', 'Branding', 'Conteúdo'],
-      image: '/images/about/zatas-marketing.png',
-      imageAlt: 'Redes Sociais',
-    },
-  ],
-  othersButtonLabel: 'Outros trabalhos',
-  othersButtonHref: '/services',
-  historyTitle: 'NOSSA HISTÓRIA',
-  historyParagraphs: [
-    'A Zatas nasceu da união de profissionais com habilidades complementares e uma visão em comum: desenvolver soluções digitais inteligentes e estratégicas.',
-    'Ao longo dos primeiros projetos, crescemos juntos, fortalecemos nossa experiência e decidimos elevar nosso nível de atuação, estruturando a empresa de forma profissional e focada em resultados.',
-    'Hoje, a Zatas transforma desafios em soluções completas, unindo tecnologia, design e estratégia.',
-  ],
-  historyButtonLabel: 'Conhecer equipe',
-  historyButtonHref: '/team',
-  historyImage: '/images/about/nossa-historia.png',
-  historyImageAlt: 'Nossa História - Zatas',
-};
-
-// ─── Tag ─────────────────────────────────────────────────────────────────────
-
+/**
+ * Componente Tag: Exibe uma etiqueta estilizada com fonte serifada e itálica.
+ * Usado principalmente para destacar tecnologias ou áreas de atuação nos serviços.
+ */
 function Tag({ label }: { label: string }) {
   return (
     <span className="about-tag">
       {label}
       <style jsx>{`
         .about-tag {
+          /* Para mudar a fonte das tags, altere font-family abaixo */
           font-family: var(--font-lora), serif;
           font-style: italic;
           font-weight: 400;
+          /* Tamanho da fonte das tags (mínimo 13px, ideal 1.1vw, máximo 20px) */
           font-size: clamp(13px, 1.1vw, 20px);
+          /* Cor do texto e da borda das tags */
           color: #0D47A1;
           border: 1.5px solid #0D47A1;
-          border-radius: 9999px;
+          border-radius: 9999px; /* Mantém o formato arredondado/pílula */
           padding: 4px 16px;
           display: inline-flex;
           align-items: center;
@@ -140,18 +72,27 @@ function Tag({ label }: { label: string }) {
   );
 }
 
-// ─── Main ─────────────────────────────────────────────────────────────────────
-
+/**
+ * COMPONENTE PRINCIPAL: AboutPage
+ * Esta página apresenta a Zatas, sua visão, compromissos, serviços e história.
+ * Os textos e dados são carregados de '@src/data/about', facilitando a manutenção.
+ */
 export default function AboutPage({ config }: { config?: Partial<AboutPageConfig> }) {
-  const cfg: AboutPageConfig = { ...defaultConfig, ...config };
+  // Combina a configuração padrão (vinda do arquivo de dados) com possíveis overrides passados via props.
+  const cfg: AboutPageConfig = { ...ABOUT_PAGE_DATA, ...config };
 
   return (
+    /*
+       INÍCIO DA PÁGINA SOBRE (COMPANY PAGE)
+       O layout é construído em seções. Os estilos (CSS) estão no final deste arquivo.
+       Os textos são puxados de 'src/data/about.ts'.
+    */
     <div className="about-root">
 
-      {/* ══════════════════════════════════════════════════════════════
-          HERO — imagem ocupa quase toda a viewport, revelando ~80px
-          do fundo escuro da seção seguinte
-      ══════════════════════════════════════════════════════════════ */}
+      {/*
+          [1] SEÇÃO HERO (Banner Principal do topo)
+          Exibe a imagem de impacto inicial.
+      */}
       <section className="about-hero">
         <img
           src="/images/about/oque-ser-zatas.png"
@@ -160,16 +101,18 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         />
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════
-          SOBRE A ZATAS — card branco sobre fundo #263238
-      ══════════════════════════════════════════════════════════════ */}
+      {/*
+          [2] SEÇÃO CARD SOBRE (Bloco com fundo escuro e card cinza)
+          Contém a missão/visão da empresa e o vídeo institucional.
+      */}
       <section className="about-card-section">
         <div className="about-card">
 
-          {/* Esquerda: texto + pássaro + botão */}
+          {/* Lado Esquerdo: Textos, Pássaro Decorativo e Botão de Contato */}
           <div className="about-card-left">
             <div className="about-card-text">
               <div className="about-card-title-wrap">
+                {/* Títulos principais da seção Sobre */}
                 <h2 className="about-card-title">
                   SOBRE A ZATAS.<br />
                   IDEIAS GANHAM FORMA,<br />
@@ -182,7 +125,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               </div>
             </div>
 
-            {/* Pássaro sobreposto no centro-direita da coluna */}
+            {/* Imagem decorativa do pássaro Zatas */}
             <div className="about-card-bird">
               <img
                 src="/images/about/fundo-passaro-card-sobre.png"
@@ -192,6 +135,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               />
             </div>
 
+            {/* Botão de Chamada para Ação (Call to Action) */}
             <div className="about-card-btn-wrap">
               <Link href={cfg.contactHref} className="about-card-btn">
                 {cfg.contactButtonLabel}
@@ -199,14 +143,14 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
             </div>
           </div>
 
-          {/* Direita: vídeo / placeholder */}
+          {/* Lado Direito: Área de Vídeo ou Placeholder */}
           <div className="about-card-right">
             {cfg.videoUrl ? (
               <video src={cfg.videoUrl} controls className="about-video" />
             ) : (
               <div className="about-video-placeholder">
                 <div className="about-video-inline">
-                  <span className="about-video-text">Precisa de uma ideia?</span>
+                  <span className="about-video-text">{cfg.videoLabel}</span>
                   <button className="about-play-btn" aria-label="Play">
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
                       <path d="M1 1L13 8L1 15V1Z" fill="#263238" />
@@ -220,33 +164,36 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════
-          TIME ESTRATÉGICO · COMPROMISSO · SERVIÇOS
-          padding-left proporcional (~17.5% da largura = ~250px em 1440px)
-      ══════════════════════════════════════════════════════════════ */}
+      {/*
+          [3] SEÇÃO DE CONTEÚDO (Time, Compromisso e Serviços)
+          Área central da página com fundo claro.
+      */}
       <section className="about-content-section">
 
-        {/* O Time Estratégico */}
+        {/* Bloco: O Time Estratégico (Título e parágrafos descritivos) */}
         <h2 className="about-section-title about-strategic-title">
           {cfg.strategicTeamTitle}
         </h2>
         <div className="about-text-block">
+          {/* Parágrafos de texto. Estilos em .about-body-text */}
           <p className="about-body-text">{cfg.strategicTeamDescription1}</p>
           <p className="about-body-text">{cfg.strategicTeamDescription2}</p>
         </div>
 
-        {/* Nosso Compromisso */}
+        {/* Bloco: Nosso Compromisso (Título e lista de itens) */}
         <h2 className="about-section-title about-section-gap-top">
           {cfg.commitmentTitle}
         </h2>
         <div className="about-text-block">
+          {/* Mapeia e exibe os itens de compromisso vindos do arquivo de dados */}
           {cfg.commitmentItems.map((item, i) => (
             <p key={i} className="about-body-text" style={{ marginBottom: '2px' }}>{item}</p>
           ))}
+          {/* Texto de rodapé do compromisso */}
           <p className="about-body-text" style={{ marginTop: '14px' }}>{cfg.commitmentFooter}</p>
         </div>
 
-        {/* Serviços em Destaque */}
+        {/* Serviços em Destaque: Lista mapeada de serviços */}
         <h2 className="about-section-title about-section-gap-top">
           {cfg.servicesTitle}
         </h2>
@@ -254,7 +201,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         <div className="about-services-list">
           {cfg.services.map((service, index) => (
             <div key={index} className="about-service-row">
-              {/* Card de texto — mesmo tamanho da imagem, texto no topo */}
+              {/* Card de texto do serviço: Descrição e Tags */}
               <div className="about-service-card">
                 <div className="about-service-card-inner">
                   <p className="about-service-desc">{service.description}</p>
@@ -265,7 +212,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                   </div>
                 </div>
               </div>
-              {/* Imagem — direita */}
+              {/* Imagem representativa do serviço */}
               <div className="about-service-img-wrap">
                 <img
                   src={service.image}
@@ -277,20 +224,20 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           ))}
         </div>
 
-        {/* Botão outros trabalhos */}
+        {/* Link para visualizar outros trabalhos */}
         <Link href={cfg.othersButtonHref} className="about-others-btn">
           {cfg.othersButtonLabel}
         </Link>
 
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════
-          NOSSA HISTÓRIA
-          Card proporcional: imagem ~51% | texto ~49%
-      ══════════════════════════════════════════════════════════════ */}
+      {/*
+          [4] SEÇÃO NOSSA HISTÓRIA (Bloco final com imagem lateral)
+          Apresenta a trajetória da Zatas com fundo azul escuro.
+      */}
       <section className="about-history-section" style={{ paddingTop: '3vw' }}>
         <div className="about-history-card">
-          {/* Imagem — esquerda */}
+          {/* Imagem lateral da história */}
           <div className="about-history-img-wrap">
             <img
               src={cfg.historyImage}
@@ -298,7 +245,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               className="about-history-img"
             />
           </div>
-          {/* Texto — direita */}
+          {/* Bloco de texto com título, parágrafos e botão */}
           <div className="about-history-text">
             <h2 className="about-history-title">{cfg.historyTitle}</h2>
             <div className="about-history-paras">
@@ -315,20 +262,22 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════════
-          STYLES — todas as medidas em unidades relativas
-      ══════════════════════════════════════════════════════════════ */}
+      {/*
+          ESTILIZAÇÃO CSS (Styled JSX)
+          Define todo o visual da página de forma responsiva.
+      */}
       <style jsx global>{`
 
-        /* ── Root ── */
+        /* ── Estilos Raiz ── */
+        /* Aqui você define a cor de fundo de toda a página e a fonte principal. */
         .about-root {
-          background-color: #ECEFF1;
+          background-color: #ECEFF1; /* Cor de fundo global (Cinza azulado claro) */
           font-family: var(--font-montserrat), sans-serif;
           min-height: 100vh;
           overflow-x: hidden;
         }
 
-        /* ── HERO ── */
+        /* ── Hero (Banner Principal) ── */
         .about-hero {
           position: relative;
           width: 100%;
@@ -337,28 +286,27 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           width: 100%;
           height: auto;
           display: block;
-          /* Corta um pouco o fundo para revelar o escuro abaixo */
           max-height: calc(100vh - 80px);
           object-fit: cover;
           object-position: top center;
         }
 
-        /* ── CARD SOBRE ── */
+        /* ── Seção Card Sobre ── */
+        /* Configurações do bloco escuro que contém o card cinza. */
         .about-card-section {
-          background-color: #263238;
-          /* padding lateral ~5.5vw para dar margem igual ao Figma */
+          background-color: #263238; /* Azul marinho escuro de fundo */
           padding: 4vw 5.5vw 5.5vw;
         }
+        /* O card cinza claro no centro da seção anterior. */
         .about-card {
           max-width: 1421px;
           margin: 0 auto;
-          background-color: #F0F0F0;
-          border-radius: clamp(16px, 1.5vw, 24px);
+          background-color: #F0F0F0; /* Cor do card cinza claro */
+          border-radius: clamp(16px, 1.5vw, 24px); /* Arredondamento das bordas */
           overflow: hidden;
           display: grid;
-          /* Vídeo ocupa ~20% (metade dos 40% anteriores) */
           grid-template-columns: 80% 20%;
-          box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+          box-shadow: 0 24px 64px rgba(0,0,0,0.3); /* Sombra do card */
           min-height: clamp(220px, 28vw, 420px);
         }
         .about-card-left {
@@ -374,41 +322,38 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           position: relative;
           z-index: 2;
         }
-        /* Wrapper inline para que a desc herde a largura do título */
         .about-card-title-wrap {
           display: inline-block;
         }
+        /* Título do Card: "SOBRE A ZATAS..." */
         .about-card-title {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 700;
-          font-size: clamp(20px, 2.5vw, 38px);
-          color: #263238;
+          font-size: clamp(20px, 2.5vw, 38px); /* Tamanho de fonte responsivo */
+          color: #263238; /* Cor do texto (Azul escuro) */
           line-height: 1.15;
           text-transform: uppercase;
           margin: 0 0 clamp(14px, 1.5vw, 20px) 0;
-          /* white-space nowrap faz o título definir a largura do inline-block */
           white-space: nowrap;
         }
+        /* Descrição logo abaixo do título no card. */
         .about-card-desc {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 300;
           font-size: clamp(12px, 1.05vw, 15px);
           color: #263238;
           line-height: 1.65;
-          /* herda largura do pai inline-block = largura do título */
           width: 100%;
           margin: 0;
         }
         .about-card-bird {
           position: absolute;
           bottom: 0;
-          /* Centraliza o pássaro mais ao centro da coluna, bem visível */
           left: 25%;
           width: 75%;
           pointer-events: none;
           user-select: none;
           z-index: 1;
-          /* Garante que o pássaro apareça com destaque */
           filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
         }
         .about-card-btn-wrap {
@@ -427,7 +372,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           align-items: center;
           text-decoration: none;
         }
-        /* Coluna direita: ocupa 40% do card (definido no grid), centraliza o conteúdo */
         .about-card-right {
           background-color: #B8D4E8;
           display: flex;
@@ -450,7 +394,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           height: 100%;
           padding: 24px;
         }
-        /* Linha com texto + play + texto inline */
         .about-video-inline {
           display: flex;
           align-items: center;
@@ -479,26 +422,24 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           padding-left: 2px;
         }
 
-        /* ── CONTENT SECTION (textos + serviços) ── */
+        /* ── Seção de Conteúdo (Texto e Serviços) ── */
+        /* Área branca/cinza claro onde ficam os textos estratégicos e lista de serviços. */
         .about-content-section {
           background-color: #ECEFF1;
-          /* padding-left ~17.5vw = ~252px em 1440px */
-          padding: 5.5vw 5vw 4vw 12.7vw;
+          padding: 5.5vw 5vw 4vw 12.7vw; /* Margens internas para alinhar o conteúdo */
         }
+        /* Títulos de seção: "TIME ESTRATÉGICO", "COMPROMISSO", "SERVIÇOS" */
         .about-section-title {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 700;
-          /* clamp: 26px telas pequenas → 44px em ~1440px */
-          font-size: clamp(22px, 3vw, 44px);
+          font-size: clamp(22px, 3vw, 44px); /* Tamanho grande e responsivo */
           color: #263238;
           text-transform: uppercase;
           line-height: 1.15;
           margin: 0 0 clamp(16px, 1.8vw, 28px) 0;
-          /* Limita a largura para forçar 2 linhas no título longo */
           max-width: 42vw;
         }
         .about-strategic-title {
-          /* Título estratégico: 2 linhas — ~600px em 1440px = ~41.7vw */
           max-width: 41.7vw;
         }
         .about-section-gap-top {
@@ -508,19 +449,20 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           display: flex;
           flex-direction: column;
           gap: clamp(8px, 1vw, 14px);
-          /* mesma largura ~600px */
           max-width: 41.7vw;
         }
+        /* Estilo dos parágrafos de texto comum na seção de conteúdo */
         .about-body-text {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 300;
+          /* Altere o tamanho da fonte do corpo do texto aqui */
           font-size: clamp(12px, 1.1vw, 16px);
           color: #263238;
-          line-height: 1.75;
+          line-height: 1.75; /* Espaçamento entre linhas */
           margin: 0;
         }
 
-        /* ── SERVICES ── */
+        /* ── Serviços ── */
         .about-services-list {
           display: flex;
           flex-direction: column;
@@ -529,7 +471,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         }
         .about-service-row {
           display: grid;
-          /* gap entre card e imagem: 3× o anterior (~48px → ~144px) */
           grid-template-columns: 1fr clamp(72px, 10vw, 144px) 1fr;
           align-items: start;
         }
@@ -554,9 +495,11 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           border-radius: 0;
           box-shadow: 0 12px 40px rgba(0,0,0,0.22);
         }
+        /* Descrição de cada serviço na lista */
         .about-service-desc {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 300;
+          /* Altere o tamanho da descrição dos serviços aqui */
           font-size: clamp(12px, 1.4vw, 20px);
           color: #263238;
           line-height: 1.65;
@@ -574,7 +517,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           display: block;
         }
 
-        /* Botão Outros trabalhos */
         .about-others-btn {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 400;
@@ -590,23 +532,21 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           margin-top: clamp(32px, 3.5vw, 56px);
         }
 
-        /* ── NOSSA HISTÓRIA ── */
+        /* ── Nossa História ── */
+        /* Seção final com fundo azul escuro e imagem lateral. */
         .about-history-section {
           background-color: #ECEFF1;
-          /* Mesmas margens laterais da seção de conteúdo acima */
           padding: 0 5.5vw 6vw 5.5vw;
         }
         .about-history-card {
           width: 100%;
           max-width: 1421px;
           margin: 0 auto;
-          /* Altura proporcional: 546/1433 ≈ 38% da largura */
           aspect-ratio: 1433 / 546;
-          background-color: #263238;
+          background-color: #263238; /* Fundo do card da história */
           border-radius: clamp(16px, 1.5vw, 24px);
           overflow: hidden;
           display: grid;
-          /* imagem ~51% | texto ~49% — igual ao Figma */
           grid-template-columns: 51% 49%;
           box-shadow: 0 16px 48px rgba(0,0,0,0.2);
         }
@@ -628,6 +568,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           height: 100%;
           box-sizing: border-box;
         }
+        /* Título da seção História: "NOSSA HISTÓRIA" */
         .about-history-title {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 700;
@@ -637,16 +578,18 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           line-height: 1.15;
           margin: 0 0 clamp(10px, 1.3vw, 20px) 0;
         }
+        /* Contêiner dos parágrafos da história */
         .about-history-paras {
           display: flex;
           flex-direction: column;
           gap: clamp(6px, 0.7vw, 10px);
           flex: 1;
         }
+        /* Estilo de cada parágrafo de texto na história (fundo escuro) */
         .about-history-para {
           font-family: var(--font-montserrat), sans-serif;
           font-weight: 300;
-          font-size: clamp(11px, 1.3vw, 18px);
+          font-size: clamp(11px, 1.3vw, 18px); /* Tamanho do texto da história */
           color: #ffffff;
           line-height: 1.6;
           margin: 0;
@@ -669,10 +612,11 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           text-decoration: none;
         }
 
-        /* ── Responsive ── */
+        /* ── Responsividade Mobile (Telas menores que 900px) ── */
+        /* Ajustes para garantir que o layout quebre corretamente em celulares e tablets. */
         @media (max-width: 900px) {
           .about-card {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Muda de 2 colunas para 1 coluna empilhada */
           }
           .about-card-right {
             min-height: 200px;
