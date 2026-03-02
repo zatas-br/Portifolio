@@ -41,6 +41,11 @@ interface AboutPageConfig {
 
 /**
  * Componente Tag: Exibe uma etiqueta estilizada com fonte serifada e itálica.
+ *
+ * PARA MODIFICAR AS TAGS:
+ * - Tamanho da fonte: Altere 'text-[clamp(13px,1.1vw,20px)]'.
+ * - Cores: Altere 'text-[#0D47A1]' e 'border-[#0D47A1]'.
+ * - Espaçamento interno: Altere 'px-4 py-1'.
  */
 function Tag({ label }: { label: string }) {
   return (
@@ -52,6 +57,12 @@ function Tag({ label }: { label: string }) {
 
 /**
  * COMPONENTE PRINCIPAL: AboutPage
+ *
+ * INSTRUÇÕES GERAIS DE MODIFICAÇÃO:
+ * 1. TEXTOS: A maioria dos textos está em 'src/data/about.ts'. Altere lá para mudar o conteúdo.
+ * 2. CORES DE FUNDO: Procure por classes 'bg-[#xxxxxx]'.
+ * 3. ESPAÇAMENTO: Use classes 'p-x' (padding), 'm-x' (margin), 'gap-x'.
+ * 4. RESPONSIVIDADE: Classes com 'md:', 'max-[900px]:', etc., definem o comportamento em diferentes telas.
  */
 export default function AboutPage({ config }: { config?: Partial<AboutPageConfig> }) {
   const cfg: AboutPageConfig = { ...ABOUT_PAGE_DATA, ...config };
@@ -59,7 +70,15 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
   return (
     <div className="bg-[#ECEFF1] font-sans min-h-screen overflow-x-hidden">
 
-      {/* [1] SEÇÃO HERO */}
+      {/*
+          [1] SEÇÃO HERO (Imagem Inicial)
+
+          PARA MODIFICAR A IMAGEM INICIAL:
+          - Caminho da imagem: Altere o 'src' abaixo.
+          - Altura Máxima: Altere 'max-h-[calc(100vh-80px)]'. Use 'h-[500px]' para um tamanho fixo.
+          - Ajuste da imagem: 'object-cover' preenche o espaço. 'object-top' foca no topo da foto.
+          - Espaçamento: Adicione 'mt-10' para margem no topo, por exemplo.
+      */}
       <section className="relative w-full">
         <img
           src="/images/about/oque-ser-zatas.png"
@@ -68,19 +87,29 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         />
       </section>
 
-      {/* [2] SEÇÃO CARD SOBRE */}
+      {/*
+          [2] SEÇÃO CARD SOBRE (Bloco Escuro com Card Cinza)
+
+          PARA MODIFICAR:
+          - Cor de fundo da seção: Altere 'bg-[#263238]'.
+          - Espaçamento da seção: Altere 'px-[5.5vw] pt-[4vw] pb-[5.5vw]'.
+          - Largura Máxima do Card: Altere 'max-w-[1421px]'.
+          - Arredondamento do Card: Altere 'rounded-[clamp(16px,1.5vw,24px)]'.
+      */}
       <section className="bg-[#263238] px-[5.5vw] pt-[4vw] pb-[5.5vw]">
         <div className="max-w-[1421px] mx-auto bg-[#F0F0F0] rounded-[clamp(16px,1.5vw,24px)] overflow-hidden grid grid-cols-1 md:grid-cols-[80%_20%] shadow-[0_24px_64px_rgba(0,0,0,0.3)] min-h-[clamp(220px,28vw,420px)]">
 
-          {/* Lado Esquerdo */}
+          {/* Lado Esquerdo do Card */}
           <div className="relative px-[clamp(24px,3.5vw,56px)] py-[clamp(28px,3.8vw,60px)] flex flex-col justify-between overflow-hidden bg-[#F0F0F0]">
             <div className="relative z-[2]">
               <div className="inline-block">
+                {/* Título do Card: Altere 'text-[clamp(20px,2.5vw,38px)]' para o tamanho da fonte */}
                 <h2 className="font-bold text-[clamp(20px,2.5vw,38px)] text-[#263238] leading-[1.15] uppercase mb-[clamp(14px,1.5vw,20px)] whitespace-nowrap">
                   SOBRE A ZATAS.<br />
                   IDEIAS GANHAM FORMA,<br />
                   ESTRATÉGIAS GANHAM FORÇA
                 </h2>
+                {/* Descrição do Card: Altere 'text-[clamp(12px,1.05vw,15px)]' para o tamanho da fonte */}
                 <p className="font-light text-[clamp(12px,1.05vw,15px)] text-[#263238] leading-[1.65] w-full m-0">
                   Somos uma empresa que une design, desenvolvimento e marketing para
                   transformar visão em posicionamento, presença e crescimento real.
@@ -88,7 +117,14 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               </div>
             </div>
 
-            {/* Pássaro Decorativo */}
+            {/*
+                Pássaro Decorativo no Card
+
+                PARA MODIFICAR:
+                - Posição: Altere 'left-[25%]' e 'w-[75%]'.
+                - Opacidade: Adicione 'opacity-50'.
+                - Sombra: Altere 'drop-shadow-[0_8px_24px_rgba(0,0,0,0.08)]'.
+            */}
             <div className="absolute bottom-0 left-[25%] w-[75%] pointer-events-none select-none z-[1] drop-shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
               <img
                 src="/images/about/fundo-passaro-card-sobre.png"
@@ -98,7 +134,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               />
             </div>
 
-            {/* Botão de Contato */}
+            {/* Botão de Contato no Card */}
             <div className="relative z-[2]">
               <Link href={cfg.contactHref} className="font-normal text-[clamp(14px,1.15vw,17px)] bg-[#263238] text-white px-[clamp(28px,2.4vw,40px)] py-[clamp(14px,1.1vw,18px)] rounded-full inline-flex items-center no-underline">
                 {cfg.contactButtonLabel}
@@ -106,7 +142,13 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
             </div>
           </div>
 
-          {/* Lado Direito: Área de Vídeo */}
+          {/*
+              Lado Direito: Área de Vídeo
+
+              PARA MODIFICAR:
+              - Cor de fundo (placeholder): Altere 'bg-[#B8D4E8]'.
+              - Altura mínima no mobile: Altere 'min-h-[200px]'.
+          */}
           <div className="bg-[#B8D4E8] flex items-center justify-center self-stretch min-h-[200px] md:min-h-0">
             {cfg.videoUrl ? (
               <video src={cfg.videoUrl} controls className="w-full h-full object-cover" />
@@ -116,6 +158,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                   <span className="font-medium text-[clamp(11px,1.1vw,16px)] text-[#263238] whitespace-nowrap">
                     {cfg.videoLabel}
                   </span>
+                  {/* Botão Play: Altere o tamanho em 'w-[...]' e 'h-[...]' */}
                   <button className="w-[clamp(32px,2.8vw,48px)] h-[clamp(32px,2.8vw,48px)] bg-white/85 rounded-full border-none flex items-center justify-center cursor-pointer flex-shrink-0 shadow-[0_2px_12px_rgba(0,0,0,0.15)] pl-0.5" aria-label="Play">
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none">
                       <path d="M1 1L13 8L1 15V1Z" fill="#263238" />
@@ -128,13 +171,20 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         </div>
       </section>
 
-      {/* [3] SEÇÃO DE CONTEÚDO */}
+      {/*
+          [3] SEÇÃO DE CONTEÚDO (Time, Compromisso, Serviços)
+
+          PARA MODIFICAR:
+          - Alinhamento lateral: Altere 'pl-[12.7vw] pr-[5vw]'.
+          - Responsividade mobile: Altere as classes 'max-[900px]:...'.
+      */}
       <section className="bg-[#ECEFF1] pt-[5.5vw] pb-[4vw] pl-[12.7vw] pr-[5vw] max-[900px]:px-6 max-[900px]:pt-10 max-[900px]:pb-8">
 
-        {/* Bloco: O Time Estratégico */}
+        {/* Título das Seções: Altere 'text-[clamp(22px,3vw,44px)]' para o tamanho da fonte */}
         <h2 className="font-bold text-[clamp(22px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(16px,1.8vw,28px)] max-w-[42vw] max-[900px]:max-w-full max-[900px]:text-[clamp(22px,5vw,32px)]">
           {cfg.strategicTeamTitle}
         </h2>
+        {/* Bloco de Texto: Altere 'gap-[...]' para o espaçamento entre parágrafos */}
         <div className="flex flex-col gap-[clamp(8px,1vw,14px)] max-w-[41.7vw] max-[900px]:max-w-full">
           <p className="font-light text-[clamp(12px,1.1vw,16px)] text-[#263238] leading-[1.75] m-0">
             {cfg.strategicTeamDescription1}
@@ -159,16 +209,28 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           </p>
         </div>
 
-        {/* Serviços em Destaque */}
+        {/*
+            Serviços em Destaque
+
+            PARA MODIFICAR A LISTA:
+            - Espaçamento entre linhas de serviços: Altere 'gap-[clamp(40px,5.2vw,75px)]'.
+        */}
         <h2 className="font-bold text-[clamp(22px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(16px,1.8vw,28px)] max-w-[42vw] max-[900px]:max-w-full max-[900px]:text-[clamp(22px,5vw,32px)] mt-[clamp(40px,4.5vw,72px)]">
           {cfg.servicesTitle}
         </h2>
 
         <div className="flex flex-col gap-[clamp(40px,5.2vw,75px)] mt-[clamp(28px,3vw,48px)]">
           {cfg.services.map((service, index) => (
+            /*
+               Linha de Serviço
+
+               PARA MODIFICAR:
+               - Proporção das colunas: Altere 'grid-cols-[1fr_clamp(72px,10vw,144px)_1fr]'.
+            */
             <div key={index} className="grid grid-cols-1 md:grid-cols-[1fr_clamp(72px,10vw,144px)_1fr] items-start">
               <div className="col-start-1 aspect-[666/430] bg-transparent flex flex-col justify-start items-start overflow-visible">
                 <div className="p-0 mt-0">
+                  {/* Descrição do serviço: Altere 'text-[clamp(12px,1.4vw,20px)]' */}
                   <p className="font-light text-[clamp(12px,1.4vw,20px)] text-[#263238] leading-[1.65] mb-[clamp(10px,1vw,16px)]">
                     {service.description}
                   </p>
@@ -179,6 +241,13 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                   </div>
                 </div>
               </div>
+              {/*
+                  Imagem do Serviço
+
+                  PARA MODIFICAR:
+                  - Sombra: Altere 'shadow-[0_12px_40px_rgba(0,0,0,0.22)]'.
+                  - Arredondamento: Adicione 'rounded-2xl'.
+              */}
               <div className="md:col-start-3 aspect-[666/430] overflow-hidden rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.22)] max-[900px]:col-start-1">
                 <img
                   src={service.image}
@@ -190,16 +259,24 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           ))}
         </div>
 
+        {/* Botão "Ver outros trabalhos" */}
         <Link href={cfg.othersButtonHref} className="font-normal text-[clamp(13px,1.1vw,16px)] text-[#263238] border-2 border-[#263238] px-[clamp(22px,2.2vw,36px)] py-[clamp(10px,0.9vw,14px)] rounded-full inline-flex items-center no-underline bg-transparent mt-[clamp(32px,3.5vw,56px)]">
           {cfg.othersButtonLabel}
         </Link>
 
       </section>
 
-      {/* [4] SEÇÃO NOSSA HISTÓRIA */}
+      {/*
+          [4] SEÇÃO NOSSA HISTÓRIA
+
+          PARA MODIFICAR:
+          - Cor de fundo do Card: Altere 'bg-[#263238]'.
+          - Sombra: Altere 'shadow-[0_16px_48px_rgba(0,0,0,0.2)]'.
+          - Proporção da Imagem/Texto: Altere 'grid-cols-[51%_49%]'.
+      */}
       <section className="bg-[#ECEFF1] px-[5.5vw] pb-[6vw] pt-[3vw] max-[900px]:px-6 max-[900px]:pb-12">
         <div className="w-full max-w-[1421px] mx-auto aspect-[1433/546] bg-[#263238] rounded-[clamp(16px,1.5vw,24px)] overflow-hidden grid grid-cols-1 md:grid-cols-[51%_49%] shadow-[0_16px_48px_rgba(0,0,0,0.2)] max-[900px]:aspect-auto">
-          {/* Imagem lateral */}
+          {/* Imagem lateral da História */}
           <div className="w-full h-full max-[900px]:h-[220px]">
             <img
               src={cfg.historyImage}
@@ -207,7 +284,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               className="w-full h-full object-cover block"
             />
           </div>
-          {/* Bloco de texto */}
+          {/* Bloco de texto da História */}
           <div className="px-[clamp(24px,3vw,48px)] py-[clamp(24px,3.5vw,56px)] flex flex-col justify-between h-full box-border">
             <h2 className="font-bold text-[clamp(20px,2.8vw,44px)] text-white uppercase leading-[1.15] mb-[clamp(10px,1.3vw,20px)]">
               {cfg.historyTitle}
@@ -219,6 +296,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                 </p>
               ))}
             </div>
+            {/* Botão final na seção História */}
             <div className="flex justify-end mt-[clamp(12px,1.2vw,20px)]">
               <Link href={cfg.historyButtonHref} className="font-normal text-[clamp(11px,1vw,15px)] bg-[#ECEFF1] text-[#263238] px-[clamp(16px,1.6vw,26px)] py-[clamp(8px,0.75vw,12px)] rounded-full inline-flex items-center no-underline">
                 {cfg.historyButtonLabel}
