@@ -78,13 +78,28 @@ export default function TeamPage() {
     <div className="min-h-screen relative overflow-hidden bg-white text-[#1E1E1E]">
       <Header />
 
-      <div className="max-w-[1800px] mx-auto px-6 pt-52 pb-24 relative z-10 flex flex-col items-center xl:items-start">
+      {/* PARA MODIFICAR O DESLOCAMENTO DO BLOCO INTEIRO (Título + Cards):
+          
+          V V V V V V V V V V V V V V V V V V V V V V V V
+          é bem aqui: Altere 'pt-56' e 'xl:pt-80' para descer ou subir o bloco todo.
+          A A A A A A A A A A A A A A A A A A A A A A A A
+      */}
+      <div className="max-w-[1800px] mx-auto px-6 min-h-screen pt-56 xl:pt-58 pb-24 relative z-10 flex flex-col items-center xl:items-start justify-start">
         
-        <header ref={headerRef} className="text-left mb-[21px] w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
-          <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
+        {/* PARA MOVER O BLOCO DE TÍTULO ("Nossa EQUIPE") PARA BAIXO (PRÓXIMO AO CARD):
+            - Altere 'mb-[10px]' para um valor menor ou negativo se quiser que fique ainda mais perto dos cards.
+        */}
+        <header ref={headerRef} className="text-left mb-6 w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
+          {/* PARA MODIFICAR A POSIÇÃO DO TEXTO "Nossa": 
+              - Altere o margin-bottom negativo (-mb-[32px]) para aproximar ou afastar do texto de baixo.
+          */}
+          <p className="relative z-20 text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-[9px]">
             {t("titleSmall")}
           </p>
-          <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-normal tracking-normal m-0">
+          {/* PARA MODIFICAR A POSIÇÃO DO TEXTO "EQUIPE": 
+              - Altere 'leading-[0.85]' para controlar o espaçamento entre linhas.
+          */}
+          <h1 className="relative z-10 text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-[0.85] tracking-tight m-0">
             {t("titleLarge")}
           </h1>
         </header>
@@ -98,18 +113,22 @@ export default function TeamPage() {
                   className="relative opacity-0"
                 >
                   {index === 3 && (
-                    <div className="hidden md:block absolute -right-72 -bottom-82 w-[140%] h-[140%] -z-10 pointer-events-none">
+                    <div className="hidden md:block absolute -right-[245px] -bottom-[845px] w-[320%] h-[320%] -z-10 pointer-events-none">
+                      {/* PARA MODIFICAR A POSIÇÃO DA IMAGEM DE FUNDO (Pássaro):
+                          - Altere '-right-[400px]' para mover para a esquerda/direita.
+                          - Altere '-bottom-[400px]' para mover para cima/baixo.
+                      */}
                       <Image
-                        src="/images/fundo-passaro.svg"
+                        src="/images/fundo-tela-equipe.png"
                         alt="Fundo Pássaro"
                         fill
-                        className="object-contain"
+                        className="object-contain opacity-100"
                       />
                     </div>
                   )}
 
                   <div
-                    className="relative group cursor-pointer w-[360px] h-[420px] rounded-[35px] overflow-hidden shadow-lg bg-gray-100"
+                    className="relative group cursor-pointer w-[360px] h-[420px] rounded-[35px] overflow-hidden shadow-[0px_3px_12px_0px_rgba(0,0,0,0.7)] bg-gray-100"
                     onClick={() => handleSelectMember({ ...profile, id })}
                   >
                     <img
