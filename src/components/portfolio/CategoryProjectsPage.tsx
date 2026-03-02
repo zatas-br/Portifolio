@@ -87,7 +87,7 @@ export default function CategoryProjectsPage({
 
         <div ref={headerRef} className="py-12 md:py-16 text-center">
 
-          <h1 className="font-sans font-bold text-[44px] text-[#1E1E1E] leading-normal mb-4 max-w-[800px] mx-auto uppercase">
+          <h1 className="font-sans font-bold text-[44px] text-[#263238] leading-normal mb-4 max-w-[800px] mx-auto uppercase">
             Design que transforma<br />ideias em experiência
           </h1>
 
@@ -142,7 +142,7 @@ export default function CategoryProjectsPage({
                   onClick={() => handleProjectClick(project.id)}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="group cursor-pointer bg-white rounded-[30px] p-6 min-h-[200px] shadow-[0_0_20px_rgba(0,0,0,0.3)] border border-transparent hover:border-[#0D47A1]/20 transition-all duration-300 hover:shadow-xl"
+                  className="group cursor-pointer bg-white rounded-[30px] p-6 min-h-[200px] shadow-[0_4px_10px_rgba(0,0,0,0.5)] border border-transparent hover:border-[#0D47A1]/20 transition-all duration-300 hover:shadow-[0_8px_20px_rgba(0,0,0,0.4)]"
                 >
                   <div className="block lg:hidden mb-6 rounded-[20px] overflow-hidden aspect-video">
                     <img 
@@ -176,7 +176,7 @@ export default function CategoryProjectsPage({
           </div>
 
           <div className="hidden lg:block relative h-full">
-            <div className="sticky top-32 w-full h-[520px] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.3)] flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
+            <div className="sticky top-32 w-full h-[520px] bg-[#E0E0E0] rounded-[30px] overflow-hidden shadow-[0_4px_10px_rgba(0,0,0,0.5)] flex items-center justify-center border border-[#B2B2B2]/30 transition-all duration-300">
               {hoveredProjectData ? (
                 <img
                   src={hoveredProjectData.image}

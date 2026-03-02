@@ -39,7 +39,7 @@ export default function ServicesLandingPage() {
             <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
               {t("titleSmall")}
             </p>
-            <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
+            <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-none tracking-tighter m-0">
               {t("titleLarge")}
             </h1>
           </header>
@@ -51,12 +51,12 @@ export default function ServicesLandingPage() {
             {categories.map((cat, index) => (
               <div key={cat.id} className="service-card opacity-0 relative">
                 {index === 2 && (
-                  <div className="hidden md:block absolute -right-72 -bottom-80 w-[140%] h-[140%] -z-10 pointer-events-none">
+                  <div className="hidden md:block absolute -right-48 -bottom-64 w-[120%] h-[120%] -z-10 pointer-events-none">
                     <Image
-                      src="/images/fundo-passaro.svg"
+                      src="/images/fundo-tela-equipe.png"
                       alt="Fundo Pássaro"
                       fill
-                      className="object-contain"
+                      className="object-contain opacity-50"
                     />
                   </div>
                 )}

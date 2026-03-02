@@ -78,13 +78,13 @@ export default function TeamPage() {
     <div className="min-h-screen relative overflow-hidden bg-white text-[#1E1E1E]">
       <Header />
 
-      <div className="max-w-[1800px] mx-auto px-6 pt-52 pb-24 relative z-10 flex flex-col items-center xl:items-start">
+      <div className="max-w-[1800px] mx-auto px-6 pt-72 pb-24 relative z-10 flex flex-col items-center xl:items-start">
         
-        <header ref={headerRef} className="text-left mb-[21px] w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
-          <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3">
+        <header ref={headerRef} className="text-left mb-[10px] w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
+          <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-5">
             {t("titleSmall")}
           </p>
-          <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-normal tracking-normal m-0">
+          <h1 className="text-[44px] font-bold font-sans text-[#1E1E1E] uppercase leading-[0.85] tracking-tight m-0">
             {t("titleLarge")}
           </h1>
         </header>
@@ -98,12 +98,12 @@ export default function TeamPage() {
                   className="relative opacity-0"
                 >
                   {index === 3 && (
-                    <div className="hidden md:block absolute -right-72 -bottom-82 w-[140%] h-[140%] -z-10 pointer-events-none">
+                    <div className="hidden md:block absolute -right-48 -bottom-64 w-[120%] h-[120%] -z-10 pointer-events-none">
                       <Image
-                        src="/images/fundo-passaro.svg"
+                        src="/images/fundo-tela-equipe.png"
                         alt="Fundo Pássaro"
                         fill
-                        className="object-contain"
+                        className="object-contain opacity-50"
                       />
                     </div>
                   )}
