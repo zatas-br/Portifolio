@@ -4,20 +4,26 @@ import { Link } from "@/src/i18n/navigation";
 import Image from "next/image";
 
 interface CardProps {
-  id: string;
   path: string;
   image: string;
   label: string;
   isServicePage?: boolean;
 }
 
-export default function AnimatedCardServiceCategory({ id, path, image, label, isServicePage }: CardProps) {
+export default function AnimatedCardServiceCategory({ path, image, label, isServicePage }: CardProps) {
   return (
     <Link href={path} className="group block w-full">
       <div className="relative flex flex-col">
         
-        <div className="w-full aspect-square bg-[#F9FBFC] rounded-[40px] shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] flex items-center justify-center border border-gray-100">
-          
+        <div className={`w-full aspect-square bg-[#F9FBFC] rounded-[40px] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 flex items-center justify-center border border-gray-100 ${
+          isServicePage 
+            ? "shadow-[0px_3px_12px_0px_rgba(0,0,0,0.7)] group-hover:shadow-[0px_6px_20px_0px_rgba(0,0,0,0.6)]" 
+            : "shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
+        }`}>
+          {/* 
+              PARA MODIFICAR O TAMANHO DO CARD (ESCALA DA IMAGEM):
+              - Altere os valores de 'scale-112' e 'group-hover:scale-120' abaixo.
+          */}
           <div className="relative w-full h-full p-1">
             <Image 
               src={image}
