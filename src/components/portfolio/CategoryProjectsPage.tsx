@@ -16,6 +16,7 @@ export default function CategoryProjectsPage({
   category,
 }: CategoryProjectsPageProps) {
   const tProjects = useTranslations("Projects");
+  const t = useTranslations("CategoryProjectsPage");
 
   const router = useRouter();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
@@ -82,26 +83,29 @@ export default function CategoryProjectsPage({
           onClick={() => router.push('/services')} 
           className="absolute top-8 left-[30px] 2xl:left-20 text-[#263238] hover:text-[#0D47A1] transition-colors flex items-center gap-2 font-sans z-10"
         >
-          <FaArrowLeft /> Voltar
+          <FaArrowLeft /> {t('back')}
         </button>
 
         <div ref={headerRef} className="py-12 md:py-16 text-center">
 
           <h1 className="font-sans font-bold text-[44px] text-[#1E1E1E] leading-normal mb-4 max-w-[800px] mx-auto uppercase">
-            Design que transforma<br />ideias em experiência
+            {t('pageTitle').split('\n').map((line, i, arr) => (
+              <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+            ))}
           </h1>
 
           <div className="flex justify-center">
             <p className="text-[20px] max-w-[800px] leading-snug">
               <span className="font-sans font-light text-[#263238]">
-                Projetos criados com estratégia, estética e propósito para gerar
-                <br />
+                {t('pageSubtitlePrefix').split('\n').map((line, i, arr) => (
+                  <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+                ))}
               </span>
               <span className="font-serif font-normal not-italic text-[#0D47A1]">
-                impacto
+                {t('pageSubtitleHighlight')}
               </span>
               <span className="font-sans font-light text-[#263238]">
-                {" "}real.
+                {t('pageSubtitleSuffix')}
               </span>
             </p>
           </div>
@@ -167,7 +171,7 @@ export default function CategoryProjectsPage({
                       {client || "Zatas"}
                     </span>
                     <span className="text-[20px] text-[#0d47a1] font-serif italic flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                      Ver projeto →
+                      {t('viewProject')}
                     </span>
                   </div>
                 </div>
@@ -189,10 +193,10 @@ export default function CategoryProjectsPage({
                     <FaEye className="w-10 h-10" />
                   </div>
                   <p className="text-[#546E7A] text-lg font-sans">
-                    Passe o mouse sobre um projeto
+                    {t('hoverPreview')}
                     <br />
                     <span className="font-serif text-[#0D47A1] italic">
-                      para visualizar a prévia
+                      {t('hoverPreviewSubtitle')}
                     </span>
                   </p>
                 </div>

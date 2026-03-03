@@ -1,9 +1,14 @@
 {
   "backToServices": "Back to Services",
   "projects": "projects",
-  "viewProject": "View project",
+  "viewProject": "View project →",
   "seeDetails": "See details",
   "hoverPreview": "Hover over a project",
   "hoverPreviewSubtitle": "to see a preview",
-  "preview": "Preview"
+  "preview": "Preview",
+  "back": "Back",
+  "pageTitle": "Design that transforms\nideas into experience",
+  "pageSubtitlePrefix": "Projects created with strategy, aesthetics and purpose to generate\n",
+  "pageSubtitleHighlight": "impact",
+  "pageSubtitleSuffix": " that matters."
 }

@@ -33,26 +33,12 @@ export default function ServicesLandingPage() {
       <Header />
 
       <div className="relative z-10 flex-1 flex flex-col items-center pt-52 pb-24 px-6">
-        {/* 
-            PARA AUMENTAR O TAMANHO DOS CARDS:
-            - Altere o 'max-w-[1400px]' abaixo. 
-            - Aumentar este valor fará com que o grid ocupe mais espaço horizontal, 
-              consequentemente aumentando o tamanho de cada card.
-        */}
         <div className="w-full max-w-[1400px]">
 
           <header ref={headerRef} className="text-left mb-1 opacity-0 pl-1">
-            {/* 
-                PARA PRIORIDADE DO TEXTO "selecione a" (ficar por cima):
-                - Adicionei 'relative z-10' para garantir que ele fique em uma camada superior.
-            */}
             <p className="text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-3 relative z-10">
               {t("titleSmall")}
             </p>
-            {/* 
-                PARA AUMENTAR O ESPAÇAMENTO DAS LETRAS EM "Categoria":
-                - Altere 'tracking-[0.2em]'. Aumentar este valor afasta as letras.
-            */}
             <h1 className="text-[44px] font-bold text-[#1E1E1E] uppercase leading-none tracking-[0em] m-0">
               {t("titleLarge")}
             </h1>
@@ -66,11 +52,6 @@ export default function ServicesLandingPage() {
               <div key={cat.id} className="service-card opacity-0 relative">
                 {index === 2 && (
                   <div className="hidden md:block absolute -right-90 -bottom-68 w-[140%] h-[140%] -z-10 pointer-events-none">
-                    {/* 
-                        PARA MODIFICAR A IMAGEM DE FUNDO (Pássaro):
-                        - Posição: Altere '-right-72' (esquerda/direita) e '-bottom-80' (cima/baixo).
-                        - Tamanho: Altere 'w-[140%]' e 'h-[140%]' para aumentar ou diminuir a escala.
-                    */}
                     <Image
                       src="/images/fundo-passaro.svg"
                       alt="Fundo Pássaro"

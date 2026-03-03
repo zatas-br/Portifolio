@@ -49,5 +49,45 @@
       "title": "Impacto",
       "desc": "Foco em resultados que importam"
     }
-  }
+  },
+  "heroTitle": "SOBRE A ZATAS.\nIDEIAS GANHAM FORMA,\nESTRATÉGIAS GANHAM FORÇA",
+  "heroSubtitle": "Somos uma empresa que une design, desenvolvimento e marketing para\ntransformar visão em posicionamento, presença e crescimento real.",
+  "videoLabel": "Precisa de uma ideia?",
+  "contactButton": "Entrar em contato",
+  "strategicTitle": "O TIME ESTRATÉGICO PARA MARCAS QUE QUEREM CRESCER COM CLAREZA E DIREÇÃO.",
+  "strategicDesc1": "Na Zatas, unimos design, desenvolvimento e marketing para transformar ideias em presença digital sólida. Trabalhamos com empresas que entendem que posicionamento não é detalhe — é estratégia.",
+  "strategicDesc2": "Seja construindo uma identidade do zero, desenvolvendo um site de alta performance ou estruturando campanhas digitais, nosso foco é simples: criar soluções inteligentes, bem executadas e orientadas a resultado.",
+  "commitmentTitle": "NOSSO COMPROMISSO",
+  "commitmentItems": [
+    "Clareza no processo.",
+    "Precisão na execução.",
+    "Consistência no crescimento."
+  ],
+  "commitmentFooter": "Não acreditamos em promessas exageradas. Acreditamos em estratégia, método e evolução contínua.",
+  "servicesTitle": "SERVIÇOS EM DESTAQUE",
+  "serviceDescriptions": [
+    "Website institucional estratégico. Desenvolvimento completo com foco em performance, identidade visual forte e estrutura pensada para conversão.",
+    "Solução completa desenvolvida sobre medida para sua necessidade, composta por aplicativo mobile e integração robusta.",
+    "Rebranding e posicionamento digital. Criação de identidade moderna e consistente, alinhando comunicação, presença online e estratégia de marca.",
+    "Design de impressos estratégicos. Desenvolvimento de materiais gráficos como cartões de visita, papelaria e peças institucionais com identidade visual forte, acabamento profissional e comunicação pensada para gerar credibilidade e impacto.",
+    "Campanhas estratégicas focadas em posicionamento, geração de leads e aumento de vendas. Planejamento completo com criativos, segmentação e análise de performance para maximizar resultados.",
+    "Gestão estratégica de redes sociais com foco em crescimento, autoridade e engajamento. Planejamento de conteúdo, identidade visual consistente e comunicação alinhada à marca."
+  ],
+  "othersButton": "Outros trabalhos",
+  "serviceImageAlts": [
+    "Criação de Website",
+    "Aplicativo Mobile",
+    "Identidade Visual",
+    "Design de Impressos",
+    "Campanhas de Marketing",
+    "Redes Sociais"
+  ],
+  "historyImageAlt": "Nossa História - Zatas",
+  "historyCardTitle": "NOSSA HISTÓRIA",
+  "historyParagraphs": [
+    "A Zatas nasceu da união de profissionais com habilidades complementares e uma visão em comum: desenvolver soluções digitais inteligentes e estratégicas.",
+    "Ao longo dos primeiros projetos, crescemos juntos, fortalecemos nossa experiência e decidimos elevar nosso nível de atuação, estruturando a empresa de forma profissional e focada em resultados.",
+    "Hoje, a Zatas transforma desafios em soluções completas, unindo tecnologia, design e estratégia."
+  ],
+  "teamButton": "Conhecer equipe"
 }

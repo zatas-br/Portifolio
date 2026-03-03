@@ -1,9 +1,14 @@
 {
   "backToServices": "Voltar para Serviços",
   "projects": "projetos",
-  "viewProject": "Ver projeto",
+  "viewProject": "Ver projeto →",
   "seeDetails": "Ver detalhes",
   "hoverPreview": "Passe o mouse sobre um projeto",
   "hoverPreviewSubtitle": "para visualizar a prévia",
-  "preview": "Preview"
+  "preview": "Preview",
+  "back": "Voltar",
+  "pageTitle": "Design que transforma\nideias em experiência",
+  "pageSubtitlePrefix": "Projetos criados com estratégia, estética e propósito para gerar\n",
+  "pageSubtitleHighlight": "impacto",
+  "pageSubtitleSuffix": " real."
 }

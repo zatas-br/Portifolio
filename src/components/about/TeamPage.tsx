@@ -53,7 +53,7 @@ export default function TeamPage() {
     }
   }, [animateEnter, animateFadeIn]);
 
-  const filteredAuthors = Object.entries(TEAM_AUTHORS).filter(([id, profile]) => {
+  const filteredAuthors = Object.entries(TEAM_AUTHORS).filter(([id]) => {
     return allowedIds.includes(id);
   });
 

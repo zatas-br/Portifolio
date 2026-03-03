@@ -96,7 +96,7 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
           <FaTimes className="w-5 h-5" />
         </button>
 
-        <div className="w-full md:w-[35%] bg-[#F5F7F8] p-8 flex flex-col items-center text-center md:items-start md:text-left border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto">
+        <div className="w-full md:w-[35%] bg-[#0D47A1] p-8 flex flex-col items-center text-center md:items-start md:text-left border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto">
 
             <div className="w-40 md:w-full h-auto rounded-[25px] overflow-hidden mb-6 shadow-md bg-white">
                 <img
@@ -106,10 +106,10 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
                 />
             </div>
             
-            <h2 className="text-[28px] font-bold text-[#1E1E1E] leading-tight mb-2 uppercase font-sans">
+            <h2 className="text-[28px] font-bold text-white leading-tight mb-2 uppercase font-sans">
                 {member.name}
             </h2>
-            <p className="text-[16px] text-[#0D47A1] font-serif italic mb-6">
+            <p className="text-[16px] text-white font-serif italic mb-6">
                 {member.role}
             </p>
             

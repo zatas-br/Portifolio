@@ -49,5 +49,45 @@
       "title": "Impact",
       "desc": "Focus on results that matter"
     }
-  }
+  },
+  "heroTitle": "ABOUT ZATAS.\nIDEAS TAKE SHAPE,\nSTRATEGIES GAIN STRENGTH",
+  "heroSubtitle": "We are a company that combines design, development, and marketing to\ntransform vision into positioning, presence, and real growth.",
+  "videoLabel": "Need an idea?",
+  "contactButton": "Get in touch",
+  "strategicTitle": "THE STRATEGIC TEAM FOR BRANDS THAT WANT TO GROW WITH CLARITY AND DIRECTION.",
+  "strategicDesc1": "At Zatas, we combine design, development, and marketing to transform ideas into a solid digital presence. We work with companies that understand that positioning is not a detail — it is strategy.",
+  "strategicDesc2": "Whether building an identity from scratch, developing a high-performance website, or structuring digital campaigns, our focus is simple: creating intelligent, well-executed, and result-oriented solutions.",
+  "commitmentTitle": "OUR COMMITMENT",
+  "commitmentItems": [
+    "Clarity in the process.",
+    "Precision in execution.",
+    "Consistency in growth."
+  ],
+  "commitmentFooter": "We don't believe in exaggerated promises. We believe in strategy, method, and continuous evolution.",
+  "servicesTitle": "FEATURED SERVICES",
+  "serviceDescriptions": [
+    "Strategic institutional website. Complete development with a focus on performance, strong visual identity, and structure designed for conversion.",
+    "Complete solution developed tailored to your needs, consisting of a mobile application and robust integration.",
+    "Rebranding and digital positioning. Creation of a modern and consistent identity, aligning communication, online presence, and brand strategy.",
+    "Strategic print design. Development of graphic materials such as business cards, stationery, and institutional pieces with a strong visual identity, professional finish, and communication designed to generate credibility and impact.",
+    "Strategic campaigns focused on positioning, lead generation, and sales increase. Complete planning with creatives, segmentation, and performance analysis to maximize results.",
+    "Strategic social media management with a focus on growth, authority, and engagement. Content planning, consistent visual identity, and communication aligned with the brand."
+  ],
+  "othersButton": "Other works",
+  "serviceImageAlts": [
+    "Website Creation",
+    "Mobile App",
+    "Visual Identity",
+    "Print Design",
+    "Marketing Campaigns",
+    "Social Media"
+  ],
+  "historyImageAlt": "Our History - Zatas",
+  "historyCardTitle": "OUR HISTORY",
+  "historyParagraphs": [
+    "Zatas was born from the union of professionals with complementary skills and a common vision: to develop intelligent and strategic digital solutions.",
+    "Throughout the first projects, we grew together, strengthened our experience, and decided to raise our level of operation, structuring the company in a professional and result-focused way.",
+    "Today, Zatas transforms challenges into complete solutions, uniting technology, design, and strategy."
+  ],
+  "teamButton": "Meet the team"
 }
