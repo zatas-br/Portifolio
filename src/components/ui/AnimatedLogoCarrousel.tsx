@@ -3,15 +3,14 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-// Adicione aqui o caminho para as logos da imagem
 const logos = [
-  { src: "/images/carrousel/ef_engenharia.svg", alt: "EF Logo" },
-  { src: "/images/carrousel/bykatino.svg", alt: "Bykatino" },
-  { src: "/images/carrousel/dpj.svg", alt: "Fitness Logo" },
-  { src: "/images/carrousel/aureni_fisioterapia.svg", alt: "Yoga Logo" },
-  { src: "/images/carrousel/jaguar.svg", alt: "Panther" },
-  { src: "/images/carrousel/varys_logo.svg", alt: "Varys" },
-  { src: "/images/carrousel/jersey_hub.svg", alt: "Sport Logo" },
+  { src: "/images/clients/ef_engenharia.svg", alt: "EF Logo" },
+  { src: "/images/clients/bykatino.svg", alt: "Bykatino" },
+  { src: "/images/clients/dpj.svg", alt: "Fitness Logo" },
+  { src: "/images/clients/aureni_fisioterapia.svg", alt: "Yoga Logo" },
+  { src: "/images/clients/jaguar.svg", alt: "Panther" },
+  { src: "/images/clients/varys_logo.svg", alt: "Varys" },
+  { src: "/images/clients/jersey_hub.svg", alt: "Sport Logo" },
 ];
 
 const AnimatedLogoCarrousel = () => {

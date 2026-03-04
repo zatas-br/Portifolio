@@ -28,7 +28,7 @@
 
   --color-text: #1a1a1a;
   --color-text-slogan:#2b4d8f;
-  --color-white:#f0f0f0;
+  --color-white:#FFF;
   --color-gray: #aaaaaa;
   --color-dark-gray: #263238;
   --color-text-muted: #555555;
@@ -39,6 +39,18 @@
   --color-success: #28a745;
   --color-warning: #ffc107;
   --color-error: #dc3545;
+
+
+  /*Cores do Figma atualizado*/
+
+  --color-white-background: #ECEFF1;
+  --color-text-primary: #263238;
+  --color-gray-background: #696969;
+  --color-text-secondary: #A9A9A9;
+  --color-text-blue: #0D47A1;
+  --color-salmon: #F27557;
+
+  --shadow-za: 0 4px 4px rgba(0, 0, 0, 0.25); 
 }
 
 @layer base {
