@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Header from "@/src/components/layout/Header";
 import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
-import AnimatedCardServiceCategory from "@/src/components/ui/AnimatedCardServiceCategory";
+import AnimatedCardServiceCategoryServices from "@/src/components/ui/AnimatedCardServiceCategoryServices";
 
 export default function ServicesLandingPage() {
   const t = useTranslations("ServicesLandingPage");
@@ -60,7 +60,7 @@ export default function ServicesLandingPage() {
                     />
                   </div>
                 )}
-                <AnimatedCardServiceCategory
+                <AnimatedCardServiceCategoryServices
                   path={cat.path}
                   image={cat.image}
                   label={t(`categories.${cat.id}`)}

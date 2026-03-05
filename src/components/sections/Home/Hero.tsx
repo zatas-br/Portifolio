@@ -24,7 +24,6 @@ const HeroSection = () => {
           <Link href="/services">
             <AnimatedButton
               variant="primary"
-              icon={<span>→</span>}
             >
               {t("button1")}
             </AnimatedButton>

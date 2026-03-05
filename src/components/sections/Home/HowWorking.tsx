@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import AnimatedCardServiceCategory from "../../ui/AnimatedCardServiceCategory";
 import AnimatedScrollProcessWork from "../../ui/AnimatedScrollProcessWork";
 
@@ -8,20 +7,20 @@ const categories = [
     {
         title: "Marketing",
         subtitle: "Impulsionamos seus números com estratégia",
-        image: "/images/services/marketing.svg",
-        path: "/services/marketing"
+        image: "/images/Marketing_Service_Image.png",
+        type: "top" as const
     },
     {
         title: "Design",
         subtitle: "Nosso design comunica, conecta e converte",
-        image: "/images/services/design.svg",
-        path: "/services/design"
+        image: "/images/Design_Service_Image.png",
+        type: "bottom" as const
     },
     {
         title: "Desenvolvimento",
         subtitle: "Desenvolvemos tecnologia que impulsiona resultados",
-        image: "/images/services/desenvolvimento.svg",
-        path: "/services/desenvolvimento"
+        image: "/images/Desenvolvimento_Service_Image.png",
+        type: "top" as const
     }
 ];
 
@@ -44,9 +43,10 @@ const HowWorkingSection = () => {
                         {categories.map((cat, index) => (
                             <AnimatedCardServiceCategory
                                 key={index}
-                                path={cat.path}
-                                image={cat.image}
-                                label={cat.title}
+                                title={cat.title}
+                                subtitle={cat.subtitle}
+                                uriImage={cat.image}
+                                type={cat.type}
                             />
                         ))}
                     </div>

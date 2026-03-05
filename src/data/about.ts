@@ -1,5 +1,5 @@
 export const ABOUT_PAGE_DATA = {
-  videoUrl: null,
+  videoUrl: "https://www.youtube.com/embed/3irhA3ZwD_0?autoplay=1&mute=1&loop=1&playlist=3irhA3ZwD_0&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3",
   contactHref: '/contact',
 
   services: [

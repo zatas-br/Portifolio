@@ -87,7 +87,24 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
 
           <div className="bg-[#B8D4E8] flex items-center justify-center self-stretch h-full aspect-[9/16] min-h-[400px] md:min-h-0 overflow-hidden">
             {cfg.videoUrl ? (
-              <video src={cfg.videoUrl} controls className="w-full h-full object-cover" />
+              <div className="relative w-full h-full group">
+                <iframe
+                  src={cfg.videoUrl}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a
+                    href="https://www.youtube.com/shorts/3irhA3ZwD_0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-black/60 text-white text-xs px-3 py-2 rounded-full backdrop-blur-sm hover:bg-black/80 transition-colors"
+                  >
+                    Ver com som
+                  </a>
+                </div>
+              </div>
             ) : (
               <div className="flex flex-col items-center justify-center gap-[clamp(10px,1vw,16px)] w-full h-full p-6">
                 <div className="flex items-center gap-[clamp(6px,0.6vw,10px)] flex-nowrap">
@@ -154,7 +171,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                 </div>
               </div>
 
-              {/* Project image with hover overlay */}
               <div className="md:col-start-3 aspect-[666/430] overflow-hidden rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.22)] max-[900px]:col-start-1 relative group">
                 <img
                   src={service.image}
@@ -167,7 +183,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                     className="absolute inset-0 flex items-center justify-center bg-[#263238]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   >
                     <span className="bg-white text-[#263238] font-semibold text-sm px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition-colors">
-                      Ver detalhes do projeto →
+                      Ver detalhes do projeto &rarr;
                     </span>
                   </Link>
                 )}

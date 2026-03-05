@@ -1,61 +1,51 @@
 "use client";
 
-import { Link } from "@/src/i18n/navigation";
 import Image from "next/image";
 
-interface CardProps {
-  path: string;
-  image: string;
-  label: string;
-  isServicePage?: boolean;
+interface AnimatedCardServiceCategoryProps {
+    title: string;
+    subtitle: string;
+    uriImage: string;
+    type: 'top' | 'bottom';
 }
 
-export default function AnimatedCardServiceCategory({ path, image, label, isServicePage }: CardProps) {
-  return (
-    <Link href={path} className="group block w-full">
-      <div className="relative flex flex-col">
-        
-        <div className={`w-full aspect-square bg-[#F9FBFC] rounded-[40px] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 flex items-center justify-center border border-gray-100 ${
-          isServicePage 
-            ? "shadow-[0px_3px_12px_0px_rgba(0,0,0,0.7)] group-hover:shadow-[0px_6px_20px_0px_rgba(0,0,0,0.6)]" 
-            : "shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
-        }`}>
-          {/* 
-              PARA MODIFICAR O TAMANHO DO CARD (ESCALA DA IMAGEM):
-              - Altere os valores de 'scale-112' e 'group-hover:scale-120' abaixo.
-          */}
-          <div className="relative w-full h-full p-1">
-            <Image 
-              src={image}
-              alt={label}
-              fill
-              className={`object-contain transition-transform duration-700 ${
-                isServicePage 
-                  ? "p-2 scale-112 group-hover:scale-120" 
-                  : "p-6 group-hover:scale-110"
-              }`}
-              priority
-            />
-          </div>
-        </div>
+export default function AnimatedCardServiceCategory({
+    title,
+    subtitle,
+    uriImage,
+    type
+}: AnimatedCardServiceCategoryProps) {
 
-        <div className="mt-6 w-full px-1">
-          <div className="flex flex-col">
-            <h2 className={`text-[#1E1E1E] transition-colors duration-300 group-hover:text-[#0D47A1] uppercase tracking-tight font-sans ${
-              isServicePage 
-                ? "text-sm font-normal" 
-                : "text-lg md:text-xl font-bold"
-            }`}>
-              {label}
-            </h2>
-            
-            <div className="h-[2px] w-full bg-[#B2B2B2] mt-2 relative overflow-hidden">
-               <div className="absolute inset-0 bg-[#0D47A1] w-0 group-hover:w-full transition-all duration-500 ease-out" />
+    const maskStyle = type === 'top'
+        ? {
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 20%, black 55%)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 35%)'
+        }
+        : {
+            WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 45%)',
+            maskImage: 'linear-gradient(to top, transparent 0%, black 45%)'
+        };
+
+    return (
+        <div className="relative w-full max-w-[320px] h-[520px] bg-white border border-gray-100 rounded-[60px] overflow-hidden flex flex-col shadow-sm transition-transform duration-300 hover:scale-[1.02]">
+            <div className="absolute inset-0 w-full h-full" style={maskStyle}>
+                <Image
+                    src={uriImage}
+                    alt={title}
+                    fill
+                    className="object-cover"
+                    priority
+                />
             </div>
-          </div>
-        </div>
 
-      </div>
-    </Link>
-  );
+            <div className={`relative z-10 px-10 flex flex-col h-full ${type === 'top' ? 'pt-5' : 'justify-end pb-5'}`}>
+                <h2 className="text-2xl font-bold text-gray-800 leading-tight mb-2">
+                    {title}
+                </h2>
+                <p className="text-[13px] text-gray-500 leading-snug font-medium max-w-[200px]">
+                    {subtitle}
+                </p>
+            </div>
+        </div>
+    );
 }
