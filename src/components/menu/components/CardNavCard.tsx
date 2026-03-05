@@ -24,6 +24,8 @@ export const CardNavCard = forwardRef<HTMLDivElement, CardNavCardProps>(
                             className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
                             href={lnk.href}
                             aria-label={lnk.ariaLabel}
+                            target={(lnk as any).external ? '_blank' : undefined}
+                            rel={(lnk as any).external ? 'noopener noreferrer' : undefined}
                         >
                             <ArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
                             {lnk.label}

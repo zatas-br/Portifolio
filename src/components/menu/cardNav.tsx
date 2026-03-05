@@ -12,10 +12,9 @@ const CardNav = ({
     items,
     className = '',
     ease = 'power3.out',
-    theme,
     language,
     colors = {}
-}: CardNavProps) => {
+}: Omit<CardNavProps, 'theme'> & { language: { current: string; onToggle: () => void } }) => {
     const t = useTranslations('CardNav');
     const finalLogoAlt = logoAlt ?? t('logoAlt');
     const {
@@ -48,10 +47,8 @@ const CardNav = ({
                     menuColor={menuColor}
                     buttonBgColor={buttonBgColor || baseColor}
                     buttonTextColor={buttonTextColor || menuColor}
-                    currentTheme={theme.current}
                     currentLanguage={language.current}
                     isHamburgerOpen={isHamburgerOpen}
-                    onThemeToggle={theme.onToggle}
                     onLanguageToggle={language.onToggle}
                     onMenuToggle={toggleMenu}
                 />

@@ -1,9 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Link } from '@/src/i18n/navigation';
-import { SunIcon, MoonIcon } from '../../icons';
-import { HamburgerMenu } from '../../ui/HamburguerMenu';
 
 interface CardNavTopProps {
     logo: string;
@@ -11,10 +8,8 @@ interface CardNavTopProps {
     menuColor: string;
     buttonBgColor: string;
     buttonTextColor: string;
-    currentTheme: String | undefined;
     currentLanguage: String;
     isHamburgerOpen: boolean;
-    onThemeToggle?: () => void;
     onLanguageToggle?: () => void;
     onMenuToggle: () => void;
 }
@@ -25,43 +20,20 @@ export const CardNavTop = ({
     menuColor,
     buttonBgColor,
     buttonTextColor,
-    currentTheme,
     currentLanguage,
     isHamburgerOpen,
-    onThemeToggle,
     onLanguageToggle,
     onMenuToggle
 }: CardNavTopProps) => {
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
     return (
         <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 z-[2]">
             <div className="flex items-center gap-2">
-                {mounted && (
-                    <button
-                        type="button"
-                        onClick={onThemeToggle}
-                        className="flex items-center justify-center w-[38px] h-[38px] md:w-[44px] md:h-[44px] rounded-[calc(0.75rem-0.2rem)] transition-all duration-300 hover:opacity-90 md:hover:scale-105 active:scale-95"
-                        style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                        aria-label={currentTheme === 'light' ? 'Mudar para tema escuro' : 'Mudar para tema claro'}
-                    >
-                        {currentTheme === 'light' ?
-                            <MoonIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" /> :
-                            <SunIcon className="w-[18px] h-[18px] md:w-[20px] md:h-[20px]" />
-                        }
-                    </button>
-                )}
-
                 <button
                     type="button"
                     onClick={onLanguageToggle}
                     className="flex items-center justify-center w-[38px] h-[38px] md:w-auto md:px-3 md:h-[44px] rounded-[calc(0.75rem-0.2rem)] font-semibold text-xs md:text-sm transition-all duration-300 hover:opacity-90 md:hover:scale-105 active:scale-95"
                     style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
-                    aria-label={currentLanguage === 'pt-br' ? 'Mudar para inglês' : 'Mudar para português'}
+                    aria-label={currentLanguage === 'pt-br' ? 'Switch to English' : 'Mudar para Português'}
                 >
                     {currentLanguage === 'pt-br' ? 'EN' : 'PT'}
                 </button>
@@ -74,12 +46,26 @@ export const CardNavTop = ({
             </div>
 
             <div className="flex items-center">
-                <div className="w-[38px] h-[38px] md:w-[44px] md:h-[44px] flex items-center justify-center">
-                    <HamburgerMenu
-                        isOpen={isHamburgerOpen}
-                        onClick={onMenuToggle}
-                        color={menuColor}
-                    />
+                <div
+                    className="w-[38px] h-[38px] md:w-[44px] md:h-[44px] flex items-center justify-center cursor-pointer"
+                    onClick={onMenuToggle}
+                    role="button"
+                    aria-label={isHamburgerOpen ? 'Fechar menu' : 'Abrir menu'}
+                >
+                    <div className="flex flex-col gap-[6px] w-[24px] md:w-[30px]">
+                        <div
+                            className={`h-[2px] bg-current transition-all duration-500 [transform-origin:center] ${
+                                isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+                            }`}
+                            style={{ color: menuColor }}
+                        />
+                        <div
+                            className={`h-[2px] bg-current transition-all duration-500 [transform-origin:center] ${
+                                isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+                            }`}
+                            style={{ color: menuColor }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

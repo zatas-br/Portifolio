@@ -14,11 +14,11 @@
   --color-primary-active: #1d3f7d;
 
   --color-blue-oil: #1e293b;
-  
+
   --color-icons: #2b4d8f;
 
-    --color-start-home-gradient: #449EE5;
-    --color-final-home-gradient: #ECEFF1;
+  --color-start-home-gradient: #449EE5;
+  --color-final-home-gradient: #ECEFF1;
 
   --color-start-gradient: var(--color-primary);
   --color-final-gradient: #2a2a2a;
@@ -40,9 +40,6 @@
   --color-warning: #ffc107;
   --color-error: #dc3545;
 
-
-  /*Cores do Figma atualizado*/
-
   --color-white-background: #ECEFF1;
   --color-text-primary: #263238;
   --color-gray-background: #696969;
@@ -50,7 +47,7 @@
   --color-text-blue: #0D47A1;
   --color-salmon: #F27557;
 
-  --shadow-za: 0 4px 4px rgba(0, 0, 0, 0.25); 
+  --shadow-za: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 @layer base {
@@ -95,9 +92,18 @@
     display: none;
   }
 
-  @keyframes scroll {
-    0% { transform: translateX(0); }
+  @keyframes logo-scroll {
+    0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  .animate-logo-scroll {
+    animation: logo-scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
   }
 
   .animate-scroll {

@@ -1,67 +1,26 @@
 "use client";
 
-import Image from "next/image";
-import { useRef } from "react";
-import { IoClose } from "react-icons/io5";
+interface FullScreenImageProps {
+  src: string;
+  alt: string;
+  onClick?: () => void;
+}
 
-export default function FullScreenImage({ src, alt }: { src: string; alt: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleFullScreen = () => {
-    if (!containerRef.current) return;
-    const el = containerRef.current;
-    if (el.requestFullscreen) el.requestFullscreen();
-    else if ((el as any).webkitRequestFullscreen) (el as any).webkitRequestFullscreen();
-  };
-
-  const closeFullScreen = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (document.fullscreenElement) document.exitFullscreen();
-  };
-
+export default function FullScreenImage({ src, alt, onClick }: FullScreenImageProps) {
   return (
-    <div 
-      ref={containerRef}
-      onClick={handleFullScreen}
-      className="relative w-full h-full cursor-zoom-in group overflow-hidden rounded-3xl"
+    <div
+      onClick={onClick}
+      className="relative w-full h-full cursor-zoom-in overflow-hidden rounded-3xl group"
     >
-      <style jsx>{`
-        div:fullscreen {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: rgba(145, 8, 8, 0) !important;
-        }
-        div:fullscreen .img-wrapper {
-          width: 80%;
-          height: 80%;
-          border-radius: 15px;
-        }
-        div:fullscreen img { 
-          object-fit: contain !important; 
-        }
-        .close-btn { display: none; }
-        div:fullscreen .close-btn {
-          display: flex;
-          position: absolute;
-          top: 2rem;
-          right: 2rem;
-          z-index: 100;
-        }
-      `}</style>
-
-      <button onClick={closeFullScreen} className="close-btn text-white bg-white/20 p-2 rounded-full backdrop-blur-md hover:bg-white/30 transition-all">
-        <IoClose size={32} />
-      </button>
-
-      <div className="img-wrapper relative w-full h-full">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="object-cover"
-          priority
-        />
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">
+          Ampliar
+        </span>
       </div>
     </div>
   );

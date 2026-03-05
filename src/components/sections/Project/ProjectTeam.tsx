@@ -6,37 +6,45 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import TeamComponentIcon from "../../ui/TeamComponentIcon";
-
-
+import { useTranslations } from "next-intl";
+import { resolveAuthors } from "@/src/utils/resolveAuthors";
+import { ProjectStatic } from "@/types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const numberOfCircles = 8;
+import { Lora } from "next/font/google";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
+const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
 
-const ProjectTeamSection = () => {
+interface Props {
+  project: ProjectStatic;
+}
+
+const FALLBACK_COLORS = [
+  "#2b4d8f", "#0D47A1", "#263238", "#1565C0",
+  "#37474F", "#1976D2", "#0288D1", "#455A64",
+];
+
+const ProjectTeamSection = ({ project }: Props) => {
+  const t = useTranslations("ProjectDetailPage");
   const containerRef = useRef<HTMLDivElement>(null);
   const circlesRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  const teamMembers = useMemo(() => Array.from({ length: numberOfCircles }), []);
+  const authors = useMemo(() => resolveAuthors(project.authorIds), [project.authorIds]);
 
   useGSAP(() => {
     const validCircles = circlesRef.current.filter((el) => el !== null);
     const total = validCircles.length;
-    
     if (total === 0) return;
 
-    const BASE_MOVE = 50 * numberOfCircles; 
-    const dynamicMaxMove = Math.max(80, BASE_MOVE - (total * 15)); 
+    const BASE_MOVE = 50 * total;
+    const dynamicMaxMove = Math.max(80, BASE_MOVE - total * 15);
     const centerIndex = (total - 1) / 2;
 
     validCircles.forEach((el, index) => {
       const relativeDist = centerIndex === 0 ? 0 : (index - centerIndex) / centerIndex;
-      const factor = Math.pow(relativeDist, 2); 
+      const factor = Math.pow(relativeDist, 2);
       const finalY = factor * dynamicMaxMove;
 
       gsap.to(el, {
@@ -50,36 +58,72 @@ const ProjectTeamSection = () => {
         },
       });
     });
-  }, { scope: containerRef, dependencies: [teamMembers.length] });
+  }, { scope: containerRef, dependencies: [authors.length] });
+
+  const isSingleAuthor = authors.length === 1;
+  const sectionTitle = isSingleAuthor ? t('authors.single') : t('authors.multiple');
 
   return (
-    <section 
-      ref={containerRef} 
+    <section
+      ref={containerRef}
       className="relative flex flex-col justify-start w-full h-[80vh] text-white overflow-hidden"
     >
       <section className="text-black h-full justify-center items-center flex flex-col gap-16 relative">
-        
+
         <div className="absolute top-0 pt-10 w-full justify-center items-start flex flex-wrap gap-4 md:gap-18 px-10">
-          {teamMembers.map((_, i) => (
-            <TeamComponentIcon 
-              imageSrc={`/images/Antony_Icon.png`} 
-              name={`Antony Brito`} 
-              ref={(el) => {
-                if (el) circlesRef.current[i] = el;
-              }}
-              key={`circle-${i}`}
-              />
-          ))}
+          {authors.map((author, i) => {
+            if (author.avatar) {
+              return (
+                <TeamComponentIcon
+                  imageSrc={author.avatar}
+                  name={author.name}
+                  ref={(el) => { if (el) circlesRef.current[i] = el; }}
+                  key={`circle-${i}`}
+                />
+              );
+            }
+
+            const initials = author.name
+              .split(" ")
+              .slice(0, 2)
+              .map((n: string) => n.charAt(0).toUpperCase())
+              .join("");
+            const color = FALLBACK_COLORS[i % FALLBACK_COLORS.length];
+
+            return (
+              <div
+                key={`circle-${i}`}
+                ref={(el) => { if (el) circlesRef.current[i] = el; }}
+                className="relative flex flex-col items-center"
+              >
+                <div
+                  className="w-16 h-16 md:w-24 md:h-24 rounded-full border-2 border-white/20 shadow-2xl flex items-center justify-center text-white font-bold text-xl md:text-2xl"
+                  style={{ backgroundColor: color }}
+                >
+                  {initials}
+                </div>
+                <div
+                  className="absolute -bottom-2 w-max px-4 py-1 rounded-xl backdrop-blur-sm shadow-sm flex items-center justify-center z-10"
+                  style={{ backgroundColor: "rgba(202, 202, 202, 0.11)" }}
+                >
+                  <p className={`${lora.className} text-slate-800 text-[10px] md:text-xs font-medium whitespace-nowrap`}>
+                    {author.name}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <section className="z-20 justify-center items-center flex flex-col gap-4 text-center px-6">
           <h1 className={`text-2xl md:text-3xl font-bold mt-4 ${montserrat.className} tracking-wider`}>
-            EQUIPE DO PROJETO
+            {sectionTitle.toUpperCase()}
           </h1>
           <p className={`max-w-[80vw] md:w-[40vw] ${montserrat.className} font-light`}>
             Especialistas alinhados com os objetivos do projeto, colaborando de forma estratégica para entregar resultados consistentes.
           </p>
         </section>
+
       </section>
     </section>
   );
