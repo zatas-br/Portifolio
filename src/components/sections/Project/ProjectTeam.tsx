@@ -66,9 +66,61 @@ const ProjectTeamSection = ({ project }: Props) => {
   return (
     <section
       ref={containerRef}
-      className="relative flex flex-col justify-start w-full h-[80vh] text-white overflow-hidden bg-white"
+      className="relative flex flex-col justify-start w-full text-white overflow-hidden bg-white"
     >
-      <section className="text-black h-full justify-center items-center flex flex-col gap-16 relative">
+
+      {/* ─── MOBILE: layout estático, sem animação ─── */}
+      <section className="md:hidden text-black flex flex-col items-center gap-10 py-12 px-6">
+
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
+          {authors.map((author, i) => {
+            const initials = author.name
+              .split(" ")
+              .slice(0, 2)
+              .map((n: string) => n.charAt(0).toUpperCase())
+              .join("");
+            const color = FALLBACK_COLORS[i % FALLBACK_COLORS.length];
+
+            return (
+              <div key={`m-${i}`} className="relative flex flex-col items-center">
+                {author.avatar ? (
+                  <div className="w-14 h-14 rounded-full border-2 border-white/20 shadow-2xl overflow-hidden">
+                    <img src={author.avatar} alt={author.name} className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <div
+                    className="w-14 h-14 rounded-full border-2 border-white/20 shadow-2xl flex items-center justify-center text-white font-bold text-base"
+                    style={{ backgroundColor: color }}
+                  >
+                    {initials}
+                  </div>
+                )}
+                <div
+                  className="absolute -bottom-2 w-max px-3 py-1 rounded-xl backdrop-blur-sm shadow-sm flex items-center justify-center z-10"
+                  style={{ backgroundColor: "rgba(202, 202, 202, 0.11)" }}
+                >
+                  <p className={`${lora.className} text-slate-800 text-[10px] font-medium whitespace-nowrap`}>
+                    {author.name}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col gap-3 text-center">
+          <h1 className={`text-xl font-bold ${montserrat.className} tracking-wider`}>
+            {sectionTitle.toUpperCase()}
+          </h1>
+          <p className={`${montserrat.className} font-light text-sm text-gray-600 max-w-[85vw]`}>
+            Especialistas alinhados com os objetivos do projeto, colaborando de forma estratégica para entregar resultados consistentes.
+          </p>
+        </div>
+
+      </section>
+
+      {/* ─── DESKTOP: idêntico ao original com animação GSAP ─── */}
+      <section className="hidden md:flex text-black h-[80vh] justify-center items-center flex-col gap-16 relative">
 
         <div className="absolute top-0 pt-10 w-full justify-center items-start flex flex-wrap gap-4 md:gap-18 px-10">
           {authors.map((author, i) => {
@@ -125,6 +177,7 @@ const ProjectTeamSection = ({ project }: Props) => {
         </section>
 
       </section>
+
     </section>
   );
 };
