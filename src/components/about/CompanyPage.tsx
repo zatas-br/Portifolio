@@ -88,35 +88,42 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
   return (
     <div className="bg-[#ECEFF1] font-sans min-h-screen overflow-x-hidden">
 
-      <section className="relative w-full bg-[#B8D4E8] overflow-hidden">
+      {/* HERO IMAGE — pt-[80px] no mobile para não ficar atrás do menu */}
+      <section className="relative w-full bg-[#9CBCE5] overflow-hidden pt-[80px] md:pt-0">
         <img
           src="/images/about/oque-ser-zatas.png"
           alt="O que é ser Zatas?"
-          className="w-full h-auto block max-h-[calc(100vh-80px)] object-cover transform -translate-y-111px]"
+          className="w-full h-auto block max-h-[calc(100vh-80px)] object-cover"
         />
       </section>
 
-      <section className="bg-[#263238] px-[5.5vw] pt-[4vw] pb-[5.5vw]">
-        <div className="max-w-[1421px] mx-auto bg-[#F0F0F0] rounded-[clamp(16px,1.5vw,24px)] overflow-hidden grid grid-cols-1 md:grid-cols-[1fr_auto] shadow-[0_24px_64px_rgba(0,0,0,0.3)] min-h-[clamp(450px,55vw,850px)]">
+      {/* HERO CARD + VIDEO */}
+      <section className="bg-[#263238] px-[4vw] pt-[4vw] pb-[5.5vw] max-[900px]:px-4 max-[900px]:pt-6 max-[900px]:pb-8">
+        <div className="max-w-[1421px] mx-auto bg-[#F0F0F0]
+          rounded-[clamp(16px,1.5vw,24px)]
+          overflow-hidden
+          grid grid-cols-1 md:grid-cols-[1fr_auto]
+          shadow-[0_24px_64px_rgba(0,0,0,0.3)]
+          min-h-[clamp(300px,55vw,850px)]">
 
-          <div className="relative px-[clamp(24px,3.5vw,56px)] pt-[55px] pb-[40px] flex flex-col justify-between overflow-hidden bg-[#F0F0F0]">
+          {/* Texto */}
+          <div className="relative px-[clamp(20px,3.5vw,56px)] pt-[clamp(24px,3vw,55px)] pb-[clamp(20px,2.5vw,40px)] flex flex-col justify-between overflow-hidden bg-[#F0F0F0]">
 
             <div className="relative z-[2]">
-              <div className="inline-block">
-                <h2 className="font-bold text-[clamp(32px,4vw,52px)] text-[#263238] leading-[1.1] uppercase mb-[clamp(15px,1.5vw,25px)] whitespace-nowrap">
-                  {t('heroTitle').split('\n').map((line, i, arr) => (
-                    <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
-                  ))}
-                </h2>
-                <p className="font-light text-[clamp(20px,1.05vw,15px)] text-[#263238] leading-[1.35] w-full m-0">
-                  {t('heroSubtitle').split('\n').map((line, i, arr) => (
-                    <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
-                  ))}
-                </p>
-              </div>
+              <h2 className="font-bold text-[clamp(20px,4vw,52px)] text-[#263238] leading-[1.1] uppercase mb-[clamp(10px,1.5vw,25px)] max-[900px]:whitespace-normal whitespace-nowrap">
+                {t('heroTitle').split('\n').map((line, i, arr) => (
+                  <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+                ))}
+              </h2>
+              <p className="font-light text-[clamp(13px,1.05vw,16px)] text-[#263238] leading-[1.35] w-full m-0">
+                {t('heroSubtitle').split('\n').map((line, i, arr) => (
+                  <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+                ))}
+              </p>
             </div>
 
-            <div className="absolute bottom-0 left-[16%] w-[136%] pointer-events-none select-none z-[1] drop-shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+            {/* Pássaro decorativo — só desktop */}
+            <div className="absolute bottom-0 left-[16%] w-[136%] pointer-events-none select-none z-[1] drop-shadow-[0_8px_24px_rgba(0,0,0,0.08)] hidden md:block">
               <img
                 src="/images/about/fundo-passaro-card-sobre.png"
                 alt=""
@@ -125,18 +132,21 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               />
             </div>
 
-            <div className="relative z-[2]">
+            <div className="relative z-[2] mt-6 md:mt-0">
               <AnimatedLinkButton
                 href={cfg.contactHref}
                 delay={0.3}
-                className="text-lg px-12 py-[22px]"
+                className="text-base md:text-lg px-8 md:px-12 py-[14px] md:py-[22px]"
               >
                 {t('contactButton')}
               </AnimatedLinkButton>
             </div>
           </div>
 
-          <div className="bg-black flex items-center justify-center self-stretch h-full aspect-[9/16] min-h-[400px] md:min-h-0 overflow-hidden rounded-r-[clamp(16px,1.5vw,24px)]">
+          {/* Vídeo
+              Desktop: borda arredondada direita
+              Mobile: SEM borda arredondada superior esquerda — apenas inf-esq e ambas inf ficam arredondadas junto com o card pai */}
+          <div className="bg-black flex items-center justify-center self-stretch h-full aspect-[9/16] min-h-0 overflow-hidden rounded-none md:rounded-r-[clamp(16px,1.5vw,24px)]">
             {cfg.videoUrl ? (
               <div className="relative w-full h-full">
                 <iframe
@@ -170,60 +180,62 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         </div>
       </section>
 
-      <section className="bg-[#ECEFF1] pt-[2.5vw] pb-[4vw] pl-[12.7vw] pr-[12vw] max-[900px]:px-6 max-[900px]:pt-10 max-[900px]:pb-8">
-        <h2 className="font-bold text-[clamp(22px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(50px,1.8vw,28px)] max-w-[55vw] max-[900px]:max-w-full">
+      {/* SEÇÃO ESTRATÉGICA + COMPROMISSO + SERVIÇOS */}
+      <section className="bg-[#ECEFF1] pt-[2.5vw] pb-[4vw] pl-[12.7vw] pr-[12vw] max-[900px]:px-5 max-[900px]:pt-8 max-[900px]:pb-8">
+
+        <h2 className="font-bold text-[clamp(16px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(14px,1.8vw,28px)] max-w-[55vw] max-[900px]:max-w-full">
           {t('strategicTitle')}
         </h2>
         <div className="flex flex-col gap-[clamp(8px,1vw,14px)] max-w-[48.7vw] max-[900px]:max-w-full">
-          <p className="font-light text-[clamp(19px,1.1vw,16px)] text-[#263238] leading-[1.25] m-0">
+          <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] m-0">
             {t('strategicDesc1')}
           </p>
-          <p className="font-light text-[clamp(19px,1.1vw,16px)] text-[#263238] leading-[1.25] m-0">
+          <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] m-0">
             {t('strategicDesc2')}
           </p>
         </div>
 
-        <h2 className="font-bold text-[clamp(22px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(16px,1.8vw,28px)] mt-[clamp(40px,4.5vw,72px)]">
+        <h2 className="font-bold text-[clamp(16px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(12px,1.8vw,28px)] mt-[clamp(24px,4.5vw,72px)]">
           {t('commitmentTitle')}
         </h2>
         <div className="flex flex-col gap-[clamp(0px,0vw,6px)] max-w-[48.7vw] max-[900px]:max-w-full">
           {commitmentItems.map((item, i) => (
-            <p key={i} className="font-light text-[clamp(19px,1.1vw,16px)] text-[#263238] leading-[1.25] m-0 mb-[2px]">
+            <p key={i} className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] m-0 mb-[2px]">
               {item}
             </p>
           ))}
-          <p className="font-light text-[clamp(19px,1.1vw,16px)] text-[#263238] leading-[1.75] m-0 mt-[14px]">
+          <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.75] m-0 mt-[14px]">
             {t('commitmentFooter')}
           </p>
         </div>
 
-        <h2 className="font-bold text-[clamp(22px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(90px,1.8vw,28px)] mt-[clamp(40px,4.5vw,72px)]">
+        <h2 className="font-bold text-[clamp(16px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(20px,1.8vw,28px)] mt-[clamp(24px,4.5vw,72px)]">
           {t('servicesTitle')}
         </h2>
 
-        <div className="flex flex-col gap-[clamp(40px,5.2vw,75px)] mt-[clamp(28px,3vw,48px)]">
+        <div className="flex flex-col gap-[clamp(32px,5.2vw,75px)] mt-[clamp(16px,3vw,48px)]">
           {cfg.services.map((service, index) => (
-            <div key={index} className="grid grid-cols-1 md:grid-cols-[1fr_clamp(72px,10vw,144px)_1fr] items-start">
+            <div key={index} className="grid grid-cols-1 md:grid-cols-[1fr_clamp(72px,10vw,144px)_1fr] items-start gap-5 md:gap-0">
 
-              <div className="col-start-1 aspect-[666/430] bg-transparent flex flex-col justify-start items-start overflow-visible">
-                <div className="p-0 mt-0">
-                  <p className="font-light text-[clamp(19px,1.1vw,16px)] text-[#263238] leading-[1.25] mb-[clamp(10px,1vw,16px)] max-w-[26.7vw] max-[900px]:max-w-full">
-                    {serviceDescriptions[index]}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {service.tags.map((tag) => (
-                      <Tag key={tag} label={tag} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="md:col-start-3 aspect-[666/430] overflow-hidden rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.22)] max-[900px]:col-start-1">
+              {/* MOBILE: imagem primeiro (order-1), DESKTOP: col 3 */}
+              <div className="order-1 md:order-none md:col-start-3 md:row-start-1 aspect-[666/430] overflow-hidden rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.22)]">
                 <img
                   src={service.image}
                   alt={serviceImageAlts[index]}
                   className="w-full h-full object-cover block transition-transform duration-500 hover:scale-105"
                 />
+              </div>
+
+              {/* MOBILE: texto depois (order-2), DESKTOP: col 1 */}
+              <div className="order-2 md:order-none md:col-start-1 md:row-start-1 aspect-auto md:aspect-[666/430] bg-transparent flex flex-col justify-start items-start overflow-visible">
+                <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] mb-[clamp(10px,1vw,16px)] max-w-[26.7vw] max-[900px]:max-w-full">
+                  {serviceDescriptions[index]}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <Tag key={tag} label={tag} />
+                  ))}
+                </div>
               </div>
 
             </div>
@@ -233,35 +245,36 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         <AnimatedLinkButton
           href={cfg.othersButtonHref}
           delay={0.2}
-          className="text-lg px-12 py-[22px] mt-[clamp(32px,3.5vw,56px)]"
+          className="text-base md:text-lg px-8 md:px-12 py-[14px] md:py-[22px] mt-[clamp(24px,3.5vw,56px)]"
         >
           {t('othersButton')}
         </AnimatedLinkButton>
       </section>
 
-      <section className="bg-[#ECEFF1] px-[5.5vw] pb-[10vw] pt-[3vw] max-[900px]:px-6 max-[900px]:pb-12">
-        <div className="w-full max-w-[1580px] mx-auto aspect-[1433/546] bg-[#263238] rounded-[clamp(16px,1.5vw,24px)] overflow-hidden grid grid-cols-1 md:grid-cols-[50%_50%] shadow-[0_16px_48px_rgba(0,0,0,0.2)] max-[900px]:aspect-auto">
-          <div className="w-full h-full max-[900px]:h-[220px]">
+      {/* HISTÓRIA */}
+      <section className="bg-[#ECEFF1] px-[5.5vw] pb-[10vw] pt-[3vw] max-[900px]:px-4 max-[900px]:pb-10 max-[900px]:pt-4">
+        <div className="w-full max-w-[1580px] mx-auto md:aspect-[1433/546] bg-[#263238] rounded-[clamp(16px,1.5vw,24px)] overflow-hidden grid grid-cols-1 md:grid-cols-[50%_50%] shadow-[0_16px_48px_rgba(0,0,0,0.2)]">
+          <div className="w-full h-[200px] md:h-full">
             <img
               src={cfg.historyImage}
               alt={t('historyImageAlt')}
               className="w-full h-full object-cover block"
             />
           </div>
-          <div className="px-[clamp(24px,3vw,48px)] py-[clamp(24px,3.5vw,56px)] flex flex-col justify-between h-full box-border text-white">
-            <h2 className="font-bold text-[clamp(22px,2.8vw,52px)] uppercase leading-[1.15] mb-[clamp(38px,1.3vw,20px)]">
+          <div className="px-[clamp(20px,3vw,48px)] py-[clamp(20px,3.5vw,56px)] flex flex-col justify-between h-full box-border text-white">
+            <h2 className="font-bold text-[clamp(16px,2.8vw,52px)] uppercase leading-[1.15] mb-[clamp(12px,1.3vw,20px)]">
               {t('historyCardTitle')}
             </h2>
-            <div className="flex flex-col gap-[clamp(16px,0.7vw,10px)] flex-1">
+            <div className="flex flex-col gap-[clamp(10px,0.7vw,10px)] flex-1">
               {historyParagraphs.map((p, i) => (
-                <p key={i} className="font-light text-[clamp(22px,1.3vw,18px)] leading-[1.3] m-0">{p}</p>
+                <p key={i} className="font-light text-[clamp(13px,1.3vw,18px)] leading-[1.4] m-0">{p}</p>
               ))}
             </div>
             <div className="flex justify-end mt-[clamp(12px,1.2vw,20px)]">
               <AnimatedLinkButton
                 href={cfg.historyButtonHref}
                 delay={0.1}
-                className="text-[clamp(16px,1vw,18px)] px-[clamp(16px,1.6vw,26px)] py-[clamp(8px,0.75vw,12px)] !bg-white !text-[#263238]"
+                className="text-[clamp(13px,1vw,18px)] px-[clamp(14px,1.6vw,26px)] py-[clamp(8px,0.75vw,12px)] !bg-white !text-[#263238]"
               >
                 {t('teamButton')}
               </AnimatedLinkButton>
