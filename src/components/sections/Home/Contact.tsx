@@ -15,17 +15,32 @@ export default function ContactSection() {
             <form className="space-y-4">
               <div className="space-y-1">
                 <label className="text-sm font-semibold text-gray-600 ml-1">Seu nome*</label>
-                <input type="text" placeholder="Antony Brito" className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800" />
+                <input
+                  type="text"
+                  placeholder="Seu nome"
+                  className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800"
+                />
               </div>
               <div className="space-y-1">
                 <label className="text-sm font-semibold text-gray-600 ml-1">Seu e-mail*</label>
-                <input type="email" placeholder="antony.brito047@gmail.com" className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800" />
+                <input
+                  type="email"
+                  placeholder="seu@email.com"
+                  className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800"
+                />
               </div>
               <div className="space-y-1">
                 <label className="text-sm font-semibold text-gray-600 ml-1">Mensagem</label>
-                <textarea rows={4} placeholder="Sua mensagem" className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800 resize-none" />
+                <textarea
+                  rows={4}
+                  placeholder="Como podemos te ajudar?"
+                  className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800 resize-none"
+                />
               </div>
-              <button type="button" className="w-full bg-[#1f2937] hover:bg-black text-white font-medium py-3.5 rounded-xl transition-colors shadow-lg mt-2">
+              <button
+                type="button"
+                className="w-full bg-[#1f2937] hover:bg-black text-white font-medium py-3.5 rounded-xl transition-colors shadow-lg mt-2"
+              >
                 Enviar Mensagem
               </button>
             </form>
@@ -61,34 +76,35 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="mt-6 flex">
-              <div className="bg-[#f3f4f6] rounded-[12px] p-1 flex flex-col md:flex-row items-center gap-6 w-fit shadow-lg mt-8">
-                <div className="bg-[#111827] w-20 h-20 rounded-[10px] flex items-center justify-center flex-shrink-0 shadow-md">
+            <div className="flex flex-row w-full">
+
+              <div className="bg-[#f3f4f6] rounded-[16px] flex-shrink-0 flex items-center justify-center shadow-lg w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px]">
+                <div className="bg-[#1E1E1E] w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 rounded-[12px] flex items-center justify-center">
                   <Image
                     src="/images/identidade_visual/icon-zatas-white.svg"
                     alt="Zatas Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                    width={82}
+                    height={82}
+                    className="object-contain w-10 h-10 sm:w-14 sm:h-14 md:w-[82px] md:h-[82px]"
                   />
                 </div>
               </div>
 
-              <div className="bg-[#f3f4f6] rounded-[12px] p-4 flex flex-col md:flex-row items-center gap-6 w-fit shadow-lg mt-8">
-                <div className="flex flex-col gap-2 pr-4">
-                  <p className="text-gray-900 font-bold text-sm text-center md:text-left">
-                    Outras redes de contato
-                  </p>
-                  <div className="flex gap-3">
-                    <SocialButton src="/images/icons_midia/whatsapp.png" alt="WhatsApp" href="https://wa.me/5516994418460" />
-                    <SocialButton src="/images/icons_midia/email.png" alt="Email" href="mailto:contato@zatas.com.br" />
-                    <SocialButton src="/images/icons_midia/instagram.png" alt="Instagram" href="https://www.instagram.com/zatas.tech" />
-                    <SocialButton src="/images/icons_midia/linkedin.png" alt="LinkedIn" href="https://www.linkedin.com/company/zatas/about" />
-                    <SocialButton src="/images/icons_midia/linktree.png" alt="Linktree" href="https://linktr.ee/zatas" />
-                  </div>
+              <div className="bg-[#f3f4f6] rounded-[16px] flex flex-col justify-center gap-2 px-3 sm:px-5 py-3 sm:py-4 flex-1 shadow-lg min-w-0">
+                <p className="text-gray-900 font-bold text-sm sm:text-base md:text-lg leading-tight">
+                  Outras redes de contato
+                </p>
+                <div className="flex gap-1 sm:gap-2 flex-nowrap">
+                  <SocialButton src="/images/icons_midia/whatsapp.png"  alt="WhatsApp"  href="https://wa.me/5516994418460" />
+                  <SocialButton src="/images/icons_midia/email.png"     alt="Email"     href="mailto:contato@zatas.com.br" />
+                  <SocialButton src="/images/icons_midia/instagram.png" alt="Instagram" href="https://www.instagram.com/zatas.tech" />
+                  <SocialButton src="/images/icons_midia/linkedin.png"  alt="LinkedIn"  href="https://www.linkedin.com/company/zatas/about" />
+                  <SocialButton src="/images/icons_midia/linktree.png"  alt="Linktree"  href="https://linktr.ee/zatas" />
                 </div>
               </div>
+
             </div>
+
           </div>
 
         </div>
@@ -99,14 +115,14 @@ export default function ContactSection() {
 
 function SocialButton({ src, alt, href }: { src: string; alt: string; href: string }) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="group cursor-pointer relative">
-      <div className="w-14 h-10 bg-white rounded-[20px] flex items-center justify-center shadow-xl/20 hover:shadow-md hover:bg-white hover:-translate-y-1 transition-all duration-300">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="group cursor-pointer flex-1">
+      <div className="h-9 sm:h-11 md:h-12 w-full bg-white rounded-[10px] sm:rounded-[14px] flex items-center justify-center hover:shadow-md hover:-translate-y-1 transition-all duration-300">
         <Image
           src={src}
           alt={alt}
-          width={22}
-          height={22}
-          className="opacity-80 group-hover:opacity-100 transition-opacity"
+          width={20}
+          height={20}
+          className="opacity-80 group-hover:opacity-100 transition-opacity sm:w-6 sm:h-6"
         />
       </div>
     </a>

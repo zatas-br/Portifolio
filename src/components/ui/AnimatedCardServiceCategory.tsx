@@ -28,12 +28,12 @@ export default function AnimatedCardServiceCategory({
 
     return (
         <div className="relative w-full max-w-[320px] h-[520px] bg-white border border-gray-100 rounded-[60px] overflow-hidden flex flex-col shadow-sm transition-transform duration-300 hover:scale-[1.02]">
-            <div className="absolute inset-0 w-full h-full" style={maskStyle}>
+            <div className="absolute inset-0 w-full h-full overflow-hidden" style={maskStyle}>
                 <Image
                     src={uriImage}
                     alt={title}
                     fill
-                    className="object-cover"
+                    className="object-cover scale-105 transition-transform duration-700 group-hover:scale-110"
                     priority
                 />
             </div>
