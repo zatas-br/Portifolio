@@ -48,7 +48,7 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
   }
 
   return (
-    <div className='gap-16 flex flex-col w-full h-auto pb-16 bg-white-background'>
+    <div className='gap-16 flex flex-col w-full h-auto pb-16 bg-white'>
       <HeroSection project={project} projectId={projectId} />
       <ProjectTeamSection project={project} />
       <ProjectApresentationSection project={project} projectId={projectId} />

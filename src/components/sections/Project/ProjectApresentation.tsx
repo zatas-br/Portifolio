@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl";
 import { ProjectStatic } from "@/types";
 import { getTechIcon } from "@/src/data/techIcons";
 import MobilePreviewIphone14 from "../../ui/Mockup/Iphone14";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
@@ -24,7 +26,7 @@ function TechCard({ tech }: { tech: string }) {
     figma: "Prototipação",
     "vs code": "Editor",
     vscode: "Editor",
-    "intellij": "IDE",
+    intellij: "IDE",
     "intellij idea": "IDE",
     react: "Frontend",
     "react native": "Mobile",
@@ -79,7 +81,6 @@ function TechCard({ tech }: { tech: string }) {
           </span>
         )}
       </div>
-
       <div className="flex flex-col">
         <span className={`${montserrat.className} font-bold text-[15px] text-[#263238] uppercase tracking-wide`}>
           {tech.toUpperCase()}
@@ -94,26 +95,57 @@ function TechCard({ tech }: { tech: string }) {
   );
 }
 
+function AnimatedLiveButton({
+  href,
+  children,
+  delay = 0,
+}: {
+  href: string;
+  children: React.ReactNode;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ref.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, delay, ease: "power3.out" }
+    );
+  }, [delay]);
+
+  const handleMouseEnter = () =>
+    gsap.to(ref.current, { y: -4, duration: 0.3, ease: "power2.out" });
+  const handleMouseLeave = () =>
+    gsap.to(ref.current, { y: 0, duration: 0.3, ease: "power2.out" });
+  const handleMouseDown = () =>
+    gsap.to(ref.current, { y: -1, duration: 0.1, ease: "power2.out" });
+  const handleMouseUp = () =>
+    gsap.to(ref.current, { y: -4, duration: 0.1, ease: "power2.out" });
+
+  return (
+    <a ref={ref} href={href} target="_blank" rel="noopener noreferrer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className="inline-flex items-center justify-center rounded-full bg-white text-[#263238] border-2 border-[#263238] font-normal no-underline shadow-lg hover:shadow-2xl transition-shadow duration-300 text-lg px-12 py-[22px]" style={{ opacity: 0 }}>
+      {children}
+    </a>
+  );
+}
+
 const ProjectApresentationSection = ({ project, projectId }: Props) => {
   const t = useTranslations("ProjectDetailPage");
   const tProject = useTranslations(`Projects.${projectId}`);
   const fullDescription = tProject("fullDescription");
 
   return (
-    <section className="flex justify-center w-full flex-wrap text-black p-8 md:px-16 gap-16 bg-[#ECEFF1]">
+    <section className="flex justify-center w-full flex-wrap text-black p-8 md:px-16 gap-16 bg-white -mt-8">
 
       {project.mockup !== false && (
-        <div className="w-full md:w-[40vw] h-full flex justify-center items-center">
+        <div className="w-full md:w-[40vw] h-full flex justify-center items-center -mt-8" style={{ filter: 'drop-shadow(0 25px 40px rgba(0,0,0,0.25))' }}>
           <MobilePreviewIphone14>
             {project.link ? (
               <iframe src={project.link} title={projectId} className="w-full h-full border-0" />
             ) : (
               <div className="w-full h-full overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={projectId}
-                  className="w-full h-full object-cover"
-                />
+                <img src={project.image} alt={projectId} className="w-full h-full object-cover" />
               </div>
             )}
           </MobilePreviewIphone14>
@@ -121,7 +153,7 @@ const ProjectApresentationSection = ({ project, projectId }: Props) => {
       )}
 
       <div
-        className={`p-8 rounded-lg border border-gray-300 bg-white flex flex-col gap-8 ${
+        className={`bg-white flex flex-col gap-8 -mt-8 ${
           project.mockup === false ? "w-full md:w-[60vw]" : "w-full md:w-[40vw]"
         }`}
       >
@@ -136,7 +168,7 @@ const ProjectApresentationSection = ({ project, projectId }: Props) => {
         {project.technologies && project.technologies.length > 0 && (
           <div className="flex flex-col gap-5">
             <p className={`font-normal ${lora.className} text-[16px] text-[#0D47A1]`}>
-              {t("technologies")} →
+              {t("technologies")}
             </p>
             <div className="grid grid-cols-2 gap-x-6 gap-y-6">
               {project.technologies.map((tech) => (
@@ -146,16 +178,6 @@ const ProjectApresentationSection = ({ project, projectId }: Props) => {
           </div>
         )}
 
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#263238] text-white px-6 py-3 rounded-full font-medium hover:bg-[#0D47A1] transition-colors w-fit mt-2"
-          >
-            {t("liveProject")} ↗
-          </a>
-        )}
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { FaEye, FaArrowLeft } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { PROJECTS_STATIC } from "@/src/data/projects";
 import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
 import { useTranslations } from "next-intl";
@@ -79,12 +79,6 @@ export default function CategoryProjectsPage({
   return (
     <div className="min-h-screen bg-[#ECEFF1]">
       <div className="max-w-[1800px] 2xl:px-20 mx-auto px-[30px] pt-24 md:pt-32 relative">
-        <button 
-          onClick={() => router.push('/services')} 
-          className="absolute top-8 left-[30px] 2xl:left-20 text-[#263238] hover:text-[#0D47A1] transition-colors flex items-center gap-2 font-sans z-10"
-        >
-          <FaArrowLeft /> {t('back')}
-        </button>
 
         <div ref={headerRef} className="py-12 md:py-16 text-center">
 

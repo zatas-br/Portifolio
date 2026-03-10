@@ -1,7 +1,9 @@
 "use client";
 
 import { Montserrat } from "next/font/google";
-import Link from "next/link";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { Link } from "@/src/i18n/navigation";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["300", "400", "700", "800"] });
 
@@ -14,6 +16,52 @@ const logos = [
   { src: "/images/clients/varys_logo.svg", alt: "Varys" },
   { src: "/images/clients/jersey_hub.svg", alt: "Jersey Hub" },
 ];
+
+function AnimatedLinkButton({
+  href,
+  children,
+  className = "",
+  delay = 0,
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ref.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, delay, ease: "power3.out" }
+    );
+  }, [delay]);
+
+  const handleMouseEnter = () =>
+    gsap.to(ref.current, { y: -4, duration: 0.3, ease: "power2.out" });
+  const handleMouseLeave = () =>
+    gsap.to(ref.current, { y: 0, duration: 0.3, ease: "power2.out" });
+  const handleMouseDown = () =>
+    gsap.to(ref.current, { y: -1, duration: 0.1, ease: "power2.out" });
+  const handleMouseUp = () =>
+    gsap.to(ref.current, { y: -4, duration: 0.1, ease: "power2.out" });
+
+  return (
+    <Link
+      ref={ref}
+      href={href}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      className={`inline-flex items-center justify-center rounded-full font-normal no-underline shadow-lg hover:shadow-2xl transition-shadow duration-300 text-lg px-12 py-[22px] ${className}`}
+      style={{ opacity: 0 }}
+    >
+      {children}
+    </Link>
+  );
+}
 
 const HeroSection = () => {
   return (
@@ -30,18 +78,12 @@ const HeroSection = () => {
         </div>
 
         <div className="flex flex-row gap-4 mt-4 flex-wrap justify-center">
-          <Link
-            href="/contact"
-            className={`${montserrat.className} bg-salmon hover:bg-salmon/90 text-white rounded-full px-10 py-5 font-light text-2xl transition-all shadow-md active:scale-95`}
-          >
+          <AnimatedLinkButton href="/contact" delay={0.3} className="bg-salmon hover:bg-salmon/90 text-white">
             Entrar em contato
-          </Link>
-          <Link
-            href="/services"
-            className={`${montserrat.className} bg-white text-text-primary border border-slate-200 rounded-full px-10 py-5 font-light text-2xl transition-all shadow-xl hover:shadow-2xl active:scale-95 flex items-center gap-2`}
-          >
+          </AnimatedLinkButton>
+          <AnimatedLinkButton href="/services" delay={0.4} className="bg-white text-text-primary border border-slate-200 shadow-xl hover:shadow-2xl">
             Explorar projetos
-          </Link>
+          </AnimatedLinkButton>
         </div>
       </div>
 

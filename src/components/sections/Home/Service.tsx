@@ -37,7 +37,7 @@ const ServiceSection = () => {
                     <AnimatedButton
                         variant="primary"
                     >
-                        {"Ver Postifólio"}
+                        {"Ver Portfólio"}
                     </AnimatedButton>
                 </Link>
             </div>

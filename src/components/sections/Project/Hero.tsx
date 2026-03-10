@@ -1,29 +1,48 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Montserrat, Lora } from "next/font/google";
 import { useTranslations } from "next-intl";
 import { ProjectStatic } from "@/types";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["400", "700"]
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["italic"]
-});
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
+const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
 
 interface HeroProps {
   project: ProjectStatic;
   projectId: string;
 }
 
+function AnimatedLiveButton({ href }: { href: string }) {
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ref.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: "power3.out" }
+    );
+  }, []);
+
+  const handleMouseEnter = () =>
+    gsap.to(ref.current, { y: -4, duration: 0.3, ease: "power2.out" });
+  const handleMouseLeave = () =>
+    gsap.to(ref.current, { y: 0, duration: 0.3, ease: "power2.out" });
+  const handleMouseDown = () =>
+    gsap.to(ref.current, { y: -1, duration: 0.1, ease: "power2.out" });
+  const handleMouseUp = () =>
+    gsap.to(ref.current, { y: -4, duration: 0.1, ease: "power2.out" });
+
+  return (
+    <a ref={ref} href={href} target="_blank" rel="noopener noreferrer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className="px-12 py-[22px] mt-4 text-lg font-normal text-gray-900 bg-white rounded-full hover:bg-gray-100 no-underline" style={{ opacity: 0 }}>
+      Ver ao vivo
+    </a>
+  );
+}
+
 const HeroSection = ({ project, projectId }: HeroProps) => {
-  const t = useTranslations("ProjectDetailPage");
   const tProject = useTranslations(`Projects.${projectId}`);
 
   const title = tProject('title');
@@ -34,11 +53,7 @@ const HeroSection = ({ project, projectId }: HeroProps) => {
     <section className="relative flex flex-col justify-center w-full h-[80vh] px-8 md:px-16 text-white overflow-hidden">
 
       <div className="absolute inset-0 z-10">
-        <img
-          src={project.image}
-          alt={title}
-          className="w-full h-full object-cover object-center"
-        />
+        <img src={project.image} alt={title} className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
       </div>
 
@@ -52,14 +67,7 @@ const HeroSection = ({ project, projectId }: HeroProps) => {
         </p>
 
         {project.link && (
-          <Link
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 mt-4 text-sm font-medium text-gray-900 transition-colors bg-white rounded-full hover:bg-gray-100"
-          >
-            {t('liveProject')}
-          </Link>
+          <AnimatedLiveButton href={project.link} />
         )}
       </div>
 

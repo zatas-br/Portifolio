@@ -66,7 +66,7 @@ const ProjectTeamSection = ({ project }: Props) => {
   return (
     <section
       ref={containerRef}
-      className="relative flex flex-col justify-start w-full h-[80vh] text-white overflow-hidden"
+      className="relative flex flex-col justify-start w-full h-[80vh] text-white overflow-hidden bg-white"
     >
       <section className="text-black h-full justify-center items-center flex flex-col gap-16 relative">
 
