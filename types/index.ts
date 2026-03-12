@@ -99,6 +99,7 @@ export interface ProjectStatic {
   link: string | null;
   gallery: string[];
   authorIds: string[];
+  mockup?: boolean;
 }
 
 export interface ProjectContent {
