@@ -96,9 +96,9 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
           <FaTimes className="w-4 h-4" />
         </button>
 
-        <div className="w-full md:w-[30%] bg-[#263238] flex flex-col items-center text-center md:items-start md:text-left border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto px-6 pt-10 pb-6 md:px-8 md:pt-12 md:pb-8">
+        <div className="w-full md:w-[32%] bg-[#263238] flex flex-col items-center text-center md:items-start md:text-left border-b md:border-b-0 md:border-r border-gray-200 overflow-y-auto px-6 pt-10 pb-6 md:px-8 md:pt-10 md:pb-8">
 
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl overflow-hidden mb-5 shadow-md bg-white flex-shrink-0 mx-auto md:mx-0">
+          <div className="md:hidden w-24 h-24 rounded-2xl overflow-hidden mb-5 shadow-md bg-white flex-shrink-0 mx-auto">
             <img
               src={member.image}
               alt={member.name}
@@ -106,26 +106,52 @@ const TeamMemberModal = memo(({ member, onClose }: TeamMemberModalProps) => {
             />
           </div>
 
-          <h2 className="text-[22px] md:text-[24px] font-bold text-white leading-tight mb-1 uppercase font-sans">
+          <div className="hidden md:block w-full aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg bg-white flex-shrink-0">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <h2 className="text-[22px] md:text-[20px] font-bold text-white leading-tight mb-1 uppercase font-sans">
             {member.name}
           </h2>
-          <p className="text-[14px] text-white/70 font-serif italic mb-6">
+          <p className="text-[14px] text-white/70 font-serif italic mb-4">
             {member.role}
           </p>
 
-          <div className="flex gap-3 justify-center md:justify-start mt-auto">
+          <div className="flex gap-3 justify-center md:justify-start">
             {member.social.linkedin && (
-              <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all cursor-pointer" onClick={(e) => e.stopPropagation()}>
+              <a
+                href={member.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all cursor-pointer"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <FaLinkedin className="w-4 h-4" />
               </a>
             )}
             {member.social.github && (
-              <a href={member.social.github} target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all cursor-pointer" onClick={(e) => e.stopPropagation()}>
+              <a
+                href={member.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all cursor-pointer"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <FaGithub className="w-4 h-4" />
               </a>
             )}
             {member.social.twitter && (
-              <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all cursor-pointer" onClick={(e) => e.stopPropagation()}>
+              <a
+                href={member.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all cursor-pointer"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <FaTwitter className="w-4 h-4" />
               </a>
             )}
