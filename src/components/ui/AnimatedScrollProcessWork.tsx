@@ -50,61 +50,105 @@ const steps = [
 export default function VerticalTimeline() {
     const containerRef = useRef<HTMLDivElement>(null);
     const logoRef = useRef<HTMLDivElement>(null);
+    const logoMobileRef = useRef<HTMLDivElement>(null);
     const diamondRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        const totalScroll = containerRef.current;
-        gsap.to(".progress-line", {
-            height: "100%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: totalScroll,
-                start: "top center",
-                end: "bottom center",
-                scrub: true,
-            }
+        const mm = gsap.matchMedia();
+
+        // ─── DESKTOP ───────────────────────────────────────────────
+        mm.add("(min-width: 768px)", () => {
+            const totalScroll = containerRef.current;
+
+            gsap.to(".progress-line", {
+                height: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: totalScroll,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true,
+                }
+            });
+
+            gsap.to(logoRef.current, {
+                top: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: totalScroll,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true,
+                }
+            });
+
+            gsap.to(diamondRef.current, {
+                rotation: 360 + 45,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: totalScroll,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                }
+            });
         });
-        gsap.to(logoRef.current, {
-            top: "100%",
-            ease: "none",
-            scrollTrigger: {
-                trigger: totalScroll,
-                start: "top center",
-                end: "bottom center",
-                scrub: true,
-            }
+
+        // ─── MOBILE ────────────────────────────────────────────────
+        // Sem coluna sticky — usa top/bottom direto no scroll da página
+        mm.add("(max-width: 767px)", () => {
+            const totalScroll = containerRef.current;
+
+            gsap.to(".progress-line-mobile", {
+                height: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: totalScroll,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.5,
+                }
+            });
+
+            gsap.to(logoMobileRef.current, {
+                top: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: totalScroll,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.5,
+                }
+            });
         });
-        gsap.to(diamondRef.current, {
-            rotation: 360 + 45,
-            ease: "none",
-            scrollTrigger: {
-                trigger: totalScroll,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 1,
-            }
-        });
+
+        return () => mm.revert();
     }, { scope: containerRef });
 
     return (
         <section ref={containerRef} className="relative w-full bg-final-home-gradient">
 
-            {/* Linha de progresso colada na esquerda */}
-            {/* Linha de progresso */}
-<div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1px] bg-gray-300 z-30 md:-translate-x-1/2">
+            {/* ── Linha desktop (centro) ── */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-300 z-30 -translate-x-1/2">
                 <div className="progress-line absolute top-0 left-0 w-full bg-blue-600 h-0" />
                 <div
                     ref={logoRef}
                     className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 z-40 flex items-center justify-center"
                     style={{ top: '0%' }}
                 >
-                    <Image
-                        src="/images/ZATAS_LOGO.png"
-                        alt="Logo"
-                        width={48}
-                        height={48}
-                        className="object-contain"
-                    />
+                    <Image src="/images/ZATAS_LOGO.png" alt="Logo" width={48} height={48} className="object-contain" />
+                </div>
+            </div>
+
+            {/* ── Linha mobile (esquerda) ── */}
+            <div className="md:hidden absolute left-6 top-0 bottom-0 w-[1px] bg-gray-300 z-30">
+                <div className="progress-line-mobile absolute top-0 left-0 w-full bg-blue-600 h-0" />
+                <div
+                    ref={logoMobileRef}
+                    className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 z-40 flex items-center justify-center"
+                    style={{ top: '0%' }}
+                >
+                    <Image src="/images/ZATAS_LOGO.png" alt="Logo" width={32} height={32} className="object-contain" />
                 </div>
             </div>
 
@@ -142,7 +186,7 @@ export default function VerticalTimeline() {
                     </div>
                 </div>
 
-                {/* Coluna direita: texto — no mobile ocupa tudo com padding esquerdo para respeitar a linha */}
+                {/* Coluna direita: texto */}
                 <div className="w-full md:w-1/2 flex flex-col pl-16 md:pl-24 pr-8 md:pr-12 pt-[10vh]">
                     {steps.map((step, index) => (
                         <div

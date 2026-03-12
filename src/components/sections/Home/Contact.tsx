@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ContactSection() {
   return (
-    <section className="relative w-full bg-white pt-10 pb-0">
+    <section className="relative w-full bg-[#ECEFF1] pt-10 pb-0">
       <div className="bg-[#1e40af] rounded-tl-[80px] w-full px-4 py-20 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
