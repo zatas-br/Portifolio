@@ -52,7 +52,7 @@ const ExpertiseSection = () => {
   }, [activeTab]);
 
   return (
-    <section className="flex flex-col justify-center items-center w-full bg-[#F8F9FA] px-5 md:px-10 lg:px-20 py-16 md:h-[100vh] md:py-0 gap-8">
+    <section className="flex flex-col justify-center items-center w-full bg-[#ECEFF1] px-5 md:px-10 lg:px-20 py-16 md:h-[100vh] md:py-0 gap-8">
 
       <div className="text-center flex flex-col gap-1 z-10">
         <h2 className={`text-2xl md:text-4xl font-extrabold text-text-primary uppercase tracking-tight ${montserrat.className}`}>
