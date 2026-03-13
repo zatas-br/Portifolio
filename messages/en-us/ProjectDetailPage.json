@@ -13,5 +13,9 @@
   "technologies": "Technologies",
   "liveProject": "View Live Project",
   "gallery": "Project Gallery",
-  "moreProjects": "View more {category} projects"
+  "moreProjects": "View more {category} projects",
+  "notFound": {
+    "title": "Project not found",
+    "back": "Back to Services"
+  }
 }

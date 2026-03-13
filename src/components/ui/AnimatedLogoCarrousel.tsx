@@ -1,31 +1,24 @@
 "use client";
 
 import Image from "next/image";
-
-const logos = [
-  { src: "/images/clients/ef_engenharia.svg", alt: "EF Engenharia" },
-  { src: "/images/clients/bykatino.svg", alt: "ByKatino" },
-  { src: "/images/clients/dpj.svg", alt: "DPJ Personal" },
-  { src: "/images/clients/aureni_fisioterapia.svg", alt: "Aureni Fisioterapia" },
-  { src: "/images/clients/jaguar.svg", alt: "Jaguar" },
-  { src: "/images/clients/varys_logo.svg", alt: "Varys" },
-  { src: "/images/clients/jersey_hub.svg", alt: "Jersey Hub" },
-];
-
-const doubled = [...logos, ...logos];
+import { useTranslations } from "next-intl";
+import { HOME_CLIENT_LOGOS } from "@/src/data/home";
 
 const AnimatedLogoCarrousel = () => {
+  const t = useTranslations("Result");
+  const doubled = [...HOME_CLIENT_LOGOS, ...HOME_CLIENT_LOGOS];
+
   return (
     <div className="w-full overflow-hidden">
       <div className="flex py-10 w-max animate-logo-scroll">
         {doubled.map((logo, index) => (
           <div
-            key={index}
+            key={`${logo.id}-${index}`}
             className="flex-shrink-0 w-28 mx-10 flex justify-center items-center"
           >
             <Image
               src={logo.src}
-              alt={logo.alt}
+              alt={t(`clientLogos.${logo.id}`)}
               width={112}
               height={56}
               className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 object-contain"

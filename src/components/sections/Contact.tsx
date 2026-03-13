@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, FormEvent } from 'react';
+import { useTranslations } from 'next-intl';
 
 enum FormStatus {
   IDLE,
@@ -11,6 +12,7 @@ enum FormStatus {
 }
 
 export default function Contact() {
+  const t = useTranslations('ContactPage');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -43,18 +45,18 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus(FormStatus.SUCCESS);
-        setStatusMessage('Mensagem enviada com sucesso!');
+        setStatusMessage(t('success'));
         setName('');
         setEmail('');
         setMessage('');
       } else {
         setStatus(FormStatus.ERROR);
-        setStatusMessage(data.error || 'Ocorreu um erro ao enviar a mensagem.');
+        setStatusMessage(data.error || t('error.default'));
       }
     } catch (error) {
       console.error('Erro de rede:', error);
       setStatus(FormStatus.ERROR);
-      setStatusMessage('Erro de conexão. Tente novamente mais tarde.');
+      setStatusMessage(t('error.network'));
     }
   };
 
@@ -65,14 +67,14 @@ export default function Contact() {
 
           <div className="bg-[#f3f4f6] rounded-[32px] p-8 md:p-10 shadow-2xl">
             <h3 className="text-xl text-gray-700 font-medium mb-6">
-              Tem um projeto em mente?
+              {t('form.title')}
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-sm font-semibold text-gray-600 ml-1">Seu nome*</label>
+                <label className="text-sm font-semibold text-gray-600 ml-1">{t('form.name.label')}</label>
                 <input
                   type="text"
-                  placeholder="Seu nome"
+                  placeholder={t('form.name.placeholder')}
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -81,10 +83,10 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-sm font-semibold text-gray-600 ml-1">Seu e-mail*</label>
+                <label className="text-sm font-semibold text-gray-600 ml-1">{t('form.email.label')}</label>
                 <input
                   type="email"
-                  placeholder="seu@email.com"
+                  placeholder={t('form.email.placeholder')}
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -93,10 +95,10 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-sm font-semibold text-gray-600 ml-1">Mensagem</label>
+                <label className="text-sm font-semibold text-gray-600 ml-1">{t('form.message.label')}</label>
                 <textarea
                   rows={4}
-                  placeholder="Como podemos te ajudar?"
+                  placeholder={t('form.message.placeholder')}
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -109,7 +111,7 @@ export default function Contact() {
                 disabled={isLoading}
                 className="w-full bg-[#1f2937] hover:bg-black text-white font-medium py-3.5 rounded-xl transition-colors shadow-lg mt-2 disabled:opacity-50"
               >
-                {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
+                {isLoading ? t('submitting') : t('form.submit')}
               </button>
               {status !== FormStatus.IDLE && (
                 <p className={`text-center font-medium mt-4 ${
@@ -123,30 +125,30 @@ export default function Contact() {
 
           <div className="text-white space-y-10 mt-4">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-3">Vamos Conversar</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-3">{t('info.title')}</h2>
               <div className="h-px w-full bg-blue-400/30 mb-4" />
               <p className="text-blue-100/90 text-sm md:text-base">
-                Conte-nos sobre seu projeto - seja um design, marketing, aplicação ou outro
+                {t('info.description')}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Image src="/images/speed.png" alt="Rápido" width={24} height={24} />
-                  <h4 className="font-semibold text-lg">Resposta rápida</h4>
+                  <Image src="/images/speed.png" alt={t('info.quickResponse.alt')} width={24} height={24} />
+                  <h4 className="font-semibold text-lg">{t('info.quickResponse.title')}</h4>
                 </div>
                 <p className="text-blue-100/70 text-xs leading-relaxed max-w-[250px]">
-                  Nossa equipe responde em pouco tempo para tirar suas dúvidas.
+                  {t('info.quickResponse.description')}
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Image src="/images/no_money.png" alt="Grátis" width={24} height={24} />
-                  <h4 className="font-semibold text-lg">Não custa nada</h4>
+                  <Image src="/images/no_money.png" alt={t('info.noCost.alt')} width={24} height={24} />
+                  <h4 className="font-semibold text-lg">{t('info.noCost.title')}</h4>
                 </div>
                 <p className="text-blue-100/70 text-xs leading-relaxed max-w-[250px]">
-                  Entrar em contato é totalmente gratuito. Peça um orçamento sem compromisso.
+                  {t('info.noCost.description')}
                 </p>
               </div>
             </div>
@@ -157,7 +159,7 @@ export default function Contact() {
                 <div className="bg-[#1E1E1E] w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 rounded-[12px] flex items-center justify-center">
                   <Image
                     src="/images/Identidade_visual/icon-zatas-white.svg"
-                    alt="Zatas Logo"
+                    alt={t('info.logoAlt')}
                     width={82}
                     height={82}
                     className="object-contain w-10 h-10 sm:w-14 sm:h-14 md:w-[82px] md:h-[82px]"
@@ -167,14 +169,14 @@ export default function Contact() {
 
               <div className="bg-[#f3f4f6] rounded-[16px] flex flex-col justify-center gap-2 px-3 sm:px-5 py-3 sm:py-4 flex-1 shadow-lg min-w-0">
                 <p className="text-gray-900 font-bold text-sm sm:text-base md:text-lg leading-tight">
-                  Outras redes de contato
+                  {t('info.otherContacts')}
                 </p>
                 <div className="flex gap-1 sm:gap-2 flex-nowrap">
-                  <SocialButton src="/images/icons_midia/whatsapp.png"  alt="WhatsApp"  href="https://wa.me/5516994418460" />
-                  <SocialButton src="/images/icons_midia/email.png"     alt="Email"     href="mailto:contato@zatas.com.br" />
-                  <SocialButton src="/images/icons_midia/instagram.png" alt="Instagram" href="https://www.instagram.com/zatas.tech" />
-                  <SocialButton src="/images/icons_midia/linkedin.png"  alt="LinkedIn"  href="https://www.linkedin.com/company/zatas/about" />
-                  <SocialButton src="/images/icons_midia/linktree.png"  alt="Linktree"  href="https://linktr.ee/zatas" />
+                  <SocialButton src="/images/icons_midia/whatsapp.png"  alt={t('info.socialAlt.whatsapp')}  href="https://wa.me/5516994418460" />
+                  <SocialButton src="/images/icons_midia/email.png"     alt={t('info.socialAlt.email')}     href="mailto:contato@zatas.com.br" />
+                  <SocialButton src="/images/icons_midia/instagram.png" alt={t('info.socialAlt.instagram')} href="https://www.instagram.com/zatas.tech" />
+                  <SocialButton src="/images/icons_midia/linkedin.png"  alt={t('info.socialAlt.linkedin')}  href="https://www.linkedin.com/company/zatas/about" />
+                  <SocialButton src="/images/icons_midia/linktree.png"  alt={t('info.socialAlt.linktree')}  href="https://linktr.ee/zatas" />
                 </div>
               </div>
 

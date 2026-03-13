@@ -1,0 +1,43 @@
+{
+  "form": {
+    "title": "Have a project in mind?",
+    "name": {
+      "label": "Your name*",
+      "placeholder": "Your name"
+    },
+    "email": {
+      "label": "Your email*",
+      "placeholder": "your@email.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "How can we help you?"
+    },
+    "submit": "Send Message"
+  },
+  "info": {
+    "title": "Let's Talk",
+    "description": "Tell us about your project - whether it's design, marketing, application or other",
+    "features": {
+      "quickResponse": {
+        "title": "Quick response",
+        "description": "Our team responds in a short time to answer your questions."
+      },
+      "free": {
+        "title": "It costs nothing",
+        "description": "Getting in touch is completely free. Ask for a quote without obligation."
+      }
+    },
+    "otherSocial": "Other contact networks"
+  },
+  "iconsAlt": {
+    "quickResponse": "Fast",
+    "free": "Free",
+    "zatasLogo": "Zatas Logo",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "linktree": "Linktree"
+  }
+}

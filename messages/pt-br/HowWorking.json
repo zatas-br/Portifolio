@@ -1,0 +1,21 @@
+{
+  "title": "Como nossa equipe trabalha?",
+  "description": "Design <italic>estratégico</italic> e soluções digitais pensadas para transmitir confiança, clareza e profissionalismo.",
+  "categories": {
+    "marketing": {
+      "title": "Marketing",
+      "subtitle": "Impulsionamos seus números com estratégia"
+    },
+    "design": {
+      "title": "Design",
+      "subtitle": "Nosso design comunica, conecta e converte"
+    },
+    "development": {
+      "title": "Desenvolvimento",
+      "subtitle": "Desenvolvemos tecnologia que impulsiona resultados"
+    }
+  },
+  "processWorkAlt": "Processo de trabalho",
+  "seuSucessoAlt": "Seu Sucesso",
+  "logoAlt": "Logo"
+}

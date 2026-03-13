@@ -54,9 +54,9 @@ export default function Header() {
       bgColor: cardBg,
       textColor: cardText,
       links: [
-        { label: t('services.links.0.label'), href: '/services/desenvolvimento', ariaLabel: 'Ver projetos de desenvolvimento', external: false },
-        { label: t('services.links.1.label'), href: '/services/design', ariaLabel: 'Ver projetos de design', external: false },
-        { label: t('services.links.2.label'), href: '/services/marketing', ariaLabel: 'Ver projetos de marketing', external: false }
+        { label: t('services.links.0.label'), href: '/services/desenvolvimento', ariaLabel: t('services.links.0.ariaLabel'), external: false },
+        { label: t('services.links.1.label'), href: '/services/design', ariaLabel: t('services.links.1.ariaLabel'), external: false },
+        { label: t('services.links.2.label'), href: '/services/marketing', ariaLabel: t('services.links.2.ariaLabel'), external: false }
       ]
     },
     {

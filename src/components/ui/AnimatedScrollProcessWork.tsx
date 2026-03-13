@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Montserrat } from "next/font/google";
+import { useTranslations } from "next-intl";
+import { HOME_WORK_STEPS } from "@/src/data/home";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,40 +16,9 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500"],
 });
 
-const steps = [
-    {
-        id: "01",
-        title: "DESCOBERTA",
-        description: "Diagnosticamos a situação atual, objetivos e entendemos a fundo o cenário do projeto.",
-        items: ["Diagnóstico de marca", "Entendimento de público", "Análise de mercado"]
-    },
-    {
-        id: "02",
-        title: "ESTRATÉGIA",
-        description: "Transformamos os insights em um plano tático focado em resultados reais.",
-        items: ["Definição de canais", "Arquitetura da solução", "Métricas de sucesso"]
-    },
-    {
-        id: "03",
-        title: "PROTOTIPAGEM",
-        description: "Criação visual, design de interface e fluxos de navegação.",
-        items: ["Wireframes", "UI Design", "Prototipagem interativa"]
-    },
-    {
-        id: "04",
-        title: "DESENVOLVIMENTO",
-        description: "Codificação robusta e escalável seguindo as melhores práticas.",
-        items: ["Front-end", "Back-end", "Integração de APIs"]
-    },
-    {
-        id: "05",
-        title: "ENTREGA",
-        description: "Lançamento oficial, monitoramento e evolução contínua.",
-        items: ["QA & Testes", "Deploy", "Treinamento"]
-    },
-];
-
 export default function VerticalTimeline() {
+    const t = useTranslations("WorkProcess");
+    const tHome = useTranslations("HowWorking");
     const containerRef = useRef<HTMLDivElement>(null);
     const logoRef = useRef<HTMLDivElement>(null);
     const logoMobileRef = useRef<HTMLDivElement>(null);
@@ -136,7 +107,7 @@ export default function VerticalTimeline() {
                     className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 z-40 flex items-center justify-center"
                     style={{ top: '0%' }}
                 >
-                    <Image src="/images/ZATAS_LOGO.png" alt="Logo" width={48} height={48} className="object-contain" />
+                    <Image src="/images/ZATAS_LOGO.png" alt={tHome("logoAlt")} width={48} height={48} className="object-contain" />
                 </div>
             </div>
 
@@ -148,7 +119,7 @@ export default function VerticalTimeline() {
                     className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 z-40 flex items-center justify-center"
                     style={{ top: '0%' }}
                 >
-                    <Image src="/images/ZATAS_LOGO.png" alt="Logo" width={32} height={32} className="object-contain" />
+                    <Image src="/images/ZATAS_LOGO.png" alt={tHome("logoAlt")} width={32} height={32} className="object-contain" />
                 </div>
             </div>
 
@@ -160,7 +131,7 @@ export default function VerticalTimeline() {
                         <div className="relative w-full h-full max-w-[200px]">
                             <Image
                                 src="/images/SEU_SUCESSO.png"
-                                alt="Seu Sucesso"
+                                alt={tHome("seuSucessoAlt")}
                                 fill
                                 className="object-contain"
                                 priority
@@ -178,7 +149,7 @@ export default function VerticalTimeline() {
                         >
                             <Image
                                 src="/images/processo-trabalho.jpg"
-                                alt="Processo de trabalho"
+                                alt={tHome("processWorkAlt")}
                                 fill
                                 className="object-cover"
                             />
@@ -188,19 +159,19 @@ export default function VerticalTimeline() {
 
                 {/* Coluna direita: texto */}
                 <div className="w-full md:w-1/2 flex flex-col pl-16 md:pl-24 pr-8 md:pr-12 pt-[10vh]">
-                    {steps.map((step, index) => (
+                    {HOME_WORK_STEPS.map((step, index) => (
                         <div
                             key={step.id}
                             className={`step-text-${index} min-h-[80vh] flex flex-col justify-center`}
                         >
                             <h3 className={`text-2xl md:text-4xl text-gray-900 mb-6 leading-tight uppercase ${montserrat.className}`}>
-                                <span className="mb-2">0{index + 1}. </span>{step.title}
+                                <span className="mb-2">0{index + 1}. </span>{t(`steps.${step.id}.title`)}
                             </h3>
                             <p className={`text-base md:text-lg text-gray-400 mb-8 max-w-md leading-relaxed ${montserrat.className}`}>
-                                {step.description}
+                                {t(`steps.${step.id}.description`)}
                             </p>
                             <ul className="space-y-4">
-                                {step.items.map((item, i) => (
+                                {(t.raw(`steps.${step.id}.items`) as string[]).map((item, i) => (
                                     <li key={i} className={`flex items-center text-gray-400 font-medium ${montserrat.className}`}>
                                         <span className="w-2 h-2 bg-dark-gray rotate-45 mr-4" />
                                         {item}

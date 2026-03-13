@@ -1,0 +1,21 @@
+{
+  "title": "How does our team work?",
+  "description": "<italic>Strategic</italic> design and digital solutions designed to convey trust, clarity and professionalism.",
+  "categories": {
+    "marketing": {
+      "title": "Marketing",
+      "subtitle": "We boost your numbers with strategy"
+    },
+    "design": {
+      "title": "Design",
+      "subtitle": "Our design communicates, connects and converts"
+    },
+    "development": {
+      "title": "Development",
+      "subtitle": "We develop technology that drives results"
+    }
+  },
+  "processWorkAlt": "Work process",
+  "seuSucessoAlt": "Your Success",
+  "logoAlt": "Logo"
+}

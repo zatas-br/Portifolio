@@ -12,12 +12,14 @@ interface ServiceCardProps {
   iconUri: string;
   text: string;
   activeColor?: string;
+  iconAlt?: string;
 }
 
 const AnimatedServiceCard = ({ 
   iconUri, 
   text, 
-  activeColor = "#f0705a"
+  activeColor = "#f0705a",
+  iconAlt = "Service Icon"
 }: ServiceCardProps) => {
   const container = useRef<HTMLDivElement>(null);
   const revealRef = useRef<HTMLDivElement>(null);
@@ -123,7 +125,7 @@ const AnimatedServiceCard = ({
         <div ref={iconRef} className="mb-6 transition-all">
           <Image 
             src={iconUri} 
-            alt="Service Icon" 
+            alt={iconAlt} 
             width={80} 
             height={80} 
             className="object-contain"

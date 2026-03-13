@@ -1,0 +1,9 @@
+{
+  "subject": "New Portfolio Contact from: {name}",
+  "title": "New Portfolio Contact",
+  "receivedFrom": "You received a new message from <strong>{name}</strong>.",
+  "from": "From:",
+  "email": "Email (Reply-To):",
+  "message": "Message:",
+  "sentFrom": "Portfolio Contact"
+}

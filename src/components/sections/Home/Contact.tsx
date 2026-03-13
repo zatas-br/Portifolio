@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function ContactSection() {
+  const t = useTranslations("ContactSection");
+
   return (
     <section className="relative w-full bg-[#ECEFF1] pt-10 pb-0">
       <div className="bg-[#1e40af] rounded-tl-[80px] w-full px-4 py-20 md:px-12 lg:px-24">
@@ -10,30 +13,30 @@ export default function ContactSection() {
 
           <div className="bg-[#f3f4f6] rounded-[32px] p-8 md:p-10 shadow-2xl">
             <h3 className="text-xl text-gray-700 font-medium mb-6">
-              Tem um projeto em mente?
+              {t("form.title")}
             </h3>
             <form className="space-y-4">
               <div className="space-y-1">
-                <label className="text-sm font-semibold text-gray-600 ml-1">Seu nome*</label>
+                <label className="text-sm font-semibold text-gray-600 ml-1">{t("form.name.label")}</label>
                 <input
                   type="text"
-                  placeholder="Seu nome"
+                  placeholder={t("form.name.placeholder")}
                   className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-sm font-semibold text-gray-600 ml-1">Seu e-mail*</label>
+                <label className="text-sm font-semibold text-gray-600 ml-1">{t("form.email.label")}</label>
                 <input
                   type="email"
-                  placeholder="seu@email.com"
+                  placeholder={t("form.email.placeholder")}
                   className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-sm font-semibold text-gray-600 ml-1">Mensagem</label>
+                <label className="text-sm font-semibold text-gray-600 ml-1">{t("form.message.label")}</label>
                 <textarea
                   rows={4}
-                  placeholder="Como podemos te ajudar?"
+                  placeholder={t("form.message.placeholder")}
                   className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800 resize-none"
                 />
               </div>
@@ -41,37 +44,37 @@ export default function ContactSection() {
                 type="button"
                 className="w-full bg-[#1f2937] hover:bg-black text-white font-medium py-3.5 rounded-xl transition-colors shadow-lg mt-2"
               >
-                Enviar Mensagem
+                {t("form.submit")}
               </button>
             </form>
           </div>
 
           <div className="text-white space-y-10 mt-4">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-3">Vamos Conversar</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-3">{t("info.title")}</h2>
               <div className="h-px w-full bg-blue-400/30 mb-4" />
               <p className="text-blue-100/90 text-sm md:text-base">
-                Conte-nos sobre seu projeto - seja um design, marketing, aplicação ou outro
+                {t("info.description")}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Image src="/images/speed.png" alt="Rápido" width={24} height={24} />
-                  <h4 className="font-semibold text-lg">Resposta rápida</h4>
+                  <Image src="/images/speed.png" alt={t("iconsAlt.quickResponse")} width={24} height={24} />
+                  <h4 className="font-semibold text-lg">{t("info.features.quickResponse.title")}</h4>
                 </div>
                 <p className="text-blue-100/70 text-xs leading-relaxed max-w-[250px]">
-                  Nossa equipe responde em pouco tempo para tirar suas dúvidas.
+                  {t("info.features.quickResponse.description")}
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Image src="/images/no_money.png" alt="Grátis" width={24} height={24} />
-                  <h4 className="font-semibold text-lg">Não custa nada</h4>
+                  <Image src="/images/no_money.png" alt={t("iconsAlt.free")} width={24} height={24} />
+                  <h4 className="font-semibold text-lg">{t("info.features.free.title")}</h4>
                 </div>
                 <p className="text-blue-100/70 text-xs leading-relaxed max-w-[250px]">
-                  Entrar em contato é totalmente gratuito. Peça um orçamento sem compromisso.
+                  {t("info.features.free.description")}
                 </p>
               </div>
             </div>
@@ -82,7 +85,7 @@ export default function ContactSection() {
                 <div className="bg-[#1E1E1E] w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 rounded-[12px] flex items-center justify-center">
                   <Image
                     src="/images/identidade_visual/icon-zatas-white.svg"
-                    alt="Zatas Logo"
+                    alt={t("iconsAlt.zatasLogo")}
                     width={82}
                     height={82}
                     className="object-contain w-10 h-10 sm:w-14 sm:h-14 md:w-[82px] md:h-[82px]"
@@ -92,14 +95,14 @@ export default function ContactSection() {
 
               <div className="bg-[#f3f4f6] rounded-[16px] flex flex-col justify-center gap-2 px-3 sm:px-5 py-3 sm:py-4 flex-1 shadow-lg min-w-0">
                 <p className="text-gray-900 font-bold text-sm sm:text-base md:text-lg leading-tight">
-                  Outras redes de contato
+                  {t("info.otherSocial")}
                 </p>
                 <div className="flex gap-1 sm:gap-2 flex-nowrap">
-                  <SocialButton src="/images/icons_midia/whatsapp.png"  alt="WhatsApp"  href="https://wa.me/5516994418460" />
-                  <SocialButton src="/images/icons_midia/email.png"     alt="Email"     href="mailto:contato@zatas.com.br" />
-                  <SocialButton src="/images/icons_midia/instagram.png" alt="Instagram" href="https://www.instagram.com/zatas.tech" />
-                  <SocialButton src="/images/icons_midia/linkedin.png"  alt="LinkedIn"  href="https://www.linkedin.com/company/zatas/about" />
-                  <SocialButton src="/images/icons_midia/linktree.png"  alt="Linktree"  href="https://linktr.ee/zatas" />
+                  <SocialButton src="/images/icons_midia/whatsapp.png"  alt={t("iconsAlt.whatsapp")}  href="https://wa.me/5516994418460" />
+                  <SocialButton src="/images/icons_midia/email.png"     alt={t("iconsAlt.email")}     href="mailto:contato@zatas.com.br" />
+                  <SocialButton src="/images/icons_midia/instagram.png" alt={t("iconsAlt.instagram")} href="https://www.instagram.com/zatas.tech" />
+                  <SocialButton src="/images/icons_midia/linkedin.png"  alt={t("iconsAlt.linkedin")}  href="https://www.linkedin.com/company/zatas/about" />
+                  <SocialButton src="/images/icons_midia/linktree.png"  alt={t("iconsAlt.linktree")}  href="https://linktr.ee/zatas" />
                 </div>
               </div>
 

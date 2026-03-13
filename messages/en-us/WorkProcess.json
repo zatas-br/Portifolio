@@ -1,0 +1,29 @@
+{
+  "steps": {
+    "01": {
+      "title": "DISCOVERY",
+      "description": "We diagnose the current situation, objectives and deeply understand the project scenario.",
+      "items": ["Brand diagnosis", "Audience understanding", "Market analysis"]
+    },
+    "02": {
+      "title": "STRATEGY",
+      "description": "We transform insights into a tactical plan focused on real results.",
+      "items": ["Channel definition", "Solution architecture", "Success metrics"]
+    },
+    "03": {
+      "title": "PROTOTYPING",
+      "description": "Visual creation, interface design and navigation flows.",
+      "items": ["Wireframes", "UI Design", "Interactive prototyping"]
+    },
+    "04": {
+      "title": "DEVELOPMENT",
+      "description": "Robust and scalable coding following best practices.",
+      "items": ["Front-end", "Back-end", "API integration"]
+    },
+    "05": {
+      "title": "DELIVERY",
+      "description": "Official launch, monitoring and continuous evolution.",
+      "items": ["QA & Testing", "Deploy", "Training"]
+    }
+  }
+}

@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 });
 
 const FooterHomeSection = () => {
-  const t = useTranslations("Hero");
+  const t = useTranslations("Footer");
 
   return (
     <div className="w-full bg-blue-oil px-6 py-12 md:px-12">
@@ -19,7 +19,7 @@ const FooterHomeSection = () => {
         <div className="relative w-64 h-16 md:w-96 md:h-28">
           <Image
             src="/images/tipografia-zatas.png"
-            alt="ZATAS Tipografia"
+            alt={t("logoAlt")}
             fill
             className="object-contain object-center md:object-left"
             priority
@@ -28,13 +28,13 @@ const FooterHomeSection = () => {
 
         <div className={`flex flex-col items-center md:items-end text-white ${montserrat.className}`}>
             <h2 className="text-lg md:text-3xl font-light uppercase tracking-[0.2em] leading-snug text-right">
-              Design
+              {t("design")}
             </h2>
             <h2 className="text-lg md:text-3xl font-light uppercase tracking-[0.2em] leading-snug text-right">
-              Código
+              {t("code")}
             </h2>
             <h2 className="text-lg md:text-3xl font-light uppercase tracking-[0.2em] leading-snug text-right">
-              Impacto
+              {t("impact")}
             </h2>
         </div>
 

@@ -1,0 +1,29 @@
+{
+  "steps": {
+    "01": {
+      "title": "DESCOBERTA",
+      "description": "Diagnosticamos a situação atual, objetivos e entendemos a fundo o cenário do projeto.",
+      "items": ["Diagnóstico de marca", "Entendimento de público", "Análise de mercado"]
+    },
+    "02": {
+      "title": "ESTRATÉGIA",
+      "description": "Transformamos os insights em um plano tático focado em resultados reais.",
+      "items": ["Definição de canais", "Arquitetura da solução", "Métricas de sucesso"]
+    },
+    "03": {
+      "title": "PROTOTIPAGEM",
+      "description": "Criação visual, design de interface e fluxos de navegação.",
+      "items": ["Wireframes", "UI Design", "Prototipagem interativa"]
+    },
+    "04": {
+      "title": "DESENVOLVIMENTO",
+      "description": "Codificação robusta e escalável seguindo as melhores práticas.",
+      "items": ["Front-end", "Back-end", "Integração de APIs"]
+    },
+    "05": {
+      "title": "ENTREGA",
+      "description": "Lançamento oficial, monitoramento e evolução contínua.",
+      "items": ["QA & Testes", "Deploy", "Treinamento"]
+    }
+  }
+}

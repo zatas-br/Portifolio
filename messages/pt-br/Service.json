@@ -1,0 +1,16 @@
+{
+  "title1": "CONFIRA NOSSOS",
+  "title2": "PRINCIPAIS SERVIÇOS",
+  "description1": "Além dos serviços abaixo, realizamos criação de soluções e softwares",
+  "description2": "sob demanda do cliente",
+  "viewPortfolio": "Ver Portfólio",
+  "cards": {
+    "strategy": "Estratégia personalizada para o seu negócio crescer",
+    "monitor": "Desenvolvimento de interfaces intuitivas e funcionais",
+    "pincel": "Design visual que comunica a essência da sua marca",
+    "finance": "Soluções tecnológicas para otimizar seus processos",
+    "search": "Otimização e presença digital para ser encontrado",
+    "globe": "Aplicações escaláveis com alcance global"
+  },
+  "cardIconAlt": "Ícone do Serviço"
+}

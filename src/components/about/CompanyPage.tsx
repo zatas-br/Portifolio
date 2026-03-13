@@ -156,7 +156,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                   allowFullScreen
                 />
                 <div className="absolute bottom-4 right-4">
-                  <a href="https://www.youtube.com/shorts/3irhA3ZwD_0" target="_blank" rel="noopener noreferrer" className="bg-black/60 text-white text-xs px-3 py-2 rounded-full backdrop-blur-sm hover:bg-black/80 transition-colors">Ver com som</a>
+                  <a href="https://www.youtube.com/shorts/3irhA3ZwD_0" target="_blank" rel="noopener noreferrer" className="bg-black/60 text-white text-xs px-3 py-2 rounded-full backdrop-blur-sm hover:bg-black/80 transition-colors">{t('viewWithSound')}</a>
                 </div>
               </div>
             ) : (

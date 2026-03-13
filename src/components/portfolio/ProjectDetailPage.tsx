@@ -35,12 +35,12 @@ export default function ProjectDetailPage({ projectId, category }: ProjectDetail
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#ECEFF1]">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-[#263238] mb-4">Projeto não encontrado</h1>
+          <h1 className="text-2xl font-bold text-[#263238] mb-4">{t('notFound.title')}</h1>
           <button
             onClick={() => router.push('/services')}
             className="text-[#0D47A1] hover:underline flex items-center gap-2 mx-auto"
           >
-            <FaArrowLeft /> Voltar para Serviços
+            <FaArrowLeft /> {t('notFound.back')}
           </button>
         </div>
       </div>

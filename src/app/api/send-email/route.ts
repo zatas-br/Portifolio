@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 const emailDestinos = [
   'contato@zatas.com.br',
@@ -15,7 +17,7 @@ interface RequestBody {
   message: string;
 }
 
-function getEmailHtml(name: string, email: string, message: string): string {
+function getEmailHtml(name: string, email: string, message: string, t: any): string {
   const mensagemFormatada = message.replace(/\n/g, '<br>');
   const azulEscuro = '#0d1b2a';
   const branco = '#FFFFFF';
@@ -28,16 +30,16 @@ function getEmailHtml(name: string, email: string, message: string): string {
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: 20px auto; border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
       <tr>
         <td style="background-color: ${azulEscuro}; color: ${branco}; padding: 25px 30px; font-size: 24px; font-weight: bold;">
-          Novo Contato do Portfólio
+          ${t.title}
         </td>
       </tr>
       <tr>
         <td style="background-color: ${branco}; padding: 30px; color: ${cinzaTexto}; font-size: 16px; line-height: 1.6;">
-          <p style="margin: 0 0 20px 0;">Você recebeu uma nova mensagem de <strong>${name}</strong>.</p>
+          <p style="margin: 0 0 20px 0;">${t.receivedFrom.replace('{name}', name)}</p>
           <hr style="border: 0; border-top: 1px solid ${cinzaBorda}; margin: 20px 0;">
-          <p style="margin: 0 0 10px 0;"><strong>De:</strong> ${name}</p>
-          <p style="margin: 0 0 20px 0;"><strong>Email (Reply-To):</strong> ${email}</p>
-          <p style="margin: 0 0 10px 0;"><strong>Mensagem:</strong></p>
+          <p style="margin: 0 0 10px 0;"><strong>${t.from}</strong> ${name}</p>
+          <p style="margin: 0 0 20px 0;"><strong>${t.email}</strong> ${email}</p>
+          <p style="margin: 0 0 10px 0;"><strong>${t.message}</strong></p>
           <div style="background-color: ${cinzaClaroBg}; border: 1px solid ${cinzaBorda}; padding: 15px; border-radius: 5px; font-style: italic;">
             ${mensagemFormatada}
           </div>
@@ -50,6 +52,20 @@ function getEmailHtml(name: string, email: string, message: string): string {
 
 export async function POST(req: NextRequest) {
   const fromEmail = process.env.FROM_EMAIL;
+
+  const acceptLanguage = req.headers.get('accept-language');
+  let locale = acceptLanguage?.split(',')[0].split('-')[0] === 'en' ? 'en-us' : 'pt-br';
+
+  const messagesPath = path.join(process.cwd(), 'messages', locale, 'Email.json');
+  let t;
+  try {
+    const content = await fs.readFile(messagesPath, 'utf8');
+    t = JSON.parse(content);
+  } catch (e) {
+    const fallbackPath = path.join(process.cwd(), 'messages', 'pt-br', 'Email.json');
+    const content = await fs.readFile(fallbackPath, 'utf8');
+    t = JSON.parse(content);
+  }
   if (!fromEmail || !process.env.RESEND_API_KEY) {
     console.error('Variáveis de ambiente (RESEND_API_KEY ou FROM_EMAIL) não configuradas.');
     return NextResponse.json({ error: 'Erro interno do servidor' }, { status: 500 });
@@ -64,11 +80,11 @@ export async function POST(req: NextRequest) {
     
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { data, error } = await resend.emails.send({
-      from: `Contato Portfólio <${fromEmail}>`,
+      from: `${t.sentFrom} <${fromEmail}>`,
       to: emailDestinos,
-      subject: `Novo Contato (Portfólio) de: ${name}`,
+      subject: t.subject.replace('{name}', name),
       replyTo: email,
-      html: getEmailHtml(name, email, message),
+      html: getEmailHtml(name, email, message, t),
     });
 
     if (error) {

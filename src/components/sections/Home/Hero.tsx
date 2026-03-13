@@ -33,7 +33,7 @@ const HeroSection = () => {
         <div className="w-full max-w-5xl px-10">
           <Image 
             src="/images/fundo-passaro 1.svg" 
-            alt="Pássaro Zatas"
+            alt={t("birdAlt")}
             width={1200}
             height={800}
             className="w-full h-auto object-contain opacity-90"

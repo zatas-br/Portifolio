@@ -1,0 +1,16 @@
+{
+  "title1": "CHECK OUT OUR",
+  "title2": "MAIN SERVICES",
+  "description1": "In addition to the services below, we create solutions and software",
+  "description2": "on client demand",
+  "viewPortfolio": "View Portfolio",
+  "cards": {
+    "strategy": "Custom strategy for your business to grow",
+    "monitor": "Development of intuitive and functional interfaces",
+    "pincel": "Visual design that communicates your brand essence",
+    "finance": "Technological solutions to optimize your processes",
+    "search": "Optimization and digital presence to be found",
+    "globe": "Scalable applications with global reach"
+  },
+  "cardIconAlt": "Service Icon"
+}
