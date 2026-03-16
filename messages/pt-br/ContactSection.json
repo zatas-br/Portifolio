@@ -1,4 +1,13 @@
 {
+  "title": "Contato",
+  "subtitle": "Tem uma ideia ou projeto? Adoraríamos ouvir de você.",
+  "submit": "Enviar",
+  "submitting": "Enviando...",
+  "success": "Mensagem enviada com sucesso!",
+  "error": {
+    "default": "Ocorreu um erro ao enviar a mensagem.",
+    "network": "Erro de conexão. Tente novamente mais tarde."
+  },
   "form": {
     "title": "Tem um projeto em mente?",
     "name": {
@@ -18,26 +27,24 @@
   "info": {
     "title": "Vamos Conversar",
     "description": "Conte-nos sobre seu projeto - seja um design, marketing, aplicação ou outro",
-    "features": {
-      "quickResponse": {
-        "title": "Resposta rápida",
-        "description": "Nossa equipe responde em pouco tempo para tirar suas dúvidas."
-      },
-      "free": {
-        "title": "Não custa nada",
-        "description": "Entrar em contato é totalmente gratuito. Peça um orçamento sem compromisso."
-      }
+    "quickResponse": {
+      "title": "Resposta rápida",
+      "description": "Nossa equipe responde em pouco tempo para tirar suas dúvidas.",
+      "alt": "Rápido"
     },
-    "otherSocial": "Outras redes de contato"
-  },
-  "iconsAlt": {
-    "quickResponse": "Rápido",
-    "free": "Grátis",
-    "zatasLogo": "Logo Zatas",
-    "whatsapp": "WhatsApp",
-    "email": "Email",
-    "instagram": "Instagram",
-    "linkedin": "LinkedIn",
-    "linktree": "Linktree"
+    "noCost": {
+      "title": "Não custa nada",
+      "description": "Entrar em contato é totalmente gratuito. Peça um orçamento sem compromisso.",
+      "alt": "Grátis"
+    },
+    "otherContacts": "Outras redes de contato",
+    "logoAlt": "Zatas Logo",
+    "socialAlt": {
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "linktree": "Linktree"
+    }
   }
 }

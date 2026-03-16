@@ -1,4 +1,13 @@
 {
+  "title": "Contact",
+  "subtitle": "Have an idea or project? We'd love to hear from you.",
+  "submit": "Send",
+  "submitting": "Sending...",
+  "success": "Message sent successfully!",
+  "error": {
+    "default": "An error occurred while sending the message.",
+    "network": "Connection error. Please try again later."
+  },
   "form": {
     "title": "Have a project in mind?",
     "name": {
@@ -18,26 +27,24 @@
   "info": {
     "title": "Let's Talk",
     "description": "Tell us about your project - whether it's design, marketing, application or other",
-    "features": {
-      "quickResponse": {
-        "title": "Quick response",
-        "description": "Our team responds in a short time to answer your questions."
-      },
-      "free": {
-        "title": "It costs nothing",
-        "description": "Getting in touch is completely free. Ask for a quote without obligation."
-      }
+    "quickResponse": {
+      "title": "Quick response",
+      "description": "Our team responds quickly to answer your questions.",
+      "alt": "Fast"
     },
-    "otherSocial": "Other contact networks"
-  },
-  "iconsAlt": {
-    "quickResponse": "Fast",
-    "free": "Free",
-    "zatasLogo": "Zatas Logo",
-    "whatsapp": "WhatsApp",
-    "email": "Email",
-    "instagram": "Instagram",
-    "linkedin": "LinkedIn",
-    "linktree": "Linktree"
+    "noCost": {
+      "title": "It costs nothing",
+      "description": "Getting in touch is completely free. Ask for a quote with no obligation.",
+      "alt": "Free"
+    },
+    "otherContacts": "Other contact networks",
+    "logoAlt": "Zatas Logo",
+    "socialAlt": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "linktree": "Linktree"
+    }
   }
 }
