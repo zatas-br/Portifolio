@@ -1,6 +1,5 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
 import ZaIcon from "@/public/images/Identidade_visual/ZA_Icon.png";
@@ -10,8 +9,6 @@ import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import Link from "next/link";
 import { ProjectStatic } from "@/types";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 interface Props {
   project: ProjectStatic;
@@ -78,7 +75,7 @@ const ProjectGalerySection = ({ project, category }: Props) => {
 
         {/* Header */}
         <div className="w-full flex justify-between items-center mb-6 md:mb-4">
-          <p className={`font-bold ${montserrat.className} text-2xl md:text-3xl text-text-primary`}>
+          <p className="text-text-primary uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
             {t("gallery")}
           </p>
           <div className="flex flex-row justify-center items-center gap-3">
@@ -86,7 +83,7 @@ const ProjectGalerySection = ({ project, category }: Props) => {
               <BsArrowLeft className="text-white bg-slate-800 rounded-full w-9 h-9 md:w-10 md:h-10 p-2 hover:bg-blue-900 transition-colors cursor-pointer" />
             </button>
             {/* Contador — oculto no mobile */}
-            <span className={`hidden md:inline ${montserrat.className} text-sm text-gray-500`}>
+            <span className="hidden md:inline font-sans text-sm text-gray-500">
               {currentIndex + 1} / {images.length}
             </span>
             <button onClick={moveNext} className="active:scale-95 transition-transform z-30">
@@ -132,7 +129,7 @@ const ProjectGalerySection = ({ project, category }: Props) => {
               className="inline-flex flex-row items-center bg-dark-blue rounded-full px-3 py-1.5 gap-1 w-max hover:bg-[#0D47A1] transition-colors"
             >
               <BsArrowLeft className="text-white-background w-6 h-6 p-1 flex-shrink-0" />
-              <p className={`font-bold ${montserrat.className} text-white-background text-xs`}>
+              <p className="font-bold font-sans text-white-background text-xs">
                 {moreProjectsLabel}
               </p>
             </Link>
@@ -140,7 +137,7 @@ const ProjectGalerySection = ({ project, category }: Props) => {
               href="/contact"
               className="inline-flex flex-row items-center rounded-full px-4 py-1.5 gap-4 w-max shadow-za hover:bg-gray-50 transition-colors border border-gray-200"
             >
-              <p className={`font-bold ${montserrat.className} text-dark-blue text-xs`}>
+              <p className="font-bold font-sans text-dark-blue text-xs">
                 Realizar seu projeto
               </p>
             </Link>
@@ -192,7 +189,7 @@ const ProjectGalerySection = ({ project, category }: Props) => {
               >
                 <BsArrowLeft size={22} />
               </button>
-              <span className={`${montserrat.className} text-sm text-slate-600 font-medium`}>
+              <span className="font-sans text-sm text-slate-600 font-medium">
                 {currentIndex + 1} / {images.length}
               </span>
               <button

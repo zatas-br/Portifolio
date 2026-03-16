@@ -1,15 +1,11 @@
 "use client";
 
-import { Montserrat, Lora } from "next/font/google";
 import { useTranslations } from "next-intl";
 import { ProjectStatic } from "@/types";
 import { getTechIcon } from "@/src/data/techIcons";
 import MobilePreviewIphone14 from "../../ui/Mockup/Iphone14";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700"] });
-const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
 
 interface Props {
   project: ProjectStatic;
@@ -82,11 +78,11 @@ function TechCard({ tech }: { tech: string }) {
         )}
       </div>
       <div className="flex flex-col">
-        <span className={`${montserrat.className} font-bold text-[15px] text-[#263238] uppercase tracking-wide`}>
+        <span className="font-sans font-bold text-[15px] text-[#263238] uppercase tracking-wide">
           {tech.toUpperCase()}
         </span>
         {subtitle && (
-          <span className={`${montserrat.className} font-normal text-[13px] text-gray-500`}>
+          <span className="font-sans font-normal text-[13px] text-gray-500">
             {subtitle}
           </span>
         )}
@@ -157,17 +153,17 @@ const ProjectApresentationSection = ({ project, projectId }: Props) => {
           project.mockup === false ? "w-full md:w-[60vw]" : "w-full md:w-[40vw]"
         }`}
       >
-        <h1 className={`font-bold ${montserrat.className} text-3xl uppercase`}>
+        <h1 className="uppercase tracking-wide text-[28px] md:text-[44px] font-bold font-sans leading-[0.85]">
           {t("about")}
         </h1>
 
-        <p className={`font-normal ${montserrat.className} text-[14px] leading-relaxed text-gray-700`}>
+        <p className="text-gray-700 text-[16px] font-light leading-relaxed font-sans">
           {fullDescription}
         </p>
 
         {project.technologies && project.technologies.length > 0 && (
           <div className="flex flex-col gap-5">
-            <p className={`font-normal ${lora.className} text-[16px] text-[#0D47A1]`}>
+            <p className="text-[#0D47A1] text-[20px] md:text-[32px] font-serif italic leading-none">
               {t("technologies")}
             </p>
             <div className="grid grid-cols-2 gap-x-6 gap-y-6">

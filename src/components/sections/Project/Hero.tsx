@@ -1,14 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Montserrat, Lora } from "next/font/google";
 import { useTranslations } from "next-intl";
 import { ProjectStatic } from "@/types";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
-const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
 
 interface HeroProps {
   project: ProjectStatic;
@@ -58,11 +54,11 @@ const HeroSection = ({ project, projectId }: HeroProps) => {
       </div>
 
       <div className="z-10 flex flex-col items-start max-w-lg gap-4 mt-[-5vh]">
-        <h1 className={`${montserrat.className} text-3xl md:text-[33px] font-bold leading-tight tracking-wide`}>
+        <h1 className="uppercase tracking-wide text-[28px] md:text-[44px] font-bold font-sans leading-[0.85]">
           {title}
         </h1>
 
-        <p className={`${montserrat.className} text-base md:text-[13px] font-normal leading-relaxed text-gray-100 mt-2`}>
+        <p className="text-gray-100 mt-2 text-[16px] font-light leading-relaxed">
           {description}
         </p>
 
@@ -72,7 +68,7 @@ const HeroSection = ({ project, projectId }: HeroProps) => {
       </div>
 
       <div className="absolute bottom-4 left-8 md:bottom-8 md:left-16 z-10 italic">
-        <span className={`${lora.className} text-[70px] md:text-[100px] italic leading-none text-white/90`}>
+        <span className="text-[70px] md:text-[100px] italic leading-none text-white/90 font-serif">
           {client}
         </span>
       </div>

@@ -110,12 +110,12 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           <div className="relative px-[clamp(20px,3.5vw,56px)] pt-[clamp(24px,3vw,55px)] pb-[clamp(20px,2.5vw,40px)] flex flex-col justify-between overflow-hidden bg-[#F0F0F0]">
 
             <div className="relative z-[2]">
-              <h2 className="font-bold text-[clamp(20px,4vw,52px)] text-[#263238] leading-[1.1] uppercase mb-[clamp(10px,1.5vw,25px)] max-[900px]:whitespace-normal whitespace-nowrap">
+              <h2 className="text-[#263238] uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-[clamp(10px,1.5vw,25px)] max-[900px]:whitespace-normal whitespace-nowrap">
                 {t('heroTitle').split('\n').map((line, i, arr) => (
                   <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
                 ))}
               </h2>
-              <p className="font-light text-[clamp(13px,1.05vw,16px)] text-[#263238] leading-[1.35] w-full m-0">
+              <p className="text-[#263238] w-full m-0 text-[16px] font-light leading-relaxed">
                 {t('heroSubtitle').split('\n').map((line, i, arr) => (
                   <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
                 ))}
@@ -183,33 +183,33 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
       {/* SEÇÃO ESTRATÉGICA + COMPROMISSO + SERVIÇOS */}
       <section className="bg-[#ECEFF1] pt-[2.5vw] pb-[4vw] pl-[12.7vw] pr-[12vw] max-[900px]:px-5 max-[900px]:pt-8 max-[900px]:pb-8">
 
-        <h2 className="font-bold text-[clamp(16px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(14px,1.8vw,28px)] max-w-[55vw] max-[900px]:max-w-full">
+        <h2 className="text-[#263238] uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-[clamp(14px,1.8vw,28px)] max-w-[55vw] max-[900px]:max-w-full">
           {t('strategicTitle')}
         </h2>
         <div className="flex flex-col gap-[clamp(8px,1vw,14px)] max-w-[48.7vw] max-[900px]:max-w-full">
-          <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] m-0">
+          <p className="text-[#263238] m-0 text-[16px] font-light leading-relaxed">
             {t('strategicDesc1')}
           </p>
-          <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] m-0">
+          <p className="text-[#263238] m-0 text-[16px] font-light leading-relaxed">
             {t('strategicDesc2')}
           </p>
         </div>
 
-        <h2 className="font-bold text-[clamp(16px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(12px,1.8vw,28px)] mt-[clamp(24px,4.5vw,72px)]">
+        <h2 className="text-[#263238] uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-[clamp(12px,1.8vw,28px)] mt-[clamp(24px,4.5vw,72px)]">
           {t('commitmentTitle')}
         </h2>
         <div className="flex flex-col gap-[clamp(0px,0vw,6px)] max-w-[48.7vw] max-[900px]:max-w-full">
           {commitmentItems.map((item, i) => (
-            <p key={i} className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] m-0 mb-[2px]">
+            <p key={i} className="text-[#263238] m-0 mb-[2px] text-[16px] font-light leading-relaxed">
               {item}
             </p>
           ))}
-          <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.75] m-0 mt-[14px]">
+          <p className="text-[#263238] m-0 mt-[14px] text-[16px] font-light leading-relaxed">
             {t('commitmentFooter')}
           </p>
         </div>
 
-        <h2 className="font-bold text-[clamp(16px,3vw,44px)] text-[#263238] uppercase leading-[1.15] mb-[clamp(20px,1.8vw,28px)] mt-[clamp(24px,4.5vw,72px)]">
+        <h2 className="text-[#263238] uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-[clamp(20px,1.8vw,28px)] mt-[clamp(24px,4.5vw,72px)]">
           {t('servicesTitle')}
         </h2>
 
@@ -228,7 +228,7 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
 
               {/* MOBILE: texto depois (order-2), DESKTOP: col 1 */}
               <div className="order-2 md:order-none md:col-start-1 md:row-start-1 aspect-auto md:aspect-[666/430] bg-transparent flex flex-col justify-start items-start overflow-visible">
-                <p className="font-light text-[clamp(13px,1.1vw,16px)] text-[#263238] leading-[1.4] mb-[clamp(10px,1vw,16px)] max-w-[26.7vw] max-[900px]:max-w-full">
+                <p className="text-[#263238] mb-[clamp(10px,1vw,16px)] max-w-[26.7vw] max-[900px]:max-w-full text-[16px] font-light leading-relaxed">
                   {serviceDescriptions[index]}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -262,12 +262,12 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
             />
           </div>
           <div className="px-[clamp(20px,3vw,48px)] py-[clamp(20px,3.5vw,56px)] flex flex-col justify-between h-full box-border text-white">
-            <h2 className="font-bold text-[clamp(16px,2.8vw,52px)] uppercase leading-[1.15] mb-[clamp(12px,1.3vw,20px)]">
+            <h2 className="uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-[clamp(12px,1.3vw,20px)]">
               {t('historyCardTitle')}
             </h2>
             <div className="flex flex-col gap-[clamp(10px,0.7vw,10px)] flex-1">
               {historyParagraphs.map((p, i) => (
-                <p key={i} className="font-light text-[clamp(13px,1.3vw,18px)] leading-[1.4] m-0">{p}</p>
+                <p key={i} className="m-0 text-[16px] font-light leading-relaxed">{p}</p>
               ))}
             </div>
             <div className="flex justify-end mt-[clamp(12px,1.2vw,20px)]">

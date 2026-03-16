@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useMemo } from "react";
-import { Montserrat } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -11,11 +10,6 @@ import { resolveAuthors } from "@/src/utils/resolveAuthors";
 import { ProjectStatic } from "@/types";
 
 gsap.registerPlugin(ScrollTrigger);
-
-import { Lora } from "next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
-const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
 
 interface Props {
   project: ProjectStatic;
@@ -99,7 +93,7 @@ const ProjectTeamSection = ({ project }: Props) => {
                   className="absolute -bottom-2 w-max px-3 py-1 rounded-xl backdrop-blur-sm shadow-sm flex items-center justify-center z-10"
                   style={{ backgroundColor: "rgba(202, 202, 202, 0.11)" }}
                 >
-                  <p className={`${lora.className} text-slate-800 text-[10px] font-medium whitespace-nowrap`}>
+                  <p className="text-slate-800 text-[10px] font-medium whitespace-nowrap font-serif">
                     {author.name}
                   </p>
                 </div>
@@ -109,10 +103,10 @@ const ProjectTeamSection = ({ project }: Props) => {
         </div>
 
         <div className="flex flex-col gap-3 text-center">
-          <h1 className={`text-xl font-bold ${montserrat.className} tracking-wider`}>
+          <h1 className="tracking-wide uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85]">
             {sectionTitle.toUpperCase()}
           </h1>
-          <p className={`${montserrat.className} font-light text-sm text-gray-600 max-w-[85vw]`}>
+          <p className="text-gray-600 max-w-[85vw] text-[16px] font-light leading-relaxed font-sans">
             Especialistas alinhados com os objetivos do projeto, colaborando de forma estratégica para entregar resultados consistentes.
           </p>
         </div>
@@ -158,7 +152,7 @@ const ProjectTeamSection = ({ project }: Props) => {
                   className="absolute -bottom-2 w-max px-4 py-1 rounded-xl backdrop-blur-sm shadow-sm flex items-center justify-center z-10"
                   style={{ backgroundColor: "rgba(202, 202, 202, 0.11)" }}
                 >
-                  <p className={`${lora.className} text-slate-800 text-[10px] md:text-xs font-medium whitespace-nowrap`}>
+                  <p className="text-slate-800 text-[10px] md:text-xs font-medium whitespace-nowrap font-serif">
                     {author.name}
                   </p>
                 </div>
@@ -168,10 +162,10 @@ const ProjectTeamSection = ({ project }: Props) => {
         </div>
 
         <section className="z-20 justify-center items-center flex flex-col gap-4 text-center px-6">
-          <h1 className={`text-2xl md:text-3xl font-bold mt-4 ${montserrat.className} tracking-wider`}>
+          <h1 className="mt-4 uppercase tracking-wide text-[28px] md:text-[44px] font-bold font-sans leading-[0.85]">
             {sectionTitle.toUpperCase()}
           </h1>
-          <p className={`max-w-[80vw] md:w-[40vw] ${montserrat.className} font-light`}>
+          <p className="max-w-[80vw] md:w-[40vw] font-sans text-[16px] font-light leading-relaxed">
             Especialistas alinhados com os objetivos do projeto, colaborando de forma estratégica para entregar resultados consistentes.
           </p>
         </section>

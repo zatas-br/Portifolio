@@ -61,7 +61,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative w-full bg-white pt-32 pb-0 min-h-screen flex flex-col">
+    <section className="relative w-full bg-[#ECEFF1] pt-32 pb-0 min-h-screen flex flex-col">
       <div className="bg-[#1e40af] rounded-tl-[80px] w-full px-4 py-20 md:px-12 lg:px-24 flex-1 flex items-center">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start w-full">
 

@@ -14,10 +14,10 @@ const HowWorkingSection = () => {
                 <div className="max-w-7xl mx-auto flex flex-col items-center">
 
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight mb-4">
+                        <h2 className="text-gray-900 uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-4">
                             {t("title")}
                         </h2>
-                        <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                        <p className="text-gray-500 max-w-2xl mx-auto text-[16px] font-light leading-relaxed">
                             {t.rich("description", {
                                 italic: (chunks) => <span className="text-blue-500 font-medium italic">{chunks}</span>
                             })}

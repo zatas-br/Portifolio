@@ -82,14 +82,14 @@ export default function CategoryProjectsPage({
 
         <div ref={headerRef} className="py-12 md:py-16 text-center">
 
-          <h1 className="font-sans font-bold text-[44px] text-[#1E1E1E] leading-normal mb-4 max-w-[800px] mx-auto uppercase">
+          <h1 className="text-[#1E1E1E] mb-4 max-w-[800px] mx-auto uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
             {t('pageTitle').split('\n').map((line, i, arr) => (
               <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
             ))}
           </h1>
 
           <div className="flex justify-center">
-            <p className="text-[20px] max-w-[800px] leading-snug">
+            <p className="max-w-[800px] text-[16px] font-light leading-relaxed">
               <span className="font-sans font-light text-[#263238]">
                 {t('pageSubtitlePrefix').split('\n').map((line, i, arr) => (
                   <span key={i}>{line}{i < arr.length - 1 && <br />}</span>

@@ -1,14 +1,11 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { BsArrowRight } from "react-icons/bs";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { useTranslations, useMessages } from "next-intl";
 import { EXPERTISE_DATA } from "@/src/data/home";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["300", "400", "700", "800"] });
 
 const ExpertiseSection = () => {
   const t = useTranslations('PartnershipsPage.expertise');
@@ -36,10 +33,10 @@ const ExpertiseSection = () => {
     <section className="flex flex-col justify-center items-center w-full bg-[#ECEFF1] px-5 md:px-10 lg:px-20 py-16 md:h-[100vh] md:py-0 gap-8">
 
       <div className="text-center flex flex-col gap-1 z-10">
-        <h2 className={`text-2xl md:text-4xl font-extrabold text-text-primary uppercase tracking-tight ${montserrat.className}`}>
+        <h2 className="text-text-primary uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
           {t('title')}
         </h2>
-        <h3 className={`text-base md:text-4xl font-extrabold text-text-secondary uppercase tracking-normal ${montserrat.className}`}>
+        <h3 className="text-text-secondary text-[20px] md:text-[44px] font-bold font-sans leading-[1.1] tracking-tight uppercase">
           {t('subtitle')}
         </h3>
       </div>
@@ -67,11 +64,11 @@ const ExpertiseSection = () => {
             <button
               key={i}
               onClick={() => setActiveTab(i)}
-              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-bold transition-all duration-300 ${
+              className={`px-3 md:px-6 py-1.5 md:py-2 rounded-full text-[10px] md:text-xs font-bold transition-all duration-300 font-sans ${
                 activeTab === i
                   ? "bg-white text-slate-900 shadow-sm"
                   : "text-white hover:text-white/80 font-medium"
-              } ${montserrat.className}`}
+              }`}
             >
               {tAreas[item.id].label}
             </button>
@@ -83,10 +80,10 @@ const ExpertiseSection = () => {
             <div ref={textsTrackRef} className="flex w-full">
               {EXPERTISE_DATA.map((item, i) => (
                 <div key={i} className="flex flex-col gap-1 w-full flex-shrink-0 pr-2">
-                  <h4 className={`text-white font-bold uppercase tracking-widest text-[10px] md:text-sm ${montserrat.className}`}>
+                  <h4 className="text-white font-bold uppercase tracking-widest text-[10px] md:text-sm font-sans">
                     {tAreas[item.id].title}
                   </h4>
-                  <p className={`text-slate-300 text-[10px] md:text-xs font-light leading-relaxed ${montserrat.className}`}>
+                  <p className="text-slate-300 text-[16px] font-light leading-relaxed">
                     {tAreas[item.id].description}
                   </p>
                 </div>
@@ -95,7 +92,7 @@ const ExpertiseSection = () => {
           </div>
 
           <button className="flex items-center justify-center gap-2 bg-white text-slate-900 rounded-full py-1.5 md:py-2 px-3 md:px-4 hover:bg-slate-100 transition-colors active:scale-95 w-max ml-auto mt-auto">
-            <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-wide ${montserrat.className}`}>{t('viewProjects')}</span>
+            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wide font-sans">{t('viewProjects')}</span>
             <BsArrowRight size={10} />
           </button>
         </div>

@@ -1,13 +1,10 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Link } from "@/src/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { PARTNERSHIP_LOGOS } from "@/src/data/home";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["300", "400", "700", "800"] });
 
 function AnimatedHeroButton({
   href,
@@ -61,14 +58,22 @@ const HeroSection = () => {
   return (
     <section className="relative flex flex-col justify-center items-center w-full min-h-screen px-6 pt-28 pb-16 text-center md:h-[100vh] md:pt-0 md:pb-0">
 
-      <div className="flex flex-col items-center flex-1 justify-center gap-5 md:gap-6 w-full max-w-5xl mx-auto">
-        <div className="flex flex-col gap-1 md:gap-0">
-          <h1 className={`text-2xl md:text-4xl font-extrabold text-text-primary tracking-tight uppercase leading-tight ${montserrat.className}`}>
+      <div className="flex flex-col items-center flex-1 justify-center gap-5 md:gap-6 w-full mx-auto">
+        <div className="flex flex-col gap-1 md:gap-0 w-full items-center">
+          <h1
+            className="text-text-primary uppercase font-bold font-sans leading-[0.85] tracking-tight w-full"
+            style={{ fontSize: 'clamp(20px, 4vw, 44px)' }}
+          >
             {t('title')}
           </h1>
-          <h2 className={`text-base md:text-4xl font-extrabold text-text-secondary uppercase tracking-normal leading-tight ${montserrat.className}`}>
+
+          <h2
+            className="text-text-secondary uppercase font-bold font-sans leading-[1.1] tracking-tight w-full"
+            style={{ fontSize: 'clamp(12px, 3vw, 44px)' }}
+          >
             {t('subtitle')}
           </h2>
+
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full sm:w-auto sm:justify-center md:flex-row md:gap-4">
@@ -77,20 +82,20 @@ const HeroSection = () => {
             delay={0.3}
             className="bg-salmon hover:bg-salmon/90 text-white px-8 py-4 text-base md:px-12 md:py-5 md:text-lg font-normal"
           >
-            <span className={montserrat.className}>{t('contactButton')}</span>
+            <span className="font-sans">{t('contactButton')}</span>
           </AnimatedHeroButton>
           <AnimatedHeroButton
             href="/services"
             delay={0.45}
             className="bg-white text-text-primary border border-slate-200 px-8 py-4 text-base md:px-12 md:py-5 md:text-lg font-normal"
           >
-            <span className={montserrat.className}>{t('exploreButton')}</span>
+            <span className="font-sans">{t('exploreButton')}</span>
           </AnimatedHeroButton>
         </div>
       </div>
 
       <div className="w-full flex flex-col items-center gap-5 mt-10 md:pb-12">
-        <p className={`text-base md:text-xl font-medium ${montserrat.className}`} style={{ color: "#A9A9A9" }}>
+        <p className="text-base md:text-xl font-medium font-sans" style={{ color: "#A9A9A9" }}>
           {t('clientsLabel')}
         </p>
 

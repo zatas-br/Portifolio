@@ -1,11 +1,7 @@
 "use client";
 
-import { Lora, Montserrat } from "next/font/google";
 import { useTranslations } from "next-intl";
 import { PARTNERSHIP_TYPES_IMAGES, PARTNERSHIP_REASONS_ICONS } from "@/src/data/home";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700", "800"] });
-const lora = Lora({ subsets: ["latin"], weight: ["400"], style: ["italic"] });
 
 const ParceriaSection = () => {
   const t = useTranslations('PartnershipsPage.opportunity');
@@ -44,10 +40,11 @@ const ParceriaSection = () => {
 
       <div className="flex flex-col gap-5 md:gap-6">
         <div className="flex flex-col items-start">
-          <span className={`text-text-blue text-xl md:text-2xl font-bold tracking-wider relative z-10 -mb-4 ${lora.className}`}>
+          <span className="text-text-blue relative z-10 -mb-1 md:-mb-2 text-[20px] md:text-[32px] font-serif italic leading-none">
             {t('label')}
           </span>
-          <span className={`text-2xl md:text-3xl font-extrabold text-slate-900 uppercase tracking-tight ${montserrat.className}`}>
+
+          <span className="text-slate-900 uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
             {t('title')}
           </span>
         </div>
@@ -56,7 +53,7 @@ const ParceriaSection = () => {
           {typesOfPartnershipLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-xl border border-slate-100/50 py-6 px-5 flex items-center justify-center gap-3 min-h-[80px]">
               <img src={item.image} alt="Icone de parceria" className="w-8 h-8 flex-shrink-0" />
-              <span className={`font-bold text-slate-800 text-sm leading-tight ${montserrat.className}`}>{item.title}</span>
+              <span className="font-bold text-slate-800 text-sm leading-tight font-sans">{item.title}</span>
             </div>
           ))}
         </div>
@@ -65,7 +62,7 @@ const ParceriaSection = () => {
           {typesOfPartnershipLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-3xl shadow-xl border border-slate-100/50 h-[40vh] flex items-center justify-center gap-4">
               <img src={item.image} alt="Icone de parceria" className="w-16 h-16" />
-              <span className={`font-bold text-slate-800 text-2xl ${montserrat.className}`}>{item.title}</span>
+              <span className="font-bold text-slate-800 text-2xl font-sans">{item.title}</span>
             </div>
           ))}
         </div>
@@ -73,10 +70,11 @@ const ParceriaSection = () => {
 
       <div className="flex flex-col gap-5 md:gap-6">
         <div className="flex flex-col items-end w-full text-right">
-          <span className={`text-text-blue text-xl md:text-2xl font-bold tracking-wider relative z-10 -mb-4 ${lora.className}`}>
+          <span className="text-text-blue relative z-10 -mb-1 md:-mb-2 text-[20px] md:text-[32px] font-serif italic leading-none">
             {t('whyLabel')}
           </span>
-          <h2 className={`text-2xl md:text-3xl font-extrabold text-slate-900 uppercase tracking-tight ${montserrat.className}`}>
+
+          <h2 className="text-slate-900 uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
             <span className="md:hidden">
               {t('whyTitle').split('\n').map((line, i, arr) => (
                 <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
@@ -92,10 +90,10 @@ const ParceriaSection = () => {
           {contentLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col gap-3 border border-slate-100/50">
               <div className="flex justify-between items-start gap-3">
-                <h3 className={`font-bold text-slate-800 text-sm leading-tight flex-1 ${montserrat.className}`}>{item.title}</h3>
+                <h3 className="font-bold text-slate-800 text-sm leading-tight flex-1 font-sans">{item.title}</h3>
                 <img src={item.iconUri} alt="Icone de parceria" className="w-8 h-8 flex-shrink-0" />
               </div>
-              <p className={`text-xs text-slate-500 leading-relaxed font-medium ${lora.className}`}>
+              <p className="text-slate-500 text-[16px] font-light leading-relaxed">
                 {item.describe}
               </p>
             </div>
@@ -106,10 +104,10 @@ const ParceriaSection = () => {
           {contentLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow p-8 flex flex-col gap-4 border border-slate-100/50 h-[40vh]">
               <div className="flex justify-between items-start">
-                <h3 className={`font-bold text-slate-800 text-base w-2/3 leading-tight ${montserrat.className}`}>{item.title}</h3>
+                <h3 className="font-bold text-slate-800 text-base w-2/3 leading-tight font-sans">{item.title}</h3>
                 <img src={item.iconUri} alt="Icone de parceria" className="w-10 h-10" />
               </div>
-              <p className={`text-sm text-slate-500 leading-relaxed font-medium mt-auto ${lora.className}`}>
+              <p className="text-slate-500 mt-auto text-[16px] font-light leading-relaxed">
                 {item.describe}
               </p>
             </div>
