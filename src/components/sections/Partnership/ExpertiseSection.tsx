@@ -30,18 +30,19 @@ const ExpertiseSection = () => {
   }, [activeTab]);
 
   return (
-    <section className="flex flex-col justify-center items-center w-full bg-[#ECEFF1] px-5 md:px-10 lg:px-20 py-16 md:h-[100vh] md:py-0 gap-8">
+    <section className="flex flex-col justify-center items-center w-full bg-[#ECEFF1] px-4 md:px-10 lg:px-20 py-16 md:h-[100vh] md:py-0 gap-8">
 
-      <div className="text-center flex flex-col gap-1 z-10">
-        <h2 className="text-text-primary uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
+      <div className="text-center flex flex-col gap-1 z-10 px-2">
+        <h2 className="text-text-primary uppercase text-[24px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
           {t('title')}
         </h2>
-        <h3 className="text-text-secondary text-[20px] md:text-[44px] font-bold font-sans leading-[1.1] tracking-tight uppercase">
+        <h3 className="text-text-secondary text-[14px] md:text-[44px] font-bold font-sans leading-[1.1] tracking-tight uppercase">
           {t('subtitle')}
         </h3>
       </div>
 
-      <div className="relative w-full max-w-5xl rounded-2xl md:rounded-3xl shadow-2xl bg-slate-900 overflow-hidden aspect-[4/3] md:aspect-[16/9] lg:h-[60vh] lg:aspect-auto">
+      <div className="relative w-full max-w-5xl rounded-2xl md:rounded-3xl shadow-2xl bg-slate-900 overflow-hidden
+        aspect-[3/4] sm:aspect-[4/3] md:aspect-[16/9] lg:h-[60vh] lg:aspect-auto">
 
         <div className="absolute inset-0 overflow-hidden">
           <div ref={imagesTrackRef} className="flex w-full h-full">
@@ -59,7 +60,7 @@ const ExpertiseSection = () => {
           </div>
         </div>
 
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-slate-900/60 backdrop-blur-md rounded-full p-1 flex shadow-lg border border-white/20 z-20">
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 bg-slate-900/60 backdrop-blur-md rounded-full p-1 flex shadow-lg border border-white/20 z-20">
           {EXPERTISE_DATA.map((item, i) => (
             <button
               key={i}
@@ -75,7 +76,15 @@ const ExpertiseSection = () => {
           ))}
         </div>
 
-        <div className="absolute bottom-4 right-4 bg-text-primary/60 backdrop-blur-xl rounded-xl md:rounded-2xl p-4 md:p-6 w-[55vw] md:w-[25vw] shadow-2xl z-20 flex flex-col">
+        <div className="
+          absolute z-20
+          /* mobile: na parte inferior, largura quase total */
+          bottom-3 left-3 right-3
+          /* desktop: canto inferior direito com largura fixa */
+          md:bottom-4 md:right-4 md:left-auto md:w-[25vw]
+          bg-text-primary/60 backdrop-blur-xl rounded-xl md:rounded-2xl p-4 md:p-6
+          shadow-2xl flex flex-col
+        ">
           <div className="relative w-full overflow-hidden mb-3">
             <div ref={textsTrackRef} className="flex w-full">
               {EXPERTISE_DATA.map((item, i) => (
@@ -83,7 +92,7 @@ const ExpertiseSection = () => {
                   <h4 className="text-white font-bold uppercase tracking-widest text-[10px] md:text-sm font-sans">
                     {tAreas[item.id].title}
                   </h4>
-                  <p className="text-slate-300 text-[16px] font-light leading-relaxed">
+                  <p className="text-slate-300 text-[13px] md:text-base font-light leading-relaxed line-clamp-3 md:line-clamp-none">
                     {tAreas[item.id].description}
                   </p>
                 </div>
