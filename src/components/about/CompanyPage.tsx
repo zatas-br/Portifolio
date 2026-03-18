@@ -88,7 +88,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
   return (
     <div className="bg-[#ECEFF1] font-sans min-h-screen overflow-x-hidden">
 
-      {/* HERO IMAGE — pt-[80px] no mobile para não ficar atrás do menu */}
       <section className="relative w-full bg-[#9CBCE5] overflow-hidden pt-[80px] md:pt-0">
         <img
           src="/images/about/oque-ser-zatas.png"
@@ -97,7 +96,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         />
       </section>
 
-      {/* HERO CARD + VIDEO */}
       <section className="bg-[#263238] px-[4vw] pt-[4vw] pb-[5.5vw] max-[900px]:px-4 max-[900px]:pt-6 max-[900px]:pb-8">
         <div className="max-w-[1421px] mx-auto bg-[#F0F0F0]
           rounded-[clamp(16px,1.5vw,24px)]
@@ -106,7 +104,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           shadow-[0_24px_64px_rgba(0,0,0,0.3)]
           min-h-[clamp(300px,55vw,850px)]">
 
-          {/* Texto */}
           <div className="relative px-[clamp(20px,3.5vw,56px)] pt-[clamp(24px,3vw,55px)] pb-[clamp(20px,2.5vw,40px)] flex flex-col justify-between overflow-hidden bg-[#F0F0F0]">
 
             <div className="relative z-[2]">
@@ -122,7 +119,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
               </p>
             </div>
 
-            {/* Pássaro decorativo — só desktop */}
             <div className="absolute bottom-0 left-[16%] w-[136%] pointer-events-none select-none z-[1] drop-shadow-[0_8px_24px_rgba(0,0,0,0.08)] hidden md:block">
               <img
                 src="/images/about/fundo-passaro-card-sobre.png"
@@ -143,9 +139,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
             </div>
           </div>
 
-          {/* Vídeo
-              Desktop: borda arredondada direita
-              Mobile: SEM borda arredondada superior esquerda — apenas inf-esq e ambas inf ficam arredondadas junto com o card pai */}
           <div className="bg-black flex items-center justify-center self-stretch h-full aspect-[9/16] min-h-0 overflow-hidden rounded-none md:rounded-r-[clamp(16px,1.5vw,24px)]">
             {cfg.videoUrl ? (
               <div className="relative w-full h-full">
@@ -180,7 +173,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         </div>
       </section>
 
-      {/* SEÇÃO ESTRATÉGICA + COMPROMISSO + SERVIÇOS */}
       <section className="bg-[#ECEFF1] pt-[2.5vw] pb-[4vw] pl-[12.7vw] pr-[12vw] max-[900px]:px-5 max-[900px]:pt-8 max-[900px]:pb-8">
 
         <h2 className="text-[#263238] uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight mb-[clamp(14px,1.8vw,28px)] max-w-[55vw] max-[900px]:max-w-full">
@@ -217,7 +209,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
           {cfg.services.map((service, index) => (
             <div key={index} className="grid grid-cols-1 md:grid-cols-[1fr_clamp(72px,10vw,144px)_1fr] items-start gap-5 md:gap-0">
 
-              {/* MOBILE: imagem primeiro (order-1), DESKTOP: col 3 */}
               <div className="order-1 md:order-none md:col-start-3 md:row-start-1 aspect-[666/430] overflow-hidden rounded-none shadow-[0_12px_40px_rgba(0,0,0,0.22)]">
                 <img
                   src={service.image}
@@ -226,7 +217,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
                 />
               </div>
 
-              {/* MOBILE: texto depois (order-2), DESKTOP: col 1 */}
               <div className="order-2 md:order-none md:col-start-1 md:row-start-1 aspect-auto md:aspect-[666/430] bg-transparent flex flex-col justify-start items-start overflow-visible">
                 <p className="text-[#263238] mb-[clamp(10px,1vw,16px)] max-w-[26.7vw] max-[900px]:max-w-full text-[16px] font-light leading-relaxed">
                   {serviceDescriptions[index]}
@@ -251,7 +241,6 @@ export default function AboutPage({ config }: { config?: Partial<AboutPageConfig
         </AnimatedLinkButton>
       </section>
 
-      {/* HISTÓRIA */}
       <section className="bg-[#ECEFF1] px-[5.5vw] pb-[10vw] pt-[3vw] max-[900px]:px-4 max-[900px]:pb-10 max-[900px]:pt-4">
         <div className="w-full max-w-[1580px] mx-auto md:aspect-[1433/546] bg-[#263238] rounded-[clamp(16px,1.5vw,24px)] overflow-hidden grid grid-cols-1 md:grid-cols-[50%_50%] shadow-[0_16px_48px_rgba(0,0,0,0.2)]">
           <div className="w-full h-[200px] md:h-full">

@@ -48,7 +48,6 @@ const ParceriaSection = () => {
           </span>
         </div>
 
-        {/* Mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:hidden">
           {typesOfPartnershipLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-xl border border-slate-100/50 py-6 px-5 flex items-center justify-center gap-3 min-h-[80px]">
@@ -58,7 +57,6 @@ const ParceriaSection = () => {
           ))}
         </div>
 
-        {/* Desktop - original exato */}
         <div className="hidden md:grid grid-cols-3 gap-6">
           {typesOfPartnershipLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-3xl shadow-xl border border-slate-100/50 h-[40vh] flex items-center justify-center gap-4">
@@ -86,7 +84,6 @@ const ParceriaSection = () => {
           </h2>
         </div>
 
-        {/* Mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
           {contentLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col gap-3 border border-slate-100/50">
@@ -99,10 +96,6 @@ const ParceriaSection = () => {
           ))}
         </div>
 
-        {/*
-          Desktop: 4 colunas em telas grandes (>=1400px aprox = 2xl),
-          2 colunas em telas menores (md até 2xl) para o texto não ficar espremido
-        */}
         <div className="hidden md:grid grid-cols-2 2xl:grid-cols-4 gap-6">
           {contentLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow p-8 flex flex-col gap-4 border border-slate-100/50">
