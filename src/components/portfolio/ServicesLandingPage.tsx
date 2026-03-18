@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Header from "@/src/components/layout/Header";
@@ -11,8 +11,20 @@ export default function ServicesLandingPage() {
   const t = useTranslations("ServicesLandingPage");
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
+  const [showBird, setShowBird] = useState(false);
 
   const { animateFadeIn, animateEnter } = usePortfolioAnimations();
+
+  useEffect(() => {
+    // Só mostra o pássaro se a tela tiver largura suficiente para não cortá-lo
+    // O pássaro precisa de ~360px além dos 3 cards (~1024px) = ~1400px mínimo
+    const checkWidth = () => {
+      setShowBird(window.innerWidth >= 1400);
+    };
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
 
   useEffect(() => {
     if (headerRef.current) animateFadeIn(headerRef.current, 0.1);
@@ -50,8 +62,8 @@ export default function ServicesLandingPage() {
           >
             {categories.map((cat, index) => (
               <div key={cat.id} className="service-card opacity-0 relative">
-                {index === 2 && (
-                  <div className="hidden md:block absolute -right-90 -bottom-68 w-[140%] h-[140%] -z-10 pointer-events-none">
+                {index === 2 && showBird && (
+                  <div className="absolute -right-90 -bottom-68 w-[140%] h-[140%] -z-10 pointer-events-none">
                     <Image
                       src="/images/fundo-passaro.svg"
                       alt="Fundo Pássaro"

@@ -43,12 +43,12 @@ const ParceriaSection = () => {
           <span className="text-text-blue relative z-10 -mb-1 md:-mb-2 text-[20px] md:text-[32px] font-serif italic leading-none">
             {t('label')}
           </span>
-
           <span className="text-slate-900 uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
             {t('title')}
           </span>
         </div>
 
+        {/* Mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:hidden">
           {typesOfPartnershipLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-xl border border-slate-100/50 py-6 px-5 flex items-center justify-center gap-3 min-h-[80px]">
@@ -58,6 +58,7 @@ const ParceriaSection = () => {
           ))}
         </div>
 
+        {/* Desktop - original exato */}
         <div className="hidden md:grid grid-cols-3 gap-6">
           {typesOfPartnershipLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-3xl shadow-xl border border-slate-100/50 h-[40vh] flex items-center justify-center gap-4">
@@ -73,7 +74,6 @@ const ParceriaSection = () => {
           <span className="text-text-blue relative z-10 -mb-1 md:-mb-2 text-[20px] md:text-[32px] font-serif italic leading-none">
             {t('whyLabel')}
           </span>
-
           <h2 className="text-slate-900 uppercase text-[28px] md:text-[44px] font-bold font-sans leading-[0.85] tracking-tight">
             <span className="md:hidden">
               {t('whyTitle').split('\n').map((line, i, arr) => (
@@ -86,6 +86,7 @@ const ParceriaSection = () => {
           </h2>
         </div>
 
+        {/* Mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:hidden">
           {contentLocalized.map((item, i) => (
             <div key={i} className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col gap-3 border border-slate-100/50">
@@ -93,21 +94,23 @@ const ParceriaSection = () => {
                 <h3 className="font-bold text-slate-800 text-sm leading-tight flex-1 font-sans">{item.title}</h3>
                 <img src={item.iconUri} alt="Icone de parceria" className="w-8 h-8 flex-shrink-0" />
               </div>
-              <p className="text-slate-500 text-[16px] font-light leading-relaxed">
-                {item.describe}
-              </p>
+              <p className="text-slate-500 text-[16px] font-light leading-relaxed">{item.describe}</p>
             </div>
           ))}
         </div>
 
-        <div className="hidden md:grid grid-cols-4 gap-6">
+        {/*
+          Desktop: 4 colunas em telas grandes (>=1400px aprox = 2xl),
+          2 colunas em telas menores (md até 2xl) para o texto não ficar espremido
+        */}
+        <div className="hidden md:grid grid-cols-2 2xl:grid-cols-4 gap-6">
           {contentLocalized.map((item, i) => (
-            <div key={i} className="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow p-8 flex flex-col gap-4 border border-slate-100/50 h-[40vh]">
+            <div key={i} className="bg-white rounded-3xl shadow-sm hover:shadow-md transition-shadow p-8 flex flex-col gap-4 border border-slate-100/50">
               <div className="flex justify-between items-start">
                 <h3 className="font-bold text-slate-800 text-base w-2/3 leading-tight font-sans">{item.title}</h3>
                 <img src={item.iconUri} alt="Icone de parceria" className="w-10 h-10" />
               </div>
-              <p className="text-slate-500 mt-auto text-[16px] font-light leading-relaxed">
+              <p className="text-slate-500 text-[16px] font-light leading-relaxed">
                 {item.describe}
               </p>
             </div>
