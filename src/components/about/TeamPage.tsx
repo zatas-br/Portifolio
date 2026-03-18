@@ -78,7 +78,7 @@ export default function TeamPage() {
     <div className="min-h-screen relative overflow-hidden bg-white text-[#1E1E1E]">
       <Header />
       <div className="max-w-[1800px] mx-auto px-6 min-h-screen pt-56 xl:pt-58 pb-24 relative z-10 flex flex-col items-center xl:items-start justify-start">
-        
+
         <header ref={headerRef} className="text-left mb-6 w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
           <p className="relative z-20 text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-[9px]">
             {t("titleSmall")}
@@ -89,54 +89,55 @@ export default function TeamPage() {
         </header>
 
         <div className="w-full max-w-[1600px] mx-auto flex flex-col items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[40px] justify-items-center w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 2xl:gap-[40px] justify-items-center w-full">
             {filteredAuthors.map(([id, profile], index) => (
-                <div 
-                  key={id}
-                  ref={el => { cardsRef.current[index] = el; }}
-                  className="relative opacity-0"
+              <div
+                key={id}
+                ref={el => { cardsRef.current[index] = el; }}
+                className="relative opacity-0 w-full"
+              >
+                {index === 3 && (
+                  <div className="hidden 2xl:block absolute -right-[245px] -bottom-[845px] w-[320%] h-[320%] -z-10 pointer-events-none">
+                    <Image
+                      src="/images/fundo-tela-equipe.png"
+                      alt="Fundo Pássaro"
+                      fill
+                      className="object-contain opacity-100"
+                    />
+                  </div>
+                )}
+
+                <div
+                  className="relative group cursor-pointer w-full aspect-[6/7] rounded-[35px] overflow-hidden shadow-[0px_3px_12px_0px_rgba(0,0,0,0.7)] bg-gray-100"
+                  style={{ maxWidth: '360px', margin: '0 auto' }}
+                  onClick={() => handleSelectMember({ ...profile, id })}
                 >
-                  {index === 3 && (
-                    <div className="hidden md:block absolute -right-[245px] -bottom-[845px] w-[320%] h-[320%] -z-10 pointer-events-none">
-                      <Image
-                        src="/images/fundo-tela-equipe.png"
-                        alt="Fundo Pássaro"
-                        fill
-                        className="object-contain opacity-100"
-                      />
-                    </div>
-                  )}
+                  <img
+                    src={profile.avatar}
+                    alt={t(`members.${id}.name`)}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
                   <div
-                    className="relative group cursor-pointer w-[360px] h-[420px] rounded-[35px] overflow-hidden shadow-[0px_3px_12px_0px_rgba(0,0,0,0.7)] bg-gray-100"
-                    onClick={() => handleSelectMember({ ...profile, id })}
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[305px] max-w-[85%] h-[72px] bg-[#263238]/70 backdrop-blur-sm rounded-[15px] flex flex-col justify-center px-5 py-2 shadow-md transition-all duration-300 group-hover:bg-[#263238]/85"
                   >
-                    <img
-                        src={profile.avatar}
-                        alt={t(`members.${id}.name`)}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <h3 className="font-bold text-[20px] text-white font-sans leading-tight uppercase">
+                      {t(`members.${id}.name`)}
+                    </h3>
 
-                    <div 
-                        className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[305px] h-[72px] bg-[#263238]/70 backdrop-blur-sm rounded-[15px] flex flex-col justify-center px-5 py-2 shadow-md transition-all duration-300 group-hover:bg-[#263238]/85"
-                    >
-                        <h3 className="font-bold text-[20px] text-white font-sans leading-tight uppercase">
-                        {t(`members.${id}.name`)}
-                        </h3>
-
-                        <div className="flex justify-between items-center mt-1 w-full">
-                        <span className="font-serif italic text-[14px] text-white max-w-[60%] truncate">
-                            {t(`members.${id}.role`)}
-                        </span>
-                        <span className="font-serif italic text-[14px] text-white flex items-center gap-1 group-hover:underline whitespace-nowrap">
-                            {t('card.viewProfile')} &rarr;
-                        </span>
-                        </div>
+                    <div className="flex justify-between items-center mt-1 w-full">
+                      <span className="font-serif italic text-[14px] text-white max-w-[60%] truncate">
+                        {t(`members.${id}.role`)}
+                      </span>
+                      <span className="font-serif italic text-[14px] text-white flex items-center gap-1 group-hover:underline whitespace-nowrap">
+                        {t('card.viewProfile')} &rarr;
+                      </span>
                     </div>
                   </div>
                 </div>
+              </div>
             ))}
-            </div>
+          </div>
         </div>
       </div>
 
