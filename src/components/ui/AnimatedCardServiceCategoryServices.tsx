@@ -17,8 +17,8 @@ export default function AnimatedCardServiceCategoryServices({ path, image, label
         
         <div className={`w-full aspect-square bg-[#F9FBFC] rounded-[40px] overflow-hidden relative transition-all duration-500 group-hover:-translate-y-2 flex items-center justify-center border border-gray-100 ${
           isServicePage 
-            ? "shadow-[0px_3px_12px_0px_rgba(0,0,0,0.7)] group-hover:shadow-[0px_6px_20px_0px_rgba(0,0,0,0.6)]" 
-            : "shadow-[0_15px_30px_-5px_rgba(0,0,0,0.4)] group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)]"
+            ? "shadow-service-card group-hover:shadow-service-card-hover" 
+            : "shadow-portfolio-card group-hover:shadow-portfolio-card-hover"
         }`}>
           <div className="relative w-full h-full p-1">
             <Image 
@@ -27,7 +27,7 @@ export default function AnimatedCardServiceCategoryServices({ path, image, label
               fill
               className={`object-contain transition-transform duration-700 ${
                 isServicePage 
-                  ? "p-2 scale-112 group-hover:scale-120" 
+                  ? "p-2 scale-110 group-hover:scale-125" 
                   : "p-6 group-hover:scale-110"
               }`}
               priority

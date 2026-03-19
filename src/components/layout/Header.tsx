@@ -5,6 +5,7 @@ import zatasIcon from '@/public/images/Identidade_visual/icon-zatas-white.svg';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { useRouter } from '@/src/i18n/navigation';
+import { CONTACT_INFO } from '@/src/data/config';
 
 export default function Header() {
   const currentLocale = useLocale();
@@ -64,9 +65,9 @@ export default function Header() {
       bgColor: cardBg,
       textColor: cardText,
       links: [
-        { label: t('contact.links.0.label'), href: 'mailto:contato@zatas.com.br', ariaLabel: t('contact.links.0.ariaLabel'), external: true },
-        { label: t('contact.links.1.label'), href: 'https://wa.me/5516994418460', ariaLabel: t('contact.links.1.ariaLabel'), external: true },
-        { label: t('contact.links.2.label'), href: 'https://www.linkedin.com/company/zatas/about', ariaLabel: t('contact.links.2.ariaLabel'), external: true }
+        { label: t('contact.links.0.label'), href: `mailto:${CONTACT_INFO.EMAIL}`, ariaLabel: t('contact.links.0.ariaLabel'), external: true },
+        { label: t('contact.links.1.label'), href: CONTACT_INFO.WHATSAPP, ariaLabel: t('contact.links.1.ariaLabel'), external: true },
+        { label: t('contact.links.2.label'), href: CONTACT_INFO.LINKEDIN, ariaLabel: t('contact.links.2.ariaLabel'), external: true }
       ]
     }
   ];

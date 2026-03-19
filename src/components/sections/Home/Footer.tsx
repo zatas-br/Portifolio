@@ -1,13 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Montserrat } from "next/font/google";
 import { useTranslations } from "next-intl";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-});
 
 const FooterHomeSection = () => {
   const t = useTranslations("Footer");
@@ -26,7 +20,7 @@ const FooterHomeSection = () => {
           />
         </div>
 
-        <div className={`flex flex-col items-center md:items-end text-white ${montserrat.className}`}>
+        <div className="flex flex-col items-center md:items-end text-white font-sans">
             <h2 className="text-lg md:text-3xl font-light uppercase tracking-[0.2em] leading-snug text-right">
               {t("design")}
             </h2>
