@@ -7,7 +7,6 @@ import { useMessages, useTranslations } from 'next-intl';
 import { TeamMember, ProjectAuthor } from '@/types';
 import { usePortfolioAnimations } from '@/src/hooks/usePortfolioAnimations';
 import TeamMemberModal from './TeamMemberModal';
-import Header from '@/src/components/layout/Header';
 
 type Education = { institution: string; degree: string; year: string; };
 type Experience = { company: string; role: string; period: string; description: string; };
@@ -76,8 +75,7 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-white text-[#1E1E1E]">
-      <Header />
-      <div className="max-w-[1800px] mx-auto px-6 min-h-screen pt-56 xl:pt-58 pb-24 relative z-10 flex flex-col items-center xl:items-start justify-start">
+      <div className="max-w-[1800px] mx-auto px-6 min-h-screen pt-52 pb-24 relative z-10 flex flex-col items-center xl:items-start justify-start">
 
         <header ref={headerRef} className="text-left mb-6 w-full max-w-[1600px] mx-auto xl:px-0 px-4 opacity-0">
           <p className="relative z-20 text-[32px] text-[#0D47A1] font-serif italic leading-none m-0 -mb-[9px]">

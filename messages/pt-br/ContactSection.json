@@ -4,6 +4,7 @@
   "submit": "Enviar",
   "submitting": "Enviando...",
   "success": "Mensagem enviada com sucesso!",
+  "emailInvalid": "Digite um e-mail válido",
   "error": {
     "default": "Ocorreu um erro ao enviar a mensagem.",
     "network": "Erro de conexão. Tente novamente mais tarde."

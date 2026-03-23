@@ -11,7 +11,7 @@ interface HeroProps {
   projectId: string;
 }
 
-function AnimatedLiveButton({ href }: { href: string }) {
+function AnimatedLiveButton({ href, label }: { href: string; label: string }) {
   const ref = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -33,13 +33,14 @@ function AnimatedLiveButton({ href }: { href: string }) {
 
   return (
     <a ref={ref} href={href} target="_blank" rel="noopener noreferrer" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} className="px-12 py-[22px] mt-4 text-lg font-normal text-gray-900 bg-white rounded-full hover:bg-gray-100 no-underline" style={{ opacity: 0 }}>
-      Ver ao vivo
+      {label}
     </a>
   );
 }
 
 const HeroSection = ({ project, projectId }: HeroProps) => {
   const tProject = useTranslations(`Projects.${projectId}`);
+  const tProjectDetail = useTranslations('ProjectDetailPage');
 
   const title = tProject('title');
   const description = tProject('description');
@@ -63,7 +64,7 @@ const HeroSection = ({ project, projectId }: HeroProps) => {
         </p>
 
         {project.link && (
-          <AnimatedLiveButton href={project.link} />
+          <AnimatedLiveButton href={project.link} label={tProjectDetail('liveProject')} />
         )}
       </div>
 

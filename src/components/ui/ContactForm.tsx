@@ -17,6 +17,9 @@ interface ContactFormProps {
   innerClassName?: string;
 }
 
+const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export default function ContactForm({
   withSubmitLogic = false,
   className = "relative w-full bg-[#ECEFF1] pt-32 pb-0 min-h-screen flex flex-col",
@@ -25,6 +28,7 @@ export default function ContactForm({
   const t = useTranslations('ContactSection');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [message, setMessage] = useState('');
   
   const [status, setStatus] = useState<FormStatus>(FormStatus.IDLE);
@@ -35,6 +39,11 @@ export default function ContactForm({
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
+    if (emailError || !isValidEmail(email)) {
+      setEmailError(t('emailInvalid'));
+      return;
+    }
+
     if (!withSubmitLogic) {
       return;
     }
@@ -103,10 +112,19 @@ export default function ContactForm({
                   placeholder={t('form.email.placeholder')}
                   required
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    const newEmail = e.target.value;
+                    setEmail(newEmail);
+                    if (newEmail && !isValidEmail(newEmail)) {
+                      setEmailError(t('emailInvalid'));
+                    } else {
+                      setEmailError('');
+                    }
+                  }}
                   disabled={isLoading}
-                  className="w-full bg-[#e5e7eb] border border-transparent focus:bg-white focus:border-blue-500 rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800"
+                  className={`w-full bg-[#e5e7eb] border focus:bg-white rounded-xl px-5 py-3 outline-none transition-all placeholder:text-gray-400 text-gray-800 ${emailError ? 'border-red-500 focus:border-red-500' : 'border-transparent focus:border-blue-500'}`}
                 />
+                {emailError && <p className="text-red-500 text-xs mt-1 ml-1">{emailError}</p>}
               </div>
               <div className="space-y-1">
                 <label className="text-sm font-semibold text-gray-600 ml-1">{t('form.message.label')}</label>
@@ -122,7 +140,7 @@ export default function ContactForm({
               </div>
               <button
                 type={withSubmitLogic ? "submit" : "button"}
-                disabled={isLoading}
+                disabled={isLoading || !!emailError}
                 className="w-full bg-[#1f2937] hover:bg-black text-white font-medium py-3.5 rounded-xl transition-colors shadow-lg mt-2 disabled:opacity-50"
               >
                 {isLoading ? t('submitting') : t('form.submit')}

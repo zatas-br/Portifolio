@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { PROJECTS_STATIC } from "@/src/data/projects";
 import { usePortfolioAnimations } from "@/src/hooks/usePortfolioAnimations";
@@ -114,9 +115,12 @@ export default function CategoryProjectsPage({
               style={{ width: `${item.w}px`, height: `${item.h}px` }}
               className="bg-[#E0E0E0] rounded-[30px] flex-shrink-0 shadow-lg overflow-hidden relative"
             >
-              <img 
+              <Image 
                 src={`/images/services/projetos/${(index % 9) + 1}.png`} 
                 alt="" 
+                width={item.w}
+                height={item.h}
+                sizes={`${item.w}px`}
                 className="w-full h-full object-cover"
               />
             </div>
