@@ -100,6 +100,7 @@ export interface ProjectStatic {
   gallery: string[];
   authorIds: string[];
   mockup?: boolean;
+  mockupType?: "iphone" | "macbook" | "both";
 }
 
 export interface ProjectContent {

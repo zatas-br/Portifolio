@@ -4,7 +4,8 @@ import { useTranslations } from "next-intl";
 import { ProjectStatic } from "@/types";
 import { getTechIcon } from "@/src/data/techIcons";
 import MobilePreviewIphone14 from "../../ui/Mockup/Iphone14";
-import { useEffect, useRef } from "react";
+import MacbookMockup from "../../ui/Mockup/Macbook";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 interface Props {
@@ -130,21 +131,69 @@ const ProjectApresentationSection = ({ project, projectId }: Props) => {
   const t = useTranslations("ProjectDetailPage");
   const tProject = useTranslations(`Projects.${projectId}`);
   const fullDescription = tProject("fullDescription");
+  
+  const [activeMockup, setActiveMockup] = useState<"macbook" | "iphone">(
+    project.mockupType === "macbook" ? "macbook" : "iphone"
+  );
+  
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (project.mockupType !== "both") return;
+
+    const interval = setInterval(() => {
+      // Animate out
+      gsap.to(containerRef.current, {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.4,
+        ease: "power2.inOut",
+        onComplete: () => {
+          // Switch state
+          setActiveMockup((prev) => (prev === "macbook" ? "iphone" : "macbook"));
+          // Animate back in
+          gsap.to(containerRef.current, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(1.2)",
+            delay: 0.1
+          });
+        }
+      });
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [project.mockupType]);
 
   return (
     <section className="flex justify-center w-full flex-wrap text-black p-8 md:px-16 gap-16 bg-white -mt-8">
 
       {project.mockup !== false && (
-        <div className="w-full md:w-[40vw] h-full flex justify-center items-center -mt-8" style={{ filter: 'drop-shadow(0 25px 40px rgba(0,0,0,0.25))' }}>
-          <MobilePreviewIphone14>
-            {project.link ? (
-              <iframe src={project.link} title={projectId} className="w-full h-full border-0" />
+        <div className="w-full md:w-[40vw] h-full flex justify-center items-center -mt-8 min-h-[500px]" style={{ filter: 'drop-shadow(0 25px 40px rgba(0,0,0,0.25))' }}>
+          <div ref={containerRef} className="w-full flex justify-center items-center">
+            {activeMockup === "macbook" ? (
+              <MacbookMockup>
+                {project.link ? (
+                  <iframe src={project.link} title={projectId} className="w-full h-full border-0" />
+                ) : (
+                  <div className="w-full h-full overflow-hidden">
+                    <img src={project.image} alt={projectId} className="w-full h-full object-cover" />
+                  </div>
+                )}
+              </MacbookMockup>
             ) : (
-              <div className="w-full h-full overflow-hidden">
-                <img src={project.image} alt={projectId} className="w-full h-full object-cover" />
-              </div>
+              <MobilePreviewIphone14>
+                {project.link ? (
+                  <iframe src={project.link} title={projectId} className="w-full h-full border-0" />
+                ) : (
+                  <div className="w-full h-full overflow-hidden">
+                    <img src={project.image} alt={projectId} className="w-full h-full object-cover" />
+                  </div>
+                )}
+              </MobilePreviewIphone14>
             )}
-          </MobilePreviewIphone14>
+          </div>
         </div>
       )}
 
